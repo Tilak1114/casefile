@@ -78,7 +78,9 @@ it can do, what it publishes, when it is done, and what it may never do.
   as a test that was never run; answers technical requests; reports.
 - **Wakes on**: `expert.approved` (first task), `work.assigned`, `request.raised` (to engineer),
   `dispute.ruled`.
-- **Waits for**: `expert.approved`. It cannot start before.
+- **Waits for**: `expert.approved`. It cannot start before. The lead approves it when counsel asks, or on its
+  own initiative when the index shows technical material (added after smoke-2, where counsel never asked and
+  the lab and test reports went to counsel with a legal focus).
 - **Sees**: as counsel, for its own documents and claims.
 - **Can**: as counsel, except requesting an expert.
 - **Publishes**: `request.raised` / `request.answered`, `dispute.opened`, `position.submitted`,
@@ -119,7 +121,10 @@ for developers only), because that would bypass coverage logging, label hiding a
 | `search_semantic` | query, filters | Atlas Vector Search over page embeddings (Voyage or Atlas automated embeddings) | counsel, engineer | search | proposed; only if a retrieval test shows it finds answer-key evidence that keyword search misses |
 
 Readers get narrow retrieval (about 2 extra documents per reader, to resolve a reference such as "see our
-letter of 12 October" on the spot); anything bigger goes back to the role as an open question. Counsel and
+letter of 12 October" on the spot); anything bigger goes back to the role as an open question. A referenced
+document is attached only if it is 30 pages or fewer and the reader's role can reserve it, so no other task of
+the role has read or is reading it (smoke-2 gave readers 1,435 pages of which 745 were distinct, because
+parallel readers attached the same long reports). Counsel and
 the engineer get the full set. The lead gets metadata and counts only, so it never sees page text.
 
 ## Keeping context from thinning up the hierarchy

@@ -20,7 +20,7 @@ from casefile.team.desk import RecordsDesk
 from casefile.team.dispatcher import Dispatcher
 from casefile.team.events import Actor, Event, EventType as E
 from casefile.team.llm import ModelGate
-from casefile.team.reader import read
+from casefile.team.reader import ReadFailed, read
 from casefile.team.reservations import reserve
 from casefile.team.roles import REVIEWERS, ReviewerBrief
 from casefile.verify.index import CaseIndex
@@ -140,19 +140,18 @@ def _read_documents(deps: TeamDeps, brief: ReviewerBrief, doc_ids: list[str], fo
     """Read the documents this task can reserve; a failed batch is recorded and the rest carry on. Returns failures."""
     db, run = deps.store.db, deps.store.run_id
     held = reserve(db, run, brief.actor.value, doc_ids, task_id)
-    who = context.read_by(db, run, deps.index)
-    mine = {d for d, actors in who.items() if brief.actor.value in actors}
     todo = [deps.index.documents[i] for i in held]
 
     def one(group) -> bool:
         try:
             read(gate=deps.gate, desk=deps.desk, index=deps.index, store=deps.store, brief=brief,
-                 documents=group, focus=focus, already_read=mine, task_id=task_id)
+                 documents=group, focus=focus, task_id=task_id,
+                 claim=lambda ids: reserve(db, run, brief.actor.value, ids, task_id))
             return True
-        except Exception as exc:  # recorded; the documents are released so another task can try them
+        except ReadFailed as exc:  # recorded; the documents are released so another task can try them
             db.reader_failures.insert_one({"run_id": run, "task_id": task_id, "role": brief.actor.value,
-                                           "document_ids": [d.id for d in group], "error": f"{type(exc).__name__}: {exc}"[:500]})
-            db.reservations.delete_many({"_id": {"$in": [f"{run}:{brief.actor.value}:{d.id}" for d in group]}})
+                                           "document_ids": exc.document_ids, "error": str(exc)[:500]})
+            db.reservations.delete_many({"_id": {"$in": [f"{run}:{brief.actor.value}:{i}" for i in exc.document_ids]}})
             return False
 
     with ThreadPoolExecutor(4) as pool:

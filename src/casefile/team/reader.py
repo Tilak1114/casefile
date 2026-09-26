@@ -1,12 +1,14 @@
 """The v2 reader: reads whole documents for a role, with narrow retrieval and one automatic repair.
 
 Narrow retrieval is deterministic: before the model runs, the records desk attaches up to two documents the
-batch cites by reference number and the role has not read yet. The harness logs every page given to the
-model as read, with the role and focus, before the model runs. A refused claim is retried once, with its page
+batch cites by reference number, if they are short and the role can reserve them (so no other task of the role
+has read or is reading them). The harness logs every page given to the model as read, with the role and focus,
+before the model runs. A refused claim is retried once, with its page
 text and the verifier's reason in front of the model.
 """
 
 import time
+from collections.abc import Callable
 from uuid import uuid4
 
 from pydantic import BaseModel
@@ -21,6 +23,7 @@ from casefile.team.roles import ReviewerBrief
 from casefile.verify.index import CaseIndex, IndexedDocument
 
 MAX_ATTACHED_REFERENCES = 2
+MAX_ATTACHED_PAGES = 30  # a long referenced report is assigned on its own, not attached to someone else's batch
 
 REPAIR_PROMPT = """{brief}
 
@@ -44,21 +47,49 @@ class ReaderResult(BaseModel):
     open_questions: list[str]
 
 
-def _attach(desk: RecordsDesk, batch: list[IndexedDocument], already_read: set[str]) -> list[str]:
+class ReadFailed(RuntimeError):
+    """A reader batch failed; `document_ids` are every document it held, attached ones included."""
+
+    def __init__(self, document_ids: list[str], cause: Exception):
+        super().__init__(f"{type(cause).__name__}: {cause}")
+        self.document_ids = document_ids
+
+
+def _attach(desk: RecordsDesk, index: CaseIndex, batch: list[IndexedDocument],
+            claim: Callable[[list[str]], list[str]]) -> list[str]:
+    """Referenced documents to read alongside the batch: short ones this reader's role can still reserve."""
     ids = {d.id for d in batch}
-    found: list[str] = []
+    candidates: list[str] = []
     for d in batch:
         for ref in desk.find_references(d.id):
             for other in ref.documents:
-                if other not in ids and other not in already_read and other not in found:
-                    found.append(other)
-    return found[:MAX_ATTACHED_REFERENCES]
+                doc = index.documents.get(other)
+                if (other not in ids and other not in candidates and doc is not None and not doc.is_label
+                        and len(doc.page_ids) <= MAX_ATTACHED_PAGES):
+                    candidates.append(other)
+    held: list[str] = []
+    for other in candidates:
+        if len(held) == MAX_ATTACHED_REFERENCES:
+            break
+        held += claim([other])
+    return held
 
 
 def read(*, gate: ModelGate, desk: RecordsDesk, index: CaseIndex, store: RunStore, brief: ReviewerBrief,
-         documents: list[IndexedDocument], focus: str, already_read: set[str], task_id: str | None = None) -> ReaderResult:
+         documents: list[IndexedDocument], focus: str, claim: Callable[[list[str]], list[str]],
+         task_id: str | None = None) -> ReaderResult:
+    """`claim` reserves documents for this reader's role and returns those it now holds."""
     worker_id = f"w-{uuid4().hex[:10]}"
-    attached = _attach(desk, documents, already_read)
+    attached = _attach(desk, index, documents, claim)
+    try:
+        return _read(gate, desk, index, store, brief, documents, attached, focus, task_id, worker_id)
+    except Exception as exc:
+        raise ReadFailed([d.id for d in documents] + attached, exc) from exc
+
+
+def _read(gate: ModelGate, desk: RecordsDesk, index: CaseIndex, store: RunStore, brief: ReviewerBrief,
+          documents: list[IndexedDocument], attached: list[str], focus: str, task_id: str | None,
+          worker_id: str) -> ReaderResult:
     all_docs = documents + [index.documents[a] for a in attached]
     text, page_ids = render_documents(all_docs, index)
     record = desk.coverage.read(page_ids, actor=f"{brief.actor.value} reader", focus=focus)
