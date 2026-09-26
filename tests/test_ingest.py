@@ -97,3 +97,18 @@ def test_reducto_cache_is_read_back_without_private_links(tmp_path):
     path = client._cache_path("0" * 64, "parse", {"a": 1})
     client._write(path, {"job_id": "j", "pdf_url": "https://signed", "studio_link": "https://studio"})
     assert client._read(path) == {"job_id": "j"}
+
+
+def test_overlapping_split_partitions_keep_each_page_in_one_document():
+    split = {"result": {"splits": [
+        {"name": "inspection_or_test_report", "pages": [1, 2, 3], "conf": "high", "partitions": [
+            {"name": "report A", "pages": [1, 2, 3], "conf": "high"},
+            {"name": "report A copy", "pages": [1, 2, 3], "conf": "low"},
+        ]},
+        {"name": "letter", "pages": [3, 4], "conf": "high", "partitions": None},
+    ]}}
+    docs = documents_from_split("T1", 11, split)
+    pages = [p for d in docs for p in d.pages]
+    assert sorted(pages) == [1, 2, 3, 4] and len(pages) == len(set(pages))
+    assert [d.pages for d in docs] == [[1, 2, 3], [4]]
+    assert [d.index for d in docs] == [1, 2]

@@ -48,6 +48,16 @@ def documents_from_split(case_id: str, file_no: int, split: dict) -> list[Logica
         else:
             found.append((section.name, sorted(section.pages), section.name, section.conf))
     found.sort(key=lambda d: d[1][0])
+    # A page belongs to exactly one document. Split sometimes returns overlapping partitions (PDF 011 came
+    # back as two identical 93-page documents); the earliest document keeps the page, empty ones are dropped.
+    taken: set[int] = set()
+    unique = []
+    for doc_type, pages, label, conf in found:
+        own = [p for p in pages if p not in taken]
+        taken.update(own)
+        if own:
+            unique.append((doc_type, own, label, conf))
+    found = unique
     return [
         LogicalDocument(
             case_id=case_id, file_no=file_no, index=i, doc_type=doc_type,
@@ -115,6 +125,11 @@ def store(db: Database, pages: list[PageText], documents: list[LogicalDocument])
         db.documents.delete_many(selector)
     if pages:
         db.pages.insert_many([{"_id": p.id, **p.model_dump(mode="json")} for p in pages])
+    # Metadata for documents that no longer exist (a re-split merged or dropped them) goes too.
+    kept = {d.id for d in documents}
+    for file_key in {(p.case_id, p.file_no) for p in pages}:
+        prefix = f"{file_key[0]}:{file_key[1]:03d}:"
+        db.metadata.delete_many({"_id": {"$regex": f"^{prefix}", "$nin": list(kept)}})
     if documents:
         db.documents.insert_many(
             [{"_id": d.id, **d.model_dump(mode="json"), "is_label": d.is_label} for d in documents]

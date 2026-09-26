@@ -108,3 +108,33 @@ def test_search_finds_the_letter_and_never_returns_labels():
     assert "HWY06MH024:040:p002" in ids[:3]  # the 7 Oct 1999 letter
     labels = {p["_id"] for p in db.database().pages.find({"is_label": True}, {"_id": 1})}
     assert not labels & set(ids)
+
+
+@pytest.mark.integration
+def test_mongo_event_store_is_append_only_ordered_and_watchable():
+    import threading
+    from uuid import uuid4
+
+    from casefile.team.dispatcher import Dispatcher
+    from casefile.team.events import Actor, EventType as E
+    from casefile.team.store import MongoStore, TaskState
+
+    database = db.database()
+    run = f"test-{uuid4().hex[:8]}"
+    store = MongoStore(database, run)
+    d = Dispatcher(store, case_id="C", run_id=run, max_running=4)
+    try:
+        e = d.emit(E.COUNSEL_ASSIGNED, Actor.LEAD, to=Actor.COUNSEL, correlation_id="c1")
+        assert d.publish(e) is None  # same id again: not appended twice
+        assert [x.seq for x in store.events()] == [1]
+        assert store.has_event(E.COUNSEL_ASSIGNED, "c1") and not store.has_event(E.COUNSEL_ASSIGNED, "c2")
+        started = d.cycle()
+        assert [t.role for t in started] == [Actor.COUNSEL]
+        assert store.task(started[0].id).state is TaskState.RUNNING
+        # a change stream wakes a waiting consumer when an event is appended
+        threading.Timer(1.0, lambda: d.emit(E.WORK_ASSIGNED, Actor.LEAD, to=Actor.COUNSEL)).start()
+        assert store.wait_for_new_events(timeout_s=15)
+    finally:
+        for c in ("events", "tasks"):
+            database[c].delete_many({"run_id": run})
+        database.counters.delete_one({"_id": f"events:{run}"})

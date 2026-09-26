@@ -14,19 +14,20 @@ class CoverageLog:
         self.case_id = case_id
         self.run_id = run_id
 
-    def _add(self, mode: CoverageMode, page_ids: list[str], query: str | None) -> CoverageRecord:
+    def _add(self, mode: CoverageMode, page_ids: list[str], query: str | None, actor: str | None = None,
+             focus: str | None = None) -> CoverageRecord:
         record = CoverageRecord(
-            id=f"cov-{uuid4().hex[:12]}", run_id=self.run_id, mode=mode,
-            page_ids=sorted(set(page_ids)), query=query, created_at=datetime.now(UTC),
+            id=f"cov-{uuid4().hex[:12]}", run_id=self.run_id, mode=mode, page_ids=sorted(set(page_ids)),
+            query=query, actor=actor, focus=focus, created_at=datetime.now(UTC),
         )
         self.collection.insert_one({"_id": record.id, "case_id": self.case_id, **record.model_dump(mode="json")})
         return record
 
-    def read(self, page_ids: list[str]) -> CoverageRecord:
-        return self._add(CoverageMode.READ, page_ids, None)
+    def read(self, page_ids: list[str], actor: str | None = None, focus: str | None = None) -> CoverageRecord:
+        return self._add(CoverageMode.READ, page_ids, None, actor, focus)
 
-    def search(self, page_ids: list[str], query: str) -> CoverageRecord:
-        return self._add(CoverageMode.SEARCH, page_ids, query)
+    def search(self, page_ids: list[str], query: str, actor: str | None = None) -> CoverageRecord:
+        return self._add(CoverageMode.SEARCH, page_ids, query, actor)
 
     def records(self) -> dict[str, CoverageRecord]:
         return {

@@ -72,6 +72,8 @@ class CoverageRecord(BaseModel):
     mode: CoverageMode
     page_ids: list[str]
     query: str | None = None
+    actor: str | None = None  # who read or searched (a role, or a reader working for one)
+    focus: str | None = None  # what they were reading for
     created_at: datetime
 
 
