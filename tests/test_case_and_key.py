@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 
 from casefile.config import DATA_DIR
-from casefile.docket.case import CaseConfig, FileAssignment, FileGroup
+from casefile.case import CaseConfig, FileAssignment, FileGroup
 from casefile.evaluation.answer_key import AnswerKey
 
 NTSB = {"page": "30", "quote": "a quote from the NTSB report"}

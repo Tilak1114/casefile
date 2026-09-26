@@ -1,8 +1,8 @@
 {
- "docket_id": "HWY06MH024",
+ "case_id": "HWY06MH024",
  "files": [
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 1,
    "filename": "Materials Lab - Report No. 06-090 Torque vs. load test-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40269693&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Report%20No.%2006-090%20Torque%20vs.%20load%20test-Master.PDF",
@@ -12,7 +12,7 @@
    "retrieved_at": "2026-09-26T12:25:42.282671Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 2,
    "filename": "Materials Lab - Report No. 06-079 Anchor Displacement Data-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40269782&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Report%20No.%2006-079%20Anchor%20Displacement%20Data-Master.PDF",
@@ -22,7 +22,7 @@
    "retrieved_at": "2026-09-26T12:25:42.285055Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 3,
    "filename": "Anchor Displacement Data Analysis Study-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40269793&FileExtension=.PDF&FileName=Anchor%20Displacement%20Data%20Analysis%20Study-Master.PDF",
@@ -32,7 +32,7 @@
    "retrieved_at": "2026-09-26T12:25:42.234033Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 4,
    "filename": "Materials Lab - Report No. 06-075 Sequence Study-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40269999&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Report%20No.%2006-075%20Sequence%20Study-Master.PDF",
@@ -42,7 +42,7 @@
    "retrieved_at": "2026-09-26T12:25:42.609770Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 5,
    "filename": "Materials Lab - Report No. 06-073 Core Samples-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40270039&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Report%20No.%2006-073%20Core%20Samples-Master.PDF",
@@ -52,7 +52,7 @@
    "retrieved_at": "2026-09-26T12:25:42.914299Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 6,
    "filename": "Materials Lab - Factual Report 06-092-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40270862&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Factual%20Report%2006-092-Master.PDF",
@@ -62,7 +62,7 @@
    "retrieved_at": "2026-09-26T12:25:42.529984Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 7,
    "filename": "Materials Lab - Report 09-091 Anchors and anchor holes-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40272573&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Report%2009-091%20Anchors%20and%20anchor%20holes-Master.PDF",
@@ -72,7 +72,7 @@
    "retrieved_at": "2026-09-26T12:25:42.632195Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 8,
    "filename": "FHWA Report on Load and Load Displacement Testing of Anchors in the Tunnel-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40272592&FileExtension=.PDF&FileName=FHWA%20Report%20on%20Load%20and%20Load%20Displacement%20Testing%20of%20Anchors%20in%20the%20Tunnel-Master.PDF",
@@ -82,7 +82,7 @@
    "retrieved_at": "2026-09-26T12:25:43.148360Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 9,
    "filename": "Materials Laboratory Factual Report 06-105, Preliminary Testing of Epoxy-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40272715&FileExtension=.PDF&FileName=Materials%20Laboratory%20Factual%20Report%2006-105%2C%20Preliminary%20Testing%20of%20Epoxy-Master.PDF",
@@ -92,7 +92,7 @@
    "retrieved_at": "2026-09-26T12:25:42.871792Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 10,
    "filename": "Materials Lab - Final factual report 07-018, purging study-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40273926&FileExtension=.PDF&FileName=Materials%20Lab%20-%20Final%20factual%20report%2007-018%2C%20purging%20study-Master.PDF",
@@ -102,7 +102,7 @@
    "retrieved_at": "2026-09-26T12:25:42.413308Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 11,
    "filename": "Polymer Characterization Report from Massachusetts Institute of Technology-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40275908&FileExtension=.PDF&FileName=Polymer%20Characterization%20Report%20from%20Massachusetts%20Institute%20of%20Technology-Master.PDF",
@@ -112,7 +112,7 @@
    "retrieved_at": "2026-09-26T12:25:42.458105Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 12,
    "filename": "FHWA Report - Parametric Laboratory Study of Anchor Strength under Short-Term Loading-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276239&FileExtension=.PDF&FileName=FHWA%20Report%20-%20Parametric%20Laboratory%20Study%20of%20Anchor%20Strength%20under%20Short-Term%20Loading-Master.PDF",
@@ -122,7 +122,7 @@
    "retrieved_at": "2026-09-26T12:25:43.728069Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 13,
    "filename": "Human Performance - Attachment A: Section 2 of Contract General Provisions-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276630&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20A%3A%20Section%202%20of%20Contract%20General%20Provisions-Master.PDF",
@@ -132,7 +132,7 @@
    "retrieved_at": "2026-09-26T12:25:42.510302Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 14,
    "filename": "Human Performance - Attachment B: Design Specifications Section 723.480, 3.07-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276633&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20B%3A%20Design%20Specifications%20Section%20723.480%2C%203.07-Master.PDF",
@@ -142,7 +142,7 @@
    "retrieved_at": "2026-09-26T12:25:42.753267Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 15,
    "filename": "Human Performance - Attachment C: Meeting Notes, September 27, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276634&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20C%3A%20Meeting%20Notes%2C%20September%2027%2C%202006-Master.PDF",
@@ -152,7 +152,7 @@
    "retrieved_at": "2026-09-26T12:25:42.612331Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 16,
    "filename": "Human Performance - Attachment D:  Pages from Powers-Rawl Fastening Systems Design Manual, Second Edition-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276635&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20D%3A%20%20Pages%20from%20Powers-Rawl%20Fastening%20Systems%20Design%20Manual%2C%20Second%20Edition-Master.PDF",
@@ -162,7 +162,7 @@
    "retrieved_at": "2026-09-26T12:25:42.833131Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 17,
    "filename": "Human Performance - Attachment E: Narratives of Investigative Interviews-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276637&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20E%3A%20Narratives%20of%20Investigative%20Interviews-Redacted.PDF",
@@ -172,7 +172,7 @@
    "retrieved_at": "2026-09-26T12:25:42.663488Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 18,
    "filename": "Human Performance - Attachment F: Transcript of Investigative Interview-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276638&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20F%3A%20Transcript%20of%20Investigative%20Interview-Redacted.PDF",
@@ -182,7 +182,7 @@
    "retrieved_at": "2026-09-26T12:25:42.673103Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 19,
    "filename": "Human Performance - Attachment G: Excerpts from field engineer's daily report (FEDR)-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40276962&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20G%3A%20Excerpts%20from%20field%20engineer%27s%20daily%20report%20%28FEDR%29-Master.PDF",
@@ -192,7 +192,7 @@
    "retrieved_at": "2026-09-26T12:25:42.979346Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 20,
    "filename": "Materials Laboratory Factual Report 07-067, Epoxy Phase Separation-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278061&FileExtension=.PDF&FileName=Materials%20Laboratory%20Factual%20Report%2007-067%2C%20Epoxy%20Phase%20Separation-Master.PDF",
@@ -202,7 +202,7 @@
    "retrieved_at": "2026-09-26T12:25:43.035980Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 21,
    "filename": "Materials Laboratory Factual Report 07-064, Lap Shear Testing-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278175&FileExtension=.PDF&FileName=Materials%20Laboratory%20Factual%20Report%2007-064%2C%20Lap%20Shear%20Testing-Master.PDF",
@@ -212,7 +212,7 @@
    "retrieved_at": "2026-09-26T12:25:43.272903Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 22,
    "filename": "Materials Laboratory Factual Report 07-070, Creep Test of Fast Set per AC 58-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278177&FileExtension=.PDF&FileName=Materials%20Laboratory%20Factual%20Report%2007-070%2C%20Creep%20Test%20of%20Fast%20Set%20per%20AC%2058-Master.PDF",
@@ -222,7 +222,7 @@
    "retrieved_at": "2026-09-26T12:25:43.303976Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 23,
    "filename": "NIST Report, Thermo-viscoelastic Characterization of Epoxy, NISTIR 7429-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278178&FileExtension=.PDF&FileName=NIST%20Report%2C%20Thermo-viscoelastic%20Characterization%20of%20Epoxy%2C%20NISTIR%207429-Master.PDF",
@@ -232,7 +232,7 @@
    "retrieved_at": "2026-09-26T12:25:42.990018Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 24,
    "filename": "Structural - Structural Group Chairman Factual Report-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278185&FileExtension=.PDF&FileName=Structural%20-%20Structural%20Group%20Chairman%20Factual%20Report-Master.PDF",
@@ -242,7 +242,7 @@
    "retrieved_at": "2026-09-26T12:25:43.036058Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 25,
    "filename": "Structural - Structural Group Chairman Addendum to Factual Report-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278186&FileExtension=.PDF&FileName=Structural%20-%20Structural%20Group%20Chairman%20Addendum%20to%20Factual%20Report-Master.PDF",
@@ -252,7 +252,7 @@
    "retrieved_at": "2026-09-26T12:25:43.027333Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 26,
    "filename": "STR Photo-01, View of 2-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278197&FileExtension=.PDF&FileName=STR%20Photo-01%2C%20View%20of%202-anchor%20roof%20hanger%20plate%20that%20has%20begun%20to%20pull%20away%20from%20the%20tunnel%20roof%20in%20the%20westbound%20D%20Street%20portal%20tunnel%20after%20the%20accident-Master.PDF",
@@ -262,7 +262,7 @@
    "retrieved_at": "2026-09-26T12:25:43.173299Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 27,
    "filename": "STR Photo-02, View of 2-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278199&FileExtension=.PDF&FileName=STR%20Photo-02%2C%20View%20of%202-anchor%20roof%20hanger%20plate%20that%20has%20begun%20to%20pull%20away%20from%20the%20tunnel%20roof%20in%20the%20westbound%20D%20Street%20portal%20tunnel%20after%20the%20accident-Master.PDF",
@@ -272,7 +272,7 @@
    "retrieved_at": "2026-09-26T12:25:43.177982Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 28,
    "filename": "STR Photo-03, View of 4-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278203&FileExtension=.PDF&FileName=STR%20Photo-03%2C%20View%20of%204-anchor%20roof%20hanger%20plate%20that%20has%20begun%20to%20pull%20away%20from%20the%20tunnel%20roof%20in%20the%20westbound%20D%20Street%20portal%20tunnel%20after%20the%20accident-Master.PDF",
@@ -282,7 +282,7 @@
    "retrieved_at": "2026-09-26T12:25:43.460244Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 29,
    "filename": "STR Photo-04, View of 2-anchor roof hanger plates that have begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278206&FileExtension=.PDF&FileName=STR%20Photo-04%2C%20View%20of%202-anchor%20roof%20hanger%20plates%20that%20have%20begun%20to%20pull%20away%20from%20the%20tunnel%20roof%20in%20the%20westbound%20D%20Street%20portal%20tunnel%20after%20the%20accident-Master.PDF",
@@ -292,7 +292,7 @@
    "retrieved_at": "2026-09-26T12:25:43.352936Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 30,
    "filename": "STR Photo-05, View of 4-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278209&FileExtension=.PDF&FileName=STR%20Photo-05%2C%20View%20of%204-anchor%20roof%20hanger%20plate%20that%20has%20begun%20to%20pull%20away%20from%20the%20tunnel%20roof%20in%20the%20westbound%20D%20Street%20portal%20tunnel%20after%20the%20accident-Master.PDF",
@@ -302,7 +302,7 @@
    "retrieved_at": "2026-09-26T12:25:43.326532Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 31,
    "filename": "STR Photo-06, Looking to the east, view of eastbound D Street portal of the collapsed concrete panels-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278212&FileExtension=.PDF&FileName=STR%20Photo-06%2C%20Looking%20to%20the%20east%2C%20view%20of%20eastbound%20D%20Street%20portal%20of%20the%20collapsed%20concrete%20panels-Master.PDF",
@@ -312,7 +312,7 @@
    "retrieved_at": "2026-09-26T12:25:43.535423Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 32,
    "filename": "STR Photo-07, Looking to the north, view of eastbound D Street portal of the collapsed concrete panels-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278213&FileExtension=.PDF&FileName=STR%20Photo-07%2C%20Looking%20to%20the%20north%2C%20view%20of%20eastbound%20D%20Street%20portal%20of%20the%20collapsed%20concrete%20panels-Master.PDF",
@@ -322,7 +322,7 @@
    "retrieved_at": "2026-09-26T12:25:43.523026Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 33,
    "filename": "STR Photo-08, Looking to the west, view of eastbound D Street portal of the collapsed concrete panels-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278215&FileExtension=.PDF&FileName=STR%20Photo-08%2C%20Looking%20to%20the%20west%2C%20view%20of%20eastbound%20D%20Street%20portal%20of%20the%20collapsed%20concrete%20panels-Master.PDF",
@@ -332,7 +332,7 @@
    "retrieved_at": "2026-09-26T12:25:43.599686Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 34,
    "filename": "Structural - Attachment 1, Memorandum to the National Transportation Safety Board from Gannett Fleming, Inc. dated August 4, 2006 (Updated November 2, 2006)-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278361&FileExtension=.PDF&FileName=Structural%20-%20Attachment%201%2C%20Memorandum%20to%20the%20National%20Transportation%20Safety%20Board%20from%20Gannett%20Fleming%2C%20Inc.%20dated%20August%204%2C%202006%20%28Updated%20November%202%2C%202006%29-Master.PDF",
@@ -342,7 +342,7 @@
    "retrieved_at": "2026-09-26T12:25:43.402595Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 35,
    "filename": "Structural - Attachment 4, Federal Highway Administration (FHWA) Turner-Fairbank Highway Research Center Finite Element Design Analysis Report-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278369&FileExtension=.PDF&FileName=Structural%20-%20Attachment%204%2C%20Federal%20Highway%20Administration%20%28FHWA%29%20Turner-Fairbank%20Highway%20Research%20Center%20Finite%20Element%20Design%20Analysis%20Report-Master.PDF",
@@ -352,7 +352,7 @@
    "retrieved_at": "2026-09-26T12:25:43.483668Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 36,
    "filename": "Structural - Attachment 5, Manufacturer literature from Power's Fasteners, Inc. on maximum torque values and torque ranges for the adhesive anchoring system-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278370&FileExtension=.PDF&FileName=Structural%20-%20Attachment%205%2C%20Manufacturer%20literature%20from%20Power%27s%20Fasteners%2C%20Inc.%20on%20maximum%20torque%20values%20and%20torque%20ranges%20for%20the%20adhesive%20anchoring%20system-Master.PDF",
@@ -362,7 +362,7 @@
    "retrieved_at": "2026-09-26T12:25:43.559663Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 37,
    "filename": "Structural - Attachment 6, Facsimile Transmittal from Massachusetts Highway Department to Gannett Fleming, Inc. dated September 23, 1998 giving direction on proof test load for anchors-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278371&FileExtension=.PDF&FileName=Structural%20-%20Attachment%206%2C%20Facsimile%20Transmittal%20from%20Massachusetts%20Highway%20Department%20to%20Gannett%20Fleming%2C%20Inc.%20dated%20September%2023%2C%201998%20giving%20direction%20on%20proof%20test%20load%20for%20anchors-Master.PDF",
@@ -372,7 +372,7 @@
    "retrieved_at": "2026-09-26T12:25:43.512970Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 38,
    "filename": "Structural - Attachment 7, Contractor transmittal (submittal number 723.480-009 B) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated October 15, 1999 regarding the ceiling module erection procedure-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278372&FileExtension=.PDF&FileName=Structural%20-%20Attachment%207%2C%20Contractor%20transmittal%20%28submittal%20number%20723.480-009%20B%29%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20October%2015%2C%201999%20regarding%20the%20ceiling%20module%20erection%20procedure-Redacted.PDF",
@@ -382,7 +382,7 @@
    "retrieved_at": "2026-09-26T12:25:43.588672Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 39,
    "filename": "Structural - Attachment 8, Manufacturer literature from Power's Fasteners, Inc. on installation requirements for the adhesive anchoring system-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278374&FileExtension=.PDF&FileName=Structural%20-%20Attachment%208%2C%20Manufacturer%20literature%20from%20Power%27s%20Fasteners%2C%20Inc.%20on%20installation%20requirements%20for%20the%20adhesive%20anchoring%20system-Master.PDF",
@@ -392,7 +392,7 @@
    "retrieved_at": "2026-09-26T12:25:43.643824Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 40,
    "filename": "Structural - Attachment 9, Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated October 7, 1999 indicating a small percentage of the adhesive anchors in the HOV ceiling mockup appear to show signs of tensile movement-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278375&FileExtension=.PDF&FileName=Structural%20-%20Attachment%209%2C%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20October%207%2C%201999%20indicating%20a%20small%20percentage%20of%20the%20adhesive%20anchors%20in%20the%20HOV%20ceiling%20mockup%20appear%20to%20show%20signs%20of%20tensile%20movement-Redacted.PDF",
@@ -402,7 +402,7 @@
    "retrieved_at": "2026-09-26T12:25:43.594083Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 41,
    "filename": "Structural - Attachment 10, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated October 12, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278376&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2010%2C%20Response%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20October%2012%2C%201999-Redacted.PDF",
@@ -412,7 +412,7 @@
    "retrieved_at": "2026-09-26T12:25:43.607240Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 42,
    "filename": "Structural - Attachment 2, Contractor transmittal (submittal number 723.480-014 C) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 7, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278377&FileExtension=.PDF&FileName=Structural%20-%20Attachment%202%2C%20Contractor%20transmittal%20%28submittal%20number%20723.480-014%20C%29%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20January%207%2C%202000-Redacted.PDF",
@@ -422,7 +422,7 @@
    "retrieved_at": "2026-09-26T12:25:43.745049Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 43,
    "filename": "Structural - Attachment 3, Design Policy Memorandum No. 107 Tunnel Finish Details dated March 13, 1997-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278432&FileExtension=.PDF&FileName=Structural%20-%20Attachment%203%2C%20Design%20Policy%20Memorandum%20No.%20107%20Tunnel%20Finish%20Details%20dated%20March%2013%2C%201997-Redacted.PDF",
@@ -432,7 +432,7 @@
    "retrieved_at": "2026-09-26T12:25:43.713061Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 44,
    "filename": "Structural - Attachment 11, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated November 8, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278538&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2011%2C%20Response%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20November%208%2C%201999-Redacted.PDF",
@@ -442,7 +442,7 @@
    "retrieved_at": "2026-09-26T12:25:43.680756Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 45,
    "filename": "Structural - Attachment 12, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated November 11, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278539&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2012%2C%20Response%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20November%2011%2C%201999-Redacted.PDF",
@@ -452,7 +452,7 @@
    "retrieved_at": "2026-09-26T12:25:43.681638Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 46,
    "filename": "Structural - Attachment 13, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated December 2, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278540&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2013%2C%20Response%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20December%202%2C%201999-Redacted.PDF",
@@ -462,7 +462,7 @@
    "retrieved_at": "2026-09-26T12:25:43.773923Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 47,
    "filename": "Structural - Attachment 14, Contractor transmittal (submittal number 723.480-016 A) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated December 27, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278542&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2014%2C%20Contractor%20transmittal%20%28submittal%20number%20723.480-016%20A%29%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20December%2027%2C%201999-Redacted.PDF",
@@ -472,7 +472,7 @@
    "retrieved_at": "2026-09-26T12:25:43.695481Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 48,
    "filename": "Structural - Attachment 15, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated December 29, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278545&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2015%2C%20Response%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20December%2029%2C%201999-Redacted.PDF",
@@ -482,7 +482,7 @@
    "retrieved_at": "2026-09-26T12:25:43.757549Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 49,
    "filename": "Structural - Attachment 16, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 7, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278551&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2016%2C%20Response%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20January%207%2C%202000-Redacted.PDF",
@@ -492,7 +492,7 @@
    "retrieved_at": "2026-09-26T12:25:43.760356Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 50,
    "filename": "Structural - Attachment 17, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 7, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278552&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2017%2C%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20January%207%2C%202000-Redacted.PDF",
@@ -502,7 +502,7 @@
    "retrieved_at": "2026-09-26T12:25:43.760911Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 51,
    "filename": "Structural - Attachment 18, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated January 19, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278557&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2018%2C%20Response%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20January%2019%2C%202000-Redacted.PDF",
@@ -512,7 +512,7 @@
    "retrieved_at": "2026-09-26T12:25:43.779510Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 52,
    "filename": "Structural - Attachment 19, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated February 7, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278561&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2019%2C%20Response%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20February%207%2C%202000-Redacted.PDF",
@@ -522,7 +522,7 @@
    "retrieved_at": "2026-09-26T12:25:43.798979Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 53,
    "filename": "Structural - Attachment 20, Adhesive Anchor Repair Procedure submitted by Modern Continental Company to Bechtel / Parsons Brinckerhoff dated February 16, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278565&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2020%2C%20Adhesive%20Anchor%20Repair%20Procedure%20submitted%20by%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20February%2016%2C%202000-Redacted.PDF",
@@ -532,7 +532,7 @@
    "retrieved_at": "2026-09-26T12:25:43.825136Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 54,
    "filename": "Structural - Attachment 21, Internal Memorandum from Staff of Bechtel / Parsons Brinckerhoff dated August 31, 2000 Recommending Disposition of Deficiency Report No. 1 be Closed-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278705&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2021%2C%20Internal%20Memorandum%20from%20Staff%20of%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20August%2031%2C%202000%20Recommending%20Disposition%20of%20Deficiency%20Report%20No.%201%20be%20Closed-Redacted.PDF",
@@ -542,7 +542,7 @@
    "retrieved_at": "2026-09-26T12:25:43.877099Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 55,
    "filename": "Structural - Attachment 22, Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated September 18, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278706&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2022%2C%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20September%2018%2C%202000-Redacted.PDF",
@@ -552,7 +552,7 @@
    "retrieved_at": "2026-09-26T12:25:43.956306Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 56,
    "filename": "Structural - Attachment 23, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 26, 2001 indicating corrective action had been verified and Deficiency Report No. 1 was closed-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278707&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2023%2C%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20January%2026%2C%202001%20indicating%20corrective%20action%20had%20been%20verified%20and%20Deficiency%20Report%20No.%201%20was%20closed-Redacted.PDF",
@@ -562,7 +562,7 @@
    "retrieved_at": "2026-09-26T12:25:43.843246Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 57,
    "filename": "Structural - Attachment 24, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated March 15, 2001 enclosing a fully executed original of the contract modification-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278711&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2024%2C%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20March%2015%2C%202001%20enclosing%20a%20fully%20executed%20original%20of%20the%20contract%20modification-Redacted.PDF",
@@ -572,7 +572,7 @@
    "retrieved_at": "2026-09-26T12:25:43.854077Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 58,
    "filename": "Structural - Attachment 25, The Commonwealth of Massachusetts Office of the Inspector General, A Review of the Central Artery / Tunnel Project's Use of Anchor Bolts on the C05B1 Tunnel Finishes Contract-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278713&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2025%2C%20The%20Commonwealth%20of%20Massachusetts%20Office%20of%20the%20Inspector%20General%2C%20A%20Review%20of%20the%20Central%20Artery%20/%20Tunnel%20Project%27s%20Use%20of%20Anchor%20Bolts%20on%20the%20C05B1%20Tunnel%20Finishes%20Contract-Master.PDF",
@@ -582,7 +582,7 @@
    "retrieved_at": "2026-09-26T12:25:43.938896Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 59,
    "filename": "Structural - Attachment 26, Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated January 13, 1999 requesting consideration of a Celline Metal Panel Structural Ceiling System-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278716&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2026%2C%20Letter%20from%20Modern%20Continental%20Company%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20dated%20January%2013%2C%201999%20requesting%20consideration%20of%20a%20Celline%20Metal%20Panel%20Structural%20Ceiling%20System-Redacted.PDF",
@@ -592,7 +592,7 @@
    "retrieved_at": "2026-09-26T12:25:43.884121Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 60,
    "filename": "Structural - Attachment 27, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated February 24, 1999 indicating Value Engineering Cost Proposal was not acceptable-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278720&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2027%2C%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20February%2024%2C%201999%20indicating%20Value%20Engineering%20Cost%20Proposal%20was%20not%20acceptable-Redacted.PDF",
@@ -602,7 +602,7 @@
    "retrieved_at": "2026-09-26T12:25:43.873514Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 61,
    "filename": "Structural - Attachment 28, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated March 25, 1999 indicating Value Engineering Cost Proposal should not be pursued further-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278724&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2028%2C%20Letter%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20March%2025%2C%201999%20indicating%20Value%20Engineering%20Cost%20Proposal%20should%20not%20be%20pursued%20further-Redacted.PDF",
@@ -612,7 +612,7 @@
    "retrieved_at": "2026-09-26T12:25:43.903636Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 62,
    "filename": "Structural - Attachment 29, Letter from Environmental Interiors, Inc. to Modern Continental Company dated March 9, 1999 withdrawing a proposal for a Celline Metal Panel Ceiling System-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278726&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2029%2C%20Letter%20from%20Environmental%20Interiors%2C%20Inc.%20to%20Modern%20Continental%20Company%20dated%20March%209%2C%201999%20withdrawing%20a%20proposal%20for%20a%20Celline%20Metal%20Panel%20Ceiling%20System-Redacted.PDF",
@@ -622,7 +622,7 @@
    "retrieved_at": "2026-09-26T12:25:44.005819Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 63,
    "filename": "Structural - Attachment 30, Contractor transmittal (submittal number 723.480-008 A) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated May 27, 1999-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278727&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2030%2C%20Contractor%20transmittal%20%28submittal%20number%20723.480-008%20A%29%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20May%2027%2C%201999-Redacted.PDF",
@@ -632,7 +632,7 @@
    "retrieved_at": "2026-09-26T12:25:43.968945Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 64,
    "filename": "Structural - Attachment 31, Contractor transmittal (submittal number 723.480-008 D) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated February 4, 2000-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278728&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2031%2C%20Contractor%20transmittal%20%28submittal%20number%20723.480-008%20D%29%20from%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20to%20Modern%20Continental%20Company%20dated%20February%204%2C%202000-Redacted.PDF",
@@ -642,7 +642,7 @@
    "retrieved_at": "2026-09-26T12:25:43.970450Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 65,
    "filename": "Structural - Attachment 32, Memorandum from the Massachusetts Turnpike Authority (MTA) to NTSB dated January 12, 2007 regarding Inspection Manual for Tunnels and Boat Structures, Volume 5-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278731&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2032%2C%20Memorandum%20from%20the%20Massachusetts%20Turnpike%20Authority%20%28MTA%29%20to%20NTSB%20dated%20January%2012%2C%202007%20regarding%20Inspection%20Manual%20for%20Tunnels%20and%20Boat%20Structures%2C%20Volume%205-Redacted.PDF",
@@ -652,7 +652,7 @@
    "retrieved_at": "2026-09-26T12:25:44.030202Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 66,
    "filename": "Structural - Attachment 33, Letter from Gannett Fleming, Inc. to Bechtel / Parsons Brinckerhoff (Authorized Representative) dated August 25, 1997 regarding proposal for alternate anchor system-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278738&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2033%2C%20Letter%20from%20Gannett%20Fleming%2C%20Inc.%20to%20Bechtel%20/%20Parsons%20Brinckerhoff%20%28Authorized%20Representative%29%20dated%20August%2025%2C%201997%20regarding%20proposal%20for%20alternate%20anchor%20system-Redacted.PDF",
@@ -662,7 +662,7 @@
    "retrieved_at": "2026-09-26T12:25:43.967076Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 67,
    "filename": "Structural - Attachment 34, Memorandum from Gannett Fleming, Inc. dated October 12, 1998 regarding the use of factor of safety of two (2) applied to manufacturer's ultimate capacities-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40278741&FileExtension=.PDF&FileName=Structural%20-%20Attachment%2034%2C%20Memorandum%20from%20Gannett%20Fleming%2C%20Inc.%20dated%20October%2012%2C%201998%20regarding%20the%20use%20of%20factor%20of%20safety%20of%20two%20%282%29%20applied%20to%20manufacturer%27s%20ultimate%20capacities-Redacted.PDF",
@@ -672,7 +672,7 @@
    "retrieved_at": "2026-09-26T12:25:43.980092Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 68,
    "filename": "Materials Laboratory Study 07-063, Finite Element Analysis of Anchor with and without void-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279242&FileExtension=.PDF&FileName=Materials%20Laboratory%20Study%2007-063%2C%20Finite%20Element%20Analysis%20of%20Anchor%20with%20and%20without%20void-Master.PDF",
@@ -682,7 +682,7 @@
    "retrieved_at": "2026-09-26T12:25:44.077099Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 69,
    "filename": "FHWA Report on Sustained Load Testing in the D Street Portal-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279247&FileExtension=.PDF&FileName=FHWA%20Report%20on%20Sustained%20Load%20Testing%20in%20the%20D%20Street%20Portal-Master.PDF",
@@ -692,7 +692,7 @@
    "retrieved_at": "2026-09-26T12:25:44.070243Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 70,
    "filename": "ICBO ER-4514 on August 14, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279249&FileExtension=.PDF&FileName=ICBO%20ER-4514%20on%20August%2014%2C%202006-Master.PDF",
@@ -702,7 +702,7 @@
    "retrieved_at": "2026-09-26T12:25:44.056607Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 71,
    "filename": "ICC ESR-1531 on August 14, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279250&FileExtension=.PDF&FileName=ICC%20ESR-1531%20on%20August%2014%2C%202006-Master.PDF",
@@ -712,7 +712,7 @@
    "retrieved_at": "2026-09-26T12:25:44.063610Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 72,
    "filename": "Power Fast Plus datasheet on August 7, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279251&FileExtension=.PDF&FileName=Power%20Fast%20Plus%20datasheet%20on%20August%207%2C%202006-Master.PDF",
@@ -722,7 +722,7 @@
    "retrieved_at": "2026-09-26T12:25:44.222536Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 73,
    "filename": "Power Fast Plus MSDS on August 7, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279252&FileExtension=.PDF&FileName=Power%20Fast%20Plus%20MSDS%20on%20August%207%2C%202006-Master.PDF",
@@ -732,7 +732,7 @@
    "retrieved_at": "2026-09-26T12:25:44.083554Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 74,
    "filename": "Sikadur AnchorFix 3 datasheet on July 31, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279253&FileExtension=.PDF&FileName=Sikadur%20AnchorFix%203%20datasheet%20on%20July%2031%2C%202006-Master.PDF",
@@ -742,7 +742,7 @@
    "retrieved_at": "2026-09-26T12:25:44.349090Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 75,
    "filename": "Sikadur AnchorFix 3 MSDS A on July 31, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279254&FileExtension=.PDF&FileName=Sikadur%20AnchorFix%203%20MSDS%20A%20on%20July%2031%2C%202006-Master.PDF",
@@ -752,7 +752,7 @@
    "retrieved_at": "2026-09-26T12:25:44.111646Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 76,
    "filename": "Sikadur AnchorFix 3 MSDS B on July 31, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279256&FileExtension=.PDF&FileName=Sikadur%20AnchorFix%203%20MSDS%20B%20on%20July%2031%2C%202006-Master.PDF",
@@ -762,7 +762,7 @@
    "retrieved_at": "2026-09-26T12:25:44.141050Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 77,
    "filename": "Sikadur AnchorFix 4 datasheet on July 31, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279257&FileExtension=.PDF&FileName=Sikadur%20AnchorFix%204%20datasheet%20on%20July%2031%2C%202006-Master.PDF",
@@ -772,7 +772,7 @@
    "retrieved_at": "2026-09-26T12:25:44.176294Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 78,
    "filename": "Sikadur AnchorFix 4 MSDS A on July 31, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279258&FileExtension=.PDF&FileName=Sikadur%20AnchorFix%204%20MSDS%20A%20on%20July%2031%2C%202006-Master.PDF",
@@ -782,7 +782,7 @@
    "retrieved_at": "2026-09-26T12:25:44.178428Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 79,
    "filename": "Sikadur AnchorFix 4 MSDS B on July 31, 2006-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279259&FileExtension=.PDF&FileName=Sikadur%20AnchorFix%204%20MSDS%20B%20on%20July%2031%2C%202006-Master.PDF",
@@ -792,7 +792,7 @@
    "retrieved_at": "2026-09-26T12:25:44.161878Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 80,
    "filename": "Creep compliance for Fast Set and Standard Set plotted on linear scales-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279262&FileExtension=.PDF&FileName=Creep%20compliance%20for%20Fast%20Set%20and%20Standard%20Set%20plotted%20on%20linear%20scales-Master.PDF",
@@ -802,7 +802,7 @@
    "retrieved_at": "2026-09-26T12:25:44.101820Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 81,
    "filename": "FHWA Laboratory Creep Testing Report-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279345&FileExtension=.PDF&FileName=FHWA%20Laboratory%20Creep%20Testing%20Report-Master.PDF",
@@ -812,7 +812,7 @@
    "retrieved_at": "2026-09-26T12:25:44.214856Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 82,
    "filename": "Interview with ConAm inspection employee-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279436&FileExtension=.PDF&FileName=Interview%20with%20ConAm%20inspection%20employee-Master.PDF",
@@ -822,7 +822,7 @@
    "retrieved_at": "2026-09-26T12:25:44.170939Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 83,
    "filename": "Deposition of Powers Fasteners employee-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279439&FileExtension=.PDF&FileName=Deposition%20of%20Powers%20Fasteners%20employee-Master.PDF",
@@ -832,7 +832,7 @@
    "retrieved_at": "2026-09-26T12:25:44.168610Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 84,
    "filename": "HWY Photo - 01, Aerial view of D Street Portal and I-90 boat area-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279444&FileExtension=.PDF&FileName=HWY%20Photo%20-%2001%2C%20Aerial%20view%20of%20D%20Street%20Portal%20and%20I-90%20boat%20area-Master.PDF",
@@ -842,7 +842,7 @@
    "retrieved_at": "2026-09-26T12:25:45.011722Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 85,
    "filename": "HWY Photo - 02, Additional aerial photo of D Street Portal-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279453&FileExtension=.PDF&FileName=HWY%20Photo%20-%2002%2C%20Additional%20aerial%20photo%20of%20D%20Street%20Portal-Master.PDF",
@@ -852,7 +852,7 @@
    "retrieved_at": "2026-09-26T12:25:44.340603Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 86,
    "filename": "HWY Photo - 03, View of I-90 Connector Tunnel Ceiling Finishes-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279454&FileExtension=.PDF&FileName=HWY%20Photo%20-%2003%2C%20View%20of%20I-90%20Connector%20Tunnel%20Ceiling%20Finishes-Master.PDF",
@@ -862,7 +862,7 @@
    "retrieved_at": "2026-09-26T12:25:44.552299Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 87,
    "filename": "HWY Photo - 04, Additional view of I-90 Connector Tunnel Ceiling Finishes-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279456&FileExtension=.PDF&FileName=HWY%20Photo%20-%2004%2C%20Additional%20view%20of%20I-90%20Connector%20Tunnel%20Ceiling%20Finishes-Master.PDF",
@@ -872,7 +872,7 @@
    "retrieved_at": "2026-09-26T12:25:44.565157Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 88,
    "filename": "HWY Photo - 05, View of Ted Williams Tunnel Ceiling Finishes (source: Mass HWY)-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279457&FileExtension=.PDF&FileName=HWY%20Photo%20-%2005%2C%20View%20of%20Ted%20Williams%20Tunnel%20Ceiling%20Finishes%20%28source%3A%20Mass%20HWY%29-Master.PDF",
@@ -882,7 +882,7 @@
    "retrieved_at": "2026-09-26T12:25:44.253731Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 89,
    "filename": "HWY Photo - 07, Overhead view of damage to the accident vehicle-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279460&FileExtension=.PDF&FileName=HWY%20Photo%20-%2007%2C%20Overhead%20view%20of%20damage%20to%20the%20accident%20vehicle-Master.PDF",
@@ -892,7 +892,7 @@
    "retrieved_at": "2026-09-26T12:25:44.355276Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 90,
    "filename": "HWY Photo - 06, View looking east in the D Street Portal showing ceiling panels on accident vehicle-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279466&FileExtension=.PDF&FileName=HWY%20Photo%20-%2006%2C%20View%20looking%20east%20in%20the%20D%20Street%20Portal%20showing%20ceiling%20panels%20on%20accident%20vehicle-Master.PDF",
@@ -902,7 +902,7 @@
    "retrieved_at": "2026-09-26T12:25:44.550719Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 91,
    "filename": "Construction Management - Group Chairman Factual Report-Master.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40279539&FileExtension=.PDF&FileName=Construction%20Management%20-%20Group%20Chairman%20Factual%20Report-Master.PDF",
@@ -912,7 +912,7 @@
    "retrieved_at": "2026-09-26T12:25:44.288804Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 92,
    "filename": "Human Performance - Group Chairman Factual Report-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40433590&FileExtension=.PDF&FileName=Human%20Performance%20-%20Group%20Chairman%20Factual%20Report-Redacted.PDF",
@@ -922,7 +922,7 @@
    "retrieved_at": "2026-09-26T12:25:44.312911Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 93,
    "filename": "Human Performance - Attachment H: HOV Anchor Displacement Correspondence-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40433591&FileExtension=.PDF&FileName=Human%20Performance%20-%20Attachment%20H%3A%20HOV%20Anchor%20Displacement%20Correspondence-Redacted.PDF",
@@ -932,7 +932,7 @@
    "retrieved_at": "2026-09-26T12:25:44.433827Z"
   },
   {
-   "docket_id": "HWY06MH024",
+   "case_id": "HWY06MH024",
    "file_no": 94,
    "filename": "State Police Crash Report-Redacted.PDF",
    "source_url": "https://data.ntsb.gov/Docket/Document/docBLOB?ID=40433593&FileExtension=.PDF&FileName=State%20Police%20Crash%20Report-Redacted.PDF",

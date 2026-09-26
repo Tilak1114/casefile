@@ -8,8 +8,8 @@ from pathlib import Path
 
 from pymongo.database import Database
 
-from casefile.docket.case import CaseConfig
-from casefile.docket.models import FetchManifest
+from casefile.case import CaseConfig
+from casefile.sources.models import FetchManifest
 from casefile.ingest.clean import page_text
 from casefile.ingest.models import (
     FileIngest,

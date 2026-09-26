@@ -6,9 +6,9 @@ import httpx
 
 from casefile import db, snapshot
 from casefile.config import DATA_DIR
-from casefile.docket.fetch import fetch_docket
-from casefile.docket.case import CaseConfig
-from casefile.docket.models import FetchManifest, SourceIndex
+from casefile.sources.ntsb import fetch_files
+from casefile.case import CaseConfig
+from casefile.sources.models import FetchManifest, SourceIndex
 from casefile.config import settings
 from casefile.ingest.metadata import extract_case
 from casefile.ingest.pipeline import ingest_case
@@ -20,7 +20,7 @@ def cmd_fetch(args: argparse.Namespace) -> None:
     case_dir = DATA_DIR / "cases" / args.case
     index = SourceIndex.model_validate_json((case_dir / "source_index.json").read_text())
     with httpx.Client(timeout=120, headers={"User-Agent": "casefile/0.1"}) as http:
-        manifest = fetch_docket(index, case_dir, http)
+        manifest = fetch_files(index, case_dir, http)
     total = sum(f.bytes for f in manifest.files)
     print(f"{len(manifest.files)} files, {total / 1e6:.1f} MB -> {case_dir / 'raw'}")
 
@@ -51,9 +51,12 @@ def cmd_snapshot_export(_: argparse.Namespace) -> None:
     print(f"database exported to {SNAPSHOT} ({SNAPSHOT.stat().st_size / 1e6:.1f} MB)")
 
 
-def cmd_snapshot_restore(_: argparse.Namespace) -> None:
-    snapshot.restore(SNAPSHOT)
-    print(f"database restored from {SNAPSHOT}")
+def cmd_snapshot_restore(args: argparse.Namespace) -> None:
+    uri = settings().atlas_connection_string if args.atlas else None
+    if args.atlas and not uri:
+        raise SystemExit("ATLAS_CONNECTION_STRING is not set in .env")
+    snapshot.restore(SNAPSHOT, uri)
+    print(f"database restored from {SNAPSHOT} to {'Atlas' if uri else 'the local container'}")
 
 
 def cmd_ping(_: argparse.Namespace) -> None:
@@ -63,7 +66,7 @@ def cmd_ping(_: argparse.Namespace) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(prog="casefile")
     sub = parser.add_subparsers(required=True)
-    fetch = sub.add_parser("fetch", help="download a case's public docket files")
+    fetch = sub.add_parser("fetch", help="download a case's source files (NTSB adapter)")
     fetch.add_argument("case", nargs="?", default="HWY06MH024")
     fetch.set_defaults(func=cmd_fetch)
     ingest = sub.add_parser("ingest", help="parse and split a case's readable files into Mongo")
@@ -75,7 +78,9 @@ def main() -> None:
     metadata.add_argument("--allow-spend", action="store_true", help="call Gemini (paid) for documents not in the cache")
     metadata.set_defaults(func=cmd_metadata)
     sub.add_parser("snapshot-export", help="write the database to data/snapshots").set_defaults(func=cmd_snapshot_export)
-    sub.add_parser("snapshot-restore", help="replace the database with data/snapshots").set_defaults(func=cmd_snapshot_restore)
+    restore = sub.add_parser("snapshot-restore", help="replace the database with data/snapshots")
+    restore.add_argument("--atlas", action="store_true", help="restore to ATLAS_CONNECTION_STRING instead of local")
+    restore.set_defaults(func=cmd_snapshot_restore)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)
     args = parser.parse_args()
     args.func(args)

@@ -17,9 +17,11 @@ def export(path: Path) -> None:
         )
 
 
-def restore(path: Path) -> None:
+def restore(path: Path, uri: str | None = None) -> None:
+    """Restore into the local container, or into the cluster at `uri` (e.g. the Atlas sandbox)."""
+    if uri:
+        command = ["mongorestore", f"--uri={uri}", "--archive", "--gzip", "--drop"]
+    else:
+        command = ["docker", "exec", "-i", CONTAINER, "mongorestore", "--archive", "--gzip", "--drop"]
     with path.open("rb") as src:
-        subprocess.run(
-            ["docker", "exec", "-i", CONTAINER, "mongorestore", "--archive", "--gzip", "--drop"],
-            stdin=src, check=True,
-        )
+        subprocess.run(command, stdin=src, check=True)

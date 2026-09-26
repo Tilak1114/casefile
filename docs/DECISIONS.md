@@ -22,6 +22,7 @@ Approved decisions, newest last. Each links to where it was argued. Open questio
 | 16 | 2026-09-26 | Classification and metadata by Gemini into typed models; every field must carry an exact-matching span or stay empty | [02-ingestion.md](02-ingestion.md) |
 | 17 | 2026-09-26 | Design for any case file, not the demo docket; simplest general component first. The text-layer library comparison was run (pypdfium2 ≈ PyMuPDF; pdfplumber worse) and is kept for the later born-digital improvement | User instruction |
 | 18 | 2026-09-26 | Verifier: quotes must exact-match stored text after whitespace and quote/dash folding only; asserted fields must match span-checked metadata or the claim is refused; negatives need full-text read coverage of every in-scope document, undated ones included; search-only coverage never supports a negative | [03-verifier.md](03-verifier.md) |
+| 19 | 2026-09-26 | Submit against Statement Two (long-horizon): the goal is complete coverage with every claim verified; refusals and unread pages are the hard signals the loop works from; memory is verified findings and coverage in MongoDB. No self-modifying harness today; a self-evolving or learning layer is planned for later. Continue on local Mongo until the Atlas sandbox string arrives | User instruction |
 
 ## Open
 

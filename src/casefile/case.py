@@ -1,4 +1,4 @@
-"""Which docket files the agent may read, and why the rest are withheld."""
+"""Which of a case's files the agent may read, and why the rest are withheld."""
 
 from datetime import date
 from enum import StrEnum

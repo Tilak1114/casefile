@@ -1,4 +1,4 @@
-"""Typed records for a public docket and the raw files fetched from it."""
+"""Typed records for a case's source files: where each came from and exactly what was received."""
 
 from datetime import datetime
 from typing import Annotated
@@ -9,7 +9,7 @@ Sha256 = Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
 
 
 class SourceEntry(BaseModel):
-    """One file listed in the docket, as published by the NTSB."""
+    """One file listed by the source (for the demo, the NTSB docket)."""
 
     model_config = ConfigDict(frozen=True)
 
@@ -21,8 +21,8 @@ class SourceEntry(BaseModel):
 class SourceIndex(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    docket_id: str
-    docket_url: HttpUrl
+    case_id: str
+    source_url: HttpUrl
     files: list[SourceEntry]
 
 
@@ -31,7 +31,7 @@ class RawFile(BaseModel):
 
     model_config = ConfigDict(frozen=True)
 
-    docket_id: str
+    case_id: str
     file_no: int
     filename: str
     source_url: HttpUrl
@@ -42,5 +42,5 @@ class RawFile(BaseModel):
 
 
 class FetchManifest(BaseModel):
-    docket_id: str
+    case_id: str
     files: list[RawFile]

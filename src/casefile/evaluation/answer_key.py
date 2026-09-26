@@ -10,7 +10,7 @@ from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from casefile.docket.case import CaseConfig
+from casefile.case import CaseConfig
 
 ItemId = Annotated[str, Field(pattern=r"^[EPRN]\d{2,3}$")]
 # A date as precise as the record allows: 1999, 1999-10 or 1999-10-07.

@@ -4,16 +4,16 @@ import httpx
 import pytest
 from pydantic import ValidationError
 
-from casefile.docket.fetch import blob_url, fetch_docket
-from casefile.docket.models import SourceEntry, SourceIndex
+from casefile.sources.ntsb import blob_url, fetch_files
+from casefile.sources.models import SourceEntry, SourceIndex
 
 PDF = b"%PDF-1.4 test body"
 
 
 def make_index(*names: str) -> SourceIndex:
     return SourceIndex(
-        docket_id="TEST01",
-        docket_url="https://data.ntsb.gov/Docket/?NTSBNumber=TEST01",
+        case_id="TEST01",
+        source_url="https://data.ntsb.gov/Docket/?NTSBNumber=TEST01",
         files=[SourceEntry(file_no=i + 1, blob_id=str(100 + i), filename=n) for i, n in enumerate(names)],
     )
 
@@ -25,7 +25,7 @@ def test_blob_url_quotes_filename():
 
 def test_fetch_records_hash_and_size(tmp_path):
     client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=PDF)))
-    manifest = fetch_docket(make_index("a.PDF", "b.PDF"), tmp_path, client)
+    manifest = fetch_files(make_index("a.PDF", "b.PDF"), tmp_path, client)
     assert [f.file_no for f in manifest.files] == [1, 2]
     assert manifest.files[0].sha256 == hashlib.sha256(PDF).hexdigest()
     assert manifest.files[0].bytes == len(PDF)
@@ -35,7 +35,7 @@ def test_fetch_records_hash_and_size(tmp_path):
 def test_fetch_rejects_non_pdf(tmp_path):
     client = httpx.Client(transport=httpx.MockTransport(lambda r: httpx.Response(200, content=b"<html>")))
     with pytest.raises(RuntimeError, match="1 of 1 files failed"):
-        fetch_docket(make_index("a.PDF"), tmp_path, client)
+        fetch_files(make_index("a.PDF"), tmp_path, client)
 
 
 def test_fetch_reuses_existing_file_without_network(tmp_path):
@@ -45,7 +45,7 @@ def test_fetch_reuses_existing_file_without_network(tmp_path):
     def fail(_):
         raise AssertionError("network should not be used")
 
-    manifest = fetch_docket(make_index("a.PDF"), tmp_path, httpx.Client(transport=httpx.MockTransport(fail)))
+    manifest = fetch_files(make_index("a.PDF"), tmp_path, httpx.Client(transport=httpx.MockTransport(fail)))
     assert manifest.files[0].bytes == len(PDF)
 
 

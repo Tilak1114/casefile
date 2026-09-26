@@ -18,6 +18,7 @@ class Settings(BaseModel):
     gemini_token: str | None = None
     gemini_model: str | None = None
     reducto_api_key: str | None = None
+    atlas_connection_string: str | None = None
 
 
 @lru_cache
