@@ -23,7 +23,7 @@ export default function TrajectoryPage() {
   const checked = ev("absence.checked");
   const stages: Stage[] = [
     { key: "open", title: "Open", detail: opened?.summary ?? "", types: ["claim_file.opened"] },
-    { key: "plan", title: "Plan the work", detail: `${team.exclusions.length} documents excluded · engineer ${ev("expert.approved").length ? "retained" : "not retained"} · counsel assigned`, types: ["scope.excluded", "counsel.assigned", "expert.approved", "expert.requested"] },
+    { key: "plan", title: "Plan the work", detail: `${team.exclusions.length ? `${team.exclusions.length} documents excluded · ` : ""}engineer ${ev("expert.approved").length ? "retained" : "not retained"} · counsel assigned`, types: ["scope.excluded", "counsel.assigned", "expert.approved", "expert.requested"] },
     { key: "read", title: "Read in parallel", detail: `${team.readers.length} readers · ${last.pages.toLocaleString()} pages`, types: ["reader"] },
     { key: "verify", title: "Verify every claim", detail: `${last.verified.toLocaleString()} kept · ${last.refused} refused`, types: ["reader"] },
     { key: "report", title: "Report", detail: `${ev("report.submitted").length} reports to the lead`, types: ["report.submitted"] },

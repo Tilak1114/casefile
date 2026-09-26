@@ -358,6 +358,35 @@
    "title": "DocumentRow",
    "type": "object"
   },
+  "EventSpecRow": {
+   "properties": {
+    "type": {
+     "title": "Type",
+     "type": "string"
+    },
+    "published_by": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Published By",
+     "type": "array"
+    },
+    "wakes": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Wakes",
+     "type": "array"
+    }
+   },
+   "required": [
+    "type",
+    "published_by",
+    "wakes"
+   ],
+   "title": "EventSpecRow",
+   "type": "object"
+  },
   "ExhibitRow": {
    "properties": {
     "document_id": {
@@ -1066,6 +1095,78 @@
    "title": "TeamExclusion",
    "type": "object"
   },
+  "TeamMember": {
+   "properties": {
+    "actor": {
+     "title": "Actor",
+     "type": "string"
+    },
+    "title": {
+     "title": "Title",
+     "type": "string"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "mirrors": {
+     "title": "Mirrors",
+     "type": "string"
+    },
+    "job": {
+     "title": "Job",
+     "type": "string"
+    },
+    "sees": {
+     "title": "Sees",
+     "type": "string"
+    },
+    "can": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Can",
+     "type": "array"
+    },
+    "never": {
+     "title": "Never",
+     "type": "string"
+    },
+    "wakes_on": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Wakes On",
+     "type": "array"
+    },
+    "publishes": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Publishes",
+     "type": "array"
+    },
+    "waits_for": {
+     "title": "Waits For",
+     "type": "string"
+    }
+   },
+   "required": [
+    "actor",
+    "title",
+    "kind",
+    "mirrors",
+    "job",
+    "sees",
+    "can",
+    "never",
+    "wakes_on",
+    "publishes",
+    "waits_for"
+   ],
+   "title": "TeamMember",
+   "type": "object"
+  },
   "TeamPoint": {
    "properties": {
     "t": {
@@ -1235,6 +1336,13 @@
     "reasoning_recorded": {
      "title": "Reasoning Recorded",
      "type": "boolean"
+    },
+    "memory_counts": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "Memory Counts",
+     "type": "object"
     }
    },
    "required": [
@@ -1249,9 +1357,64 @@
     "series",
     "exclusions",
     "calls",
-    "reasoning_recorded"
+    "reasoning_recorded",
+    "memory_counts"
    ],
    "title": "TeamRun",
+   "type": "object"
+  },
+  "TeamSpec": {
+   "description": "The v2 team as the code defines it: members, the event catalogue, guards, verifier rules, memory.",
+   "properties": {
+    "members": {
+     "items": {
+      "$ref": "#/$defs/TeamMember"
+     },
+     "title": "Members",
+     "type": "array"
+    },
+    "events": {
+     "items": {
+      "$ref": "#/$defs/EventSpecRow"
+     },
+     "title": "Events",
+     "type": "array"
+    },
+    "guards": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "Guards",
+     "type": "object"
+    },
+    "verifier_rules": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Verifier Rules",
+     "type": "array"
+    },
+    "negative_rule": {
+     "title": "Negative Rule",
+     "type": "string"
+    },
+    "memory": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "title": "Memory",
+     "type": "object"
+    }
+   },
+   "required": [
+    "members",
+    "events",
+    "guards",
+    "verifier_rules",
+    "negative_rule",
+    "memory"
+   ],
+   "title": "TeamSpec",
    "type": "object"
   },
   "TeamTask": {
@@ -1667,6 +1830,9 @@
     }
    ],
    "default": null
+  },
+  "team_spec": {
+   "$ref": "#/$defs/TeamSpec"
   }
  },
  "required": [
@@ -1688,7 +1854,8 @@
   "workers",
   "score",
   "baseline",
-  "answer_key"
+  "answer_key",
+  "team_spec"
  ],
  "title": "Bundle",
  "type": "object"

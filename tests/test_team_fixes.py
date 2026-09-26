@@ -86,9 +86,9 @@ def test_engineer_work_after_retention_runs():
     assert len(engineer) == 2 and all(t.state is TaskState.RUNNING for t in engineer)
 
 
-def test_only_long_documents_can_be_excluded():
-    from casefile.team.lead import MIN_PAGES_TO_EXCLUDE, excludable
+def test_the_lead_cannot_exclude_documents():
+    from casefile.team.lead import NextStep, Opening
+    from casefile.team.spec import SPECS
 
-    idx = index(doc("bulk", MIN_PAGES_TO_EXCLUDE + 1), doc("stamp", 1), doc("edge", MIN_PAGES_TO_EXCLUDE), doc("cover", 30, label=True))
-    kept, refused = excludable(idx, ["bulk", "stamp", "edge", "cover", "missing"])
-    assert kept == ["bulk"] and refused == ["stamp", "edge"]  # labels and unknown ids are ignored, not refused
+    assert "exclusions" not in Opening.model_fields and "exclusions" not in NextStep.model_fields
+    assert E.SCOPE_EXCLUDED not in SPECS[Actor.LEAD].publishes

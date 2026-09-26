@@ -222,6 +222,24 @@ export type Decision = {
 } | null;
 export type Calls1 = TeamCall[];
 export type ReasoningRecorded = boolean;
+export type Actor1 = string;
+export type Title2 = string;
+export type Kind4 = string;
+export type Mirrors1 = string;
+export type Job = string;
+export type Sees1 = string;
+export type Can = string[];
+export type Never = string;
+export type WakesOn = string[];
+export type Publishes = string[];
+export type WaitsFor = string;
+export type Members = TeamMember[];
+export type Type2 = string;
+export type PublishedBy = string[];
+export type Wakes = string[];
+export type Events2 = EventSpecRow[];
+export type VerifierRules1 = string[];
+export type NegativeRule1 = string;
 
 export interface Bundle {
   case: CaseInfo;
@@ -244,6 +262,7 @@ export interface Bundle {
   baseline: ScoreRow | null;
   answer_key: AnswerKey;
   team?: TeamRun | null;
+  team_spec: TeamSpec;
 }
 export interface CaseInfo {
   case_id: CaseId;
@@ -460,6 +479,7 @@ export interface TeamRun {
   exclusions: Exclusions;
   calls: Calls1;
   reasoning_recorded: ReasoningRecorded;
+  memory_counts: MemoryCounts;
 }
 export interface TeamEvent {
   seq: Seq1;
@@ -524,4 +544,42 @@ export interface TeamCall {
   reasoning_tokens: ReasoningTokens;
   reasoning: Reasoning;
   decision: Decision;
+}
+export interface MemoryCounts {
+  [k: string]: number;
+}
+/**
+ * The v2 team as the code defines it: members, the event catalogue, guards, verifier rules, memory.
+ */
+export interface TeamSpec {
+  members: Members;
+  events: Events2;
+  guards: Guards1;
+  verifier_rules: VerifierRules1;
+  negative_rule: NegativeRule1;
+  memory: Memory;
+}
+export interface TeamMember {
+  actor: Actor1;
+  title: Title2;
+  kind: Kind4;
+  mirrors: Mirrors1;
+  job: Job;
+  sees: Sees1;
+  can: Can;
+  never: Never;
+  wakes_on: WakesOn;
+  publishes: Publishes;
+  waits_for: WaitsFor;
+}
+export interface EventSpecRow {
+  type: Type2;
+  published_by: PublishedBy;
+  wakes: Wakes;
+}
+export interface Guards1 {
+  [k: string]: number;
+}
+export interface Memory {
+  [k: string]: string;
 }

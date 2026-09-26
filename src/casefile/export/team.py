@@ -12,6 +12,10 @@ from pymongo.database import Database
 from casefile.export.models import TeamCall, TeamEvent, TeamExclusion, TeamPoint, TeamReader, TeamRun, TeamTask
 
 
+MEMORY_COLLECTIONS = ("events", "tasks", "reservations", "coverage", "findings", "refusals", "exclusions", "disputes",
+                      "model_calls", "workers")
+
+
 def _ts(v) -> datetime:
     if isinstance(v, datetime):
         return v.replace(tzinfo=None)
@@ -124,4 +128,6 @@ def build_team(db: Database, run_id: str) -> TeamRun | None:
                         reasoning=c.get("reasoning") or "", decision=_decision(c["actor"], c.get("output")))
                for c in calls],
         reasoning_recorded=any(c.get("reasoning") for c in calls),
+        memory_counts={name: db[name].count_documents({"run_id": run_id}) for name in MEMORY_COLLECTIONS}
+        | {"checkpoints": db.checkpoints.count_documents({"thread_id": {"$in": [t.id for t in tasks]}})},
     )

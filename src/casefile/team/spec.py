@@ -19,7 +19,7 @@ SPECS: dict[Actor, RoleSpec] = {
         wakes_on=frozenset({E.CLAIM_FILE_OPENED, E.EXPERT_REQUESTED, E.REPORT_SUBMITTED, E.DISPUTE_OPENED,
                             E.POSITION_SUBMITTED, E.TASK_EXPIRED, E.GUARD_HIT}),
         publishes=frozenset({E.COUNSEL_ASSIGNED, E.EXPERT_APPROVED, E.EXPERT_DECLINED, E.WORK_ASSIGNED,
-                             E.SCOPE_EXCLUDED, E.DISPUTE_RULED, E.CLAIM_FILE_CLOSED, E.BRIEF_SUBMITTED}),
+                             E.DISPUTE_RULED, E.CLAIM_FILE_CLOSED, E.BRIEF_SUBMITTED}),
     ),
     Actor.COUNSEL: RoleSpec(
         actor=Actor.COUNSEL,

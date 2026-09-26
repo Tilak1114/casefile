@@ -3,7 +3,7 @@
 Each lead task is one decision about the event that woke it. The lead retains the forensic engineer when counsel
 asks or on its own initiative, as a claim professional does. The harness validates every decision: document
 ids must exist, the engineer can only be assigned work after approval, rulings must cite claims in the
-dispute, and the claim file closes only when every document is read or excluded and nothing is open.
+dispute, and the claim file closes only when every document is read and nothing is open.
 """
 
 from pydantic import BaseModel, Field
@@ -17,25 +17,8 @@ from casefile.team.store import TaskState
 
 BRIEF = ("You are the claim professional who owns this construction-defect liability claim file. You assign work to "
          "defense counsel and, once you approve its retention, the forensic engineer. You never read documents yourself "
-         "and you never state fault, liability or coverage. Your job is to get every document read by the right role or "
-         "excluded with a reason, follow up open questions, rule disputes on the evidence, and close the claim file.")
-
-
-MIN_PAGES_TO_EXCLUDE = 20  # short documents are cheap to read, and a one-page stamp or transmittal can carry a key date
-EXCLUDE_RULE = (f"Only documents longer than {MIN_PAGES_TO_EXCLUDE} pages (bulk data) may be excluded; shorter documents are "
-                "cheap to read and must be assigned.")
-
-
-class Exclusion(BaseModel):
-    document_ids: list[str]
-    reason: str = Field(description="Why these documents need not be read in full, e.g. bulk test data tables.")
-
-
-def excludable(index, ids: list[str]) -> tuple[list[str], list[str]]:
-    """Split proposed exclusions into those allowed (long documents) and those refused (short ones)."""
-    known = [i for i in ids if i in index.documents and not index.documents[i].is_label]
-    kept = [i for i in known if len(index.documents[i].page_ids) > MIN_PAGES_TO_EXCLUDE]
-    return kept, [i for i in known if i not in kept]
+         "and you never state fault, liability or coverage. Your job is to get every document read by the right role, "
+         "follow up open questions, rule disputes on the evidence, and close the claim file.")
 
 
 class Assignment(BaseModel):
@@ -57,7 +40,6 @@ RETAIN = ("If the claim file holds technical material (testing, laboratory, insp
 class Opening(BaseModel):
     thinking: str
     counsel_focus: str = Field(description="What defense counsel should establish first.")
-    exclusions: list[Exclusion] = []
     retain_engineer: Retention | None = None
 
 
@@ -71,9 +53,8 @@ class ExpertDecision(BaseModel):
 class NextStep(BaseModel):
     thinking: str
     assignments: list[Assignment] = []
-    exclusions: list[Exclusion] = []
     retain_engineer: Retention | None = Field(None, description="Only if the engineer is not yet approved.")
-    close: bool = Field(description="True only if every document is read or excluded and nothing is open.")
+    close: bool = Field(description="True only if every document is read and nothing is open.")
 
 
 class Ruling(BaseModel):
@@ -93,7 +74,7 @@ def _state(deps: TeamDeps) -> str:
     open_tasks = [t for t in deps.dispatcher.store.tasks() if t.state in (TaskState.PENDING, TaskState.READY, TaskState.RUNNING)]
     approved = any(e.type is E.EXPERT_APPROVED for e in deps.dispatcher.store.events())
     return (f"Verified claims: {db.findings.count_documents({'run_id': run})}; refused: {db.refusals.count_documents({'run_id': run})}.\n"
-            f"Documents neither read nor excluded: {len(unfinished)}.\n"
+            f"Documents not yet read: {len(unfinished)}.\n"
             f"Forensic engineer approved: {'yes' if approved else 'no'}.\n"
             f"Open tasks: {len(open_tasks)}; open disputes: {db.disputes.count_documents({'run_id': run, 'status': 'open'})}.\n"
             "Reports received:\n" + ("\n".join(f"- {r.sender.value}: {r.payload.get('summary', '')[:600]}" for r in reports[-6:]) or "(none)"))
@@ -107,20 +88,6 @@ def retain(dispatcher: Dispatcher, index: CaseIndex, retention: Retention | None
     dispatcher.emit(E.EXPERT_APPROVED, Actor.LEAD, to=Actor.ENGINEER, causation_id=cause.id, subject_ids=ids,
                     payload={"focus": retention.focus, "document_ids": ids, "reason": retention.reason, "initiative": "lead"})
     return True
-
-
-def _exclude(deps: TeamDeps, exclusions: list[Exclusion], cause: Event) -> list[str]:
-    notes = []
-    for x in exclusions:
-        ids, refused = excludable(deps.index, x.document_ids)
-        if refused:
-            notes.append(f"exclusion refused for {len(refused)} documents of {MIN_PAGES_TO_EXCLUDE} pages or fewer")
-        for i in ids:
-            deps.store.db.exclusions.update_one({"_id": f"{deps.store.run_id}:{i}"},
-                                                {"$set": {"run_id": deps.store.run_id, "document_id": i, "reason": x.reason}}, upsert=True)
-        if ids:
-            deps.dispatcher.emit(E.SCOPE_EXCLUDED, Actor.LEAD, subject_ids=ids, causation_id=cause.id, payload={"reason": x.reason})
-    return notes
 
 
 def _assign(deps: TeamDeps, assignments: list[Assignment], cause: Event) -> list[str]:
@@ -145,7 +112,7 @@ def can_close(deps: TeamDeps, own_task_id: str) -> tuple[bool, str]:
               if t.id != own_task_id and t.state in (TaskState.PENDING, TaskState.READY, TaskState.RUNNING)]
     disputes = db.disputes.count_documents({"run_id": run, "status": "open"})
     if unfinished:
-        return False, f"{len(unfinished)} documents neither read nor excluded"
+        return False, f"{len(unfinished)} documents not yet read"
     if others:
         return False, f"{len(others)} tasks still open"
     if disputes:
@@ -159,14 +126,12 @@ def handle(deps: TeamDeps, event: Event, task_id: str) -> str:
 
     if event.type is E.CLAIM_FILE_OPENED:
         out, _ = gate.call(actor="lead", purpose="open", schema=Opening, task_id=task_id, prompt=(
-            f"{BRIEF}\n\nA construction-defect claim file has arrived. Assign defense counsel with a first focus. You may "
-            f"exclude documents that need not be read in full, with a reason. {EXCLUDE_RULE} {RETAIN}\n\nDocument index (id | type | date | from -> to | "
+            f"{BRIEF}\n\nA construction-defect claim file has arrived. Assign defense counsel with a first focus. {RETAIN}\n\nDocument index (id | type | date | from -> to | "
             f"pages | read by):\n{index}"))
-        excluded = _exclude(deps, out.exclusions, event)
         retain(deps.dispatcher, deps.index, out.retain_engineer, event)
         deps.dispatcher.emit(E.COUNSEL_ASSIGNED, Actor.LEAD, to=Actor.COUNSEL, causation_id=event.id,
                              payload={"focus": out.counsel_focus, "thinking": out.thinking})
-        return "; ".join(["counsel assigned", *excluded])
+        return "counsel assigned"
 
     if event.type is E.EXPERT_REQUESTED:
         out, _ = gate.call(actor="lead", purpose="expert", schema=ExpertDecision, task_id=task_id, prompt=(
@@ -201,12 +166,11 @@ def handle(deps: TeamDeps, event: Event, task_id: str) -> str:
     unfinished = context.unfinished_documents(db, run, deps.index)
     out, _ = gate.call(actor="lead", purpose="next", schema=NextStep, task_id=task_id, prompt=(
         f"{BRIEF}\n\nWhat woke you: {event.type.value} from {event.sender.value}: {str(event.payload)[:800]}\n\n{_state(deps)}\n\n"
-        f"Assign unread documents to the right role, exclude those that need no full reading (with a reason), or close "
-        f"the claim file when everything is read or excluded and nothing is open. {EXCLUDE_RULE} {RETAIN}\n\nDocuments not yet read or excluded:\n"
+        f"Assign every unread document to the right role, or close the claim file when every document is read "
+        f"and nothing is open. {RETAIN}\n\nDocuments not yet read:\n"
         f"{context.document_index(db, run, deps.index, only=set(unfinished))}"))
-    excluded = _exclude(deps, out.exclusions, event)
     retained = retain(deps.dispatcher, deps.index, out.retain_engineer, event)  # before assignments, so engineer work is not dropped
-    notes = excluded + (["engineer retained"] if retained else []) + _assign(deps, out.assignments, event)
+    notes = (["engineer retained"] if retained else []) + _assign(deps, out.assignments, event)
     if out.close:
         ok, why = can_close(deps, task_id)
         if ok:

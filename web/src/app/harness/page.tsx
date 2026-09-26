@@ -1,3 +1,4 @@
+import { HarnessTeam } from "@/components/HarnessTeam";
 import { loadBundle } from "@/lib/data";
 import type { TraceRow } from "@/lib/types";
 
@@ -44,6 +45,7 @@ type Turn = { turn: number; decision?: TraceRow; rejected?: TraceRow; worker?: T
 
 export default function HarnessPage() {
   const b = loadBundle();
+  if (b.team) return <HarnessTeam spec={b.team_spec} runId={b.run.run_id} />;
   const h = b.harness;
   const turns: Turn[] = [];
   for (const t of b.trace) {
@@ -59,13 +61,6 @@ export default function HarnessPage() {
   }, {});
   return (
     <div className="page">
-      {b.team && (
-        <div className="card pad" style={{ borderColor: "var(--pend)", fontSize: 13 }}>
-          <strong>This screen still describes the v1 design</strong> (one examiner and two reviewer roles). Run {b.run.run_id} was made by
-          the v2 team: claim professional, defense counsel, forensic engineer and readers, working through events. Its trajectory is on
-          the <a href="/trajectory">Trajectory</a> screen.
-        </div>
-      )}
       <div className="page-head">
         <div className="eyebrow">How it works · read from the code</div>
         <h1>The harness</h1>

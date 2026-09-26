@@ -267,6 +267,37 @@ class TeamCall(BaseModel):
     decision: dict | None  # the typed answer; for readers, counts only (their claims are on other screens)
 
 
+class TeamMember(BaseModel):
+    actor: str
+    title: str
+    kind: str  # "model" or "code"
+    mirrors: str
+    job: str
+    sees: str
+    can: list[str]
+    never: str
+    wakes_on: list[str]
+    publishes: list[str]
+    waits_for: str
+
+
+class EventSpecRow(BaseModel):
+    type: str
+    published_by: list[str]
+    wakes: list[str]
+
+
+class TeamSpec(BaseModel):
+    """The v2 team as the code defines it: members, the event catalogue, guards, verifier rules, memory."""
+
+    members: list[TeamMember]
+    events: list[EventSpecRow]
+    guards: dict[str, int]
+    verifier_rules: list[str]
+    negative_rule: str
+    memory: dict[str, str]
+
+
 class TeamPoint(BaseModel):
     t: float
     pages: int
@@ -295,6 +326,7 @@ class TeamRun(BaseModel):
     exclusions: list[TeamExclusion]
     calls: list[TeamCall]
     reasoning_recorded: bool
+    memory_counts: dict[str, int]  # documents this run wrote to each MongoDB collection
 
 
 class Bundle(BaseModel):
@@ -318,3 +350,4 @@ class Bundle(BaseModel):
     baseline: ScoreRow | None
     answer_key: list[KeyEventRow]
     team: TeamRun | None = None
+    team_spec: TeamSpec

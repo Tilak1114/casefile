@@ -27,6 +27,7 @@ from casefile.verify.index import CaseIndex
 
 MAX_FOLLOW_UP_ROUNDS = 2
 MAX_DOCUMENTS_PER_ROUND = 40
+READERS_PER_TASK = 8  # readers one task runs at once; the model gate caps the team's total
 
 
 @dataclass
@@ -154,7 +155,7 @@ def _read_documents(deps: TeamDeps, brief: ReviewerBrief, doc_ids: list[str], fo
             db.reservations.delete_many({"_id": {"$in": [f"{run}:{brief.actor.value}:{i}" for i in exc.document_ids]}})
             return False
 
-    with ThreadPoolExecutor(4) as pool:
+    with ThreadPoolExecutor(READERS_PER_TASK) as pool:
         return sum(not ok for ok in pool.map(one, batches(todo, deps.index)))
 
 

@@ -343,3 +343,12 @@ readers and events read from the MongoDB event log, and a detail panel for each.
   v2-full-1's decisions were backfilled from its cache files matched by name and write time (97 of 99; checked
   against the events they produced); it has no reasoning summaries. The Trajectory screen shows both.
 - `casefile team --fresh` calls the model for every step instead of replaying cached answers.
+
+## No exclusions (decision 30)
+
+The exclusion guard backfired: in v2-full-3 the lead read "only documents over 20 pages may be excluded" as an
+invitation and excluded all 19 of them (about 1,300 pages, including the daily-report printout and every
+post-collapse test report); the run was stopped at $0.09. Across three runs the lead's exclusions were right once
+(v2-full-1, 218 pages of raw data), cost two key events once (v2-full-2) and would have cost most of the
+post-collapse events once. Reading everything costs about $0.50 more per run. So the lead no longer excludes: it
+decides who reads what and with what focus, and the claim file closes only when every document has been read.

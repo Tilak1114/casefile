@@ -221,3 +221,13 @@ table.data td.date { font-family: var(--font-mono); font-size: var(--t-12); whit
 .dec { font-size: var(--t-12); }
 .dec dd { min-width: 0; overflow-wrap: anywhere; }
 .dec-list { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }
+.stat { display: grid; gap: 2px; align-content: start; }
+.stat-k { font-size: var(--t-11); color: var(--muted); }
+.stat-v { font-size: var(--t-20); font-weight: 700; }
+.stat-d { font-size: var(--t-12); color: var(--muted); line-height: 1.35; }
+.cov.cov-both { background: var(--accent); border-color: var(--accent); }
+.cov.cov-counsel { background: var(--accent-soft); border-color: var(--accent); }
+.cov.cov-engineer { background: var(--ok-soft); border-color: var(--ok); }
+.cov.cov-excluded { background: repeating-linear-gradient(45deg, var(--line-strong) 0 2px, transparent 2px 5px); border-color: var(--line-strong); }
+.cov.cov-unread { background: var(--surface); border-color: var(--bad); }

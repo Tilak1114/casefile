@@ -1,9 +1,11 @@
 import { BarChart, LineChart } from "@/components/charts";
 import { EvidenceHost, OpenEvidence } from "@/components/EvidenceHost";
+import { MemoryTeam } from "@/components/MemoryTeam";
 import { loadBundle, lookupFor } from "@/lib/data";
 
 export default function MemoryPage() {
   const b = loadBundle();
+  if (b.team) return <MemoryTeam b={b} team={b.team} />;
   const progress = b.trace.filter((t) => t.kind === "progress");
   const decisions = b.trace.filter((t) => (t.kind === "decision" || t.kind === "rejected") && t.context_chars);
   const docs = b.documents.filter((d) => !d.is_label);

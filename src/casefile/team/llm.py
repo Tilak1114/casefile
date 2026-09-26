@@ -13,7 +13,7 @@ from pymongo.database import Database
 from casefile.models.openrouter import ModelUsage
 
 T = TypeVar("T", bound=BaseModel)
-MAX_MODEL_CALLS_AT_ONCE = 4
+MAX_MODEL_CALLS_AT_ONCE = 16
 
 
 class ModelClient(Protocol):
