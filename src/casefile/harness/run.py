@@ -4,8 +4,8 @@ from datetime import UTC, datetime
 from uuid import uuid4
 
 from langgraph.checkpoint.mongodb import MongoDBSaver
-from pymongo import MongoClient
 
+from casefile import db as dbmod
 from casefile.case import CaseConfig
 from casefile.config import DATA_DIR, settings
 from casefile.harness.assemble import RunOutputs, assemble, propose_and_check_negatives
@@ -21,7 +21,7 @@ from casefile.verify.load import load_index
 
 def run_case(case_id: str, run_id: str | None = None, allow_spend: bool = False) -> RunOutputs:
     config = settings()
-    client = MongoClient(config.atlas_connection_string)
+    client = dbmod.client()
     db = client[config.casefile_database]
     case_dir = DATA_DIR / "cases" / case_id
     case = CaseConfig.model_validate_json((case_dir / "case.json").read_text())

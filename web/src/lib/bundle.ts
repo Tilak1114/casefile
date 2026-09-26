@@ -1,0 +1,377 @@
+/* Generated from casefile.export.models (Pydantic). Do not edit; run casefile export. */
+
+export type CaseId = string;
+export type Title = string;
+export type EventDate = string;
+export type EventSummary = string;
+export type Source = string;
+export type Inputs = number;
+export type FileNo = number;
+export type Reason = string;
+export type Withheld = WithheldFile[];
+export type RunId = string;
+export type Status = string;
+export type Turns = number;
+export type StartedAt = string | null;
+export type EndedAt = string | null;
+export type ExaminerActions = string[];
+export type ExaminerSees = string[];
+export type Role = string;
+export type Title1 = string;
+export type Mirrors = string;
+export type Brief = string;
+export type DefaultFocus = string;
+export type Tools = string[];
+export type Sees = string;
+export type Roles = RoleSpec[];
+export type VerifierRules = string[];
+export type NegativeRule = string;
+export type Id = string;
+export type FileNo1 = number;
+export type DocType = string;
+export type Date = string | null;
+export type Author = string | null;
+export type Recipient = string | null;
+export type PageIds = string[];
+export type IsLabel = boolean;
+export type SplitLabel = string;
+export type SplitConfidence = string;
+export type ReadBy = string[];
+export type Documents = DocumentRow[];
+export type PageId = string;
+export type FileNo2 = number;
+export type Page = number;
+export type Image = string | null;
+export type IsLabel1 = boolean;
+export type Id1 = string;
+export type Kind = string;
+export type Role1 = string;
+export type WorkerId = string;
+export type Statement = string;
+export type Date1 = string | null;
+export type Verified = boolean;
+export type Reasons = string[];
+export type Checks = string[];
+export type PageId1 = string;
+export type Quote = string;
+export type Left = number;
+export type Top = number;
+export type Width = number;
+export type Height = number;
+export type Boxes = Box[];
+export type Highlights = Highlight[];
+export type RepairOf = string | null;
+export type RepairAttempted = boolean;
+export type Claims = Claim[];
+export type Refusals = Claim[];
+export type Date2 = string;
+export type Statement1 = string;
+export type ClaimIds = string[];
+export type Roles1 = string[];
+export type DocumentId = string | null;
+export type Lane = string;
+export type Chronology = ChronologyRow[];
+export type Id2 = string;
+export type Label = string;
+export type Events = number;
+export type Lanes = Lane1[];
+export type Id3 = string;
+export type Names = string[];
+export type Kind1 = string;
+export type Roles2 = string[];
+export type ClaimIds1 = string[];
+export type Parties = PartyRow[];
+export type Source1 = string;
+export type Type = string;
+export type Target = string;
+export type ClaimIds2 = string[];
+export type Links = LinkRow[];
+export type DocumentId1 = string;
+export type DocType1 = string;
+export type Date3 = string | null;
+export type FileNo3 = number;
+export type Sha256 = string;
+export type CitedBy = number;
+export type Exhibits = ExhibitRow[];
+export type Negatives = string[];
+export type DocumentsTotal = number;
+export type DocumentsRead = number;
+export type PagesTotal = number;
+export type PagesRead = number;
+export type UnreadDocuments = string[];
+export type SearchedOnlyPages = string[];
+export type Seq = number;
+export type Turn = number;
+export type Kind2 = string;
+export type Summary = string;
+export type At = string;
+export type Action = {
+  [k: string]: unknown;
+} | null;
+export type WorkerIds = string[];
+export type ContextChars = number | null;
+export type CoveragePages = number | null;
+export type VerifiedTotal = number | null;
+export type RefusedTotal = number | null;
+export type Tokens = number | null;
+export type Trace = TraceRow[];
+export type Id4 = string;
+export type Role2 = string;
+export type DocumentIds = string[];
+export type Pages1 = number;
+export type Focus = string;
+export type Verified1 = number;
+export type Refused = number;
+export type OpenQuestions = string[];
+export type PromptTokens = number;
+export type OutputTokens = number;
+export type ThinkingTokens = number;
+export type Seconds = number;
+export type Workers = WorkerRow[];
+export type RunId1 = string;
+export type EventsFound = number;
+export type EventsTotal = number;
+export type CoreFound = number;
+export type CoreTotal = number;
+export type RelationshipsFound = number;
+export type RelationshipsTotal = number;
+export type PartiesFound = number;
+export type PartiesTotal = number;
+export type VerifiedClaims = number;
+export type RefusedClaims = number;
+export type PagesRead1 = number;
+export type Readers = number;
+export type PromptTokens1 = number;
+export type OutputTokens1 = number;
+export type CostUsd = number;
+export type Id5 = string;
+export type Date4 = string;
+export type Summary1 = string;
+export type Core = boolean;
+export type Split = string;
+export type NtsbPage = string;
+export type NtsbQuote = string;
+export type EvidencePages = string[];
+export type FoundBy = string[];
+export type AnswerKey = KeyEventRow[];
+
+export interface Bundle {
+  case: CaseInfo;
+  run: RunInfo;
+  harness: HarnessSpec;
+  documents: Documents;
+  pages: Pages;
+  claims: Claims;
+  refusals: Refusals;
+  chronology: Chronology;
+  lanes: Lanes;
+  parties: Parties;
+  links: Links;
+  exhibits: Exhibits;
+  negatives: Negatives;
+  coverage: Coverage;
+  trace: Trace;
+  workers: Workers;
+  score: ScoreRow | null;
+  baseline: ScoreRow | null;
+  answer_key: AnswerKey;
+}
+export interface CaseInfo {
+  case_id: CaseId;
+  title: Title;
+  event_date: EventDate;
+  event_summary: EventSummary;
+  source: Source;
+  inputs: Inputs;
+  withheld: Withheld;
+}
+export interface WithheldFile {
+  file_no: FileNo;
+  reason: Reason;
+}
+export interface RunInfo {
+  run_id: RunId;
+  status: Status;
+  turns: Turns;
+  started_at: StartedAt;
+  ended_at: EndedAt;
+}
+export interface HarnessSpec {
+  examiner_actions: ExaminerActions;
+  examiner_sees: ExaminerSees;
+  roles: Roles;
+  guards: Guards;
+  verifier_rules: VerifierRules;
+  negative_rule: NegativeRule;
+  memory_collections: MemoryCollections;
+}
+export interface RoleSpec {
+  role: Role;
+  title: Title1;
+  mirrors: Mirrors;
+  brief: Brief;
+  default_focus: DefaultFocus;
+  tools: Tools;
+  sees: Sees;
+}
+export interface Guards {
+  [k: string]: number;
+}
+export interface MemoryCollections {
+  [k: string]: string;
+}
+export interface DocumentRow {
+  id: Id;
+  file_no: FileNo1;
+  doc_type: DocType;
+  date: Date;
+  author: Author;
+  recipient: Recipient;
+  page_ids: PageIds;
+  is_label: IsLabel;
+  split_label: SplitLabel;
+  split_confidence: SplitConfidence;
+  read_by: ReadBy;
+}
+export interface Pages {
+  [k: string]: PageRef;
+}
+export interface PageRef {
+  page_id: PageId;
+  file_no: FileNo2;
+  page: Page;
+  image: Image;
+  is_label: IsLabel1;
+}
+export interface Claim {
+  id: Id1;
+  kind: Kind;
+  role: Role1;
+  worker_id: WorkerId;
+  statement: Statement;
+  date: Date1;
+  verified: Verified;
+  reasons: Reasons;
+  checks: Checks;
+  highlights: Highlights;
+  repair_of: RepairOf;
+  repair_attempted?: RepairAttempted;
+  detail: Detail;
+}
+export interface Highlight {
+  page_id: PageId1;
+  quote: Quote;
+  boxes: Boxes;
+}
+export interface Box {
+  left: Left;
+  top: Top;
+  width: Width;
+  height: Height;
+}
+export interface Detail {
+  [k: string]: string;
+}
+export interface ChronologyRow {
+  date: Date2;
+  statement: Statement1;
+  claim_ids: ClaimIds;
+  roles: Roles1;
+  document_id: DocumentId;
+  lane: Lane;
+}
+export interface Lane1 {
+  id: Id2;
+  label: Label;
+  events: Events;
+}
+export interface PartyRow {
+  id: Id3;
+  names: Names;
+  kind: Kind1;
+  roles: Roles2;
+  claim_ids: ClaimIds1;
+}
+export interface LinkRow {
+  source: Source1;
+  type: Type;
+  target: Target;
+  claim_ids: ClaimIds2;
+}
+export interface ExhibitRow {
+  document_id: DocumentId1;
+  doc_type: DocType1;
+  date: Date3;
+  file_no: FileNo3;
+  sha256: Sha256;
+  cited_by: CitedBy;
+}
+export interface Coverage {
+  documents_total: DocumentsTotal;
+  documents_read: DocumentsRead;
+  pages_total: PagesTotal;
+  pages_read: PagesRead;
+  unread_documents: UnreadDocuments;
+  searched_only_pages: SearchedOnlyPages;
+}
+export interface TraceRow {
+  seq: Seq;
+  turn: Turn;
+  kind: Kind2;
+  summary: Summary;
+  at: At;
+  action: Action;
+  worker_ids: WorkerIds;
+  context_chars: ContextChars;
+  coverage_pages: CoveragePages;
+  verified_total: VerifiedTotal;
+  refused_total: RefusedTotal;
+  tokens: Tokens;
+}
+export interface WorkerRow {
+  id: Id4;
+  role: Role2;
+  document_ids: DocumentIds;
+  pages: Pages1;
+  focus: Focus;
+  verified: Verified1;
+  refused: Refused;
+  open_questions: OpenQuestions;
+  prompt_tokens: PromptTokens;
+  output_tokens: OutputTokens;
+  thinking_tokens: ThinkingTokens;
+  seconds: Seconds;
+}
+export interface ScoreRow {
+  run_id: RunId1;
+  dev: SplitScore;
+  heldout: SplitScore;
+  parties_found: PartiesFound;
+  parties_total: PartiesTotal;
+  verified_claims: VerifiedClaims;
+  refused_claims: RefusedClaims;
+  pages_read: PagesRead1;
+  readers: Readers;
+  prompt_tokens: PromptTokens1;
+  output_tokens: OutputTokens1;
+  cost_usd: CostUsd;
+}
+export interface SplitScore {
+  events_found: EventsFound;
+  events_total: EventsTotal;
+  core_found: CoreFound;
+  core_total: CoreTotal;
+  relationships_found: RelationshipsFound;
+  relationships_total: RelationshipsTotal;
+}
+export interface KeyEventRow {
+  id: Id5;
+  date: Date4;
+  summary: Summary1;
+  core: Core;
+  split: Split;
+  ntsb_page: NtsbPage;
+  ntsb_quote: NtsbQuote;
+  evidence_pages: EvidencePages;
+  found_by: FoundBy;
+}

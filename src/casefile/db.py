@@ -6,8 +6,17 @@ from pymongo.database import Database
 from casefile.config import settings
 
 
+_client: MongoClient | None = None
+
+
 def client() -> MongoClient:
-    return MongoClient(settings().atlas_connection_string, serverSelectionTimeoutMS=5000)
+    """One shared client. The 30 s server selection outlasts an Atlas primary election (a failover
+    stopped run full-1 at 5 s); reads and writes are retried once by the driver."""
+    global _client
+    if _client is None:
+        _client = MongoClient(settings().atlas_connection_string, serverSelectionTimeoutMS=30000,
+                              retryWrites=True, retryReads=True)
+    return _client
 
 
 def database() -> Database:

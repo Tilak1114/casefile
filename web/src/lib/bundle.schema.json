@@ -1,0 +1,1240 @@
+{
+ "$defs": {
+  "Box": {
+   "properties": {
+    "left": {
+     "title": "Left",
+     "type": "number"
+    },
+    "top": {
+     "title": "Top",
+     "type": "number"
+    },
+    "width": {
+     "title": "Width",
+     "type": "number"
+    },
+    "height": {
+     "title": "Height",
+     "type": "number"
+    }
+   },
+   "required": [
+    "left",
+    "top",
+    "width",
+    "height"
+   ],
+   "title": "Box",
+   "type": "object"
+  },
+  "CaseInfo": {
+   "properties": {
+    "case_id": {
+     "title": "Case Id",
+     "type": "string"
+    },
+    "title": {
+     "title": "Title",
+     "type": "string"
+    },
+    "event_date": {
+     "title": "Event Date",
+     "type": "string"
+    },
+    "event_summary": {
+     "title": "Event Summary",
+     "type": "string"
+    },
+    "source": {
+     "title": "Source",
+     "type": "string"
+    },
+    "inputs": {
+     "title": "Inputs",
+     "type": "integer"
+    },
+    "withheld": {
+     "items": {
+      "$ref": "#/$defs/WithheldFile"
+     },
+     "title": "Withheld",
+     "type": "array"
+    }
+   },
+   "required": [
+    "case_id",
+    "title",
+    "event_date",
+    "event_summary",
+    "source",
+    "inputs",
+    "withheld"
+   ],
+   "title": "CaseInfo",
+   "type": "object"
+  },
+  "ChronologyRow": {
+   "properties": {
+    "date": {
+     "title": "Date",
+     "type": "string"
+    },
+    "statement": {
+     "title": "Statement",
+     "type": "string"
+    },
+    "claim_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Claim Ids",
+     "type": "array"
+    },
+    "roles": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Roles",
+     "type": "array"
+    },
+    "document_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Document Id"
+    },
+    "lane": {
+     "title": "Lane",
+     "type": "string"
+    }
+   },
+   "required": [
+    "date",
+    "statement",
+    "claim_ids",
+    "roles",
+    "document_id",
+    "lane"
+   ],
+   "title": "ChronologyRow",
+   "type": "object"
+  },
+  "Claim": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "role": {
+     "title": "Role",
+     "type": "string"
+    },
+    "worker_id": {
+     "title": "Worker Id",
+     "type": "string"
+    },
+    "statement": {
+     "title": "Statement",
+     "type": "string"
+    },
+    "date": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Date"
+    },
+    "verified": {
+     "title": "Verified",
+     "type": "boolean"
+    },
+    "reasons": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Reasons",
+     "type": "array"
+    },
+    "checks": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Checks",
+     "type": "array"
+    },
+    "highlights": {
+     "items": {
+      "$ref": "#/$defs/Highlight"
+     },
+     "title": "Highlights",
+     "type": "array"
+    },
+    "repair_of": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Repair Of"
+    },
+    "repair_attempted": {
+     "default": false,
+     "title": "Repair Attempted",
+     "type": "boolean"
+    },
+    "detail": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "title": "Detail",
+     "type": "object"
+    }
+   },
+   "required": [
+    "id",
+    "kind",
+    "role",
+    "worker_id",
+    "statement",
+    "date",
+    "verified",
+    "reasons",
+    "checks",
+    "highlights",
+    "repair_of",
+    "detail"
+   ],
+   "title": "Claim",
+   "type": "object"
+  },
+  "Coverage": {
+   "properties": {
+    "documents_total": {
+     "title": "Documents Total",
+     "type": "integer"
+    },
+    "documents_read": {
+     "title": "Documents Read",
+     "type": "integer"
+    },
+    "pages_total": {
+     "title": "Pages Total",
+     "type": "integer"
+    },
+    "pages_read": {
+     "title": "Pages Read",
+     "type": "integer"
+    },
+    "unread_documents": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Unread Documents",
+     "type": "array"
+    },
+    "searched_only_pages": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Searched Only Pages",
+     "type": "array"
+    }
+   },
+   "required": [
+    "documents_total",
+    "documents_read",
+    "pages_total",
+    "pages_read",
+    "unread_documents",
+    "searched_only_pages"
+   ],
+   "title": "Coverage",
+   "type": "object"
+  },
+  "DocumentRow": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "file_no": {
+     "title": "File No",
+     "type": "integer"
+    },
+    "doc_type": {
+     "title": "Doc Type",
+     "type": "string"
+    },
+    "date": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Date"
+    },
+    "author": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Author"
+    },
+    "recipient": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Recipient"
+    },
+    "page_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Page Ids",
+     "type": "array"
+    },
+    "is_label": {
+     "title": "Is Label",
+     "type": "boolean"
+    },
+    "split_label": {
+     "title": "Split Label",
+     "type": "string"
+    },
+    "split_confidence": {
+     "title": "Split Confidence",
+     "type": "string"
+    },
+    "read_by": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Read By",
+     "type": "array"
+    }
+   },
+   "required": [
+    "id",
+    "file_no",
+    "doc_type",
+    "date",
+    "author",
+    "recipient",
+    "page_ids",
+    "is_label",
+    "split_label",
+    "split_confidence",
+    "read_by"
+   ],
+   "title": "DocumentRow",
+   "type": "object"
+  },
+  "ExhibitRow": {
+   "properties": {
+    "document_id": {
+     "title": "Document Id",
+     "type": "string"
+    },
+    "doc_type": {
+     "title": "Doc Type",
+     "type": "string"
+    },
+    "date": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Date"
+    },
+    "file_no": {
+     "title": "File No",
+     "type": "integer"
+    },
+    "sha256": {
+     "title": "Sha256",
+     "type": "string"
+    },
+    "cited_by": {
+     "title": "Cited By",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "document_id",
+    "doc_type",
+    "date",
+    "file_no",
+    "sha256",
+    "cited_by"
+   ],
+   "title": "ExhibitRow",
+   "type": "object"
+  },
+  "HarnessSpec": {
+   "properties": {
+    "examiner_actions": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Examiner Actions",
+     "type": "array"
+    },
+    "examiner_sees": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Examiner Sees",
+     "type": "array"
+    },
+    "roles": {
+     "items": {
+      "$ref": "#/$defs/RoleSpec"
+     },
+     "title": "Roles",
+     "type": "array"
+    },
+    "guards": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "title": "Guards",
+     "type": "object"
+    },
+    "verifier_rules": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Verifier Rules",
+     "type": "array"
+    },
+    "negative_rule": {
+     "title": "Negative Rule",
+     "type": "string"
+    },
+    "memory_collections": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "title": "Memory Collections",
+     "type": "object"
+    }
+   },
+   "required": [
+    "examiner_actions",
+    "examiner_sees",
+    "roles",
+    "guards",
+    "verifier_rules",
+    "negative_rule",
+    "memory_collections"
+   ],
+   "title": "HarnessSpec",
+   "type": "object"
+  },
+  "Highlight": {
+   "properties": {
+    "page_id": {
+     "title": "Page Id",
+     "type": "string"
+    },
+    "quote": {
+     "title": "Quote",
+     "type": "string"
+    },
+    "boxes": {
+     "items": {
+      "$ref": "#/$defs/Box"
+     },
+     "title": "Boxes",
+     "type": "array"
+    }
+   },
+   "required": [
+    "page_id",
+    "quote",
+    "boxes"
+   ],
+   "title": "Highlight",
+   "type": "object"
+  },
+  "KeyEventRow": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "date": {
+     "title": "Date",
+     "type": "string"
+    },
+    "summary": {
+     "title": "Summary",
+     "type": "string"
+    },
+    "core": {
+     "title": "Core",
+     "type": "boolean"
+    },
+    "split": {
+     "title": "Split",
+     "type": "string"
+    },
+    "ntsb_page": {
+     "title": "Ntsb Page",
+     "type": "string"
+    },
+    "ntsb_quote": {
+     "title": "Ntsb Quote",
+     "type": "string"
+    },
+    "evidence_pages": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Evidence Pages",
+     "type": "array"
+    },
+    "found_by": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Found By",
+     "type": "array"
+    }
+   },
+   "required": [
+    "id",
+    "date",
+    "summary",
+    "core",
+    "split",
+    "ntsb_page",
+    "ntsb_quote",
+    "evidence_pages",
+    "found_by"
+   ],
+   "title": "KeyEventRow",
+   "type": "object"
+  },
+  "Lane": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "label": {
+     "title": "Label",
+     "type": "string"
+    },
+    "events": {
+     "title": "Events",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "id",
+    "label",
+    "events"
+   ],
+   "title": "Lane",
+   "type": "object"
+  },
+  "LinkRow": {
+   "properties": {
+    "source": {
+     "title": "Source",
+     "type": "string"
+    },
+    "type": {
+     "title": "Type",
+     "type": "string"
+    },
+    "target": {
+     "title": "Target",
+     "type": "string"
+    },
+    "claim_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Claim Ids",
+     "type": "array"
+    }
+   },
+   "required": [
+    "source",
+    "type",
+    "target",
+    "claim_ids"
+   ],
+   "title": "LinkRow",
+   "type": "object"
+  },
+  "PageRef": {
+   "properties": {
+    "page_id": {
+     "title": "Page Id",
+     "type": "string"
+    },
+    "file_no": {
+     "title": "File No",
+     "type": "integer"
+    },
+    "page": {
+     "title": "Page",
+     "type": "integer"
+    },
+    "image": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Image"
+    },
+    "is_label": {
+     "title": "Is Label",
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "page_id",
+    "file_no",
+    "page",
+    "image",
+    "is_label"
+   ],
+   "title": "PageRef",
+   "type": "object"
+  },
+  "PartyRow": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "names": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Names",
+     "type": "array"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "roles": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Roles",
+     "type": "array"
+    },
+    "claim_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Claim Ids",
+     "type": "array"
+    }
+   },
+   "required": [
+    "id",
+    "names",
+    "kind",
+    "roles",
+    "claim_ids"
+   ],
+   "title": "PartyRow",
+   "type": "object"
+  },
+  "RoleSpec": {
+   "properties": {
+    "role": {
+     "title": "Role",
+     "type": "string"
+    },
+    "title": {
+     "title": "Title",
+     "type": "string"
+    },
+    "mirrors": {
+     "title": "Mirrors",
+     "type": "string"
+    },
+    "brief": {
+     "title": "Brief",
+     "type": "string"
+    },
+    "default_focus": {
+     "title": "Default Focus",
+     "type": "string"
+    },
+    "tools": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Tools",
+     "type": "array"
+    },
+    "sees": {
+     "title": "Sees",
+     "type": "string"
+    }
+   },
+   "required": [
+    "role",
+    "title",
+    "mirrors",
+    "brief",
+    "default_focus",
+    "tools",
+    "sees"
+   ],
+   "title": "RoleSpec",
+   "type": "object"
+  },
+  "RunInfo": {
+   "properties": {
+    "run_id": {
+     "title": "Run Id",
+     "type": "string"
+    },
+    "status": {
+     "title": "Status",
+     "type": "string"
+    },
+    "turns": {
+     "title": "Turns",
+     "type": "integer"
+    },
+    "started_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Started At"
+    },
+    "ended_at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Ended At"
+    }
+   },
+   "required": [
+    "run_id",
+    "status",
+    "turns",
+    "started_at",
+    "ended_at"
+   ],
+   "title": "RunInfo",
+   "type": "object"
+  },
+  "ScoreRow": {
+   "properties": {
+    "run_id": {
+     "title": "Run Id",
+     "type": "string"
+    },
+    "dev": {
+     "$ref": "#/$defs/SplitScore"
+    },
+    "heldout": {
+     "$ref": "#/$defs/SplitScore"
+    },
+    "parties_found": {
+     "title": "Parties Found",
+     "type": "integer"
+    },
+    "parties_total": {
+     "title": "Parties Total",
+     "type": "integer"
+    },
+    "verified_claims": {
+     "title": "Verified Claims",
+     "type": "integer"
+    },
+    "refused_claims": {
+     "title": "Refused Claims",
+     "type": "integer"
+    },
+    "pages_read": {
+     "title": "Pages Read",
+     "type": "integer"
+    },
+    "readers": {
+     "title": "Readers",
+     "type": "integer"
+    },
+    "prompt_tokens": {
+     "title": "Prompt Tokens",
+     "type": "integer"
+    },
+    "output_tokens": {
+     "title": "Output Tokens",
+     "type": "integer"
+    },
+    "cost_usd": {
+     "title": "Cost Usd",
+     "type": "number"
+    }
+   },
+   "required": [
+    "run_id",
+    "dev",
+    "heldout",
+    "parties_found",
+    "parties_total",
+    "verified_claims",
+    "refused_claims",
+    "pages_read",
+    "readers",
+    "prompt_tokens",
+    "output_tokens",
+    "cost_usd"
+   ],
+   "title": "ScoreRow",
+   "type": "object"
+  },
+  "SplitScore": {
+   "properties": {
+    "events_found": {
+     "title": "Events Found",
+     "type": "integer"
+    },
+    "events_total": {
+     "title": "Events Total",
+     "type": "integer"
+    },
+    "core_found": {
+     "title": "Core Found",
+     "type": "integer"
+    },
+    "core_total": {
+     "title": "Core Total",
+     "type": "integer"
+    },
+    "relationships_found": {
+     "title": "Relationships Found",
+     "type": "integer"
+    },
+    "relationships_total": {
+     "title": "Relationships Total",
+     "type": "integer"
+    }
+   },
+   "required": [
+    "events_found",
+    "events_total",
+    "core_found",
+    "core_total",
+    "relationships_found",
+    "relationships_total"
+   ],
+   "title": "SplitScore",
+   "type": "object"
+  },
+  "TraceRow": {
+   "properties": {
+    "seq": {
+     "title": "Seq",
+     "type": "integer"
+    },
+    "turn": {
+     "title": "Turn",
+     "type": "integer"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "summary": {
+     "title": "Summary",
+     "type": "string"
+    },
+    "at": {
+     "title": "At",
+     "type": "string"
+    },
+    "action": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Action"
+    },
+    "worker_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Worker Ids",
+     "type": "array"
+    },
+    "context_chars": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Context Chars"
+    },
+    "coverage_pages": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Coverage Pages"
+    },
+    "verified_total": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Verified Total"
+    },
+    "refused_total": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Refused Total"
+    },
+    "tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Tokens"
+    }
+   },
+   "required": [
+    "seq",
+    "turn",
+    "kind",
+    "summary",
+    "at",
+    "action",
+    "worker_ids",
+    "context_chars",
+    "coverage_pages",
+    "verified_total",
+    "refused_total",
+    "tokens"
+   ],
+   "title": "TraceRow",
+   "type": "object"
+  },
+  "WithheldFile": {
+   "properties": {
+    "file_no": {
+     "title": "File No",
+     "type": "integer"
+    },
+    "reason": {
+     "title": "Reason",
+     "type": "string"
+    }
+   },
+   "required": [
+    "file_no",
+    "reason"
+   ],
+   "title": "WithheldFile",
+   "type": "object"
+  },
+  "WorkerRow": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "role": {
+     "title": "Role",
+     "type": "string"
+    },
+    "document_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Document Ids",
+     "type": "array"
+    },
+    "pages": {
+     "title": "Pages",
+     "type": "integer"
+    },
+    "focus": {
+     "title": "Focus",
+     "type": "string"
+    },
+    "verified": {
+     "title": "Verified",
+     "type": "integer"
+    },
+    "refused": {
+     "title": "Refused",
+     "type": "integer"
+    },
+    "open_questions": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Open Questions",
+     "type": "array"
+    },
+    "prompt_tokens": {
+     "title": "Prompt Tokens",
+     "type": "integer"
+    },
+    "output_tokens": {
+     "title": "Output Tokens",
+     "type": "integer"
+    },
+    "thinking_tokens": {
+     "title": "Thinking Tokens",
+     "type": "integer"
+    },
+    "seconds": {
+     "title": "Seconds",
+     "type": "number"
+    }
+   },
+   "required": [
+    "id",
+    "role",
+    "document_ids",
+    "pages",
+    "focus",
+    "verified",
+    "refused",
+    "open_questions",
+    "prompt_tokens",
+    "output_tokens",
+    "thinking_tokens",
+    "seconds"
+   ],
+   "title": "WorkerRow",
+   "type": "object"
+  }
+ },
+ "properties": {
+  "case": {
+   "$ref": "#/$defs/CaseInfo"
+  },
+  "run": {
+   "$ref": "#/$defs/RunInfo"
+  },
+  "harness": {
+   "$ref": "#/$defs/HarnessSpec"
+  },
+  "documents": {
+   "items": {
+    "$ref": "#/$defs/DocumentRow"
+   },
+   "title": "Documents",
+   "type": "array"
+  },
+  "pages": {
+   "additionalProperties": {
+    "$ref": "#/$defs/PageRef"
+   },
+   "title": "Pages",
+   "type": "object"
+  },
+  "claims": {
+   "items": {
+    "$ref": "#/$defs/Claim"
+   },
+   "title": "Claims",
+   "type": "array"
+  },
+  "refusals": {
+   "items": {
+    "$ref": "#/$defs/Claim"
+   },
+   "title": "Refusals",
+   "type": "array"
+  },
+  "chronology": {
+   "items": {
+    "$ref": "#/$defs/ChronologyRow"
+   },
+   "title": "Chronology",
+   "type": "array"
+  },
+  "lanes": {
+   "items": {
+    "$ref": "#/$defs/Lane"
+   },
+   "title": "Lanes",
+   "type": "array"
+  },
+  "parties": {
+   "items": {
+    "$ref": "#/$defs/PartyRow"
+   },
+   "title": "Parties",
+   "type": "array"
+  },
+  "links": {
+   "items": {
+    "$ref": "#/$defs/LinkRow"
+   },
+   "title": "Links",
+   "type": "array"
+  },
+  "exhibits": {
+   "items": {
+    "$ref": "#/$defs/ExhibitRow"
+   },
+   "title": "Exhibits",
+   "type": "array"
+  },
+  "negatives": {
+   "items": {
+    "type": "string"
+   },
+   "title": "Negatives",
+   "type": "array"
+  },
+  "coverage": {
+   "$ref": "#/$defs/Coverage"
+  },
+  "trace": {
+   "items": {
+    "$ref": "#/$defs/TraceRow"
+   },
+   "title": "Trace",
+   "type": "array"
+  },
+  "workers": {
+   "items": {
+    "$ref": "#/$defs/WorkerRow"
+   },
+   "title": "Workers",
+   "type": "array"
+  },
+  "score": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/ScoreRow"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "baseline": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/ScoreRow"
+    },
+    {
+     "type": "null"
+    }
+   ]
+  },
+  "answer_key": {
+   "items": {
+    "$ref": "#/$defs/KeyEventRow"
+   },
+   "title": "Answer Key",
+   "type": "array"
+  }
+ },
+ "required": [
+  "case",
+  "run",
+  "harness",
+  "documents",
+  "pages",
+  "claims",
+  "refusals",
+  "chronology",
+  "lanes",
+  "parties",
+  "links",
+  "exhibits",
+  "negatives",
+  "coverage",
+  "trace",
+  "workers",
+  "score",
+  "baseline",
+  "answer_key"
+ ],
+ "title": "Bundle",
+ "type": "object"
+}

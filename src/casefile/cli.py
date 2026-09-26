@@ -124,6 +124,14 @@ def cmd_assemble(args: argparse.Namespace) -> None:
     print(f"{args.run_id}: {len(out.chronology)} chronology entries, {len(out.parties)} parties, {len(out.links)} links")
 
 
+def cmd_export(args: argparse.Namespace) -> None:
+    from casefile.config import REPO_ROOT
+    from casefile.export.build import export_run
+
+    out = export_run(db.database(), DATA_DIR / "cases" / args.case, args.run_id, args.baseline, REPO_ROOT / "web")
+    print(f"{args.run_id} exported to {out} ({out.stat().st_size / 1e6:.1f} MB)")
+
+
 def cmd_score(args: argparse.Namespace) -> None:
     import yaml
 
@@ -185,6 +193,11 @@ def main() -> None:
     asm.add_argument("run_id")
     asm.add_argument("case", nargs="?", default="HWY06MH024")
     asm.set_defaults(func=cmd_assemble)
+    exp = sub.add_parser("export", help="export a run for the web UI (bundle JSON and page images)")
+    exp.add_argument("run_id")
+    exp.add_argument("case", nargs="?", default="HWY06MH024")
+    exp.add_argument("--baseline", default="baseline-1")
+    exp.set_defaults(func=cmd_export)
     score = sub.add_parser("score", help="score a run against the answer key")
     score.add_argument("run_id")
     score.add_argument("case", nargs="?", default="HWY06MH024")
