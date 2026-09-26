@@ -33,7 +33,7 @@ class ModelUsage(BaseModel):
 
 class OpenRouter:
     def __init__(self, api_key: str | None, cache_dir: Path, model: str = DEFAULT_MODEL, allow_spend: bool = False,
-                 http: httpx.Client | None = None, retries: int = 1):
+                 http: httpx.Client | None = None, retries: int = 2):
         self.model = model
         self.cache = CacheStore(cache_dir)
         self.allow_spend = allow_spend
@@ -63,16 +63,21 @@ class OpenRouter:
             "response_format": {"type": "json_schema",
                                 "json_schema": {"name": schema.__name__, "schema": schema.model_json_schema()}},
         }
+        output = None
         for attempt in range(self.retries + 1):
             response = self.http.post(URL, headers={"Authorization": f"Bearer {self.api_key}"}, json=body)
-            if response.status_code == 200 and "choices" in response.json():
-                break
-            transient = response.status_code in (408, 429, 500, 502, 503, 504)
+            data = response.json() if response.status_code == 200 else {}
+            content = ((data.get("choices") or [{}])[0].get("message") or {}).get("content")
+            if content:
+                try:
+                    output = schema.model_validate_json(content)
+                    break
+                except ValueError:
+                    pass  # malformed JSON from the model: retry
+            transient = response.status_code in (200, 408, 429, 500, 502, 503, 504)
             if attempt == self.retries or not transient:
-                raise RuntimeError(f"OpenRouter {task} returned {response.status_code}: {response.text[:300]}")
+                raise RuntimeError(f"OpenRouter {task} returned {response.status_code} without valid output: {response.text[:300]}")
             time.sleep(2 * (attempt + 1))
-        data = response.json()
-        output = schema.model_validate_json(data["choices"][0]["message"]["content"])
         u = data.get("usage", {})
         usage = ModelUsage(
             prompt_tokens=u.get("prompt_tokens", 0), output_tokens=u.get("completion_tokens", 0),

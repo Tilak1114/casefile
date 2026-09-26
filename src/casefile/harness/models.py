@@ -92,8 +92,10 @@ class ReaderOutput(BaseModel):
 
 
 class Role(StrEnum):
-    PARTIES = "parties_reviewer"
-    TECHNICAL = "technical_reviewer"
+    PARTIES = "parties_reviewer"  # v1
+    TECHNICAL = "technical_reviewer"  # v1
+    COUNSEL = "counsel"  # v2: defense counsel
+    ENGINEER = "engineer"  # v2: forensic engineer
 
 
 class Assign(BaseModel):

@@ -138,3 +138,20 @@ def test_mongo_event_store_is_append_only_ordered_and_watchable():
         for c in ("events", "tasks"):
             database[c].delete_many({"run_id": run})
         database.counters.delete_one({"_id": f"events:{run}"})
+
+
+@pytest.mark.integration
+def test_a_document_is_reserved_by_one_task_per_role():
+    from uuid import uuid4
+
+    from casefile.team.reservations import reserve
+
+    database = db.database()
+    run = f"test-{uuid4().hex[:8]}"
+    try:
+        first = reserve(database, run, "counsel", ["d1", "d2"], task_id="t1")
+        second = reserve(database, run, "counsel", ["d2", "d3"], task_id="t2")
+        other_role = reserve(database, run, "engineer", ["d1"], task_id="t3")
+        assert first == ["d1", "d2"] and second == ["d3"] and other_role == ["d1"]
+    finally:
+        database.reservations.delete_many({"run_id": run})

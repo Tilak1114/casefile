@@ -72,3 +72,11 @@ def test_retries_once_on_transient_error(monkeypatch):
 def test_gives_up_on_permanent_error():
     with pytest.raises(RuntimeError, match="400"):
         client(lambda r: reply(400)).structured("t", "p", Answer)
+
+
+def test_an_empty_reply_is_retried(monkeypatch):
+    monkeypatch.setattr(openrouter.time, "sleep", lambda s: None)
+    empty = httpx.Response(200, json={"choices": [{"message": {"content": None}}], "usage": {}})
+    responses = [empty, reply()]
+    out, _, _ = client(lambda r: responses.pop(0)).structured("t", "p", Answer)
+    assert out.ok and responses == []

@@ -63,7 +63,10 @@ class Dispatcher:
         for event in self.store.events(since_seq=self._cursor):
             for role in MODEL_ROLES:
                 if event.type in SPECS[role].wakes_on and event.to in (role, None) and event.sender is not role:
-                    self.create_task(role, f"handle {event.type.value}", trigger=event)
+                    # The engineer is retained only with the lead's approval: until then none of its tasks can start.
+                    waits = ([WaitFor(type=EventType.EXPERT_APPROVED)]
+                             if role is Actor.ENGINEER and event.type is not EventType.EXPERT_APPROVED else [])
+                    self.create_task(role, f"handle {event.type.value}", trigger=event, waits_for=waits)
             self._cursor = max(self._cursor, event.seq)
 
     def _satisfied(self, task: Task) -> bool:

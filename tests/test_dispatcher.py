@@ -86,5 +86,16 @@ def test_a_task_past_its_deadline_expires_and_the_lead_is_told(d):
 
 def test_broadcast_events_wake_every_subscriber(d):
     d.publish(ev(E.DISPUTE_RULED, Actor.LEAD, to=None))
-    roles = sorted(t.role.value for t in d.cycle())
-    assert roles == ["counsel", "engineer"]
+    started = sorted(t.role.value for t in d.cycle())
+    assert started == ["counsel"]  # the engineer's task exists but waits for its approval
+    assert sorted(t.role.value for t in d.store.tasks()) == ["counsel", "engineer"]
+
+
+def test_the_engineer_cannot_start_before_it_is_approved(d):
+    d.publish(ev(E.REQUEST_RAISED, Actor.COUNSEL, to=Actor.ENGINEER, corr="q1"))
+    d.cycle()
+    task = next(t for t in d.store.tasks() if t.role is Actor.ENGINEER)
+    assert task.state is TaskState.PENDING
+    d.publish(ev(E.EXPERT_APPROVED, Actor.LEAD, to=Actor.ENGINEER, corr="x1"))
+    d.cycle()
+    assert d.store.task(task.id).state is TaskState.RUNNING

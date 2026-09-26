@@ -150,6 +150,12 @@ def cmd_score(args: argparse.Namespace) -> None:
             print("  missed:", m)
 
 
+def cmd_team(args: argparse.Namespace) -> None:
+    from casefile.team.run import run_team
+
+    print(run_team(args.case, run_id=args.run_id, allow_spend=args.allow_spend, max_cycles=args.max_cycles).model_dump_json(indent=1))
+
+
 def cmd_indexes(_: argparse.Namespace) -> None:
     print("pages_text:", search.ensure_indexes(db.database()))
 
@@ -203,6 +209,12 @@ def main() -> None:
     score.add_argument("case", nargs="?", default="HWY06MH024")
     score.add_argument("--missed", action="store_true", help="list the answer-key events the run did not find")
     score.set_defaults(func=cmd_score)
+    team = sub.add_parser("team", help="run the v2 claims team on a case (resumes if --run-id exists)")
+    team.add_argument("case", nargs="?", default="HWY06MH024")
+    team.add_argument("--run-id")
+    team.add_argument("--max-cycles", type=int, default=300)
+    team.add_argument("--allow-spend", action="store_true", help="call the model (paid) for anything not cached")
+    team.set_defaults(func=cmd_team)
     sub.add_parser("indexes", help="create the Atlas Search index on page text").set_defaults(func=cmd_indexes)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)
     args = parser.parse_args()
