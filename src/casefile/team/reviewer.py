@@ -153,6 +153,7 @@ def _read_documents(deps: TeamDeps, brief: ReviewerBrief, doc_ids: list[str], fo
             db.reader_failures.insert_one({"run_id": run, "task_id": task_id, "role": brief.actor.value,
                                            "document_ids": exc.document_ids, "error": str(exc)[:500]})
             db.reservations.delete_many({"_id": {"$in": [f"{run}:{brief.actor.value}:{i}" for i in exc.document_ids]}})
+            db.coverage.delete_many({"_id": {"$in": exc.coverage_ids}})  # the pages were never read: they count as unread again
             return False
 
     with ThreadPoolExecutor(READERS_PER_TASK) as pool:

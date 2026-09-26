@@ -89,3 +89,14 @@ def test_fresh_mode_ignores_the_cache_but_still_writes_it():
     c.structured("t", "prompt", Answer)
     _, _, cached = c.structured("t", "prompt", Answer)
     assert not cached and len(calls) == 2 and c.cache.store
+
+
+def test_a_rate_limit_waits_long_enough_and_honours_retry_after(monkeypatch):
+    waits = []
+    monkeypatch.setattr(openrouter.time, "sleep", waits.append)
+    limited = httpx.Response(429, json={"error": "rate limit"})
+    told = httpx.Response(429, json={"error": "rate limit"}, headers={"Retry-After": "7"})
+    responses = [limited, told, limited, reply()]
+    out, _, _ = client(lambda r: responses.pop(0)).structured("t", "p", Answer)
+    assert out.ok and responses == []
+    assert waits[0] >= 15 and waits[1] == 7 and len(waits) == 3  # more tries than the default 2 for a rate limit

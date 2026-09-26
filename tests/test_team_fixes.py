@@ -92,3 +92,29 @@ def test_the_lead_cannot_exclude_documents():
 
     assert "exclusions" not in Opening.model_fields and "exclusions" not in NextStep.model_fields
     assert E.SCOPE_EXCLUDED not in SPECS[Actor.LEAD].publishes
+
+
+def test_a_failed_read_reports_the_coverage_it_logged_so_it_can_be_undone():
+    from casefile.team.reader import ReadFailed, read
+    from casefile.verify.index import CaseIndex, IndexedDocument, IndexedPage
+
+    d = IndexedDocument(id="C:001:d01", doc_type="letter", page_ids=["C:001:p001"], is_label=False)
+    idx = CaseIndex(case_id="C", pages={"C:001:p001": IndexedPage(id="C:001:p001", file_no=1, page=1, text="text", is_label=False,
+                                                                  document_id=d.id)}, documents={d.id: d})
+
+    class Coverage:
+        def read(self, page_ids, actor, focus):
+            return SimpleNamespace(id="cov-1")
+
+    class Gate:
+        def call(self, **kw):
+            raise RuntimeError("429 rate limit")
+
+    desk = SimpleNamespace(coverage=Coverage(), find_references=lambda doc_id: [])
+    brief = SimpleNamespace(actor=Actor.ENGINEER, brief="b", claim_role=None)
+    try:
+        read(gate=Gate(), desk=desk, index=idx, store=None, brief=brief, documents=[d], focus="f", claim=lambda ids: ids)
+    except ReadFailed as exc:
+        assert exc.document_ids == [d.id] and exc.coverage_ids == ["cov-1"]
+    else:
+        raise AssertionError("expected ReadFailed")

@@ -48,11 +48,13 @@ class ReaderResult(BaseModel):
 
 
 class ReadFailed(RuntimeError):
-    """A reader batch failed; `document_ids` are every document it held, attached ones included."""
+    """A reader batch failed; `document_ids` are every document it held, attached ones included, and
+    `coverage_ids` the reads it logged, which the caller removes so the pages count as unread again."""
 
-    def __init__(self, document_ids: list[str], cause: Exception):
+    def __init__(self, document_ids: list[str], cause: Exception, coverage_ids: list[str] | None = None):
         super().__init__(f"{type(cause).__name__}: {cause}")
         self.document_ids = document_ids
+        self.coverage_ids = coverage_ids or []
 
 
 def _attach(desk: RecordsDesk, index: CaseIndex, batch: list[IndexedDocument],
@@ -81,18 +83,20 @@ def read(*, gate: ModelGate, desk: RecordsDesk, index: CaseIndex, store: RunStor
     """`claim` reserves documents for this reader's role and returns those it now holds."""
     worker_id = f"w-{uuid4().hex[:10]}"
     attached = _attach(desk, index, documents, claim)
+    logged: list[str] = []
     try:
-        return _read(gate, desk, index, store, brief, documents, attached, focus, task_id, worker_id)
+        return _read(gate, desk, index, store, brief, documents, attached, focus, task_id, worker_id, logged)
     except Exception as exc:
-        raise ReadFailed([d.id for d in documents] + attached, exc) from exc
+        raise ReadFailed([d.id for d in documents] + attached, exc, logged) from exc
 
 
 def _read(gate: ModelGate, desk: RecordsDesk, index: CaseIndex, store: RunStore, brief: ReviewerBrief,
           documents: list[IndexedDocument], attached: list[str], focus: str, task_id: str | None,
-          worker_id: str) -> ReaderResult:
+          worker_id: str, logged: list[str]) -> ReaderResult:
     all_docs = documents + [index.documents[a] for a in attached]
     text, page_ids = render_documents(all_docs, index)
     record = desk.coverage.read(page_ids, actor=f"{brief.actor.value} reader", focus=focus)
+    logged.append(record.id)
     started = time.time()
     prompt = READER_PROMPT.format(role_brief=brief.brief, focus=focus, documents=text)
     output, usage = gate.call(actor=f"{brief.actor.value}-reader", purpose="read", prompt=prompt, schema=ReaderOutput, task_id=task_id,

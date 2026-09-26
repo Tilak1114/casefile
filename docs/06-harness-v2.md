@@ -352,3 +352,12 @@ post-collapse test report); the run was stopped at $0.09. Across three runs the 
 (v2-full-1, 218 pages of raw data), cost two key events once (v2-full-2) and would have cost most of the
 post-collapse events once. Reading everything costs about $0.50 more per run. So the lead no longer excludes: it
 decides who reads what and with what focus, and the claim file closes only when every document has been read.
+
+## v2-full-3, and two fixes after it
+
+v2-full-3 read every document (no exclusions) with 8 readers per task and 16 model calls at once: 14 minutes, 181
+calls, $5.18, all 49 answer-key events found (35/35 development, 14/14 held out), 18/19 parties, 4/13 relationships,
+8 disputes ruled. One reader batch failed on OpenRouter's new-account limit (20 requests a minute); counsel had read
+the same documents, so nothing was lost, but the pages had been logged as read before the call. Fixed after the run:
+a failed batch removes its read record so the documents are reassigned, and a 429 waits for `Retry-After` (or 15 s,
+30 s, ...) for up to 5 retries.

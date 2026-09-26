@@ -39,21 +39,23 @@ at while the system was improved.
 Every agent uses the same model, `google/gemini-3.8-flash` through OpenRouter. The baseline is that model given all
 pages in one prompt.
 
-| | Team run `v2-full-2` | Earlier team run `v2-full-1` | One prompt, same model |
+| | Team run `v2-full-3` | Earlier team run `v2-full-2` | One prompt, same model |
 |---|---|---|---|
-| Key events found, development set | **32 / 35** | 28 / 35 | 14 / 35 |
-| Key events found, held-out set | **14 / 14** | 12 / 14 | 4 / 14 |
+| Key events found, development set | **35 / 35** | 32 / 35 | 14 / 35 |
+| Key events found, held-out set | **14 / 14** | 14 / 14 | 4 / 14 |
 | Parties found | 18 / 19 | 18 / 19 | 7 / 19 |
-| Relationships found | 3 / 13 | 3 / 13 | 0 / 13 |
-| Claims kept by the verifier (refused) | 1,007 (5%) | 641 (11%) | 35 (35%) |
-| Pages read | 1,721 / 1,737 | 1,519 / 1,737 | all, in one prompt |
-| Time, model calls, cost | 26 min, 150 calls, $4.31 | 17 min, 99 calls, $3.10 | 1 call, $0.60 |
+| Relationships found | 4 / 13 | 3 / 13 | 0 / 13 |
+| Claims kept by the verifier (refused) | 1,277 (5%) | 1,007 (5%) | 35 (35%) |
+| Pages read | 1,737 / 1,737 | 1,721 / 1,737 | all, in one prompt |
+| Time, model calls, cost | 14 min, 181 calls, $5.18 | 26 min, 150 calls, $4.31 | 1 call, $0.60 |
 
 Every missed event is traced to where it was lost (page never read, read but not claimed, claim refused, different
-date). In `v2-full-2`, two of the three misses came from the lead skipping one-page transmittals; the lead can no
-longer skip documents ([decision 30](docs/DECISIONS.md)). The third is a date-range event.
+date), and each round of fixes came from that attribution: `v2-full-1` lost daily-report entries read in one oversized
+call; `v2-full-2` lost two events on one-page transmittals the lead skipped. `v2-full-3` reads every document, in
+windows for long logs, 16 model calls at a time, and misses no answer-key event. In it the specialists opened 8 disputes
+over dates, each ruled by the lead from the quotes.
 
-**Weak spot:** relationships (3 of 13). The model links two companies, but the quote often doesn't show the link, so
+**Weak spot:** relationships (4 of 13). The model links two companies, but the quote often doesn't show the link, so
 the verifier refuses it.
 
 `casefile score RUN_ID` recomputes any score from the run's records in MongoDB and `answer_key.yaml`.
@@ -95,7 +97,7 @@ Four stages. Only the second uses agents.
 | `cache` | Model and parser answers, so a finished run replays for free |
 
 No agent keeps the run in its prompt. Each agent's context is rebuilt from MongoDB for every task, so the lead's
-prompt stays between about 2k and 10k tokens however many pages have been read.
+prompt stays under about 10k tokens however many pages have been read.
 
 ## The UI
 
@@ -132,7 +134,7 @@ committed caches; ingest refuses to spend unless run with `--allow-spend`. Tests
 
 - One case. The harness has no case-specific logic (the docket is a case configuration, a source adapter, the UI's source link and the CLI's
   default case id), but only this case has been run and scored.
-- Relationships are weak (3 of 13).
+- Relationships are weak (4 of 13).
 - The answer key is ours, built from the NTSB report and audited against the input files independently of any run;
   every run is scored against the same key.
 - Reasoning shown in the UI is the model provider's summary of its reasoning, not the raw reasoning tokens.

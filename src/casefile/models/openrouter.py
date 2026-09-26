@@ -18,6 +18,7 @@ from casefile.blobstore import CacheStore
 T = TypeVar("T", bound=BaseModel)
 URL = "https://openrouter.ai/api/v1/chat/completions"
 DEFAULT_MODEL = "google/gemini-3.8-flash"
+RATE_LIMIT_RETRIES = 5  # a 429 is retried more often than other errors, with longer waits
 
 
 class SpendNotAllowed(RuntimeError):
@@ -67,7 +68,8 @@ class OpenRouter:
                                 "json_schema": {"name": schema.__name__, "schema": schema.model_json_schema()}},
         }
         output = None
-        for attempt in range(self.retries + 1):
+        attempt = 0
+        while True:
             response = self.http.post(URL, headers={"Authorization": f"Bearer {self.api_key}"}, json=body)
             data = response.json() if response.status_code == 200 else {}
             content = ((data.get("choices") or [{}])[0].get("message") or {}).get("content")
@@ -77,10 +79,15 @@ class OpenRouter:
                     break
                 except ValueError:
                     pass  # malformed JSON from the model: retry
+            limited = response.status_code == 429
             transient = response.status_code in (200, 408, 429, 500, 502, 503, 504)
-            if attempt == self.retries or not transient:
+            if not transient or attempt >= (RATE_LIMIT_RETRIES if limited else self.retries):
                 raise RuntimeError(f"OpenRouter {task} returned {response.status_code} without valid output: {response.text[:300]}")
-            time.sleep(2 * (attempt + 1))
+            if limited:  # a per-minute limit: wait as told, or long enough for the window to move
+                time.sleep(float(response.headers.get("retry-after") or 0) or 15 * (attempt + 1))
+            else:
+                time.sleep(2 * (attempt + 1))
+            attempt += 1
         u = data.get("usage", {})
         message = (data.get("choices") or [{}])[0].get("message") or {}
         usage = ModelUsage(
