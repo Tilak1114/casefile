@@ -128,6 +128,17 @@ ol.approve { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
       <tr><td>Disputes ruled</td><td>8</td><td>1</td><td>0</td><td>—</td></tr>
       <tr><td>Time · cost</td><td>14 min · $5.18</td><td>26 min · $4.31</td><td>17 min · $3.10</td><td>1 call · $0.60</td></tr>
     </tbody></table></div>
+    <h3 style="margin-top:8px">Against a general-purpose agent</h3>
+    <p>The same 1,737 pages were also given to 8 Claude (Sonnet) agents running in parallel in Claude Code with no harness: each read about an eighth of the file in one pass of about 10 minutes and returned quoted claims in the same format. Their claims went through the same verifier and answer key.</p>
+    <div class="tbl"><table><thead><tr><th></th><th>Casefile v2-full-3 (Gemini 3.8 Flash)</th><th>8 Claude agents, no harness</th><th>One prompt (Gemini)</th></tr></thead><tbody>
+      <tr><td>Answer-key events</td><td><b>49 / 49</b></td><td>36 / 49</td><td>18 / 49</td></tr>
+      <tr><td>Held-out events</td><td><b>14 / 14</b></td><td>11 / 14</td><td>4 / 14</td></tr>
+      <tr><td>Parties</td><td>18 / 19</td><td>15 / 19</td><td>7 / 19</td></tr>
+      <tr><td>Relationships</td><td>4 / 13</td><td>2 / 13</td><td>0 / 13</td></tr>
+      <tr><td>Claims kept (refused)</td><td>1,277 (5%)</td><td>369 (16%)</td><td>35 (35%)</td></tr>
+      <tr><td>Record of pages read</td><td>1,737 / 1,737</td><td>none</td><td>—</td></tr>
+    </tbody></table></div>
+    <p style="font-size:13px;color:var(--muted)">A different, stronger model, so this compares model and harness together, from one pass per agent. The fair next test is a generic agent loop on the same Gemini model. The agents' output and the scorer are in the repository (<code>data/cases/HWY06MH024/comparisons/claude-code-1/</code>, <code>scripts/score_claude_comparison.py</code>).</p>
     <p>Each round of changes came from loss attribution on the run before it. <b>v2-full-1</b> lost daily-report entries read in one oversized call and quotes broken across hyphenated lines: readers now read long documents in page windows, report each dated log entry, and the verifier joins hyphenated words. <b>v2-full-2</b> lost two events on one-page transmittals the lead chose to skip: the lead can no longer exclude documents. <b>v2-full-3</b> reads everything and misses no answer-key event. The weak spot is relationships: the model links two companies, but the quote often does not show the link, so the verifier refuses it.</p>
   </section>
   <section>
