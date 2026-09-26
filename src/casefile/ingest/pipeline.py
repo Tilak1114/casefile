@@ -57,6 +57,22 @@ def documents_from_split(case_id: str, file_no: int, split: dict) -> list[Logica
     ]
 
 
+def unassigned_documents(case_id: str, file_no: int, pages: list[int], start_index: int) -> list[LogicalDocument]:
+    """Pages Split left out (it stops on very long files) become documents of their own, one per run of
+    consecutive pages, so nothing parsed drops out of reading or coverage."""
+    runs: list[list[int]] = []
+    for p in pages:
+        if runs and p == runs[-1][-1] + 1:
+            runs[-1].append(p)
+        else:
+            runs.append([p])
+    return [
+        LogicalDocument(case_id=case_id, file_no=file_no, index=start_index + i, doc_type="other", pages=run,
+                        split_label="pages not assigned by Split", confidence="low")
+        for i, run in enumerate(runs)
+    ]
+
+
 def ingest_file(
     reducto: ReductoClient, case_id: str, file_no: int, path: Path, sha256: str
 ) -> tuple[list[PageText], list[LogicalDocument], FileIngest]:
@@ -65,10 +81,12 @@ def ingest_file(
     split, split_cached = reducto.split(path, sha256, parse["job_id"], request)
     documents = documents_from_split(case_id, file_no, split)
 
-    label_pages = {p for d in documents if d.doc_type == PRODUCTION_LABEL for p in d.pages}
-    assigned = {p for d in documents for p in d.pages}
-    by_page = blocks_by_page(parse)
     n_pages = parse["usage"]["num_pages"]
+    assigned = {p for d in documents for p in d.pages}
+    unassigned = [p for p in range(1, n_pages + 1) if p not in assigned]
+    documents = documents + unassigned_documents(case_id, file_no, unassigned, start_index=len(documents) + 1)
+    label_pages = {p for d in documents if d.doc_type == PRODUCTION_LABEL for p in d.pages}
+    by_page = blocks_by_page(parse)
     pages = []
     for number in range(1, n_pages + 1):
         text, spans, stripped, figures = page_text(by_page.get(number, []))
@@ -81,7 +99,7 @@ def ingest_file(
     summary = FileIngest(
         case_id=case_id, file_no=file_no, sha256=sha256, pages=n_pages, documents=len(documents),
         label_pages=len(label_pages),
-        unassigned_pages=[p for p in range(1, n_pages + 1) if p not in assigned],
+        unassigned_pages=unassigned,
         parse_credits=0.0 if parse_cached else parse["usage"]["credits"],
         split_credits=0.0 if split_cached else split["usage"]["credits"],
         cached=parse_cached and split_cached,

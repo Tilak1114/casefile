@@ -63,6 +63,27 @@ def cmd_snapshot_restore(args: argparse.Namespace) -> None:
     print(f"database restored from {SNAPSHOT} to {'local' if local else 'the shared cluster'}")
 
 
+def cmd_run(args: argparse.Namespace) -> None:
+    from casefile.harness.run import run_case
+
+    out = run_case(args.case, run_id=args.run_id, allow_spend=args.allow_spend)
+    c = out.coverage
+    print(f"{out.run_id}: {len(out.chronology)} chronology entries, {len(out.parties)} parties, "
+          f"{len(out.links)} links, {len(out.negatives)} negatives; read {c.documents_read}/{c.documents_total} "
+          f"documents, {c.pages_read}/{c.pages_total} pages")
+
+
+def cmd_upload(args: argparse.Namespace) -> None:
+    from casefile.blobstore import CacheStore, upload_sources
+
+    case_dir = DATA_DIR / "cases" / args.case
+    manifest = FetchManifest.model_validate_json((case_dir / "fetch_manifest.json").read_text())
+    for kind in ("reducto", "gemini"):
+        print(f"{kind} cache: {CacheStore(case_dir / 'cache' / kind).upload_local()} new entries uploaded")
+    files = [(f.file_no, case_dir / f.path, f.sha256) for f in manifest.files]
+    print(f"sources: {upload_sources(args.case, files)} new files uploaded to GridFS")
+
+
 def cmd_indexes(_: argparse.Namespace) -> None:
     print("pages_text:", search.ensure_indexes(db.database()))
 
@@ -89,6 +110,14 @@ def main() -> None:
     restore = sub.add_parser("snapshot-restore", help="replace the database with data/snapshots")
     restore.add_argument("--yes-replace-shared", action="store_true", help="allow replacing a non-local database")
     restore.set_defaults(func=cmd_snapshot_restore)
+    run = sub.add_parser("run", help="run the harness on a case (resumes if --run-id already exists)")
+    run.add_argument("case", nargs="?", default="HWY06MH024")
+    run.add_argument("--run-id")
+    run.add_argument("--allow-spend", action="store_true", help="call Gemini (paid) for anything not cached")
+    run.set_defaults(func=cmd_run)
+    upload = sub.add_parser("upload", help="copy caches and source files into Atlas so teammates need only the connection string")
+    upload.add_argument("case", nargs="?", default="HWY06MH024")
+    upload.set_defaults(func=cmd_upload)
     sub.add_parser("indexes", help="create the Atlas Search index on page text").set_defaults(func=cmd_indexes)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)
     args = parser.parse_args()

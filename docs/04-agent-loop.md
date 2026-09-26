@@ -1,6 +1,6 @@
 # Step 5: the agent loop
 
-Status: plan for approval, 2026-09-26. Statement Two (long-horizon): the run works toward a goal
+Status: approved 2026-09-26; built. Statement Two (long-horizon): the run works toward a goal
 measured by hard signals, and its memory lives in MongoDB, not in the prompt.
 
 ## Goal and hard signals
@@ -75,7 +75,7 @@ run is; the trace records that size per turn so the UI can show it.
 
 ## Guards (constants, as in PerceptFlow)
 
-- `MAX_TURNS = 40`, `MAX_WORKERS_ACTIVE = 4`, `MAX_WORKER_SPAWNS = 60`, `MAX_REPAIRS_PER_CLAIM = 1`,
+- `MAX_TURNS = 40`, `MAX_WORKERS_ACTIVE = 4`, `MAX_WORKER_SPAWNS = 150` (raised from 60 for the 88-file case), `MAX_REPAIRS_PER_CLAIM = 1`,
   `MAX_UNPRODUCTIVE_TURNS = 3` (no new coverage and no new verified finding), and a token budget.
   Hitting one stops the run with the reason recorded.
 

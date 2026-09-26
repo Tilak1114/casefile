@@ -1,16 +1,22 @@
 # Answer key for docket HWY06MH024 (I-90 connector tunnel ceiling collapse, Boston, 10 July 2006).
-# STATUS: DRAFT for review. Built from NTSB HAR-07/02 and the 35 project-record files the agent may read
-# (case.json group "project_record").
+# STATUS: DRAFT for review. Built from NTSB HAR-07/02 and the 88 docket files the agent may read
+# (case.json group "input"). The 6 withheld files (17, 24, 25, 82, 91, 92) are NTSB-authored analysis
+# and are never cited as evidence.
 #
-# evidence.page  = 1-based page within the docket PDF; quotes match the page text (pdftotext text layer,
-#                  or Reducto r-1 OCR for scanned pages) after whitespace collapsing.
+# evidence.page  = 1-based page within the docket PDF; quotes match the stored page text (pdftotext text
+#                  layer, or Reducto OCR for scanned pages) after whitespace collapsing.
 # ntsb.page      = printed page number of HAR-07/02 (PDF page index minus 12 for the body pages).
-# NTSB cover sheets and separator pages (page 1 of each attachment, file 19 pp.1-2, file 93 separator
-# pages) are NTSB labels, not project records, and are never cited.
+# Pages stored with is_label true (NTSB cover sheets and separator pages) are not project records and are
+# never cited.
 #
 # Split method: random.Random(26); events stratified by core (core ids sorted, shuffled, first
 # round(0.3*n) -> heldout; then non-core the same way), then negatives, then relationships, each
 # sorted, shuffled with the same generator and the first round(0.3*n) held out. Parties carry no split.
+# 88-file revision: existing items keep their splits. The items added in this revision (E42-E49, N07)
+# were split by the same method run on the new ids only (a fresh random.Random(26); new core events
+# E42-E49 -> heldout E44, E48; no new non-core events; new negatives N07 -> dev; no new relationships).
+# Events after the collapse (E45-E49) are included only where HAR-07/02 relies on them for the causal
+# chain.
 case_id: HWY06MH024
 source: NTSB HAR-07/02 https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR0702.pdf
 status: draft
@@ -28,6 +34,10 @@ events:
     page: 4
     quote: Changes to the ceiling support system and fireproofing extent/details developed in response to constructibility
       & schedule issues and lessons learned from the TWT.
+  - file_no: 34
+    page: 2
+    quote: Design Policy Memorandum (DPM) 107 dated 3/13/97 was the basis for the design of the modular ceiling panel/hanger
+      system
   ntsb:
     page: "26"
     quote: 'On March 13, 1997, MassHighway issued Design Policy Memorandum No. 107, subject: Tunnel Finish Details'
@@ -74,6 +84,9 @@ events:
   - file_no: 14
     page: 2
     quote: Comply with adhesive anchor system manufacturer's printed installation instructions and recommendations.
+  - file_no: 34
+    page: 2
+    quote: A proof test load of 125% of the design service load of 3.25 kips (i.e. 1.25 x 2.6 kips) was specified
   ntsb:
     page: "37"
     quote: During the bid phase, an addendum was added to the contract that contained additional directives regarding
@@ -92,6 +105,10 @@ events:
   - file_no: 37
     page: 3
     quote: After chemical adhesive has cured, proof test anchors to 125 percent of their design load
+  - file_no: 34
+    page: 3
+    quote: this was furnished in the form of a sample specification by the Management Consultant to Gannett Fleming
+      via fax on 9/23/98.
   ntsb:
     page: "36"
     quote: In a September 23, 1998, facsimile transmittal, B/PB directed that Gannett Fleming’s contract specifications
@@ -112,6 +129,10 @@ events:
     page: 2
     quote: This meeting focused on the use of adhesive anchors which will be used to attach the hanging ceiling
       supports to the concrete tunnel roof.
+  - file_no: 34
+    page: 3
+    quote: A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998 to address this
+      issue
   ntsb:
     page: "29"
     quote: A Gannett Fleming memorandum documenting an October 9, 1998, meeting between Gannett Fleming and B/PB
@@ -368,6 +389,9 @@ events:
     page: 34
     quote: The subject of the meeting was to discuss and determine the cause of the pull out of 5 of the ceiling
       anchors
+  - file_no: 15
+    page: 3
+    quote: On 10-21-99, a Powers representative was on-site examining the HOV lane anchor failures.
   ntsb:
     page: "44"
     quote: On October 21, 1999, another Powers representative met with Modern Continental and B/PB personnel to
@@ -545,6 +569,10 @@ events:
   - file_no: 42
     page: 10
     quote: B. Allowable Loads (Per Power Rawl 2nd edition section 52 pages 143, 144, 160 & 161)
+  - file_no: 34
+    page: 3
+    quote: The contractor anchor adequacy submittal certified by PE seal dated December 17, 1999 indicated that the
+      product to be supplied would attain an adhesive tensile allowable force of 6.35 kips/bolt
   ntsb:
     page: "34"
     quote: On December 17, 1999, the anchor capacity structural calculations were certified by a registered professional
@@ -664,6 +692,10 @@ events:
   - file_no: 53
     page: 3
     quote: The revised loading requirement for proof testing shall be at 6,350 lb. tension.
+  - file_no: 15
+    page: 2
+    quote: After 5 anchors slipped in the HOV lanes, Modern Continental replaced the slipped anchors and tested to
+      6350 lbs.
   ntsb:
     page: "48"
     quote: In February, the management consultant and the contractor reached an agreement under which all the failed
@@ -717,6 +749,171 @@ events:
     quote: The CA/T project agreed to pay the testing cost for any anchor that
   split: dev
   core: false
+- id: E42
+  date: '2000-02-01'
+  summary: ICBO Evaluation Service reissues ER-4514 in final form. Like the October 1999 draft, it permits Power-Fast
+    Fast Set with threaded rod only for short-term (wind or earthquake) loads and reduces Fast Set bond strength by
+    25 percent (safety factor 5.33 instead of 4).
+  evidence:
+  - file_no: 70
+    page: 1
+    quote: Reissued February 1, 2000
+  - file_no: 70
+    page: 2
+    quote: The allowable load values for the Power-Fast Epoxy Adhesive, Fast Set, installed with threaded rod or fully
+      threaded bolts is permitted for short-term loads, such as those resulting from wind or earthquake forces only.
+  - file_no: 70
+    page: 6
+    quote: When using the Fast Set Power-Fast adhesive, the bond strength must be reduced by 25 percent based on a
+      safety factor of 5.33.
+  ntsb:
+    page: "35"
+    quote: The final version of the reissued ICBO ER-4514 was dated February 2000.
+  split: dev
+  core: true
+- id: E43
+  date: '2003-11'
+  summary: B/PB submits the Inspection Manual for Tunnels and Boat Structures to the MTA. The manual is not put
+    into use before the collapse, and the pilot inspections the MTA began arranging in late 2005 are never carried out.
+  evidence:
+  - file_no: 65
+    page: 2
+    quote: B/PB submitted the Inspection Manual for Tunnels and Boat Structures (the Manual) to the MTA in November
+      2003.
+  - file_no: 65
+    page: 2
+    quote: In late 2005, MTA took steps to initiate pilot or trial inspections based on the Manual, including engagement
+      of an outside consultant. However, these trials were never carried out.
+  ntsb:
+    page: "77"
+    quote: Investigators asked MTA officials why the inspection manual was not used from the time it was published
+      in November 2003 until the day of the ceiling collapse.
+  split: dev
+  core: true
+- id: E44
+  date: '2006-07-10'
+  summary: About 11 p.m., the M1 row of anchors in eastbound ceiling module EB081 pulls out. The suspended concrete ceiling swings down
+    onto a passing car, and the passenger is killed.
+  evidence:
+  - file_no: 94
+    page: 2
+    quote: Witness states he heard a loud snapping noise then a large portion of the tunnel roof swung down and struck
+      roof of Vehicle #1, pushing it against left barrier.
+  - file_no: 4
+    page: 1
+    quote: discusses the sequence of fracture and damage that led to the structure swinging down and to the north
+      after the adhesive anchors
+  ntsb:
+    page: "1"
+    quote: As the car approached the end of the I-90 connector tunnel, a section of the tunnel’s suspended concrete
+      ceiling detached from the tunnel roof and fell onto the vehicle.
+  split: heldout
+  core: true
+- id: E45
+  date: '2006-07-14'
+  date_end: '2006-08-10'
+  summary: During on-scene work, investigators measure every anchor left in the portal roof. Many have displaced
+    downward, and the displaced share is greatest in the most heavily loaded rows.
+  evidence:
+  - file_no: 2
+    page: 1
+    quote: each adhesive anchor remaining in the roof of the connector tunnel was examined to measure the distance
+      that the anchor had moved downward (displaced) from its originally installed position.
+  - file_no: 2
+    page: 2
+    quote: The following three tables summarize the number of displaced anchors in the anchor group rows and modules
+      for the WB, EB, and HOV tunnels.
+  - file_no: 3
+    page: 2
+    quote: The proportion of displaced anchors was greatest for the highest dead load condition and least for the
+      lowest dead load condition.
+  ntsb:
+    page: "82"
+    quote: After the accident, 161 of the 634 remaining adhesive anchors supporting the D Street portal ceiling were
+      found to have measurable displacement,
+  split: dev
+  core: true
+- id: E46
+  date: '2007-02-21'
+  summary: The NTSB Materials Laboratory examines the 20 failed M1-row anchors and others from the tunnel. Yellowed
+    epoxy appears only on anchors that had displaced (0.5 inch or more), and on one failed anchor it reaches about
+    4 inches up the embedment.
+  evidence:
+  - file_no: 7
+    page: 1
+    quote: Twenty adhesive anchors from the failure area (ceiling module EB081, middle1 row)
+  - file_no: 7
+    page: 21
+    quote: yellowed epoxy was not found on any of the examined anchors with a displacement less than 0.375 inch and
+      was found on all but one of the examined anchors with displacement of 0.5 inch and greater.
+  - file_no: 7
+    page: 10
+    quote: fractured epoxy was yellowed up to about 4 inches above the position corresponding to the
+  ntsb:
+    page: "81"
+    quote: 13 of the 20 anchors in that row showed a yellow discoloration found only on displaced anchors.
+  split: dev
+  core: true
+- id: E47
+  date: '2007-04-27'
+  summary: MIT's FTIR analysis for the NTSB matches all epoxy samples from the tunnel to Powers Fast Set, not Standard
+    Set. An FHWA report states that construction invoices also show a fast-set formula was used.
+  evidence:
+  - file_no: 11
+    page: 3
+    quote: Thus, FTIR indicates that tunnel epoxy samples correspond to Powers Fast Set epoxy rather than Standard
+      Set epoxy.
+  - file_no: 12
+    page: 10
+    quote: Construction invoices researched by the State of Massachusetts show that the epoxy used was a fast-set
+      formula of the Powers Foil-Fast epoxy.
+  ntsb:
+    page: "67"
+    quote: Fourier transform infrared spectroscopy at MIT showed that all of the samples from the tunnels, including
+      the samples from the accident site, matched to the Fast Set reference samples.
+  split: dev
+  core: true
+- id: E48
+  date: '2006-07-26'
+  date_end: '2006-11-29'
+  summary: The FHWA runs sustained-load (creep) tests on anchors still installed in the westbound portal roof. In
+    3 of the 9 rigorous tests the displacement never stabilizes; two anchors pull out completely.
+  evidence:
+  - file_no: 69
+    page: 7
+    quote: The sustained load testing that was conducted on 11 anchor rods between July 26, 2006 and November 29, 2006,
+  - file_no: 69
+    page: 54
+    quote: Of the 9 adhesive anchors subject to the rigorous sustained load investigation, the displacement of 3 anchors
+      never stabilized under the load applied. Two of those anchors displaced completely from the ceiling
+  ntsb:
+    page: "60"
+    quote: During the sustained load tests, two anchors pulled completely free of the tunnel roof.
+  split: heldout
+  core: true
+- id: E49
+  date: '2006-12-20'
+  date_end: '2007-03-12'
+  summary: In 82-day FHWA laboratory creep tests, anchors set with Power-Fast Fast Set creep at every load, and those
+    loaded to 4,000 lb fail. Standard Set anchors barely move under the same conditions.
+  evidence:
+  - file_no: 81
+    page: 10
+    quote: Load was transferred to each anchor on December 20, 2006 between 8am and 2pm.
+  - file_no: 81
+    page: 52
+    quote: The anchors sustaining 3000 pound loads displaced approximately 0.03 inches due to creep during the 82 day
+      tests while the anchors loaded at 4000 pounds failed prior to the end of testing.
+  - file_no: 81
+    page: 52
+    quote: These results indicate that there are inherent differences between the Fast and Standard Set epoxy formulas
+      that significantly affect their creep behavior
+  ntsb:
+    page: "90"
+    quote: The testing showed that anchors installed with the Powers Fast Set epoxy, using best practices, exhibited
+      significant and continued displacement (creep) when subjected to loads as low as 1,000 pounds.
+  split: dev
+  core: true
 negatives:
 - id: N01
   statement: No contract specification or submittal in the record sets a creep, sustained-load or long-term performance
@@ -734,7 +931,8 @@ negatives:
   split: dev
 - id: N02
   statement: No approval document or submittal identifies which Power-Fast formulation (Fast Set or Standard Set)
-    was being supplied or approved for the ceiling anchors; only the draft ER-4514 distinguishes the two.
+    was being supplied or approved for the ceiling anchors. Among the approval documents and submittals, only the
+    draft ER-4514 in submittal 723.480-014 C distinguishes the two.
   must_have_read:
   - 42
   - 63
@@ -745,9 +943,10 @@ negatives:
     quote: None of the approval documentation identified the epoxy formulation that was being used or that was approved
       for use in the D Street portal.
   split: heldout
-- id: N03
-  statement: No sustained-load (creep) test of the installed anchors, and no ultimate or sacrificial load test,
-    was required or performed; all recorded tests are short-duration proof tests at 3,250 or 6,350 lb.
+- id: N03  # Narrowed in the 88-file revision: the FHWA post-accident sustained-load and peak-load tests of the installed anchors (files 8, 69) are now readable.
+  statement: Before the collapse, no sustained-load (creep) test of the installed anchors and no ultimate or sacrificial
+    load test was required or performed. All tests recorded during construction are short-duration proof tests at
+    3,250 or 6,350 lb. The only sustained-load and ultimate-load tests of the installed anchors are the FHWA tests after the accident.
   must_have_read:
   - 14
   - 37
@@ -768,12 +967,13 @@ negatives:
   - 44
   - 46
   - 42
+  - 83
   ntsb:
     page: "45"
     quote: No evidence was found that Powers took any further action in regard to the anchor displacement in CA/T
       tunnels after the 1999 anchor examination and submission of findings.
   split: dev
-- id: N05  # WEAK: NTSB says no approval document named the formulation; it does not say this request went unanswered, and a reply could sit in withheld files.
+- id: N05  # WEAK: NTSB says no approval document named the formulation; it does not say this request went unanswered. The withheld files are now only NTSB-authored analysis, but the NTSB saw project records that are not in the docket.
   statement: The record contains no response to B/PB's December 1999 request for documentation of the epoxy manufacturer
     and type, and no document answers it.
   must_have_read:
@@ -790,22 +990,42 @@ negatives:
     quote: None of the approval documentation identified the epoxy formulation that was being used or that was approved
       for use in the D Street portal.
   split: heldout
-- id: N06  # WEAK: NTSB's finding covers records to 2006; the readable record stops in 2001, so this is absence within the 35 files only.
-  statement: After DR-001 was closed, no document sets up continued monitoring of the D Street portal anchors.
+- id: N06  # WEAK: the readable project correspondence stops in 2001. The 2006-07 files (15, 65) show no monitoring, but the Dec 2001 noncompliance report and 2001-02 slippage entries the NTSB cites are not in the docket. Reworded in the 88-file revision so that it no longer conflicts with the November 2003 inspection manual (E43).
+  statement: After DR-001 was closed, no document shows Modern Continental or B/PB monitoring the D Street portal
+    anchors for further displacement.
   must_have_read:
   - 54
   - 56
   - 57
+  - 15
+  - 65
   ntsb:
     page: "49"
     quote: No evidence was found of any followup actions taken by Modern Continental or B/PB in regard to the anchor
       displacements in the HOV tunnel.
   split: dev
+- id: N07
+  statement: The record contains no inspection of the D Street portal ceiling or its anchors between the tunnel's
+    opening to traffic and the collapse. The November 2003 inspection manual was not put into use, and the pilot
+    inspections planned in late 2005 were never carried out.
+  must_have_read:
+  - 65
+  - 15
+  ntsb:
+    page: "76"
+    quote: The accident investigation found no evidence that any inspections had been performed to determine the
+      physical and functional condition of the ceiling system in the D Street portal
+  split: dev
 parties:
 - id: P01
   name: Federal Highway Administration (FHWA)
   kind: organization
-  role: Federal funding and oversight; reviewed and approved CA/T designs and construction contracts
+  role: Federal funding and oversight; reviewed and approved CA/T designs and construction contracts; its Turner-Fairbank
+    Highway Research Center tested the anchors after the accident
+  evidence:
+  - file_no: 69
+    page: 54
+    quote: the Federal Highway Administration conducted sustained load testing on 11 adhesive anchors
   ntsb:
     page: "21"
     quote: The FHWA reviewed and approved the preliminary and follow-on CA/T project designs.
@@ -828,7 +1048,11 @@ parties:
 - id: P04
   name: Massachusetts Turnpike Authority (MTA)
   kind: organization
-  role: Owner and operator of the CA/T project from 1997
+  role: Owner and operator of the CA/T project from 1997; responsible for tunnel inspection after turnover
+  evidence:
+  - file_no: 15
+    page: 3
+    quote: Once the tunnel was turned over to the MTA, they (MTA) had sole responsibility for maintenance and inspection.
   ntsb:
     page: "18"
     quote: the MTA was given authority for the ownership, management, and operation of the complete CA/T project.
@@ -885,6 +1109,10 @@ parties:
   name: Sika Corporation
   kind: organization
   role: Formulated the epoxy and supplied it in bulk to Powers
+  evidence:
+  - file_no: 12
+    page: 10
+    quote: The epoxy Powers used was formulated by the Sika Corporation (Lyndhurst, NJ)
   ntsb:
     page: "30"
     quote: epoxy material formulated by Sika Corporation, of Lyndhurst, New Jersey; packaged by Powers Fasteners,
@@ -938,6 +1166,30 @@ parties:
     page: "42"
     quote: On October 7, 1999, Modern Continental’s senior project manager for the I-90 tunnel notified B/PB that
       the company had become aware of problems involving
+- id: P18
+  name: ICBO Evaluation Service, Inc. (ICBO ES)
+  kind: organization
+  role: Issued evaluation report ER-4514 on the Powers Power-Fast adhesive anchor system (draft October 1999, reissued
+    February 2000)
+  evidence:
+  - file_no: 70
+    page: 1
+    quote: A subsidiary corporation of the International Conference of Building Officials
+  ntsb:
+    page: "32"
+    quote: 1992 version of ICBO Evaluation Service, Inc. (ICBO ES), evaluation report (ER) 4514 (ICBO ER-4514).
+- id: P19
+  name: Massachusetts Institute of Technology (MIT)
+  kind: organization
+  role: Testing agency; characterized the tunnel epoxy samples for the NTSB (FTIR identification as Fast Set)
+  evidence:
+  - file_no: 11
+    page: 1
+    quote: Department of Materials Science and Engineering Massachusetts Institute of Technology
+  ntsb:
+    page: "67"
+    quote: Thirty-one adhesive samples from the tunnel were subsequently sent to the Massachusetts Institute of Technology
+      (MIT) for testing.
 relationships:
 - id: R01
   source: P05
@@ -1043,7 +1295,10 @@ relationships:
   source: P11
   type: supplied
   target: P10
-  evidence: []
+  evidence:
+  - file_no: 12
+    page: 10
+    quote: The epoxy Powers used was formulated by the Sika Corporation (Lyndhurst, NJ)
   ntsb:
     page: "30"
     quote: epoxy material formulated by Sika Corporation, of Lyndhurst, New Jersey; packaged by Powers Fasteners,

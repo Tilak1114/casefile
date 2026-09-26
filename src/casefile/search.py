@@ -35,14 +35,17 @@ def ensure_indexes(db: Database, wait_seconds: int = 180) -> str:
     raise TimeoutError(f"search index {PAGES_INDEX} not queryable after {wait_seconds}s")
 
 
-def search_pages(db: Database, case_id: str, query: str, limit: int = 10) -> list[dict]:
-    """Readable, non-label pages matching the query, best first. Labels are never returned."""
+def search_pages(db: Database, case_id: str, query: str, limit: int = 10, phrase: bool = False) -> list[dict]:
+    """Readable, non-label pages matching the query, best first. Labels are never returned.
+
+    With `phrase`, the words must appear together in order (used to look for counter-examples)."""
+    operator = {"phrase": {"query": query, "path": "text"}} if phrase else {"text": {"query": query, "path": "text"}}
     pipeline = [
         {
             "$search": {
                 "index": PAGES_INDEX,
                 "compound": {
-                    "must": [{"text": {"query": query, "path": "text"}}],
+                    "must": [operator],
                     "filter": [
                         {"equals": {"path": "case_id", "value": case_id}},
                         {"equals": {"path": "is_label", "value": False}},

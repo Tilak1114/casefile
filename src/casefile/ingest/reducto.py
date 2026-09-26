@@ -4,12 +4,13 @@ The cache is committed: anyone with the repo re-ingests for free. A cache miss c
 spending is explicitly allowed.
 """
 
-import gzip
 import hashlib
 import json
 from pathlib import Path
 
 import httpx
+
+from casefile.blobstore import CacheStore
 
 BASE_URL = "https://platform.reducto.ai"
 PARSE_SETTINGS = {"settings": {"model": "r-1", "return_ocr_data": True}}
@@ -34,7 +35,7 @@ class ReductoClient:
         http: httpx.Client | None = None,
     ):
         self.cache_dir = cache_dir
-        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self.cache = CacheStore(cache_dir)
         self.allow_spend = allow_spend
         self.api_key = api_key
         self.http = http or httpx.Client(base_url=BASE_URL, timeout=900)
@@ -43,15 +44,10 @@ class ReductoClient:
         return self.cache_dir / f"{sha256}-{kind}-{_settings_hash(settings)}.json.gz"
 
     def _read(self, path: Path) -> dict | None:
-        if not path.exists():
-            return None
-        with gzip.open(path, "rt") as fh:
-            return json.load(fh)
+        return self.cache.get(path.name)
 
     def _write(self, path: Path, body: dict) -> None:
-        clean = {k: v for k, v in body.items() if k not in PRIVATE_FIELDS}
-        with gzip.open(path, "wt") as fh:
-            json.dump(clean, fh)
+        self.cache.put(path.name, {k: v for k, v in body.items() if k not in PRIVATE_FIELDS})
 
     def _require_spend(self, what: str) -> None:
         if not self.allow_spend:

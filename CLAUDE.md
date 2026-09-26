@@ -22,8 +22,9 @@ Read `docs/DECISIONS.md` first: every approved decision, newest last, with links
 - Every claim the agent makes cites `(document_id, quote)` and is checked by exact match. Negatives
   cite coverage. Tests for the verifier come before the agent.
 - The case is the real public NTSB docket HWY06MH024 (Boston Central Artery ceiling collapse), cited
-  to source and never altered. Its answer key comes from the NTSB final report HAR0702. Any synthetic
-  material added later must be labelled as such everywhere it is shown. Casefile quotes documents; it
-  never states fault.
+  to source and never altered. The agent reads the 88 files a claims examiner would receive; the 6
+  files that are the NTSB's own analysis are withheld and, with final report HAR0702, form the answer
+  key. Any synthetic material added later must be labelled as such everywhere it is shown. Casefile
+  quotes documents; it never states fault.
 - Run long jobs in parallel (case generation, ingest, eval runs), and report failures early.
 - Commit only when asked. End commit messages with the attribution trailer the session provides.

@@ -69,7 +69,8 @@ def test_ingest_file_marks_labels_and_unassigned_pages():
     assert [p.is_label for p in pages] == [True, False, False]
     assert pages[1].text == "appear to show signs of tensile movement"
     assert pages[1].figures_dropped == 1
-    assert [d.doc_type for d in docs] == ["production_label", "letter"]
+    assert [d.doc_type for d in docs] == ["production_label", "letter", "other"]
+    assert docs[-1].pages == [3] and docs[-1].split_label == "pages not assigned by Split"
     assert summary.unassigned_pages == [3]
     assert summary.parse_credits == 2.4 and summary.split_credits == 4.0
 

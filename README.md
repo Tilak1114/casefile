@@ -9,17 +9,19 @@ The demo case is the public NTSB docket HWY06MH024 (Boston I-90 connector tunnel
 
 ## Setup for teammates (no paid calls)
 
-The team database is the team MongoDB Atlas cluster; it already holds the ingested case and the
-Atlas Search index. Everything paid is also in the repo: Reducto's parse and split results and
-Gemini's metadata are cached under `data/cases/HWY06MH024/cache/`, and the database is snapshotted in
-`data/snapshots/`.
+Everything lives in the team Atlas cluster: the ingested pages, documents and metadata, the Atlas
+Search index, every run's findings and trace, the Reducto and Gemini response caches (collection
+`cache`) and the 94 source PDFs (GridFS bucket `sources`, with their SHA-256). A teammate needs only the
+connection string.
 
 ```bash
-cp .env.example .env            # set ATLAS_CONNECTION_STRING to the Atlas connection string, add GEMINI_TOKEN/GEMINI_MODEL
+cp .env.example .env            # set ATLAS_CONNECTION_STRING, add GEMINI_TOKEN/GEMINI_MODEL
 uv sync
 uv run casefile ping            # checks the connection
-uv run casefile fetch           # downloads the 94 public NTSB PDFs (free), for page images and re-ingest
 ```
+
+Re-running ingest, metadata or a finished run replays from the Atlas cache for free. `casefile fetch`
+(download from the NTSB) is only needed for offline work.
 
 Working offline instead: `docker compose up -d --wait`, point `ATLAS_CONNECTION_STRING` at
 `mongodb://localhost:27017/?directConnection=true`, then `uv run casefile snapshot-restore` and

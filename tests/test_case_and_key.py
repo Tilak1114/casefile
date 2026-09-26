@@ -49,21 +49,21 @@ def key(**overrides) -> AnswerKey:
 
 def test_real_case_config_loads_and_withholds_investigation_files():
     config = CaseConfig.model_validate_json((DATA_DIR / "cases/HWY06MH024/case.json").read_text())
-    assert len(config.readable()) == 36
-    assert {f.file_no for f in config.withheld()} >= {24, 91, 92}  # the NTSB factual reports
+    assert len(config.readable()) == 88
+    assert {f.file_no for f in config.withheld()} == {17, 24, 25, 82, 91, 92}  # NTSB-authored analysis
 
 
 def test_case_rejects_duplicate_file():
     with pytest.raises(ValidationError, match="more than once"):
         CaseConfig(
             case_id="T1", title="t", event_date="2006-07-10", event_summary="t",
-            files=[FileAssignment(file_no=1, group=FileGroup.PROJECT_RECORD, reason="x")] * 2,
+            files=[FileAssignment(file_no=1, group=FileGroup.INPUT, reason="x")] * 2,
         )
 
 
 def test_key_flags_evidence_from_withheld_file():
-    assert key().check_against(case(FileGroup.PROJECT_RECORD)) == []
-    problems = key().check_against(case(FileGroup.INVESTIGATION))
+    assert key().check_against(case(FileGroup.INPUT)) == []
+    problems = key().check_against(case(FileGroup.WITHHELD))
     assert problems == ["E01 cites file 1, which the agent cannot read"]
 
 

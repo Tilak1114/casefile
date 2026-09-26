@@ -7,8 +7,8 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class FileGroup(StrEnum):
-    PROJECT_RECORD = "project_record"  # made during the project; the agent reads these
-    INVESTIGATION = "investigation"  # made by the investigation after the event; withheld
+    INPUT = "input"  # what a claims examiner would receive; the agent reads these
+    WITHHELD = "withheld"  # the investigator's own analysis: same kind of thing as our outputs; answer key only
     UNPLACED = "unplaced"  # not yet classified; withheld until it is
 
 
@@ -37,7 +37,7 @@ class CaseConfig(BaseModel):
         return self
 
     def readable(self) -> list[int]:
-        return sorted(f.file_no for f in self.files if f.group is FileGroup.PROJECT_RECORD)
+        return sorted(f.file_no for f in self.files if f.group is FileGroup.INPUT)
 
     def withheld(self) -> list[FileAssignment]:
-        return [f for f in self.files if f.group is not FileGroup.PROJECT_RECORD]
+        return [f for f in self.files if f.group is not FileGroup.INPUT]
