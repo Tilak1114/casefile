@@ -6,3 +6,5 @@ __pycache__/
 .ruff_cache/
 data/generated/
 *.log
+data/cases/*/raw/
+

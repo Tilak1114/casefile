@@ -1,0 +1,19 @@
+# Local MongoDB with Atlas Search and Vector Search, so search code is tested before migration.
+services:
+  mongo:
+    image: mongodb/mongodb-atlas-local:latest
+    container_name: casefile-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - casefile-mongo-data:/data/db
+      - casefile-mongo-config:/data/configdb
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  casefile-mongo-data:
+  casefile-mongo-config:

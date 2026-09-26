@@ -1,0 +1,476 @@
+{
+ "docket_id": "HWY06MH024",
+ "docket_url": "https://data.ntsb.gov/Docket/?NTSBNumber=HWY06MH024",
+ "files": [
+  {
+   "file_no": 1,
+   "blob_id": "40269693",
+   "filename": "Materials Lab - Report No. 06-090 Torque vs. load test-Master.PDF"
+  },
+  {
+   "file_no": 2,
+   "blob_id": "40269782",
+   "filename": "Materials Lab - Report No. 06-079 Anchor Displacement Data-Master.PDF"
+  },
+  {
+   "file_no": 3,
+   "blob_id": "40269793",
+   "filename": "Anchor Displacement Data Analysis Study-Master.PDF"
+  },
+  {
+   "file_no": 4,
+   "blob_id": "40269999",
+   "filename": "Materials Lab - Report No. 06-075 Sequence Study-Master.PDF"
+  },
+  {
+   "file_no": 5,
+   "blob_id": "40270039",
+   "filename": "Materials Lab - Report No. 06-073 Core Samples-Master.PDF"
+  },
+  {
+   "file_no": 6,
+   "blob_id": "40270862",
+   "filename": "Materials Lab - Factual Report 06-092-Master.PDF"
+  },
+  {
+   "file_no": 7,
+   "blob_id": "40272573",
+   "filename": "Materials Lab - Report 09-091 Anchors and anchor holes-Master.PDF"
+  },
+  {
+   "file_no": 8,
+   "blob_id": "40272592",
+   "filename": "FHWA Report on Load and Load Displacement Testing of Anchors in the Tunnel-Master.PDF"
+  },
+  {
+   "file_no": 9,
+   "blob_id": "40272715",
+   "filename": "Materials Laboratory Factual Report 06-105, Preliminary Testing of Epoxy-Master.PDF"
+  },
+  {
+   "file_no": 10,
+   "blob_id": "40273926",
+   "filename": "Materials Lab - Final factual report 07-018, purging study-Master.PDF"
+  },
+  {
+   "file_no": 11,
+   "blob_id": "40275908",
+   "filename": "Polymer Characterization Report from Massachusetts Institute of Technology-Master.PDF"
+  },
+  {
+   "file_no": 12,
+   "blob_id": "40276239",
+   "filename": "FHWA Report - Parametric Laboratory Study of Anchor Strength under Short-Term Loading-Master.PDF"
+  },
+  {
+   "file_no": 13,
+   "blob_id": "40276630",
+   "filename": "Human Performance - Attachment A: Section 2 of Contract General Provisions-Master.PDF"
+  },
+  {
+   "file_no": 14,
+   "blob_id": "40276633",
+   "filename": "Human Performance - Attachment B: Design Specifications Section 723.480, 3.07-Master.PDF"
+  },
+  {
+   "file_no": 15,
+   "blob_id": "40276634",
+   "filename": "Human Performance - Attachment C: Meeting Notes, September 27, 2006-Master.PDF"
+  },
+  {
+   "file_no": 16,
+   "blob_id": "40276635",
+   "filename": "Human Performance - Attachment D:  Pages from Powers-Rawl Fastening Systems Design Manual, Second Edition-Master.PDF"
+  },
+  {
+   "file_no": 17,
+   "blob_id": "40276637",
+   "filename": "Human Performance - Attachment E: Narratives of Investigative Interviews-Redacted.PDF"
+  },
+  {
+   "file_no": 18,
+   "blob_id": "40276638",
+   "filename": "Human Performance - Attachment F: Transcript of Investigative Interview-Redacted.PDF"
+  },
+  {
+   "file_no": 19,
+   "blob_id": "40276962",
+   "filename": "Human Performance - Attachment G: Excerpts from field engineer's daily report (FEDR)-Master.PDF"
+  },
+  {
+   "file_no": 20,
+   "blob_id": "40278061",
+   "filename": "Materials Laboratory Factual Report 07-067, Epoxy Phase Separation-Master.PDF"
+  },
+  {
+   "file_no": 21,
+   "blob_id": "40278175",
+   "filename": "Materials Laboratory Factual Report 07-064, Lap Shear Testing-Master.PDF"
+  },
+  {
+   "file_no": 22,
+   "blob_id": "40278177",
+   "filename": "Materials Laboratory Factual Report 07-070, Creep Test of Fast Set per AC 58-Master.PDF"
+  },
+  {
+   "file_no": 23,
+   "blob_id": "40278178",
+   "filename": "NIST Report, Thermo-viscoelastic Characterization of Epoxy, NISTIR 7429-Master.PDF"
+  },
+  {
+   "file_no": 24,
+   "blob_id": "40278185",
+   "filename": "Structural - Structural Group Chairman Factual Report-Master.PDF"
+  },
+  {
+   "file_no": 25,
+   "blob_id": "40278186",
+   "filename": "Structural - Structural Group Chairman Addendum to Factual Report-Master.PDF"
+  },
+  {
+   "file_no": 26,
+   "blob_id": "40278197",
+   "filename": "STR Photo-01, View of 2-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF"
+  },
+  {
+   "file_no": 27,
+   "blob_id": "40278199",
+   "filename": "STR Photo-02, View of 2-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF"
+  },
+  {
+   "file_no": 28,
+   "blob_id": "40278203",
+   "filename": "STR Photo-03, View of 4-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF"
+  },
+  {
+   "file_no": 29,
+   "blob_id": "40278206",
+   "filename": "STR Photo-04, View of 2-anchor roof hanger plates that have begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF"
+  },
+  {
+   "file_no": 30,
+   "blob_id": "40278209",
+   "filename": "STR Photo-05, View of 4-anchor roof hanger plate that has begun to pull away from the tunnel roof in the westbound D Street portal tunnel after the accident-Master.PDF"
+  },
+  {
+   "file_no": 31,
+   "blob_id": "40278212",
+   "filename": "STR Photo-06, Looking to the east, view of eastbound D Street portal of the collapsed concrete panels-Master.PDF"
+  },
+  {
+   "file_no": 32,
+   "blob_id": "40278213",
+   "filename": "STR Photo-07, Looking to the north, view of eastbound D Street portal of the collapsed concrete panels-Master.PDF"
+  },
+  {
+   "file_no": 33,
+   "blob_id": "40278215",
+   "filename": "STR Photo-08, Looking to the west, view of eastbound D Street portal of the collapsed concrete panels-Master.PDF"
+  },
+  {
+   "file_no": 34,
+   "blob_id": "40278361",
+   "filename": "Structural - Attachment 1, Memorandum to the National Transportation Safety Board from Gannett Fleming, Inc. dated August 4, 2006 (Updated November 2, 2006)-Master.PDF"
+  },
+  {
+   "file_no": 35,
+   "blob_id": "40278369",
+   "filename": "Structural - Attachment 4, Federal Highway Administration (FHWA) Turner-Fairbank Highway Research Center Finite Element Design Analysis Report-Master.PDF"
+  },
+  {
+   "file_no": 36,
+   "blob_id": "40278370",
+   "filename": "Structural - Attachment 5, Manufacturer literature from Power's Fasteners, Inc. on maximum torque values and torque ranges for the adhesive anchoring system-Master.PDF"
+  },
+  {
+   "file_no": 37,
+   "blob_id": "40278371",
+   "filename": "Structural - Attachment 6, Facsimile Transmittal from Massachusetts Highway Department to Gannett Fleming, Inc. dated September 23, 1998 giving direction on proof test load for anchors-Master.PDF"
+  },
+  {
+   "file_no": 38,
+   "blob_id": "40278372",
+   "filename": "Structural - Attachment 7, Contractor transmittal (submittal number 723.480-009 B) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated October 15, 1999 regarding the ceiling module erection procedure-Redacted.PDF"
+  },
+  {
+   "file_no": 39,
+   "blob_id": "40278374",
+   "filename": "Structural - Attachment 8, Manufacturer literature from Power's Fasteners, Inc. on installation requirements for the adhesive anchoring system-Master.PDF"
+  },
+  {
+   "file_no": 40,
+   "blob_id": "40278375",
+   "filename": "Structural - Attachment 9, Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated October 7, 1999 indicating a small percentage of the adhesive anchors in the HOV ceiling mockup appear to show signs of tensile movement-Redacted.PDF"
+  },
+  {
+   "file_no": 41,
+   "blob_id": "40278376",
+   "filename": "Structural - Attachment 10, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated October 12, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 42,
+   "blob_id": "40278377",
+   "filename": "Structural - Attachment 2, Contractor transmittal (submittal number 723.480-014 C) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 7, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 43,
+   "blob_id": "40278432",
+   "filename": "Structural - Attachment 3, Design Policy Memorandum No. 107 Tunnel Finish Details dated March 13, 1997-Redacted.PDF"
+  },
+  {
+   "file_no": 44,
+   "blob_id": "40278538",
+   "filename": "Structural - Attachment 11, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated November 8, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 45,
+   "blob_id": "40278539",
+   "filename": "Structural - Attachment 12, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated November 11, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 46,
+   "blob_id": "40278540",
+   "filename": "Structural - Attachment 13, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated December 2, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 47,
+   "blob_id": "40278542",
+   "filename": "Structural - Attachment 14, Contractor transmittal (submittal number 723.480-016 A) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated December 27, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 48,
+   "blob_id": "40278545",
+   "filename": "Structural - Attachment 15, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated December 29, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 49,
+   "blob_id": "40278551",
+   "filename": "Structural - Attachment 16, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 7, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 50,
+   "blob_id": "40278552",
+   "filename": "Structural - Attachment 17, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 7, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 51,
+   "blob_id": "40278557",
+   "filename": "Structural - Attachment 18, Response Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated January 19, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 52,
+   "blob_id": "40278561",
+   "filename": "Structural - Attachment 19, Response Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated February 7, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 53,
+   "blob_id": "40278565",
+   "filename": "Structural - Attachment 20, Adhesive Anchor Repair Procedure submitted by Modern Continental Company to Bechtel / Parsons Brinckerhoff dated February 16, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 54,
+   "blob_id": "40278705",
+   "filename": "Structural - Attachment 21, Internal Memorandum from Staff of Bechtel / Parsons Brinckerhoff dated August 31, 2000 Recommending Disposition of Deficiency Report No. 1 be Closed-Redacted.PDF"
+  },
+  {
+   "file_no": 55,
+   "blob_id": "40278706",
+   "filename": "Structural - Attachment 22, Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated September 18, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 56,
+   "blob_id": "40278707",
+   "filename": "Structural - Attachment 23, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated January 26, 2001 indicating corrective action had been verified and Deficiency Report No. 1 was closed-Redacted.PDF"
+  },
+  {
+   "file_no": 57,
+   "blob_id": "40278711",
+   "filename": "Structural - Attachment 24, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated March 15, 2001 enclosing a fully executed original of the contract modification-Redacted.PDF"
+  },
+  {
+   "file_no": 58,
+   "blob_id": "40278713",
+   "filename": "Structural - Attachment 25, The Commonwealth of Massachusetts Office of the Inspector General, A Review of the Central Artery / Tunnel Project's Use of Anchor Bolts on the C05B1 Tunnel Finishes Contract-Master.PDF"
+  },
+  {
+   "file_no": 59,
+   "blob_id": "40278716",
+   "filename": "Structural - Attachment 26, Letter from Modern Continental Company to Bechtel / Parsons Brinckerhoff dated January 13, 1999 requesting consideration of a Celline Metal Panel Structural Ceiling System-Redacted.PDF"
+  },
+  {
+   "file_no": 60,
+   "blob_id": "40278720",
+   "filename": "Structural - Attachment 27, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated February 24, 1999 indicating Value Engineering Cost Proposal was not acceptable-Redacted.PDF"
+  },
+  {
+   "file_no": 61,
+   "blob_id": "40278724",
+   "filename": "Structural - Attachment 28, Letter from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated March 25, 1999 indicating Value Engineering Cost Proposal should not be pursued further-Redacted.PDF"
+  },
+  {
+   "file_no": 62,
+   "blob_id": "40278726",
+   "filename": "Structural - Attachment 29, Letter from Environmental Interiors, Inc. to Modern Continental Company dated March 9, 1999 withdrawing a proposal for a Celline Metal Panel Ceiling System-Redacted.PDF"
+  },
+  {
+   "file_no": 63,
+   "blob_id": "40278727",
+   "filename": "Structural - Attachment 30, Contractor transmittal (submittal number 723.480-008 A) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated May 27, 1999-Redacted.PDF"
+  },
+  {
+   "file_no": 64,
+   "blob_id": "40278728",
+   "filename": "Structural - Attachment 31, Contractor transmittal (submittal number 723.480-008 D) from Bechtel / Parsons Brinckerhoff (Authorized Representative) to Modern Continental Company dated February 4, 2000-Redacted.PDF"
+  },
+  {
+   "file_no": 65,
+   "blob_id": "40278731",
+   "filename": "Structural - Attachment 32, Memorandum from the Massachusetts Turnpike Authority (MTA) to NTSB dated January 12, 2007 regarding Inspection Manual for Tunnels and Boat Structures, Volume 5-Redacted.PDF"
+  },
+  {
+   "file_no": 66,
+   "blob_id": "40278738",
+   "filename": "Structural - Attachment 33, Letter from Gannett Fleming, Inc. to Bechtel / Parsons Brinckerhoff (Authorized Representative) dated August 25, 1997 regarding proposal for alternate anchor system-Redacted.PDF"
+  },
+  {
+   "file_no": 67,
+   "blob_id": "40278741",
+   "filename": "Structural - Attachment 34, Memorandum from Gannett Fleming, Inc. dated October 12, 1998 regarding the use of factor of safety of two (2) applied to manufacturer's ultimate capacities-Redacted.PDF"
+  },
+  {
+   "file_no": 68,
+   "blob_id": "40279242",
+   "filename": "Materials Laboratory Study 07-063, Finite Element Analysis of Anchor with and without void-Master.PDF"
+  },
+  {
+   "file_no": 69,
+   "blob_id": "40279247",
+   "filename": "FHWA Report on Sustained Load Testing in the D Street Portal-Master.PDF"
+  },
+  {
+   "file_no": 70,
+   "blob_id": "40279249",
+   "filename": "ICBO ER-4514 on August 14, 2006-Master.PDF"
+  },
+  {
+   "file_no": 71,
+   "blob_id": "40279250",
+   "filename": "ICC ESR-1531 on August 14, 2006-Master.PDF"
+  },
+  {
+   "file_no": 72,
+   "blob_id": "40279251",
+   "filename": "Power Fast Plus datasheet on August 7, 2006-Master.PDF"
+  },
+  {
+   "file_no": 73,
+   "blob_id": "40279252",
+   "filename": "Power Fast Plus MSDS on August 7, 2006-Master.PDF"
+  },
+  {
+   "file_no": 74,
+   "blob_id": "40279253",
+   "filename": "Sikadur AnchorFix 3 datasheet on July 31, 2006-Master.PDF"
+  },
+  {
+   "file_no": 75,
+   "blob_id": "40279254",
+   "filename": "Sikadur AnchorFix 3 MSDS A on July 31, 2006-Master.PDF"
+  },
+  {
+   "file_no": 76,
+   "blob_id": "40279256",
+   "filename": "Sikadur AnchorFix 3 MSDS B on July 31, 2006-Master.PDF"
+  },
+  {
+   "file_no": 77,
+   "blob_id": "40279257",
+   "filename": "Sikadur AnchorFix 4 datasheet on July 31, 2006-Master.PDF"
+  },
+  {
+   "file_no": 78,
+   "blob_id": "40279258",
+   "filename": "Sikadur AnchorFix 4 MSDS A on July 31, 2006-Master.PDF"
+  },
+  {
+   "file_no": 79,
+   "blob_id": "40279259",
+   "filename": "Sikadur AnchorFix 4 MSDS B on July 31, 2006-Master.PDF"
+  },
+  {
+   "file_no": 80,
+   "blob_id": "40279262",
+   "filename": "Creep compliance for Fast Set and Standard Set plotted on linear scales-Master.PDF"
+  },
+  {
+   "file_no": 81,
+   "blob_id": "40279345",
+   "filename": "FHWA Laboratory Creep Testing Report-Master.PDF"
+  },
+  {
+   "file_no": 82,
+   "blob_id": "40279436",
+   "filename": "Interview with ConAm inspection employee-Master.PDF"
+  },
+  {
+   "file_no": 83,
+   "blob_id": "40279439",
+   "filename": "Deposition of Powers Fasteners employee-Master.PDF"
+  },
+  {
+   "file_no": 84,
+   "blob_id": "40279444",
+   "filename": "HWY Photo - 01, Aerial view of D Street Portal and I-90 boat area-Master.PDF"
+  },
+  {
+   "file_no": 85,
+   "blob_id": "40279453",
+   "filename": "HWY Photo - 02, Additional aerial photo of D Street Portal-Master.PDF"
+  },
+  {
+   "file_no": 86,
+   "blob_id": "40279454",
+   "filename": "HWY Photo - 03, View of I-90 Connector Tunnel Ceiling Finishes-Master.PDF"
+  },
+  {
+   "file_no": 87,
+   "blob_id": "40279456",
+   "filename": "HWY Photo - 04, Additional view of I-90 Connector Tunnel Ceiling Finishes-Master.PDF"
+  },
+  {
+   "file_no": 88,
+   "blob_id": "40279457",
+   "filename": "HWY Photo - 05, View of Ted Williams Tunnel Ceiling Finishes (source: Mass HWY)-Master.PDF"
+  },
+  {
+   "file_no": 89,
+   "blob_id": "40279460",
+   "filename": "HWY Photo - 07, Overhead view of damage to the accident vehicle-Master.PDF"
+  },
+  {
+   "file_no": 90,
+   "blob_id": "40279466",
+   "filename": "HWY Photo - 06, View looking east in the D Street Portal showing ceiling panels on accident vehicle-Master.PDF"
+  },
+  {
+   "file_no": 91,
+   "blob_id": "40279539",
+   "filename": "Construction Management - Group Chairman Factual Report-Master.PDF"
+  },
+  {
+   "file_no": 92,
+   "blob_id": "40433590",
+   "filename": "Human Performance - Group Chairman Factual Report-Redacted.PDF"
+  },
+  {
+   "file_no": 93,
+   "blob_id": "40433591",
+   "filename": "Human Performance - Attachment H: HOV Anchor Displacement Correspondence-Redacted.PDF"
+  },
+  {
+   "file_no": 94,
+   "blob_id": "40433593",
+   "filename": "State Police Crash Report-Redacted.PDF"
+  }
+ ]
+}

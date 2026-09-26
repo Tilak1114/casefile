@@ -1,4 +1,8 @@
-# Casefile: plan
+# Casefile: plan (superseded)
+
+> Superseded on 2026-09-26. The case is now the real NTSB docket HWY06MH024, the database is local
+> MongoDB, and ingestion uses Reducto. See `DECISIONS.md` and the step documents `00-*` to `02-*`.
+> Kept for the reasoning behind the verifier and coverage design.
 
 Status on 2026-09-25: repo created, nothing built. The hackathon (MongoDB Harness Engineering & Model
 Wrangling) is on 2026-09-26. Statement One is recursive harnessing, Statement Two is long-horizon
