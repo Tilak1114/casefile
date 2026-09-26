@@ -1,15 +1,18 @@
 # Casefile: working rules
 
-Read `docs/PLAN.md` first. It holds the decision, the design, the build order and the one open question (the domain).
+Read `docs/DECISIONS.md` first: every approved decision, newest last, with links to the step plans
+(`docs/00-*` onward). `docs/PLAN.md` is superseded and kept only for its reasoning.
 
 - Build only what is justified by use or measurement. No features for show, no made-up claims in the
   code, docs or pitch. When something is unproven, say so or remove it.
 - Do not add self-rewriting prompts or policy, auto-tuning, rule proposing or pauses for a human
-  unless asked. The only self-extension is the parser registry, and it is gated by deterministic checks.
+  unless asked. A self-evolving or learning layer is planned for later; until the user asks for it,
+  nothing in the harness rewrites itself.
 - Gemini is the only LLM for the agents and any reasoning (key and model in `.env`). External
-  document-processing vendors (e.g. Extend, Reducto) may be used for ingestion if they measure better. MongoDB runs locally while we build
-  (`MONGO_CONNECTION_STRING`, database `CASEFILE_DATABASE`); at the event the stack migrates to
-  whatever the event requires. Nothing may depend on a feature the local setup lacks without saying so.
+  document-processing vendors (e.g. Extend, Reducto) may be used for ingestion if they measure better.
+- The database is the team MongoDB Atlas cluster (`ATLAS_CONNECTION_STRING`, database
+  `CASEFILE_DATABASE`), shared by the team. Never drop or overwrite it without the user's go-ahead.
+  The local `mongodb-atlas-local` container is only for offline work.
 - Build step by step: write a high-level plan for each step, get the user's approval, then build.
 - Everything that crosses a boundary in the harness is a typed Pydantic model: documents, pages,
   citations, findings, coverage records, parties and relationships, tool inputs and outputs, subagent

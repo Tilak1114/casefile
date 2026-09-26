@@ -7,7 +7,7 @@ from casefile.config import settings
 
 
 def client() -> MongoClient:
-    return MongoClient(settings().mongo_connection_string, serverSelectionTimeoutMS=5000)
+    return MongoClient(settings().atlas_connection_string, serverSelectionTimeoutMS=5000)
 
 
 def database() -> Database:

@@ -9,8 +9,8 @@ def test_local_mongo_ping():
 
 
 @pytest.mark.integration
-def test_local_mongo_supports_search_indexes():
-    """The atlas-local image must accept search index commands; plain mongod does not."""
+def test_database_supports_search_indexes():
+    """Local atlas-local and Atlas both accept search index commands; plain mongod does not."""
     collection = db.database()["_search_probe"]
     collection.drop()
     collection.insert_one({"text": "probe"})
@@ -97,3 +97,14 @@ def test_negative_over_real_case_needs_every_letter_read():
         assert verify_negative(claim, index, log.records()).status is Status.VERIFIED
     finally:
         database.coverage.delete_many({"run_id": "test-negative"})
+
+
+@pytest.mark.integration
+def test_search_finds_the_letter_and_never_returns_labels():
+    from casefile import search
+
+    hits = search.search_pages(db.database(), "HWY06MH024", "tensile movement anchors", limit=10)
+    ids = [h["_id"] for h in hits]
+    assert "HWY06MH024:040:p002" in ids[:3]  # the 7 Oct 1999 letter
+    labels = {p["_id"] for p in db.database().pages.find({"is_label": True}, {"_id": 1})}
+    assert not labels & set(ids)

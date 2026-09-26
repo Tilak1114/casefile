@@ -9,26 +9,33 @@ The demo case is the public NTSB docket HWY06MH024 (Boston I-90 connector tunnel
 
 ## Setup for teammates (no paid calls)
 
-Everything paid is already in the repo: Reducto's parse and split results are cached in
-`data/cases/HWY06MH024/cache/reducto/`, and the database is snapshotted in `data/snapshots/`.
+The team database is the team MongoDB Atlas cluster; it already holds the ingested case and the
+Atlas Search index. Everything paid is also in the repo: Reducto's parse and split results and
+Gemini's metadata are cached under `data/cases/HWY06MH024/cache/`, and the database is snapshotted in
+`data/snapshots/`.
 
 ```bash
-cp .env.example .env            # add GEMINI_TOKEN and GEMINI_MODEL; REDUCTO_API_KEY is not needed
-docker compose up -d --wait     # local MongoDB with Atlas Search (mongodb-atlas-local)
+cp .env.example .env            # set ATLAS_CONNECTION_STRING to the Atlas connection string, add GEMINI_TOKEN/GEMINI_MODEL
 uv sync
-uv run casefile fetch           # downloads the 94 public docket PDFs from the NTSB (free)
-uv run casefile snapshot-restore   # load the database as ingested
+uv run casefile ping            # checks the connection
+uv run casefile fetch           # downloads the 94 public NTSB PDFs (free), for page images and re-ingest
 ```
 
-Or rebuild the database from the cache instead of the snapshot, still at no cost:
+Working offline instead: `docker compose up -d --wait`, point `ATLAS_CONNECTION_STRING` at
+`mongodb://localhost:27017/?directConnection=true`, then `uv run casefile snapshot-restore` and
+`uv run casefile indexes`. Restoring refuses to overwrite a non-local database unless you pass
+`--yes-replace-shared`.
 
-```bash
-uv run casefile ingest          # reads the committed Reducto cache; 0 credits
-```
+`casefile ingest` and `casefile metadata` read the committed caches and refuse to call Reducto or
+Gemini for anything missing unless run with `--allow-spend`. After any paid run, commit the new cache
+files and run `casefile snapshot-export` so nobody pays for the same work again.
 
-`casefile ingest` refuses to call Reducto for anything missing from the cache unless run with
-`--allow-spend`. After any paid run, commit the new cache files and run `casefile snapshot-export`
-so nobody pays for the same work again.
+## MongoDB MCP server
+
+`.mcp.json` registers the official MongoDB MCP server (read-only) for Claude Code, pointing at local
+Mongo by default. To point it at the Atlas cluster without committing credentials, export
+`MDB_MCP_CONNECTION_STRING` before starting Claude Code, or add a machine-local override with
+`claude mcp add-json mongodb '<config>' --scope local`.
 
 ## Tests
 

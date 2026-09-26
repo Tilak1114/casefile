@@ -4,7 +4,7 @@ import argparse
 
 import httpx
 
-from casefile import db, snapshot
+from casefile import db, search, snapshot
 from casefile.config import DATA_DIR
 from casefile.sources.ntsb import fetch_files
 from casefile.case import CaseConfig
@@ -52,11 +52,19 @@ def cmd_snapshot_export(_: argparse.Namespace) -> None:
 
 
 def cmd_snapshot_restore(args: argparse.Namespace) -> None:
-    uri = settings().atlas_connection_string if args.atlas else None
-    if args.atlas and not uri:
-        raise SystemExit("ATLAS_CONNECTION_STRING is not set in .env")
-    snapshot.restore(SNAPSHOT, uri)
-    print(f"database restored from {SNAPSHOT} to {'Atlas' if uri else 'the local container'}")
+    uri = settings().atlas_connection_string
+    local = "localhost" in uri or "127.0.0.1" in uri
+    if not local and not args.yes_replace_shared:
+        raise SystemExit(
+            "ATLAS_CONNECTION_STRING is a shared cluster; restoring drops and replaces its casefile "
+            "collections. Rerun with --yes-replace-shared if that is what you want."
+        )
+    snapshot.restore(SNAPSHOT)
+    print(f"database restored from {SNAPSHOT} to {'local' if local else 'the shared cluster'}")
+
+
+def cmd_indexes(_: argparse.Namespace) -> None:
+    print("pages_text:", search.ensure_indexes(db.database()))
 
 
 def cmd_ping(_: argparse.Namespace) -> None:
@@ -79,8 +87,9 @@ def main() -> None:
     metadata.set_defaults(func=cmd_metadata)
     sub.add_parser("snapshot-export", help="write the database to data/snapshots").set_defaults(func=cmd_snapshot_export)
     restore = sub.add_parser("snapshot-restore", help="replace the database with data/snapshots")
-    restore.add_argument("--atlas", action="store_true", help="restore to ATLAS_CONNECTION_STRING instead of local")
+    restore.add_argument("--yes-replace-shared", action="store_true", help="allow replacing a non-local database")
     restore.set_defaults(func=cmd_snapshot_restore)
+    sub.add_parser("indexes", help="create the Atlas Search index on page text").set_defaults(func=cmd_indexes)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)
     args = parser.parse_args()
     args.func(args)

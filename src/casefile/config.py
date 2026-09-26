@@ -13,12 +13,11 @@ DATA_DIR = REPO_ROOT / "data"
 class Settings(BaseModel):
     model_config = ConfigDict(frozen=True)
 
-    mongo_connection_string: str
+    atlas_connection_string: str  # the team database: the team Atlas cluster
     casefile_database: str
     gemini_token: str | None = None
     gemini_model: str | None = None
     reducto_api_key: str | None = None
-    atlas_connection_string: str | None = None
 
 
 @lru_cache
