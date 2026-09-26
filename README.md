@@ -4,6 +4,7 @@
 documents and checked by code.**
 
 Built for the MongoDB Harness Engineering & Model Wrangling hackathon, Statement Two (long-horizon agents).
+Repository: https://github.com/Tilak1114/casefile · Demo script: [docs/PITCH.md](docs/PITCH.md)
 
 ## The problem
 
@@ -115,6 +116,7 @@ A static Next.js app over the exported run (`web/`):
 ## Run it
 
 ```bash
+git clone https://github.com/Tilak1114/casefile.git && cd casefile
 cp .env.example .env            # ATLAS_CONNECTION_STRING, OPENROUTER_API (and REDUCTO_API_KEY, GEMINI_* for ingest)
 uv sync
 uv run casefile ping            # checks the Atlas connection
