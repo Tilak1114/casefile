@@ -43,7 +43,7 @@ export default function TrajectoryPage() {
         <p>
           Every step the team took, read back from the MongoDB event log. The claim professional never reads pages; it assigns work,
           retains the engineer and closes the file. Counsel and the engineer work in parallel through readers, and every claim is checked
-          against the page before it counts. {clock(team.duration_s)} end to end, {team.calls} model calls, ${team.cost_usd.toFixed(2)}, stopped because: {team.stop_reason}.
+          against the page before it counts. {clock(team.duration_s)} end to end, {team.call_count} model calls, ${team.cost_usd.toFixed(2)}, stopped because: {team.stop_reason}.
         </p>
       </div>
 

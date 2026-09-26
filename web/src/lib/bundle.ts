@@ -163,7 +163,7 @@ export type StartedAt1 = string;
 export type DurationS = number;
 export type StopReason = string;
 export type CostUsd1 = number;
-export type Calls = number;
+export type CallCount = number;
 export type Seq1 = number;
 export type T = number;
 export type Type1 = string;
@@ -183,7 +183,7 @@ export type TriggerSeq = number | null;
 export type Start = number;
 export type End = number | null;
 export type Note = string;
-export type Calls1 = number;
+export type Calls = number;
 export type CostUsd2 = number;
 export type Tasks = TeamTask[];
 export type Id7 = string;
@@ -206,6 +206,22 @@ export type Series = TeamPoint[];
 export type DocumentId2 = string;
 export type Reason1 = string;
 export type Exclusions = TeamExclusion[];
+export type Id8 = string;
+export type Actor = string;
+export type Purpose = string;
+export type TaskId1 = string | null;
+export type Ref = string | null;
+export type T2 = number;
+export type CostUsd4 = number;
+export type PromptTokens2 = number;
+export type OutputTokens2 = number;
+export type ReasoningTokens = number;
+export type Reasoning = string;
+export type Decision = {
+  [k: string]: unknown;
+} | null;
+export type Calls1 = TeamCall[];
+export type ReasoningRecorded = boolean;
 
 export interface Bundle {
   case: CaseInfo;
@@ -436,12 +452,14 @@ export interface TeamRun {
   duration_s: DurationS;
   stop_reason: StopReason;
   cost_usd: CostUsd1;
-  calls: Calls;
+  call_count: CallCount;
   events: Events1;
   tasks: Tasks;
   readers: Readers1;
   series: Series;
   exclusions: Exclusions;
+  calls: Calls1;
+  reasoning_recorded: ReasoningRecorded;
 }
 export interface TeamEvent {
   seq: Seq1;
@@ -464,7 +482,7 @@ export interface TeamTask {
   start: Start;
   end: End;
   note: Note;
-  calls: Calls1;
+  calls: Calls;
   cost_usd: CostUsd2;
 }
 export interface TeamReader {
@@ -489,4 +507,21 @@ export interface TeamPoint {
 export interface TeamExclusion {
   document_id: DocumentId2;
   reason: Reason1;
+}
+/**
+ * One model call: who made it, for which task, what it decided and the model's reasoning summary.
+ */
+export interface TeamCall {
+  id: Id8;
+  actor: Actor;
+  purpose: Purpose;
+  task_id: TaskId1;
+  ref: Ref;
+  t: T2;
+  cost_usd: CostUsd4;
+  prompt_tokens: PromptTokens2;
+  output_tokens: OutputTokens2;
+  reasoning_tokens: ReasoningTokens;
+  reasoning: Reasoning;
+  decision: Decision;
 }

@@ -331,3 +331,15 @@ matched by code; dates and splits are unchanged. All runs were re-scored against
 
 The UI gained a Trajectory screen for team runs: the process stage by stage, a swimlane timeline of tasks,
 readers and events read from the MongoDB event log, and a detail panel for each.
+
+## After v2-full-2 started
+
+- **Exclusion guard.** The lead may exclude only documents over 20 pages; shorter ones must be assigned. In
+  v2-full-2 the lead excluded 12 one-page submittal transmittals as "standard cover sheets", yet 9 of those pages
+  are answer-key evidence (review stamps and return dates for E04, E10, E33, E35, E38). Enforced in code, stated
+  in the lead's prompt, and a refused exclusion is recorded in the lead's task note.
+- **Reasoning capture.** Every model call now records the typed decision and the provider's reasoning summary
+  (OpenRouter `reasoning`, Gemini's own summary, not raw tokens), tied to its task and, for readers, its worker.
+  v2-full-1's decisions were backfilled from its cache files matched by name and write time (97 of 99; checked
+  against the events they produced); it has no reasoning summaries. The Trajectory screen shows both.
+- `casefile team --fresh` calls the model for every step instead of replaying cached answers.

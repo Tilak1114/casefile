@@ -66,7 +66,8 @@ def execute(deps: TeamDeps, task: Task, checkpointer: MongoDBSaver) -> str:
     return f"noted {event.type.value}"
 
 
-def run_team(case_id: str, run_id: str | None = None, allow_spend: bool = False, max_cycles: int = MAX_CYCLES) -> RunSummary:
+def run_team(case_id: str, run_id: str | None = None, allow_spend: bool = False, max_cycles: int = MAX_CYCLES,
+             fresh: bool = False) -> RunSummary:
     config = settings()
     client = dbmod.client()
     db = client[config.casefile_database]
@@ -75,7 +76,8 @@ def run_team(case_id: str, run_id: str | None = None, allow_spend: bool = False,
     index = load_index(db, case_id)
     coverage = CoverageLog(db, case_id, run_id)
     store = RunStore(db, case_id, run_id)
-    gate = ModelGate(OpenRouter(config.openrouter_api, case_dir / "cache" / "openrouter", allow_spend=allow_spend), db, run_id)
+    gate = ModelGate(OpenRouter(config.openrouter_api, case_dir / "cache" / "openrouter", allow_spend=allow_spend,
+                               read_cache=not fresh), db, run_id)
     dispatcher = Dispatcher(MongoStore(db, run_id), case_id=case_id, run_id=run_id, max_running=MAX_TASKS_AT_ONCE)
     deps = TeamDeps(gate=gate, desk=RecordsDesk(db, index, coverage), index=index, store=store, dispatcher=dispatcher)
     checkpointer = MongoDBSaver(client, db_name=config.casefile_database)

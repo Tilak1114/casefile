@@ -153,7 +153,7 @@ def cmd_score(args: argparse.Namespace) -> None:
 def cmd_team(args: argparse.Namespace) -> None:
     from casefile.team.run import run_team
 
-    print(run_team(args.case, run_id=args.run_id, allow_spend=args.allow_spend, max_cycles=args.max_cycles).model_dump_json(indent=1))
+    print(run_team(args.case, run_id=args.run_id, allow_spend=args.allow_spend, max_cycles=args.max_cycles, fresh=args.fresh).model_dump_json(indent=1))
 
 
 def cmd_indexes(_: argparse.Namespace) -> None:
@@ -214,6 +214,7 @@ def main() -> None:
     team.add_argument("--run-id")
     team.add_argument("--max-cycles", type=int, default=300)
     team.add_argument("--allow-spend", action="store_true", help="call the model (paid) for anything not cached")
+    team.add_argument("--fresh", action="store_true", help="call the model for every step, ignoring cached answers")
     team.set_defaults(func=cmd_team)
     sub.add_parser("indexes", help="create the Atlas Search index on page text").set_defaults(func=cmd_indexes)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)

@@ -1,4 +1,7 @@
-"""The team's one gate to the model: at most N calls at once across every agent, each call recorded."""
+"""The team's one gate to the model: at most N calls at once across every agent, each call recorded.
+
+Each record keeps the typed answer and the model's reasoning summary, so the trajectory can show what every
+agent decided and why; `ref` ties a call to the worker that made it."""
 
 import threading
 from datetime import UTC, datetime
@@ -26,13 +29,15 @@ class ModelGate:
         self.run_id = run_id
         self._slots = threading.BoundedSemaphore(max_at_once)
 
-    def call(self, *, actor: str, purpose: str, prompt: str, schema: type[T], task_id: str | None = None) -> tuple[T, ModelUsage]:
+    def call(self, *, actor: str, purpose: str, prompt: str, schema: type[T], task_id: str | None = None,
+             ref: str | None = None) -> tuple[T, ModelUsage]:
         with self._slots:
             output, usage, cached = self.client.structured(f"{actor}-{purpose}", prompt, schema)
         if self.db is not None:
             self.db.model_calls.insert_one({
                 "run_id": self.run_id, "actor": actor, "purpose": purpose, "task_id": task_id, "model": self.client.model,
-                "prompt_chars": len(prompt), "cached": cached, **usage.model_dump(), "at": datetime.now(UTC),
+                "ref": ref, "prompt_chars": len(prompt), "cached": cached, **usage.model_dump(),
+                "output": output.model_dump(mode="json"), "at": datetime.now(UTC),
             })
         return output, usage
 

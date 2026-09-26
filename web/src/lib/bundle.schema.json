@@ -882,6 +882,97 @@
    "title": "SplitScore",
    "type": "object"
   },
+  "TeamCall": {
+   "description": "One model call: who made it, for which task, what it decided and the model's reasoning summary.",
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "actor": {
+     "title": "Actor",
+     "type": "string"
+    },
+    "purpose": {
+     "title": "Purpose",
+     "type": "string"
+    },
+    "task_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Task Id"
+    },
+    "ref": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Ref"
+    },
+    "t": {
+     "title": "T",
+     "type": "number"
+    },
+    "cost_usd": {
+     "title": "Cost Usd",
+     "type": "number"
+    },
+    "prompt_tokens": {
+     "title": "Prompt Tokens",
+     "type": "integer"
+    },
+    "output_tokens": {
+     "title": "Output Tokens",
+     "type": "integer"
+    },
+    "reasoning_tokens": {
+     "title": "Reasoning Tokens",
+     "type": "integer"
+    },
+    "reasoning": {
+     "title": "Reasoning",
+     "type": "string"
+    },
+    "decision": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Decision"
+    }
+   },
+   "required": [
+    "id",
+    "actor",
+    "purpose",
+    "task_id",
+    "ref",
+    "t",
+    "cost_usd",
+    "prompt_tokens",
+    "output_tokens",
+    "reasoning_tokens",
+    "reasoning",
+    "decision"
+   ],
+   "title": "TeamCall",
+   "type": "object"
+  },
   "TeamEvent": {
    "properties": {
     "seq": {
@@ -1095,8 +1186,8 @@
      "title": "Cost Usd",
      "type": "number"
     },
-    "calls": {
-     "title": "Calls",
+    "call_count": {
+     "title": "Call Count",
      "type": "integer"
     },
     "events": {
@@ -1133,6 +1224,17 @@
      },
      "title": "Exclusions",
      "type": "array"
+    },
+    "calls": {
+     "items": {
+      "$ref": "#/$defs/TeamCall"
+     },
+     "title": "Calls",
+     "type": "array"
+    },
+    "reasoning_recorded": {
+     "title": "Reasoning Recorded",
+     "type": "boolean"
     }
    },
    "required": [
@@ -1140,12 +1242,14 @@
     "duration_s",
     "stop_reason",
     "cost_usd",
-    "calls",
+    "call_count",
     "events",
     "tasks",
     "readers",
     "series",
-    "exclusions"
+    "exclusions",
+    "calls",
+    "reasoning_recorded"
    ],
    "title": "TeamRun",
    "type": "object"

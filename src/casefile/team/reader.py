@@ -95,7 +95,8 @@ def _read(gate: ModelGate, desk: RecordsDesk, index: CaseIndex, store: RunStore,
     record = desk.coverage.read(page_ids, actor=f"{brief.actor.value} reader", focus=focus)
     started = time.time()
     prompt = READER_PROMPT.format(role_brief=brief.brief, focus=focus, documents=text)
-    output, usage = gate.call(actor=f"{brief.actor.value}-reader", purpose="read", prompt=prompt, schema=ReaderOutput, task_id=task_id)
+    output, usage = gate.call(actor=f"{brief.actor.value}-reader", purpose="read", prompt=prompt, schema=ReaderOutput, task_id=task_id,
+                              ref=worker_id)
     claims = check_output(output, index, run_id=store.run_id, case_id=store.case_id, role=brief.claim_role, worker_id=worker_id)
 
     refused = [c for c in claims if not c.verified]
@@ -106,7 +107,8 @@ def _read(gate: ModelGate, desk: RecordsDesk, index: CaseIndex, store: RunStore,
         doc_text, _ = render_documents(docs, index)
         listing = "\n".join(f"- {c.statement} -- {'; '.join(c.reasons)}" for c in refused)
         fix, fix_usage = gate.call(actor=f"{brief.actor.value}-reader", purpose="repair", schema=ReaderOutput, task_id=task_id,
-                                   prompt=REPAIR_PROMPT.format(brief=brief.brief, refused=listing, documents=doc_text))
+                                   prompt=REPAIR_PROMPT.format(brief=brief.brief, refused=listing, documents=doc_text),
+                                   ref=worker_id)
         usage.prompt_tokens += fix_usage.prompt_tokens
         usage.output_tokens += fix_usage.output_tokens
         usage.cost_usd += fix_usage.cost_usd

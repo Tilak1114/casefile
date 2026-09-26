@@ -29,7 +29,7 @@ def memory_cache(monkeypatch):
 
 
 def reply(status=200, content='{"ok": true}'):
-    body = {"choices": [{"message": {"content": content}}],
+    body = {"choices": [{"message": {"content": content, "reasoning": "**Checking** the answer is yes."}}],
             "usage": {"prompt_tokens": 8, "completion_tokens": 5, "cost": 2.8e-06,
                       "completion_tokens_details": {"reasoning_tokens": 2}}}
     return httpx.Response(status, json=body if status == 200 else {"error": "busy"})
@@ -49,10 +49,11 @@ def test_structured_output_usage_and_cache():
     c = client(handler)
     out, usage, cached = c.structured("t", "prompt", Answer)
     assert out.ok and not cached and usage.cost_usd == 2.8e-06 and usage.reasoning_tokens == 2
+    assert usage.reasoning == "**Checking** the answer is yes." and calls[0]["reasoning"] == {"exclude": False}
     assert calls[0]["model"] == "google/gemini-3.8-flash"
     assert calls[0]["response_format"]["json_schema"]["schema"]["properties"]["ok"]["type"] == "boolean"
-    _, _, cached = c.structured("t", "prompt", Answer)
-    assert cached and len(calls) == 1
+    _, again, cached = c.structured("t", "prompt", Answer)
+    assert cached and len(calls) == 1 and again.reasoning == usage.reasoning  # replay keeps the reasoning
 
 
 def test_no_spend_without_permission():
@@ -80,3 +81,11 @@ def test_an_empty_reply_is_retried(monkeypatch):
     responses = [empty, reply()]
     out, _, _ = client(lambda r: responses.pop(0)).structured("t", "p", Answer)
     assert out.ok and responses == []
+
+
+def test_fresh_mode_ignores_the_cache_but_still_writes_it():
+    calls = []
+    c = client(lambda r: calls.append(1) or reply(), read_cache=False)
+    c.structured("t", "prompt", Answer)
+    _, _, cached = c.structured("t", "prompt", Answer)
+    assert not cached and len(calls) == 2 and c.cache.store

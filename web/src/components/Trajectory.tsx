@@ -9,6 +9,15 @@ type Team = NonNullable<Bundle["team"]>;
 type TEvent = Team["events"][number];
 type TTask = Team["tasks"][number];
 type TReader = Team["readers"][number];
+type TCall = Team["calls"][number];
+
+const PURPOSE: Record<string, string> = {
+  open: "Opening the claim file", next: "Deciding the next step", expert: "Deciding on the engineer", rule: "Ruling a dispute",
+  brief: "Writing the case brief", plan: "Planning what to read", review: "Reviewing its readers' claims",
+  report: "Reporting to the lead", answer: "Answering a request", absences: "Proposing absences",
+  read: "Reading documents", repair: "Repairing refused claims",
+};
+const ROLE_OF = (actor: string) => actor.replace("-reader", "");
 export type DocInfo = { doc_type: string; date: string | null; file_no: number; pages: number };
 export type Stage = { key: string; title: string; detail: string; types: string[] };
 
@@ -295,6 +304,19 @@ export function Trajectory({ team, docs, stages }: { team: Team; docs: Record<st
           </div>
         </section>
       </div>
+
+      <section className="section">
+        <h2>What the agents were thinking</h2>
+        <p>
+          Every decision the lead, counsel and the engineer made, in order: the model&apos;s summary of its own reasoning, then the typed
+          answer the harness acted on. {team.reasoning_recorded ? "" : "This run did not record reasoning summaries; only the decisions are shown."}
+        </p>
+        <div style={{ display: "grid", gap: 6 }}>
+          {team.calls.filter((c) => !c.actor.endsWith("-reader")).map((c) => (
+            <CallCard key={c.id} call={c} onTask={c.task_id ? () => { setSel({ kind: "task", id: c.task_id! }); window.scrollTo({ top: 0, behavior: "smooth" }); } : undefined} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
@@ -307,6 +329,10 @@ function EventDetail({ e, team, onSelect, docs }: { e: TEvent; team: Team; onSel
   const cause = e.causation_seq ? team.events.find((x) => x.seq === e.causation_seq) : undefined;
   const effects = team.events.filter((x) => x.causation_seq === e.seq);
   const tasks = team.tasks.filter((t) => t.trigger_seq === e.seq);
+  // the decision that produced this event: the sender's latest model call that had answered by then
+  const why = ["lead", "counsel", "engineer"].includes(e.sender)
+    ? team.calls.filter((c) => c.actor === e.sender && c.t <= e.t + 1).sort((a, b) => b.t - a.t)[0]
+    : undefined;
   return (
     <>
       <div className="eyebrow">Event #{e.seq} · {clock(e.t)}</div>
@@ -318,6 +344,12 @@ function EventDetail({ e, team, onSelect, docs }: { e: TEvent; team: Team; onSel
         {e.subjects > 0 && <><dt>Refers to</dt><dd>{e.subjects} {e.type === "report.submitted" || e.type === "brief.submitted" ? "claims" : "documents"}</dd></>}
       </dl>
       {e.summary && <p style={{ fontSize: 13, whiteSpace: "pre-wrap" }}>{e.summary}</p>}
+      {why && (
+        <div style={{ display: "grid", gap: 6 }}>
+          <div className="eyebrow">Why: the decision behind it</div>
+          <CallCard call={why} open />
+        </div>
+      )}
       {e.document_ids.length > 0 && <DocList ids={e.document_ids} docs={docs} />}
       {(tasks.length > 0 || effects.length > 0) && (
         <div style={{ display: "grid", gap: 4, fontSize: 13 }}>
@@ -332,6 +364,7 @@ function EventDetail({ e, team, onSelect, docs }: { e: TEvent; team: Team; onSel
 
 function TaskDetail({ t, team, onSelect }: { t: TTask; team: Team; onSelect: (s: Selection) => void }) {
   const readers = team.readers.filter((r) => r.task_id === t.id);
+  const thinking = team.calls.filter((c) => c.task_id === t.id && !c.actor.endsWith("-reader"));
   const trig = t.trigger_seq ? team.events.find((e) => e.seq === t.trigger_seq) : undefined;
   const out = team.events.filter((e) => e.sender === t.role && e.t >= t.start && e.t <= (t.end ?? t.start) + 1);
   const pages = readers.reduce((a, r) => a + r.pages, 0);
@@ -346,6 +379,12 @@ function TaskDetail({ t, team, onSelect }: { t: TTask; team: Team; onSelect: (s:
         <dt>Model calls</dt><dd className="num">{t.calls} · ${t.cost_usd.toFixed(2)}</dd>
         {readers.length > 0 && <><dt>Readers</dt><dd className="num">{readers.length} · {pages} pages · {readers.reduce((a, r) => a + r.verified, 0)} verified, {readers.reduce((a, r) => a + r.refused, 0)} refused</dd></>}
       </dl>
+      {thinking.length > 0 && (
+        <div style={{ display: "grid", gap: 6 }}>
+          <div className="eyebrow">Its thinking, call by call</div>
+          {thinking.map((c, i) => <CallCard key={c.id} call={c} open={i === thinking.length - 1} />)}
+        </div>
+      )}
       {out.length > 0 && (
         <div style={{ display: "grid", gap: 4, fontSize: 13 }}>
           <div className="eyebrow">Published</div>
@@ -378,6 +417,7 @@ function ReaderDetail({ r, docs, onSelect, team }: { r: TReader; docs: Record<st
         <dt>Focus</dt><dd>{r.focus}</dd>
       </dl>
       <p style={{ fontSize: 12, color: "var(--muted)" }}>The harness logged these pages as read before the model ran; every claim was then checked against them.</p>
+      {team.calls.filter((c) => c.ref === r.id).map((c, i) => <CallCard key={c.id} call={c} open={i === 0} />)}
       <DocList ids={r.document_ids} docs={docs} />
     </>
   );
@@ -403,5 +443,55 @@ function DocList({ ids, docs }: { ids: string[]; docs: Record<string, DocInfo> }
         </tbody>
       </table>
     </div>
+  );
+}
+
+/** The provider's reasoning summary: "**Heading**" lines become small headings. */
+function Reasoning({ text }: { text: string }) {
+  const parts = text.split(/\*\*(.+?)\*\*/g);
+  const out: React.ReactNode[] = [];
+  for (let i = 0; i < parts.length; i++) {
+    const chunk = parts[i].trim();
+    if (!chunk) continue;
+    out.push(i % 2 === 1
+      ? <div key={i} className="think-h">{chunk}</div>
+      : <p key={i} className="think-p">{chunk}</p>);
+  }
+  return <div className="think">{out}</div>;
+}
+
+function Decision({ value, depth = 0 }: { value: unknown; depth?: number }) {
+  if (value === null || value === undefined || value === "") return <span style={{ color: "var(--faint)" }}>—</span>;
+  if (typeof value !== "object") return <span>{String(value)}</span>;
+  if (Array.isArray(value)) {
+    if (value.length === 0) return <span style={{ color: "var(--faint)" }}>none</span>;
+    if (value.every((v) => typeof v !== "object")) return <span>{value.join(", ")}</span>;
+    return <ol className="dec-list">{value.map((v, i) => <li key={i}><Decision value={v} depth={depth + 1} /></li>)}</ol>;
+  }
+  return (
+    <dl className="kv dec">
+      {Object.entries(value as Record<string, unknown>).map(([k, v]) => (
+        <div key={k} style={{ display: "contents" }}><dt>{k.replaceAll("_", " ")}</dt><dd><Decision value={v} depth={depth + 1} /></dd></div>
+      ))}
+    </dl>
+  );
+}
+
+export function CallCard({ call, open = false, onTask }: { call: TCall; open?: boolean; onTask?: () => void }) {
+  return (
+    <details className="call" open={open}>
+      <summary>
+        <span className="call-who">{ROLE_OF(call.actor)}{call.actor.endsWith("-reader") ? " reader" : ""}</span>
+        <span className="call-what">{PURPOSE[call.purpose] ?? call.purpose}</span>
+        <span className="call-meta num">{clock(call.t)} · {call.reasoning_tokens.toLocaleString()} reasoning tokens · ${call.cost_usd.toFixed(3)}</span>
+      </summary>
+      <div className="call-body">
+        <div className="eyebrow">Reasoning (the model&apos;s own summary)</div>
+        {call.reasoning ? <Reasoning text={call.reasoning} /> : <p className="think-p" style={{ color: "var(--muted)" }}>Not recorded for this run.</p>}
+        <div className="eyebrow">{call.actor.endsWith("-reader") ? "What it returned (counts)" : "What it decided"}</div>
+        <Decision value={call.decision} />
+        {onTask && <button className="link-button" style={{ fontSize: 12 }} onClick={onTask}>Show its task on the timeline</button>}
+      </div>
+    </details>
   );
 }

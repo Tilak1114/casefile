@@ -29,17 +29,19 @@ class ModelUsage(BaseModel):
     output_tokens: int = 0
     reasoning_tokens: int = 0
     cost_usd: float = 0.0
+    reasoning: str = ""  # the provider's summary of the model's reasoning, when it returns one (not the raw tokens)
 
 
 class OpenRouter:
     def __init__(self, api_key: str | None, cache_dir: Path, model: str = DEFAULT_MODEL, allow_spend: bool = False,
-                 http: httpx.Client | None = None, retries: int = 2):
+                 http: httpx.Client | None = None, retries: int = 2, read_cache: bool = True):
         self.model = model
         self.cache = CacheStore(cache_dir)
         self.allow_spend = allow_spend
         self.api_key = api_key
         self.http = http or httpx.Client(timeout=600)
         self.retries = retries
+        self.read_cache = read_cache  # False: always call the model (answers are still written to the cache)
 
     def _key(self, task: str, prompt: str, schema: type[BaseModel]) -> str:
         digest = hashlib.sha256(
@@ -50,7 +52,7 @@ class OpenRouter:
     def structured(self, task: str, prompt: str, schema: type[T]) -> tuple[T, ModelUsage, bool]:
         """Model output validated into `schema`, its usage, and whether it came from the cache."""
         name = self._key(task, prompt, schema)
-        if (cached := self.cache.get(name)) is not None:
+        if self.read_cache and (cached := self.cache.get(name)) is not None:
             return schema.model_validate(cached["output"]), ModelUsage.model_validate(cached["usage"]), True
         if not self.allow_spend:
             raise SpendNotAllowed(f"model call {task} needed but not in the cache; rerun with --allow-spend")
@@ -60,6 +62,7 @@ class OpenRouter:
             "model": self.model,
             "temperature": 0,
             "messages": [{"role": "user", "content": prompt}],
+            "reasoning": {"exclude": False},  # return the reasoning summary with the answer
             "response_format": {"type": "json_schema",
                                 "json_schema": {"name": schema.__name__, "schema": schema.model_json_schema()}},
         }
@@ -79,10 +82,11 @@ class OpenRouter:
                 raise RuntimeError(f"OpenRouter {task} returned {response.status_code} without valid output: {response.text[:300]}")
             time.sleep(2 * (attempt + 1))
         u = data.get("usage", {})
+        message = (data.get("choices") or [{}])[0].get("message") or {}
         usage = ModelUsage(
             prompt_tokens=u.get("prompt_tokens", 0), output_tokens=u.get("completion_tokens", 0),
             reasoning_tokens=(u.get("completion_tokens_details") or {}).get("reasoning_tokens", 0) or 0,
-            cost_usd=u.get("cost", 0.0) or 0.0,
+            cost_usd=u.get("cost", 0.0) or 0.0, reasoning=message.get("reasoning") or "",
         )
         self.cache.put(name, {"model": self.model, "output": output.model_dump(mode="json"), "usage": usage.model_dump()})
         return output, usage, False

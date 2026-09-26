@@ -250,6 +250,23 @@ class TeamReader(BaseModel):
     focus: str
 
 
+class TeamCall(BaseModel):
+    """One model call: who made it, for which task, what it decided and the model's reasoning summary."""
+
+    id: str
+    actor: str
+    purpose: str
+    task_id: str | None
+    ref: str | None  # the reader (worker) that made it, for reader calls
+    t: float  # when the answer came back
+    cost_usd: float
+    prompt_tokens: int
+    output_tokens: int
+    reasoning_tokens: int
+    reasoning: str  # provider's summary of the model's reasoning; empty when the run did not record it
+    decision: dict | None  # the typed answer; for readers, counts only (their claims are on other screens)
+
+
 class TeamPoint(BaseModel):
     t: float
     pages: int
@@ -270,12 +287,14 @@ class TeamRun(BaseModel):
     duration_s: float
     stop_reason: str
     cost_usd: float
-    calls: int
+    call_count: int
     events: list[TeamEvent]
     tasks: list[TeamTask]
     readers: list[TeamReader]
     series: list[TeamPoint]
     exclusions: list[TeamExclusion]
+    calls: list[TeamCall]
+    reasoning_recorded: bool
 
 
 class Bundle(BaseModel):

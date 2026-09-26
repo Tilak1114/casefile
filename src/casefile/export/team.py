@@ -9,7 +9,7 @@ from datetime import datetime
 
 from pymongo.database import Database
 
-from casefile.export.models import TeamEvent, TeamExclusion, TeamPoint, TeamReader, TeamRun, TeamTask
+from casefile.export.models import TeamCall, TeamEvent, TeamExclusion, TeamPoint, TeamReader, TeamRun, TeamTask
 
 
 def _ts(v) -> datetime:
@@ -31,6 +31,14 @@ def _summary(e: dict) -> str:
     if "documents" in p:
         return f"{p['documents']} documents in the claim file"
     return ""
+
+
+def _decision(actor: str, output: dict | None) -> dict | None:
+    if output is None:
+        return None
+    if actor.endswith("-reader"):
+        return {k: len(v) for k, v in output.items() if isinstance(v, list)}
+    return output
 
 
 def build_team(db: Database, run_id: str) -> TeamRun | None:
@@ -107,7 +115,13 @@ def build_team(db: Database, run_id: str) -> TeamRun | None:
     end = max([events[-1].t] + [c for c in (rel(x["at"]) for x in calls)] + [r.end for r in readers])
     return TeamRun(
         started_at=str(raw[0]["at"]), duration_s=round(end, 1), stop_reason=summary.get("stop_reason", "unknown"),
-        cost_usd=round(sum(c.get("cost_usd", 0) for c in calls), 4), calls=len(calls), events=events, tasks=tasks,
+        cost_usd=round(sum(c.get("cost_usd", 0) for c in calls), 4), call_count=len(calls), events=events, tasks=tasks,
         readers=readers, series=series,
         exclusions=[TeamExclusion(document_id=x["document_id"], reason=x["reason"]) for x in db.exclusions.find({"run_id": run_id})],
+        calls=[TeamCall(id=str(c["_id"]), actor=c["actor"], purpose=c["purpose"], task_id=c.get("task_id"), ref=c.get("ref"),
+                        t=rel(c["at"]), cost_usd=round(c.get("cost_usd", 0.0), 5), prompt_tokens=c.get("prompt_tokens", 0),
+                        output_tokens=c.get("output_tokens", 0), reasoning_tokens=c.get("reasoning_tokens", 0),
+                        reasoning=c.get("reasoning") or "", decision=_decision(c["actor"], c.get("output")))
+               for c in calls],
+        reasoning_recorded=any(c.get("reasoning") for c in calls),
     )
