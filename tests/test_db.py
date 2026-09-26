@@ -42,3 +42,58 @@ def test_answer_key_quotes_exact_match_ingested_text():
             if page is None or page["is_label"] or ws(c.quote) not in ws(page["text"]):
                 missing.append(f"{item.id} {c.file_no}:{c.page}")
     assert missing == []
+
+
+@pytest.mark.integration
+def test_every_answer_key_citation_passes_the_verifier():
+    import yaml
+
+    from casefile.config import DATA_DIR
+    from casefile.evaluation.answer_key import AnswerKey
+    from casefile.ingest.models import page_id
+    from casefile.verify.load import load_index
+    from casefile.verify.models import Citation, Claim, Status
+    from casefile.verify.verifier import verify_claim
+
+    key = AnswerKey.model_validate(yaml.safe_load((DATA_DIR / "cases/HWY06MH024/answer_key.yaml").read_text()))
+    index = load_index(db.database(), key.case_id)
+    refused = []
+    for item in [*key.events, *key.relationships, *key.parties]:
+        if not item.evidence:
+            continue
+        claim = Claim(
+            id=item.id, statement=item.id,
+            citations=[Citation(page_id=page_id(key.case_id, c.file_no, c.page), quote=c.quote) for c in item.evidence],
+        )
+        verdict = verify_claim(claim, index)
+        if verdict.status is not Status.VERIFIED:
+            refused.append((item.id, verdict.reasons))
+    assert refused == []
+
+
+@pytest.mark.integration
+def test_negative_over_real_case_needs_every_letter_read():
+    """Reading all letters but one leaves exactly that letter's pages uncovered."""
+    from casefile.verify.coverage import CoverageLog
+    from casefile.verify.load import load_index
+    from casefile.verify.models import NegativeClaim, NegativeScope, Status
+    from casefile.verify.verifier import verify_negative
+
+    database = db.database()
+    index = load_index(database, "HWY06MH024")
+    letters = [d for d in index.documents.values() if d.doc_type == "letter" and not d.is_label]
+    log = CoverageLog(database, "HWY06MH024", run_id="test-negative")
+    try:
+        skipped = letters[0]
+        partial = log.read([p for d in letters[1:] for p in d.page_ids])
+        claim = NegativeClaim(id="N", statement="no letter says X",
+                              scope=NegativeScope(doc_types=["letter"]), coverage_ids=[partial.id])
+        verdict = verify_negative(claim, index, log.records())
+        assert verdict.status is Status.REFUSED
+        assert verdict.uncovered_page_ids == sorted(skipped.page_ids)
+
+        full = log.read(skipped.page_ids)
+        claim = claim.model_copy(update={"coverage_ids": [partial.id, full.id]})
+        assert verify_negative(claim, index, log.records()).status is Status.VERIFIED
+    finally:
+        database.coverage.delete_many({"run_id": "test-negative"})

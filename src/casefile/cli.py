@@ -10,7 +10,9 @@ from casefile.docket.fetch import fetch_docket
 from casefile.docket.case import CaseConfig
 from casefile.docket.models import FetchManifest, SourceIndex
 from casefile.config import settings
+from casefile.ingest.metadata import extract_case
 from casefile.ingest.pipeline import ingest_case
+from casefile.models.gemini import Gemini
 from casefile.ingest.reducto import ReductoClient
 
 
@@ -31,6 +33,14 @@ def cmd_ingest(args: argparse.Namespace) -> None:
     run = ingest_case(case, manifest, case_dir, reducto, db.database())
     credits = sum(f.parse_credits + f.split_credits for f in run.files)
     print(f"{len(run.files)} files ingested, {len(run.failures)} failed, {credits:.1f} Reducto credits")
+
+
+def cmd_metadata(args: argparse.Namespace) -> None:
+    case_dir = DATA_DIR / "cases" / args.case
+    config = settings()
+    gemini = Gemini(config.gemini_token, config.gemini_model or "", case_dir / "cache" / "gemini", allow_spend=args.allow_spend)
+    totals = extract_case(db.database(), args.case, gemini)
+    print(totals)
 
 
 SNAPSHOT = DATA_DIR / "snapshots" / "casefile.archive.gz"
@@ -60,6 +70,10 @@ def main() -> None:
     ingest.add_argument("case", nargs="?", default="HWY06MH024")
     ingest.add_argument("--allow-spend", action="store_true", help="call Reducto (paid) for files not in the cache")
     ingest.set_defaults(func=cmd_ingest)
+    metadata = sub.add_parser("metadata", help="read each document's date, author and recipient with Gemini")
+    metadata.add_argument("case", nargs="?", default="HWY06MH024")
+    metadata.add_argument("--allow-spend", action="store_true", help="call Gemini (paid) for documents not in the cache")
+    metadata.set_defaults(func=cmd_metadata)
     sub.add_parser("snapshot-export", help="write the database to data/snapshots").set_defaults(func=cmd_snapshot_export)
     sub.add_parser("snapshot-restore", help="replace the database with data/snapshots").set_defaults(func=cmd_snapshot_restore)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)
