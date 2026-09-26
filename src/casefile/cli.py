@@ -84,6 +84,64 @@ def cmd_upload(args: argparse.Namespace) -> None:
     print(f"sources: {upload_sources(args.case, files)} new files uploaded to GridFS")
 
 
+def cmd_baseline(args: argparse.Namespace) -> None:
+    from pymongo import MongoClient
+
+    from casefile.evaluation.baseline import run_baseline
+    from casefile.harness.examiner import Deps
+    from casefile.harness.store import RunStore
+    from casefile.verify.coverage import CoverageLog
+    from casefile.verify.load import load_index
+
+    config = settings()
+    database = MongoClient(config.atlas_connection_string)[config.casefile_database]
+    case_dir = DATA_DIR / "cases" / args.case
+    case = CaseConfig.model_validate_json((case_dir / "case.json").read_text())
+    manifest = FetchManifest.model_validate_json((case_dir / "fetch_manifest.json").read_text())
+    deps = Deps(gemini=Gemini(config.gemini_token, config.gemini_model or "", case_dir / "cache" / "gemini", allow_spend=args.allow_spend),
+                index=load_index(database, args.case), store=RunStore(database, args.case, args.run_id),
+                coverage=CoverageLog(database, args.case, args.run_id))
+    print(run_baseline(deps, case, {f.file_no: f.sha256 for f in manifest.files}))
+
+
+def cmd_assemble(args: argparse.Namespace) -> None:
+    from pymongo import MongoClient
+
+    from casefile.harness.assemble import assemble
+    from casefile.harness.examiner import Deps
+    from casefile.harness.store import RunStore
+    from casefile.verify.coverage import CoverageLog
+    from casefile.verify.load import load_index
+
+    config = settings()
+    database = MongoClient(config.atlas_connection_string)[config.casefile_database]
+    case_dir = DATA_DIR / "cases" / args.case
+    case = CaseConfig.model_validate_json((case_dir / "case.json").read_text())
+    manifest = FetchManifest.model_validate_json((case_dir / "fetch_manifest.json").read_text())
+    deps = Deps(gemini=None, index=load_index(database, args.case), store=RunStore(database, args.case, args.run_id),
+                coverage=CoverageLog(database, args.case, args.run_id))
+    out = assemble(deps, case, {f.file_no: f.sha256 for f in manifest.files})
+    print(f"{args.run_id}: {len(out.chronology)} chronology entries, {len(out.parties)} parties, {len(out.links)} links")
+
+
+def cmd_score(args: argparse.Namespace) -> None:
+    import yaml
+
+    from casefile.evaluation.answer_key import AnswerKey
+    from casefile.evaluation.score import score_run
+
+    key = AnswerKey.model_validate(yaml.safe_load((DATA_DIR / "cases" / args.case / "answer_key.yaml").read_text()))
+    s = score_run(db.database(), key, args.run_id)
+    for name, sp in (("dev", s.dev), ("held-out", s.heldout)):
+        print(f"{name:8} events {sp.events_found}/{sp.events_total} (core {sp.core_found}/{sp.core_total}), "
+              f"relationships {sp.relationships_found}/{sp.relationships_total}")
+    print(f"parties {s.parties_found}/{s.parties_total}; verified {s.verified_claims}, refused {s.refused_claims}; "
+          f"pages read {s.pages_read}; readers {s.readers}; tokens in {s.prompt_tokens:,} out {s.output_tokens:,}; ~${s.cost_usd}")
+    if args.missed:
+        for m in s.dev.missed_events + s.heldout.missed_events:
+            print("  missed:", m)
+
+
 def cmd_indexes(_: argparse.Namespace) -> None:
     print("pages_text:", search.ensure_indexes(db.database()))
 
@@ -118,6 +176,20 @@ def main() -> None:
     upload = sub.add_parser("upload", help="copy caches and source files into Atlas so teammates need only the connection string")
     upload.add_argument("case", nargs="?", default="HWY06MH024")
     upload.set_defaults(func=cmd_upload)
+    base = sub.add_parser("baseline", help="single-prompt baseline: all readable pages in one Gemini call")
+    base.add_argument("case", nargs="?", default="HWY06MH024")
+    base.add_argument("--run-id", default="baseline-1")
+    base.add_argument("--allow-spend", action="store_true")
+    base.set_defaults(func=cmd_baseline)
+    asm = sub.add_parser("assemble", help="re-assemble a finished run's outputs from its verified findings (no model calls)")
+    asm.add_argument("run_id")
+    asm.add_argument("case", nargs="?", default="HWY06MH024")
+    asm.set_defaults(func=cmd_assemble)
+    score = sub.add_parser("score", help="score a run against the answer key")
+    score.add_argument("run_id")
+    score.add_argument("case", nargs="?", default="HWY06MH024")
+    score.add_argument("--missed", action="store_true", help="list the answer-key events the run did not find")
+    score.set_defaults(func=cmd_score)
     sub.add_parser("indexes", help="create the Atlas Search index on page text").set_defaults(func=cmd_indexes)
     sub.add_parser("ping", help="check the MongoDB connection").set_defaults(func=cmd_ping)
     args = parser.parse_args()

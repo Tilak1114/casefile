@@ -7,6 +7,7 @@ from verified claims.
 """
 
 import hashlib
+import re
 from datetime import UTC, datetime
 
 from pydantic import BaseModel
@@ -47,6 +48,16 @@ Verified facts:
 
 def _fold(s: str) -> str:
     return " ".join(s.translate(FOLD).lower().split())
+
+
+SUFFIXES = {"inc", "incorporated", "co", "company", "companies", "corp", "corporation", "llc", "ltd", "the"}
+
+
+def name_key(name: str) -> str:
+    """A party name with formatting removed: case, punctuation and corporate suffixes. Two names with the
+    same key are the same party written differently; nothing else is merged without a quoted alias."""
+    words = re.sub(r"[^\w\s]", " ", name.translate(FOLD).lower()).split()
+    return " ".join(w for w in words if w not in SUFFIXES)
 
 
 def propose_and_check_negatives(deps: Deps, turn: int) -> tuple[int, int]:
@@ -160,16 +171,16 @@ def _party_clusters(parties: list[StoredClaim], aliases: list[StoredClaim]) -> t
         return x
 
     for p in parties:
-        find(_fold(p.payload.name))
+        find(name_key(p.payload.name))
     for a in aliases:
         assert isinstance(a.payload, AliasClaim)
-        parent[find(_fold(a.payload.name))] = find(_fold(a.payload.same_as))
+        parent[find(name_key(a.payload.name))] = find(name_key(a.payload.same_as))
     groups: dict[str, list[StoredClaim]] = {}
     for p in parties:
-        groups.setdefault(find(_fold(p.payload.name)), []).append(p)
+        groups.setdefault(find(name_key(p.payload.name)), []).append(p)
     names_of: dict[str, set[str]] = {}
     for a in aliases:
-        root = find(_fold(a.payload.name))
+        root = find(name_key(a.payload.name))
         names_of.setdefault(root, set()).update({a.payload.name, a.payload.same_as})
     clusters, by_name = [], {}
     for i, (root, members) in enumerate(sorted(groups.items())):
@@ -179,7 +190,7 @@ def _party_clusters(parties: list[StoredClaim], aliases: list[StoredClaim]) -> t
         clusters.append(Party(id=pid, names=names, kind=members[0].payload.kind,
                               roles=sorted({m.payload.role for m in members}), claim_ids=[m.id for m in members]))
         for n in names:
-            by_name[_fold(n)] = pid
+            by_name[name_key(n)] = pid
     return clusters, by_name
 
 
@@ -201,7 +212,7 @@ def assemble(deps: Deps, case: CaseConfig, manifest_sha: dict[int, str]) -> RunO
     links: dict[tuple[str, str, str], PartyLink] = {}
     for r in (c for c in findings if c.kind is ClaimKind.RELATIONSHIP):
         assert isinstance(r.payload, RelationshipClaim)
-        s, t = by_name.get(_fold(r.payload.source)), by_name.get(_fold(r.payload.target))
+        s, t = by_name.get(name_key(r.payload.source)), by_name.get(name_key(r.payload.target))
         s, t = s or r.payload.source, t or r.payload.target
         key = (s, r.payload.type.value, t)
         links.setdefault(key, PartyLink(source=s, type=key[1], target=t, claim_ids=[])).claim_ids.append(r.id)

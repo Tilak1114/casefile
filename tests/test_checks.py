@@ -90,3 +90,11 @@ def test_alias_quote_must_contain_both_names():
 def test_claim_ids_are_stable_for_the_same_content():
     out = ReaderOutput(parties=[PartyMention(name="B/PB", kind="organization", role="consultant", quotes=[q("Bechtel/Parsons Brinckerhoff (B/PB)")])])
     assert run(out)[0].id == run(out)[0].id
+
+
+def test_party_names_merge_only_on_formatting():
+    from casefile.harness.assemble import name_key
+
+    assert name_key("Modern Continental Construction Company, Inc.") == name_key("MODERN CONTINENTAL CONSTRUCTION CO.")
+    assert name_key("Bechtel/Parsons Brinckerhoff") == name_key("BECHTEL / PARSONS BRINCKERHOFF")
+    assert name_key("B/PB") != name_key("Bechtel/Parsons Brinckerhoff")  # needs a quoted alias
