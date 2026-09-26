@@ -15,6 +15,7 @@ from pymongo.database import Database
 from casefile.case import CaseConfig
 from casefile.evaluation.answer_key import AnswerKey
 from casefile.evaluation.score import score_run
+from casefile.export.team import build_team
 from casefile.export.models import (
     Box,
     Bundle,
@@ -240,6 +241,9 @@ def build_bundle(db: Database, case_dir: Path, run_id: str, baseline_id: str | N
     end = next((t for t in reversed(trace) if t["kind"] == "run_end"), None)
     last_turn = max((t["turn"] for t in trace), default=0)
     status = end["summary"] if end else f"interrupted at turn {last_turn}; resumable from its checkpoint"
+    team = build_team(db, run_id)
+    if team is not None:
+        status = f"team run, stopped because: {team.stop_reason}"
     cov = outputs.get("coverage", {})
     return Bundle(
         case=CaseInfo(case_id=cid, title=case.title, event_date=str(case.event_date), event_summary=case.event_summary,
@@ -264,7 +268,7 @@ def build_bundle(db: Database, case_dir: Path, run_id: str, baseline_id: str | N
                            output_tokens=w.get("output_tokens", 0), thinking_tokens=w.get("thinking_tokens", 0),
                            seconds=w.get("seconds", 0.0)) for w in workers],
         score=_score_row(db, key, run_id), baseline=_score_row(db, key, baseline_id) if baseline_id else None,
-        answer_key=key_rows,
+        answer_key=key_rows, team=team,
     )
 
 

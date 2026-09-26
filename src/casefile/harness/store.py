@@ -35,6 +35,11 @@ class RunStore:
         self.db.pending.delete_one({"_id": claim.id})
         self.db.findings.replace_one({"_id": claim.id}, {"_id": claim.id, **claim.model_dump(mode="json")}, upsert=True)
 
+    def reinstate(self, claim: StoredClaim) -> None:
+        """Move a refused claim that passed a later check into findings."""
+        self.db.refusals.delete_one({"_id": claim.id})
+        self.db.findings.replace_one({"_id": claim.id}, {"_id": claim.id, **claim.model_dump(mode="json")}, upsert=True)
+
     def refuse(self, claim: StoredClaim) -> None:
         self.db.pending.delete_one({"_id": claim.id})
         self.db.refusals.replace_one({"_id": claim.id}, {"_id": claim.id, **claim.model_dump(mode="json")}, upsert=True)

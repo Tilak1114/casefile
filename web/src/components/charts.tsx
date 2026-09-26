@@ -13,7 +13,7 @@ function niceMax(v: number): number {
   return Math.ceil(v / p) * p;
 }
 
-function Axes({ maxY, xs, fmt }: { maxY: number; xs: number[]; fmt: (v: number) => string }) {
+function Axes({ maxY, xs, fmt, xFmt }: { maxY: number; xs: number[]; fmt: (v: number) => string; xFmt: (x: number) => string }) {
   const ticks = [0, maxY / 2, maxY];
   const iw = W - PAD.l - PAD.r;
   const ih = H - PAD.t - PAD.b;
@@ -34,13 +34,13 @@ function Axes({ maxY, xs, fmt }: { maxY: number; xs: number[]; fmt: (v: number) 
       {xLabels.map((x) => {
         const px = PAD.l + (xs.length > 1 ? ((x - xMin) / (xMax - xMin)) * iw : iw / 2);
         const anchor = x === xMax && xs.length > 1 ? "end" : x === xMin && xs.length > 1 ? "start" : "middle";
-        return <text key={x} x={px} y={H - 6} textAnchor={anchor} fontSize={11} fill="var(--muted)">turn {x}</text>;
+        return <text key={x} x={px} y={H - 6} textAnchor={anchor} fontSize={11} fill="var(--muted)">{xFmt(x)}</text>;
       })}
     </g>
   );
 }
 
-export function LineChart({ title, points, fmt = (v) => v.toLocaleString() }: { title: string; points: Point[]; fmt?: (v: number) => string }) {
+export function LineChart({ title, points, fmt = (v) => v.toLocaleString(), xFmt = (x) => `turn ${x}` }: { title: string; points: Point[]; fmt?: (v: number) => string; xFmt?: (x: number) => string }) {
   if (points.length === 0) return <div className="empty">No data yet.</div>;
   const maxY = niceMax(Math.max(...points.map((p) => p.y)));
   const xs = points.map((p) => p.x);
@@ -55,12 +55,12 @@ export function LineChart({ title, points, fmt = (v) => v.toLocaleString() }: { 
   return (
     <figure className="card pad" style={{ margin: 0, display: "grid", gap: 8 }}>
       <figcaption style={{ fontWeight: 600, fontSize: 13 }}>{title}</figcaption>
-      <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto" }} role="img" aria-label={`${title}: ${fmt(last.y)} at turn ${last.x}`}>
-        <Axes maxY={maxY} xs={xs} fmt={fmt} />
+      <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto" }} role="img" aria-label={`${title}: ${fmt(last.y)} at ${xFmt(last.x)}`}>
+        <Axes maxY={maxY} xs={xs} fmt={fmt} xFmt={xFmt} />
         <path d={`${d} L${px(last.x)},${py(0)} L${px(points[0].x)},${py(0)} Z`} fill="var(--accent)" opacity={0.08} />
         <path d={d} fill="none" stroke="var(--accent)" strokeWidth={2} strokeLinejoin="round" />
         {points.map((p) => (
-          <g key={p.x}>
+          <g key={`${p.x}-${p.y}`}>
             <circle cx={px(p.x)} cy={py(p.y)} r={p === last ? 4.5 : 3} fill="var(--accent)" stroke="var(--surface)" strokeWidth={2} />
             <circle cx={px(p.x)} cy={py(p.y)} r={10} fill="transparent"><title>{p.label}</title></circle>
           </g>
@@ -83,7 +83,7 @@ export function BarChart({ title, points, fmt = (v) => v.toLocaleString(), note 
     <figure className="card pad" style={{ margin: 0, display: "grid", gap: 8 }}>
       <figcaption style={{ fontWeight: 600, fontSize: 13 }}>{title}</figcaption>
       <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto" }} role="img" aria-label={title}>
-        <Axes maxY={maxY} xs={xs} fmt={fmt} />
+        <Axes maxY={maxY} xs={xs} fmt={fmt} xFmt={(x) => `turn ${x}`} />
         {points.map((p, i) => {
           const h = (p.y / maxY) * ih;
           const x = PAD.l + i * slot + (slot - bw) / 2;

@@ -292,6 +292,10 @@ planned = part of v2; proposed = for the user to accept or drop. Pauses for a hu
 - The Harness screen shows the team, the event catalogue and each role's subscriptions.
 - The replay becomes the event stream: filter by role, follow a conversation by correlation id, open any
   dispute with both positions and the ruling.
+- The process itself, shown intuitively (user request, 2026-09-26): open → lead assigns and retains the
+  engineer → roles read through readers in parallel → verifier keeps or refuses each claim → reports → lead
+  reassigns or excludes → disputes and requests → close check → absences → assembly. Each stage is drawn from
+  the run's own events, with its counts (documents, pages, claims, refusals, cost), not a static diagram.
 
 ## Needs your approval
 
@@ -304,3 +308,26 @@ planned = part of v2; proposed = for the user to accept or drop. Pauses for a hu
 7. The evaluation, including the ablations and loss attribution.
 8. The records desk: typed retrieval tools, narrow for readers, full for roles, metadata only for the lead.
 9. The six measures against context thinning up the hierarchy.
+
+## After the first full run (v2-full-1)
+
+Measured on v2-full-1 (closed by the lead, 17 min, $3.10): nothing was lost to coverage (0 of the missed events
+were on unread pages); the losses moved to reading and verification. Three changes, each tested before building:
+
+- **Readers are batched by characters (about 40k), and an over-long document is read in page windows.** Ablation
+  on the daily-report printout (PDF 019, 9 key events) with a neutral focus: one call per document 33 events and
+  8/9 key events; windows 53 and 9/9; windows plus a rule to report each dated log entry with its date line 73
+  and 9/9, for about $0.40.
+- **Names in quotes.** A name matches when only its formatting differs (case, punctuation, "Inc."), and at
+  assembly a claim refused only because a party is named by a verified alias (B/PB) is reinstated with the alias
+  claim recorded. On v2-full-1's 39 name refusals this rescues 13; most relationship refusals remain, because
+  their quotes do not show the relation.
+- **Hyphens at line breaks.** The verifier joins a word across a line-end hyphen, keeping or dropping the
+  hyphen. On v2-full-1 this rescues 6 of 22 unfound quotes.
+
+The answer key was also audited: for every event, the 88 input files were searched, independently of any run,
+for other pages that document the same occurrence (mostly copies in PDF 093). 77 pages were added, every quote
+matched by code; dates and splits are unchanged. All runs were re-scored against it.
+
+The UI gained a Trajectory screen for team runs: the process stage by stage, a swimlane timeline of tasks,
+readers and events read from the MongoDB event log, and a detail panel for each.

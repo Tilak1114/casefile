@@ -59,6 +59,13 @@ export default function HarnessPage() {
   }, {});
   return (
     <div className="page">
+      {b.team && (
+        <div className="card pad" style={{ borderColor: "var(--pend)", fontSize: 13 }}>
+          <strong>This screen still describes the v1 design</strong> (one examiner and two reviewer roles). Run {b.run.run_id} was made by
+          the v2 team: claim professional, defense counsel, forensic engineer and readers, working through events. Its trajectory is on
+          the <a href="/trajectory">Trajectory</a> screen.
+        </div>
+      )}
       <div className="page-head">
         <div className="eyebrow">How it works · read from the code</div>
         <h1>The harness</h1>
@@ -135,7 +142,7 @@ export default function HarnessPage() {
         </section>
       </div>
 
-      <section className="section">
+      {!b.team && <section className="section">
         <h2>Run {b.run.run_id}, turn by turn</h2>
         <p>{b.run.status}. Actions: {Object.entries(actionCounts).map(([k, v]) => `${v} ${k}`).join(", ")}.</p>
         <div className="card pad" style={{ display: "grid", gap: 6, fontSize: 13, borderColor: "var(--pend)" }}>
@@ -166,7 +173,7 @@ export default function HarnessPage() {
             </tbody>
           </table>
         </div>
-      </section>
+      </section>}
     </div>
   );
 }

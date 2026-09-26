@@ -85,6 +85,22 @@ def test_find_quote_is_case_sensitive_and_exact_on_words():
 
 # --- positive claims ------------------------------------------------------------------------------
 
+def test_a_hyphen_at_a_line_break_joins_the_word_with_or_without_the_hyphen():
+    text = "the load-\ndisplacement testing of the anchor instal-\n  lation was"
+    start, end = find_quote(text, "the load-displacement testing")
+    assert text[start:end] == "the load-\ndisplacement testing"
+    start, end = find_quote(text, "the anchor installation was")
+    assert text[start:end] == "the anchor instal-\n  lation was"
+    assert find_quote(text, "the load- displacement testing") is not None  # plain whitespace folding still applies
+
+
+def test_a_hyphen_within_a_line_is_not_joined():
+    text = "an anti- corrosion coating and a load -displacement curve"
+    assert find_quote(text, "anti-corrosion") is None
+    assert find_quote(text, "anticorrosion") is None
+    assert find_quote(text, "load-displacement") is None
+
+
 def test_real_quote_verifies_with_highlight_offsets(index):
     verdict = verify_claim(claim(("C:040:p002", "appear to show signs of tensile movement")), index)
     assert verdict.status is Status.VERIFIED

@@ -31,6 +31,9 @@ Rules:
   "stated_in_text" when the text says when something happened, and then one quote must show that date.
 - Parties and relationships: write names exactly as they appear in your quotes. Report aliases only when
   one quote shows both names for the same party (for example "Bechtel/Parsons Brinckerhoff (B/PB)").
+- Logs, diaries and daily reports hold many dated entries: report each entry that bears on your focus as
+  its own event, with date_source "stated_in_text" and a second quote from the same page that is the
+  entry's date line (for example "12-MAR-2003" or "Date: 3/12/03").
 - Open questions: documents or facts referred to here that are not among these documents.
 
 {documents}"""

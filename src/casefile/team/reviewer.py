@@ -155,7 +155,7 @@ def _read_documents(deps: TeamDeps, brief: ReviewerBrief, doc_ids: list[str], fo
             return False
 
     with ThreadPoolExecutor(4) as pool:
-        return sum(not ok for ok in pool.map(one, batches(todo)))
+        return sum(not ok for ok in pool.map(one, batches(todo, deps.index)))
 
 
 def work_graph(deps: TeamDeps, brief: ReviewerBrief):

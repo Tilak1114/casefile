@@ -169,6 +169,7 @@ class StoredClaim(BaseModel):
     reasons: list[str] = []
     matches: list[dict[str, int | str]] = []  # page_id, start, end
     repair_of: str | None = None
+    name_aliases: dict[str, str] = {}  # party name -> id of the verified alias claim that shows it in the quote
     created_at: datetime
 
 

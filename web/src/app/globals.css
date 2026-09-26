@@ -191,3 +191,17 @@ table.data td.date { font-family: var(--font-mono); font-size: var(--t-12); whit
 .react-flow__minimap .mm-event { fill: var(--accent); }
 .react-flow__minimap .mm-none { fill: transparent; }
 .ev-more { font-family: var(--font-mono); font-size: 9.5px; padding: 0 4px; border-radius: var(--r-1); border: 1px solid var(--line-strong); color: var(--ink); }
+
+/* ---------- trajectory ---------- */
+.stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 6px; counter-reset: stage; }
+.stage { display: grid; gap: 2px; align-content: start; text-align: left; padding: 8px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-2); cursor: pointer; position: relative; }
+.stage:hover { border-color: var(--line-strong); }
+.stage[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.stage-no { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+.stage-title { font-weight: 650; font-size: var(--t-13); }
+.stage-detail { font-size: var(--t-12); color: var(--muted); line-height: 1.35; }
+.traj-scroll { overflow-x: auto; border-bottom: 1px solid var(--line); }
+.traj-scroll svg { display: block; }
+.traj-scroll .hit { cursor: pointer; }
+.traj-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; padding: 8px var(--s-4); font-size: var(--t-12); }
+.traj-legend > span { display: inline-flex; gap: 6px; align-items: center; }

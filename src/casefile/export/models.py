@@ -211,6 +211,73 @@ class CaseInfo(BaseModel):
     withheld: list[WithheldFile]
 
 
+class TeamEvent(BaseModel):
+    seq: int
+    t: float  # seconds since the claim file opened
+    type: str
+    sender: str
+    to: str | None
+    subjects: int
+    correlation_id: str
+    causation_seq: int | None
+    summary: str
+    document_ids: list[str]
+
+
+class TeamTask(BaseModel):
+    id: str
+    role: str
+    kind: str
+    state: str
+    trigger_seq: int | None
+    start: float
+    end: float | None
+    note: str
+    calls: int
+    cost_usd: float
+
+
+class TeamReader(BaseModel):
+    id: str
+    role: str
+    task_id: str | None
+    start: float
+    end: float
+    document_ids: list[str]
+    pages: int
+    verified: int
+    refused: int
+    focus: str
+
+
+class TeamPoint(BaseModel):
+    t: float
+    pages: int
+    verified: int
+    refused: int
+    cost_usd: float
+
+
+class TeamExclusion(BaseModel):
+    document_id: str
+    reason: str
+
+
+class TeamRun(BaseModel):
+    """A v2 team run as it happened: the event log, the tasks it caused, the readers they started."""
+
+    started_at: str
+    duration_s: float
+    stop_reason: str
+    cost_usd: float
+    calls: int
+    events: list[TeamEvent]
+    tasks: list[TeamTask]
+    readers: list[TeamReader]
+    series: list[TeamPoint]
+    exclusions: list[TeamExclusion]
+
+
 class Bundle(BaseModel):
     case: CaseInfo
     run: RunInfo
@@ -231,3 +298,4 @@ class Bundle(BaseModel):
     score: ScoreRow | None
     baseline: ScoreRow | None
     answer_key: list[KeyEventRow]
+    team: TeamRun | None = None

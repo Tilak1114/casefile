@@ -33,6 +33,7 @@ MAX_REPAIRS_PER_ACTION = 6
 MAX_UNPRODUCTIVE_TURNS = 3
 MAX_RUN_TOKENS = 8_000_000
 PAGES_PER_READER = 25
+MAX_CHARS_PER_READER = 40_000  # about 10k tokens of page text per reader; set by the dense-log ablation
 SEARCH_HITS = 8
 
 
@@ -157,18 +158,38 @@ def validate(action, deps: Deps, state: RunState) -> str | None:
 # ---- actions ---------------------------------------------------------------------------------------
 
 
-def batches(docs: list[IndexedDocument], pages_per_reader: int = PAGES_PER_READER) -> list[list[IndexedDocument]]:
-    """Whole documents grouped into readers of about `pages_per_reader` pages; a long document reads alone."""
-    out: list[list[IndexedDocument]] = []
-    current: list[IndexedDocument] = []
-    size = 0
-    for doc in docs:
-        n = len(doc.page_ids)
-        if current and size + n > pages_per_reader:
+def _windows(doc: IndexedDocument, index: CaseIndex, pages_per_reader: int, max_chars: int) -> list[IndexedDocument]:
+    """A document cut into consecutive page windows within the budget; a short document is one window."""
+    out, current, size = [], [], 0
+    for pid in doc.page_ids:
+        n = len(index.pages[pid].text) if pid in index.pages else 0
+        if current and (len(current) + 1 > pages_per_reader or size + n > max_chars):
             out.append(current)
             current, size = [], 0
-        current.append(doc)
+        current.append(pid)
         size += n
+    if current:
+        out.append(current)
+    return [doc if len(out) == 1 else doc.model_copy(update={"page_ids": w}) for w in out]
+
+
+def batches(docs: list[IndexedDocument], index: CaseIndex, pages_per_reader: int = PAGES_PER_READER,
+            max_chars: int = MAX_CHARS_PER_READER) -> list[list[IndexedDocument]]:
+    """Documents grouped into readers within a page and character budget. Short documents stay whole; a
+    document over the budget is read in consecutive page windows, so a dense log is not read in one call."""
+    out: list[list[IndexedDocument]] = []
+    current: list[IndexedDocument] = []
+    pages = chars = 0
+    for doc in docs:
+        for part in _windows(doc, index, pages_per_reader, max_chars):
+            n = len(part.page_ids)
+            c = sum(len(index.pages[p].text) for p in part.page_ids if p in index.pages)
+            if current and (pages + n > pages_per_reader or chars + c > max_chars):
+                out.append(current)
+                current, pages, chars = [], 0, 0
+            current.append(part)
+            pages += n
+            chars += c
     if current:
         out.append(current)
     return out
@@ -191,7 +212,7 @@ def act(action, deps: Deps, state: RunState) -> tuple[list[WorkerRecord], str]:
     if isinstance(action, Assign):
         who = read_by(deps)
         docs = [deps.index.documents[d] for d in action.document_ids if action.role.value not in who.get(d, set())]
-        groups = batches(docs)[:budget]
+        groups = batches(docs, deps.index)[:budget]
         workers = _run_readers(deps, action.role, groups, action.focus)
         return workers, f"{action.role.value} read {sum(len(g) for g in groups)} documents with {len(groups)} readers"
     if isinstance(action, SearchAction):
@@ -203,7 +224,7 @@ def act(action, deps: Deps, state: RunState) -> tuple[list[WorkerRecord], str]:
             doc = deps.index.document_of(h["_id"])
             if doc and doc.id not in doc_ids and action.role.value not in who.get(doc.id, set()):
                 doc_ids.append(doc.id)
-        groups = batches([deps.index.documents[d] for d in doc_ids])[:budget]
+        groups = batches([deps.index.documents[d] for d in doc_ids], deps.index)[:budget]
         workers = _run_readers(deps, action.role, groups, action.reason) if groups else []
         deps.store.trace(state.turn, TraceKind.SEARCH, f"search {action.query!r}: {len(hits)} pages, {len(doc_ids)} new documents",
                          action=action)

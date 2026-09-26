@@ -7,7 +7,6 @@ from verified claims.
 """
 
 import hashlib
-import re
 from datetime import UTC, datetime
 
 from pydantic import BaseModel
@@ -25,6 +24,7 @@ from casefile.harness.models import (
     Role,
     StoredClaim,
 )
+from casefile.harness.checks import name_key, reinstate_by_alias
 from casefile.harness.roles import ROLES
 from casefile.search import search_pages
 from casefile.verify.models import NegativeClaim, NegativeScope, Status
@@ -50,14 +50,6 @@ def _fold(s: str) -> str:
     return " ".join(s.translate(FOLD).lower().split())
 
 
-SUFFIXES = {"inc", "incorporated", "co", "company", "companies", "corp", "corporation", "llc", "ltd", "the"}
-
-
-def name_key(name: str) -> str:
-    """A party name with formatting removed: case, punctuation and corporate suffixes. Two names with the
-    same key are the same party written differently; nothing else is merged without a quoted alias."""
-    words = re.sub(r"[^\w\s]", " ", name.translate(FOLD).lower()).split()
-    return " ".join(w for w in words if w not in SUFFIXES)
 
 
 def propose_and_check_negatives(deps: Deps, turn: int) -> tuple[int, int]:
@@ -195,6 +187,11 @@ def _party_clusters(parties: list[StoredClaim], aliases: list[StoredClaim]) -> t
 
 
 def assemble(deps: Deps, case: CaseConfig, manifest_sha: dict[int, str]) -> RunOutputs:
+    # A claim refused only because a party is named by an alias in its quote is reinstated once the run's
+    # verified aliases are known; the alias claim that resolves each name is recorded on the claim.
+    aliases = [c for c in deps.store.claims("findings") if c.kind is ClaimKind.ALIAS]
+    for claim in reinstate_by_alias(deps.store.claims("refusals"), aliases):
+        deps.store.reinstate(claim)
     findings = deps.store.claims("findings")
     events = [c for c in findings if c.kind is ClaimKind.EVENT]
     merged: dict[tuple[str, str], ChronologyEntry] = {}

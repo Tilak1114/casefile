@@ -98,3 +98,48 @@ def test_party_names_merge_only_on_formatting():
     assert name_key("Modern Continental Construction Company, Inc.") == name_key("MODERN CONTINENTAL CONSTRUCTION CO.")
     assert name_key("Bechtel/Parsons Brinckerhoff") == name_key("BECHTEL / PARSONS BRINCKERHOFF")
     assert name_key("B/PB") != name_key("Bechtel/Parsons Brinckerhoff")  # needs a quoted alias
+
+
+def test_a_name_written_with_different_formatting_is_in_its_quote():
+    ok = run(ReaderOutput(parties=[PartyMention(name="MODERN CONTINENTAL CONSTRUCTION CO.", kind="organization", role="contractor",
+                                                quotes=[q("The Modern Continental Construction Company, Inc.")])]))
+    assert ok[0].verified
+    partial = run(ReaderOutput(parties=[PartyMention(name="Continental Construction Group", kind="organization", role="contractor",
+                                                     quotes=[q("The Modern Continental Construction Company, Inc.")])]))
+    assert not partial[0].verified  # words must all appear, in order, as whole words
+
+
+def rel_bpb_to_mcc(quote: str):
+    return run(ReaderOutput(relationships=[RelationshipClaim(
+        source="Bechtel/Parsons Brinckerhoff", type=RelationType.OVERSAW, target="The Modern Continental Construction Company, Inc.",
+        quotes=[q(quote)])]))[0]
+
+
+def alias(name: str, same_as: str, quote: str):
+    return run(ReaderOutput(aliases=[AliasClaim(name=name, same_as=same_as, quote=q(quote))]))[0]
+
+
+def test_a_refused_name_is_reinstated_through_a_verified_alias():
+    from casefile.harness.checks import reinstate_by_alias
+
+    TEXT_BPB = "B/PB directed The Modern Continental Construction Company, Inc. to retest"
+    global TEXT
+    old, TEXT = TEXT, TEXT + "\n" + TEXT_BPB
+    try:
+        refused = rel_bpb_to_mcc(TEXT_BPB)
+        assert not refused.verified and refused.reasons == ["'Bechtel/Parsons Brinckerhoff' does not appear in the quotes"]
+        known = alias("Bechtel/Parsons Brinckerhoff", "B/PB", "Bechtel/Parsons Brinckerhoff (B/PB)")
+        [back] = reinstate_by_alias([refused], [known])
+        assert back.verified and back.reasons == [] and back.name_aliases == {"Bechtel/Parsons Brinckerhoff": known.id}
+        assert reinstate_by_alias([refused], []) == []  # no alias, stays refused
+    finally:
+        TEXT = old
+
+
+def test_only_name_refusals_are_reinstated():
+    from casefile.harness.checks import reinstate_by_alias
+
+    other = rel_bpb_to_mcc("B/PB wrote this sentence that is not on the page")
+    assert any(r.startswith("quote not found") for r in other.reasons)
+    known = alias("Bechtel/Parsons Brinckerhoff", "B/PB", "Bechtel/Parsons Brinckerhoff (B/PB)")
+    assert reinstate_by_alias([other], [known]) == []

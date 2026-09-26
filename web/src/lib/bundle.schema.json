@@ -882,6 +882,346 @@
    "title": "SplitScore",
    "type": "object"
   },
+  "TeamEvent": {
+   "properties": {
+    "seq": {
+     "title": "Seq",
+     "type": "integer"
+    },
+    "t": {
+     "title": "T",
+     "type": "number"
+    },
+    "type": {
+     "title": "Type",
+     "type": "string"
+    },
+    "sender": {
+     "title": "Sender",
+     "type": "string"
+    },
+    "to": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "To"
+    },
+    "subjects": {
+     "title": "Subjects",
+     "type": "integer"
+    },
+    "correlation_id": {
+     "title": "Correlation Id",
+     "type": "string"
+    },
+    "causation_seq": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Causation Seq"
+    },
+    "summary": {
+     "title": "Summary",
+     "type": "string"
+    },
+    "document_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Document Ids",
+     "type": "array"
+    }
+   },
+   "required": [
+    "seq",
+    "t",
+    "type",
+    "sender",
+    "to",
+    "subjects",
+    "correlation_id",
+    "causation_seq",
+    "summary",
+    "document_ids"
+   ],
+   "title": "TeamEvent",
+   "type": "object"
+  },
+  "TeamExclusion": {
+   "properties": {
+    "document_id": {
+     "title": "Document Id",
+     "type": "string"
+    },
+    "reason": {
+     "title": "Reason",
+     "type": "string"
+    }
+   },
+   "required": [
+    "document_id",
+    "reason"
+   ],
+   "title": "TeamExclusion",
+   "type": "object"
+  },
+  "TeamPoint": {
+   "properties": {
+    "t": {
+     "title": "T",
+     "type": "number"
+    },
+    "pages": {
+     "title": "Pages",
+     "type": "integer"
+    },
+    "verified": {
+     "title": "Verified",
+     "type": "integer"
+    },
+    "refused": {
+     "title": "Refused",
+     "type": "integer"
+    },
+    "cost_usd": {
+     "title": "Cost Usd",
+     "type": "number"
+    }
+   },
+   "required": [
+    "t",
+    "pages",
+    "verified",
+    "refused",
+    "cost_usd"
+   ],
+   "title": "TeamPoint",
+   "type": "object"
+  },
+  "TeamReader": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "role": {
+     "title": "Role",
+     "type": "string"
+    },
+    "task_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Task Id"
+    },
+    "start": {
+     "title": "Start",
+     "type": "number"
+    },
+    "end": {
+     "title": "End",
+     "type": "number"
+    },
+    "document_ids": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Document Ids",
+     "type": "array"
+    },
+    "pages": {
+     "title": "Pages",
+     "type": "integer"
+    },
+    "verified": {
+     "title": "Verified",
+     "type": "integer"
+    },
+    "refused": {
+     "title": "Refused",
+     "type": "integer"
+    },
+    "focus": {
+     "title": "Focus",
+     "type": "string"
+    }
+   },
+   "required": [
+    "id",
+    "role",
+    "task_id",
+    "start",
+    "end",
+    "document_ids",
+    "pages",
+    "verified",
+    "refused",
+    "focus"
+   ],
+   "title": "TeamReader",
+   "type": "object"
+  },
+  "TeamRun": {
+   "description": "A v2 team run as it happened: the event log, the tasks it caused, the readers they started.",
+   "properties": {
+    "started_at": {
+     "title": "Started At",
+     "type": "string"
+    },
+    "duration_s": {
+     "title": "Duration S",
+     "type": "number"
+    },
+    "stop_reason": {
+     "title": "Stop Reason",
+     "type": "string"
+    },
+    "cost_usd": {
+     "title": "Cost Usd",
+     "type": "number"
+    },
+    "calls": {
+     "title": "Calls",
+     "type": "integer"
+    },
+    "events": {
+     "items": {
+      "$ref": "#/$defs/TeamEvent"
+     },
+     "title": "Events",
+     "type": "array"
+    },
+    "tasks": {
+     "items": {
+      "$ref": "#/$defs/TeamTask"
+     },
+     "title": "Tasks",
+     "type": "array"
+    },
+    "readers": {
+     "items": {
+      "$ref": "#/$defs/TeamReader"
+     },
+     "title": "Readers",
+     "type": "array"
+    },
+    "series": {
+     "items": {
+      "$ref": "#/$defs/TeamPoint"
+     },
+     "title": "Series",
+     "type": "array"
+    },
+    "exclusions": {
+     "items": {
+      "$ref": "#/$defs/TeamExclusion"
+     },
+     "title": "Exclusions",
+     "type": "array"
+    }
+   },
+   "required": [
+    "started_at",
+    "duration_s",
+    "stop_reason",
+    "cost_usd",
+    "calls",
+    "events",
+    "tasks",
+    "readers",
+    "series",
+    "exclusions"
+   ],
+   "title": "TeamRun",
+   "type": "object"
+  },
+  "TeamTask": {
+   "properties": {
+    "id": {
+     "title": "Id",
+     "type": "string"
+    },
+    "role": {
+     "title": "Role",
+     "type": "string"
+    },
+    "kind": {
+     "title": "Kind",
+     "type": "string"
+    },
+    "state": {
+     "title": "State",
+     "type": "string"
+    },
+    "trigger_seq": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "Trigger Seq"
+    },
+    "start": {
+     "title": "Start",
+     "type": "number"
+    },
+    "end": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "title": "End"
+    },
+    "note": {
+     "title": "Note",
+     "type": "string"
+    },
+    "calls": {
+     "title": "Calls",
+     "type": "integer"
+    },
+    "cost_usd": {
+     "title": "Cost Usd",
+     "type": "number"
+    }
+   },
+   "required": [
+    "id",
+    "role",
+    "kind",
+    "state",
+    "trigger_seq",
+    "start",
+    "end",
+    "note",
+    "calls",
+    "cost_usd"
+   ],
+   "title": "TeamTask",
+   "type": "object"
+  },
   "TraceRow": {
    "properties": {
     "seq": {
@@ -1212,6 +1552,17 @@
    },
    "title": "Answer Key",
    "type": "array"
+  },
+  "team": {
+   "anyOf": [
+    {
+     "$ref": "#/$defs/TeamRun"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null
   }
  },
  "required": [

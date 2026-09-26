@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/chronology", label: "Chronology" },
   { href: "/parties", label: "Parties" },
   { href: "/harness", label: "Harness" },
+  { href: "/trajectory", label: "Trajectory" },
   { href: "/memory", label: "Memory" },
   { href: "/evaluation", label: "Evaluation" },
 ];

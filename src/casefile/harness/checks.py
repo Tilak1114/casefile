@@ -2,12 +2,15 @@
 
 On top of the Step 4 verifier (every quote on its page; asserted fields match metadata) this adds three
 deterministic rules: a party's name must appear in its quote; a relationship's parties must both appear
-in its quotes; an event dated from the text needs a quote that shows that date. Negatives are proposed
+in its quotes; an event dated from the text needs a quote that shows that date. A name appears if its
+words do, ignoring case, punctuation and corporate suffixes; at assembly a name also appears through a
+verified alias (B/PB for Bechtel/Parsons Brinckerhoff) quoted in the claim. Negatives are proposed
 and checked separately, at the end of the run (`negatives.py`).
 """
 
 import hashlib
 import json
+import re
 from datetime import UTC, datetime
 
 from casefile.harness.models import (
@@ -33,9 +36,69 @@ def _fold(s: str) -> str:
     return " ".join(s.translate(FOLD).lower().split())
 
 
+SUFFIXES = {"inc", "incorporated", "co", "company", "companies", "corp", "corporation", "llc", "ltd", "the"}
+NOT_IN_QUOTES = "does not appear in the quotes"
+
+
+def name_key(name: str) -> str:
+    """A party name with formatting removed: case, punctuation and corporate suffixes. Two names with the
+    same key are the same party written differently; nothing else is merged without a quoted alias."""
+    words = re.sub(r"[^\w\s]", " ", name.translate(FOLD).lower()).split()
+    return " ".join(w for w in words if w not in SUFFIXES)
+
+
+def _name_in(name: str, quotes: list[QuoteRef]) -> bool:
+    key = name_key(name)
+    return _fold(name) in " ".join(_fold(q.quote) for q in quotes) or bool(key) and any(
+        f" {key} " in f" {name_key(q.quote)} " for q in quotes)
+
+
+def _names_of(claim: StoredClaim) -> list[str]:
+    p = claim.payload
+    if isinstance(p, PartyMention):
+        return [p.name]
+    if isinstance(p, RelationshipClaim):
+        return [p.source, p.target]
+    if isinstance(p, AliasClaim):
+        return [p.name, p.same_as]
+    return []
+
+
 def _names_present(names: list[str], quotes: list[QuoteRef]) -> list[str]:
-    joined = " ".join(_fold(q.quote) for q in quotes)
-    return [f"{name!r} does not appear in the quotes" for name in names if _fold(name) not in joined]
+    return [f"{name!r} {NOT_IN_QUOTES}" for name in names if not _name_in(name, quotes)]
+
+
+def reinstate_by_alias(refused: list[StoredClaim], aliases: list[StoredClaim]) -> list[StoredClaim]:
+    """Refused claims whose only fault is a party name absent from the quotes, where a verified alias of that
+    name is in the quotes instead. Returned verified, with the alias claim recorded for each name."""
+    parent: dict[str, str] = {}
+
+    def find(x: str) -> str:
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    verified = [a for a in aliases if a.verified and isinstance(a.payload, AliasClaim)]
+    for a in verified:
+        parent[find(name_key(a.payload.name))] = find(name_key(a.payload.same_as))
+    out = []
+    for claim in refused:
+        missing = [n for n in _names_of(claim) if not _name_in(n, claim.citations)]
+        if not missing or len(claim.reasons) != len(missing) or not all(r.endswith(NOT_IN_QUOTES) for r in claim.reasons):
+            continue
+        resolved: dict[str, str] = {}
+        for name in missing:
+            root = find(name_key(name))
+            for a in verified:
+                if find(name_key(a.payload.name)) == root and any(
+                        _name_in(n, claim.citations) for n in (a.payload.name, a.payload.same_as)):
+                    resolved[name] = a.id
+                    break
+        if len(resolved) == len(missing):
+            out.append(claim.model_copy(update={"verified": True, "reasons": [], "name_aliases": resolved}))
+    return out
 
 
 def _claim_id(run_id: str, kind: ClaimKind, payload) -> str:
