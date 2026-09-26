@@ -181,6 +181,14 @@ class ScoreRow(BaseModel):
     cost_usd: float
 
 
+class Comparison(BaseModel):
+    """Another system scored by the same verifier and answer key."""
+
+    label: str
+    note: str
+    score: ScoreRow
+
+
 class KeyEventRow(BaseModel):
     id: str
     date: str
@@ -351,3 +359,4 @@ class Bundle(BaseModel):
     answer_key: list[KeyEventRow]
     team: TeamRun | None = None
     team_spec: TeamSpec
+    comparisons: list[Comparison]

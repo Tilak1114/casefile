@@ -18,6 +18,7 @@ from casefile.evaluation.score import score_run
 from casefile.export.team import build_team
 from casefile.export.team_spec import team_spec
 from casefile.export.models import (
+    Comparison,
     Box,
     Bundle,
     CaseInfo,
@@ -58,6 +59,13 @@ VERIFIER_RULES = [
     "A claim with no citation is shown as interpretation, never as fact.",
     "One failed citation refuses the whole claim. Refused claims are kept with their reasons, not softened.",
 ]
+# Other systems scored by the same verifier and key; shown on the Evaluation screen when their claims exist.
+COMPARISONS = {
+    "claude-code-1": ("8 Claude agents · no harness",
+                      "Claude Sonnet in Claude Code, 8 agents in parallel, one pass of about 10 minutes each over an eighth of "
+                      "the pages; a different, stronger model, so this compares model and harness together; nothing records "
+                      "which pages were read"),
+}
 MAX_LANES = 9  # parties with their own lane on the board; the rest share "Other parties"
 NEGATIVE_RULE = (
     "Each role proposes what the claim file does not contain at the end of the run, with search terms that would "
@@ -270,6 +278,8 @@ def build_bundle(db: Database, case_dir: Path, run_id: str, baseline_id: str | N
                            seconds=w.get("seconds", 0.0)) for w in workers],
         score=_score_row(db, key, run_id), baseline=_score_row(db, key, baseline_id) if baseline_id else None,
         answer_key=key_rows, team=team, team_spec=team_spec(),
+        comparisons=[Comparison(label=label, note=note, score=row) for rid, (label, note) in COMPARISONS.items()
+                     if (row := _score_row(db, key, rid)) is not None],
     )
 
 

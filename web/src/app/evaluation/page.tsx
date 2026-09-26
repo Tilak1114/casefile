@@ -10,7 +10,14 @@ export default function EvaluationPage() {
   const b = loadBundle();
   const claims = claimsById(b);
   const found = b.answer_key.flatMap((k) => k.found_by).map((id) => claims[id]).filter(Boolean);
-  const cols: [string, ScoreRow | null | undefined][] = [[`Harness · ${b.run.run_id}`, b.score], ["Single prompt · baseline", b.baseline]];
+  type Col = { name: string; s: ScoreRow | null | undefined; pages?: React.ReactNode; readers?: React.ReactNode; cost?: React.ReactNode };
+  const cols: Col[] = [
+    { name: `Casefile harness · ${b.run.run_id}`, s: b.score, cost: b.team ? <span className="num">${b.team.cost_usd.toFixed(2)}</span> : undefined },
+    ...b.comparisons.map((c) => ({ name: c.label, s: c.score, pages: <span style={{ color: "var(--muted)" }}>not recorded</span>,
+                                   readers: <span className="num">8 agents</span>, cost: <span style={{ color: "var(--muted)" }}>not metered</span> })),
+    { name: "Single prompt · baseline", s: b.baseline },
+  ];
+  const override: Record<string, keyof Col> = { "Pages read": "pages", "Reading calls (readers started)": "readers", "Cost": "cost" };
   const rows: [string, (s: ScoreRow) => React.ReactNode][] = [
     ["Pages read", (s) => <span className="num">{s.pages_read.toLocaleString()}</span>],
     ["Key events found, development set", (s) => frac(s.dev.events_found, s.dev.events_total)],
@@ -22,7 +29,7 @@ export default function EvaluationPage() {
     ["Claims verified", (s) => <span className="num">{s.verified_claims}</span>],
     ["Claims refused", (s) => <span className="num">{s.refused_claims} ({Math.round((100 * s.refused_claims) / Math.max(1, s.verified_claims + s.refused_claims))}%)</span>],
     ["Reading calls (readers started)", (s) => <span className="num">{s.readers}</span>],
-    ["Cost at list price", (s) => <span className="num">${s.cost_usd.toFixed(2)}</span>],
+    ["Cost", (s) => <span className="num">${s.cost_usd.toFixed(2)}</span>],
   ];
   const splits = [["dev", "Development set (used while building)"], ["heldout", "Held-out set (scored only at the end)"]] as const;
   return (
@@ -31,19 +38,23 @@ export default function EvaluationPage() {
         <div className="page-head">
           <div className="eyebrow">Measured against the NTSB&apos;s findings</div>
           <h1>Evaluation</h1>
-          <p>The answer key is built from the NTSB final report HAR-07/02 and its six analysis PDFs, which the agent never sees. It is used to score runs and as context, never as a finding of fault. The harness run shown here stopped early ({b.run.status}), so its numbers are for a partial reading of the claim file.</p>
+          <p>The answer key is built from the NTSB final report HAR-07/02 and its six analysis PDFs, which the agent never sees. It is used to score runs and as context, never as a finding of fault. Run {b.run.run_id}: {b.run.status}.</p>
         </div>
         <section className="section">
-          <h2>Harness against a single prompt</h2>
-          <p>The baseline gives every readable page to one Gemini call and runs the same checks and scoring. The harness has to beat it to earn its place.</p>
+          <h2>Harness against a single prompt and a general-purpose agent</h2>
+          <p>Every column is checked by the same verifier and scored against the same key. The baseline gives every readable page to one Gemini call, the same model the harness uses. {b.comparisons.map((c) => `${c.label}: ${c.note}.`).join(" ")}</p>
           <div className="card table-wrap">
             <table className="data">
-              <thead><tr><th></th>{cols.map(([n]) => <th key={n} style={{ textAlign: "right" }}>{n}</th>)}</tr></thead>
+              <thead><tr><th></th>{cols.map((c) => <th key={c.name} style={{ textAlign: "right" }}>{c.name}</th>)}</tr></thead>
               <tbody>
-                {rows.map(([label, f]) => (
-                  <tr key={label}>
+                {rows.map(([label, f], i) => (
+                  <tr key={`${i}-${label}`}>
                     <td style={{ paddingLeft: label.startsWith("  ") ? 28 : 12, color: label.startsWith("  ") ? "var(--muted)" : undefined }}>{label.trim()}</td>
-                    {cols.map(([n, s]) => <td key={n} style={{ textAlign: "right" }}>{s ? f(s) : "—"}</td>)}
+                    {cols.map((c) => {
+                      const o = override[label.trim()];
+                      const special = o ? (c[o] as React.ReactNode) : undefined;
+                      return <td key={c.name} style={{ textAlign: "right" }}>{special ?? (c.s ? f(c.s) : "—")}</td>;
+                    })}
                   </tr>
                 ))}
               </tbody>

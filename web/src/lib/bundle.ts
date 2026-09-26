@@ -240,6 +240,9 @@ export type Wakes = string[];
 export type Events2 = EventSpecRow[];
 export type VerifierRules1 = string[];
 export type NegativeRule1 = string;
+export type Label1 = string;
+export type Note1 = string;
+export type Comparisons = Comparison[];
 
 export interface Bundle {
   case: CaseInfo;
@@ -263,6 +266,7 @@ export interface Bundle {
   answer_key: AnswerKey;
   team?: TeamRun | null;
   team_spec: TeamSpec;
+  comparisons: Comparisons;
 }
 export interface CaseInfo {
   case_id: CaseId;
@@ -582,4 +586,12 @@ export interface Guards1 {
 }
 export interface Memory {
   [k: string]: string;
+}
+/**
+ * Another system scored by the same verifier and answer key.
+ */
+export interface Comparison {
+  label: Label1;
+  note: Note1;
+  score: ScoreRow;
 }

@@ -224,6 +224,29 @@
    "title": "Claim",
    "type": "object"
   },
+  "Comparison": {
+   "description": "Another system scored by the same verifier and answer key.",
+   "properties": {
+    "label": {
+     "title": "Label",
+     "type": "string"
+    },
+    "note": {
+     "title": "Note",
+     "type": "string"
+    },
+    "score": {
+     "$ref": "#/$defs/ScoreRow"
+    }
+   },
+   "required": [
+    "label",
+    "note",
+    "score"
+   ],
+   "title": "Comparison",
+   "type": "object"
+  },
   "Coverage": {
    "properties": {
     "documents_total": {
@@ -1833,6 +1856,13 @@
   },
   "team_spec": {
    "$ref": "#/$defs/TeamSpec"
+  },
+  "comparisons": {
+   "items": {
+    "$ref": "#/$defs/Comparison"
+   },
+   "title": "Comparisons",
+   "type": "array"
   }
  },
  "required": [
@@ -1855,7 +1885,8 @@
   "score",
   "baseline",
   "answer_key",
-  "team_spec"
+  "team_spec",
+  "comparisons"
  ],
  "title": "Bundle",
  "type": "object"
