@@ -1,0 +1,566 @@
+{
+  "events": [
+    {
+      "date": "1992",
+      "date_source": "stated_in_text",
+      "statement": "A Powers Fasteners product profile describes pullout tests of the Power-Fast epoxy anchoring system used for a suspended ceiling in Boston's Callahan Tunnel, witnessed by a Massachusetts Turnpike Authority inspector.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p033", "quote": "Adapted from Rapper newsletter: Spring 1992"},
+        {"page_id": "HWY06MH024:042:p034", "quote": "Prior to its selection, the Power-Fast system was subjected to a series of pullout tests. The Powers distributor, Boston Cartridge Tool Co., set up these tests which were witnessed by an inspector from the Massachusetts Turnpike Authority."}
+      ]
+    },
+    {
+      "date": "1992-05",
+      "date_source": "stated_in_text",
+      "statement": "Project staff conducted a claims avoidance review of the tunnel finishes contract specifications, which did not catch the weaknesses in the anchor bolt testing protocol.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p018", "quote": "In May 1992, Project staff conducted a claims avoidance review for the tunnel finishes contract specifications."}
+      ]
+    },
+    {
+      "date": "1993-01",
+      "date_source": "stated_in_text",
+      "statement": "MassHighway awarded the $49.5 million C05B1 Tunnel Finishes contract, which included the Ted Williams Tunnel ceiling anchor bolt installation, to Walsh Construction of Illinois.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p009", "quote": "MassHighway awarded this $49.5 million contract to Walsh Construction of Illinois in January 1993."}
+      ]
+    },
+    {
+      "date": "1994-04",
+      "date_source": "stated_in_text",
+      "statement": "Before installing the first anchor bolts in April 1994, the contractor submitted RFI No. 126 asking to follow the anchor manufacturer's cleaning instructions instead of the contract specification's method of cleaning holes with water.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p014", "quote": "before installing the first anchor bolts in April 1994, the contractor submitted Request for Information (RFI)9 No. 126 to B/PB requesting reconsideration of the specification to use water to clean the holes."}
+      ]
+    },
+    {
+      "date": "1994-06-06",
+      "date_source": "stated_in_text",
+      "statement": "Testing of the Ted Williams Tunnel ceiling anchor bolts began, and sixteen percent of the first bolts tested failed.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p020", "quote": "Testing of the bolts began on June 6, 1994. Sixteen percent of the first bolts failed during testing (eight out of 50)."}
+      ]
+    },
+    {
+      "date": "1994-08-08",
+      "date_source": "stated_in_text",
+      "statement": "The Project issued Deficiency Report No. 4514, noting that anchor bolts installed where visible water was present on the ceiling had an extraordinarily high failure rate.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p020", "quote": "The Project issued Deficiency Report (DR) No. 4514 to the contractor on August 8, 1994."},
+        {"page_id": "HWY06MH024:058:p020", "quote": "anchor bolts installed where visible water was present on ceiling have exhibited extraordinarily high failure rate."}
+      ]
+    },
+    {
+      "date": "1994-11",
+      "date_source": "stated_in_text",
+      "statement": "Rebar interference began delaying the Ted Williams Tunnel ceiling installation, and the contractor requested permission to drill through the rebar, contrary to the contract specifications.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p012", "quote": "In November 1994, rebar interference began to delay the ceiling installation and the contractor requested permission to drill through the rebar, contrary to the contract specifications."}
+      ]
+    },
+    {
+      "date": "1994-12-16",
+      "date_source": "stated_in_text",
+      "statement": "A field engineer's report recorded that 58 anchor bolts were tested and five failed, a nine percent failure rate.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p020", "quote": "A field engineer's report dated December 16, 1994, states that the contractor tested 58 bolts and five failed, a failure rate of nine percent."}
+      ]
+    },
+    {
+      "date": "1995-01",
+      "date_source": "stated_in_text",
+      "statement": "MassHighway, on B/PB's advice, agreed to let the contractor drill through the rebar mesh in the Ted Williams Tunnel roof to place ceiling anchor bolts.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p012", "quote": "In January 1995, MassHighway, on B/PB's advice, agreed to the change."}
+      ]
+    },
+    {
+      "date": "1995-04-06",
+      "date_source": "stated_in_text",
+      "statement": "The construction contractor hired subcontractor Engineered Products Company, Inc. (EPC) to core-drill anchor holes through rebar in the Ted Williams Tunnel roof, without first requiring EPC to demonstrate its work.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p023", "quote": "On April 6, 1995, just a few weeks after receiving cost proposals from the three drilling firms, the construction contractor hired a fourth subcontractor, Engineered Products Company, Inc. (EPC), to perform the core drilling."}
+      ]
+    },
+    {
+      "date": "1995-06-06",
+      "date_source": "stated_in_text",
+      "statement": "MassHighway approved the hiring of EPC as a subcontractor, about two months after EPC had already started core drilling in the tunnel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p023", "quote": "MassHighway approved the hiring of EPC as a subcontractor on June 6, 1995; about two months after EPC started core drilling in the tunnel."}
+      ]
+    },
+    {
+      "date": "1996-07",
+      "date_source": "stated_in_text",
+      "statement": "The contractor completed the C05B1 Ted Williams Tunnel Finishes contract work.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p009", "quote": "The contractor began work in January 1993 and completed work in July 1996."}
+      ]
+    },
+    {
+      "date": "1997-08-25",
+      "date_source": "document_date",
+      "statement": "Gannett Fleming reported to Bechtel/Parsons Brinckerhoff on its research into resin bonded, undercut, and expansion anchor systems for the ceiling of the 4A2 tunnel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:066:p002", "quote": "August 25, 1997"},
+        {"page_id": "HWY06MH024:066:p002", "quote": "Gannett Fleming has been researching various types of post-installed anchoring systems for the subject tunnel."}
+      ]
+    },
+    {
+      "date": "1997-12-30",
+      "date_source": "document_date",
+      "statement": "Hodgen Construction transmitted structural calculations for the active ceiling anchors, Submittal 723.480-014C, for review.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p002", "quote": "TRANSMITTAL DATE: 12/30/97"},
+        {"page_id": "HWY06MH024:042:p002", "quote": "STRUCTURAL CALCULATIONS FOR ACTIVE ANCHORS"}
+      ]
+    },
+    {
+      "date": "1998-06-25",
+      "date_source": "stated_in_text",
+      "statement": "The Massachusetts Inspector General provided Project management a preliminary draft of the report reviewing anchor bolt change orders on the C05B1 contract.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p032", "quote": "On June 25, 1998, the Inspector General provided to Project management a preliminary draft of this report."}
+      ]
+    },
+    {
+      "date": "1998-08-10",
+      "date_source": "document_date",
+      "statement": "The Massachusetts Turnpike Authority's Project Director responded to the Inspector General's draft report, defending the anchor bolt change orders and stating that the drilling procedure was reviewed and approved by senior structural engineers.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p035", "quote": "August 10, 1998"},
+        {"page_id": "HWY06MH024:058:p035", "quote": "I write in response to your draft report on the Central Artery/Tunnel Project's I-90 tunnel finishes contract CO5B1."}
+      ]
+    },
+    {
+      "date": "1998-12",
+      "date_source": "document_date",
+      "statement": "The Massachusetts Office of the Inspector General released its report on the Central Artery/Tunnel Project's use of anchor bolts on the C05B1 Tunnel Finishes contract.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p002", "quote": "A Review of the Central Artery/Tunnel Project's Use of Anchor Bolts on the C05B1 Tunnel Finishes Contract"},
+        {"page_id": "HWY06MH024:058:p002", "quote": "December 1998"}
+      ]
+    },
+    {
+      "date": "1998-12-23",
+      "date_source": "document_date",
+      "statement": "The Massachusetts Turnpike Authority's Deputy Director responded to the Inspector General's final draft report, noting the Project had adopted a new ceiling anchoring concept.",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p033", "quote": "RECEIVED DEC 23 1998"},
+        {"page_id": "HWY06MH024:058:p033", "quote": "I have reviewed your final draft report on the Central Artery/Tunnel Project's C05B1 Ted Williams Tunnel finishes contract."}
+      ]
+    },
+    {
+      "date": "1999-03-09",
+      "date_source": "document_date",
+      "statement": "Environmental Interiors Inc. withdrew its proposal to substitute a Celline ceiling system for the precast concrete ceiling panels specified for the I-90 Seaport Access Tunnel Finishes contract.",
+      "quotes": [
+        {"page_id": "HWY06MH024:062:p002", "quote": "March 9, 1999"},
+        {"page_id": "HWY06MH024:062:p002", "quote": "Please be advised that we are withdrawing our various proposals for the use of our Celline® ceiling system in lieu of the precast concrete ceiling panels and support systems specified for this project."}
+      ]
+    },
+    {
+      "date": "1999-10-12",
+      "date_source": "document_date",
+      "statement": "Following an October 8, 1999 Engineering Issues meeting, Bechtel/Parsons Brinckerhoff told Modern Continental that loose turnbuckles in the ceiling system could over-stress the adhesive anchors and cause movement.",
+      "quotes": [
+        {"page_id": "HWY06MH024:041:p002", "quote": "As discussed during our Engineering Issues meeting of October, 8 1999, and in response to the above referenced letter, the following was discussed."},
+        {"page_id": "HWY06MH024:041:p002", "quote": "A review of the ceiling system indicates that several turnbuckles are loose. This could induce excessive loading to the point that the anchors may be over stressed which may cause movement."}
+      ]
+    },
+    {
+      "date": "1999-10-20",
+      "date_source": "document_date",
+      "statement": "Powers Fasteners' field engineering manager confirmed to Modern Continental that linear interpolation between published embedment depths was permitted for the anchor design.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p007", "quote": "Wednesday, October 20, 1999"},
+        {"page_id": "HWY06MH024:042:p007", "quote": "In response to your fax memo to Mr. Gary Wilcox dated 10/19/99 regarding interpolation and per my discussion with Jack Armour of Powers Fasteners Boston, I have the following response."}
+      ]
+    },
+    {
+      "date": "1999-12-17",
+      "date_source": "document_date",
+      "statement": "SIGMA Engineering prepared structural calculations for Modern Continental Construction, checking the ceiling anchor design service loads against Powers Rawl allowable loads.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p010", "quote": "Customer: Modern Continental Construction Co. Seismic Zone: II Date: Dec. 17, 1999"}
+      ]
+    },
+    {
+      "date": "1999-12-20",
+      "date_source": "document_date",
+      "statement": "Powers Fasteners responded to Newman, Renner, Colony's review comments on the C09B2 structural calculations for the epoxy anchors, agreeing to some values and providing a draft ICBO evaluation report.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p005", "quote": "Monday, December 20, 1999"},
+        {"page_id": "HWY06MH024:042:p005", "quote": "Pursuant to your request, the attachments forwarded under your fax cover sheets dated December 6 and 15, 1999 have been reviewed."}
+      ]
+    },
+    {
+      "date": "1999-12-29",
+      "date_source": "document_date",
+      "statement": "Modern Continental Construction responded to a revised adhesive anchor testing procedure (CP-022), disputing B/PB's proposed retest of installed anchors to 125 percent of allowable tension.",
+      "quotes": [
+        {"page_id": "HWY06MH024:048:p002", "quote": "December 29, 1999"},
+        {"page_id": "HWY06MH024:048:p002", "quote": "With regard to the replacement of the failed anchors, Modern Continental acknowledges that a clean drill hole is required prior to reinstallation of the new anchor, and if necessary will utilize a carbide drill bit to remove any remaining debris from the hole prior to anchor installation."}
+      ]
+    },
+    {
+      "date": "1999-12-30",
+      "date_source": "document_date",
+      "statement": "Hanson Concrete transmitted a submittal for restrictive anchors for the concrete slab, Submittal 723.480-008D, for review.",
+      "quotes": [
+        {"page_id": "HWY06MH024:064:p002", "quote": "TRANSMITTAL DATE: 12/30/99"},
+        {"page_id": "HWY06MH024:064:p002", "quote": "Restrictive Anchors for Concrete Slab"}
+      ]
+    },
+    {
+      "date": "1999-10-01",
+      "date_source": "document_date",
+      "statement": "ICBO Evaluation Report ER-4514, covering the Power-Fast epoxy and Chem-Stud capsule adhesive anchor systems, was reissued.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p016", "quote": "Reissued October 1, 1999"},
+        {"page_id": "HWY06MH024:042:p016", "quote": "The Power-Fast Adhesive Anchor System consists of a two-component structural epoxy that is used to bond threaded rods, fully threaded bolts, or reinforcing steel into predrilled holes in normal-weight, stone aggregate concrete."}
+      ]
+    },
+    {
+      "date": "2005-06-01",
+      "date_source": "document_date",
+      "statement": "Powers Fasteners' Material Safety Data Sheet for the Power-Fast+ epoxy adhesive cartridge system was dated.",
+      "quotes": [
+        {"page_id": "HWY06MH024:073:p006", "quote": "Date of Preparation: June 1, 2005"}
+      ]
+    },
+    {
+      "date": "2006-07-10",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory Factual Report identifies this date as the date of the I-90 Connector Tunnel accident under investigation.",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p001", "quote": "Place : Boston, Massachusetts Date : July 10, 2006 Vehicle : I-90 Connector Tunnel to the Ted Williams Tunnel"}
+      ]
+    },
+    {
+      "date": "2007-01",
+      "date_source": "stated_in_text",
+      "statement": "NTSB requested that MIT characterize epoxy samples removed from the adhesive anchoring system that secured the tunnel's concrete ceiling panels.",
+      "quotes": [
+        {"page_id": "HWY06MH024:011:p002", "quote": "In January 2007, NTSB requested the characterization of epoxy samples from the adhesive anchoring system used to secure concrete ceiling panels that formed part of the ventilation ducting to the concrete tunnel roof."}
+      ]
+    },
+    {
+      "date": "2007-03-27",
+      "date_source": "document_date",
+      "statement": "Bodycote Polymer - Broutman Laboratory's report on NTSB-directed lap shear creep testing found that a Standard Set epoxy sample loaded at 770 psi in a 70 degree F wet condition failed at 988 hours.",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p004", "quote": "Date: 27 th March 2007"},
+        {"page_id": "HWY06MH024:021:p007", "quote": "Standard set epoxy sample loaded at 770 psi, 70°F, wet condition failed at 988 hours."}
+      ]
+    },
+    {
+      "date": "2007-03-28",
+      "date_source": "document_date",
+      "statement": "Bodycote Polymer - Broutman Laboratory issued a report on lap shear strength testing of the Standard Set and Fast Set epoxy adhesives, contracted by NTSB.",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p028", "quote": "Date: 28 th March 2007"},
+        {"page_id": "HWY06MH024:021:p030", "quote": "Bodycote Polymer – Broutman Laboratory (BPBL) was contracted by National Transportation Safety Board (NTSB) to conduct lap shear strength tests on two types of epoxy adhesives."}
+      ]
+    },
+    {
+      "date": "2007-04-27",
+      "date_source": "document_date",
+      "statement": "MIT's Polymer Characterization Factual Report for NTSB found that FTIR spectra of epoxy samples removed from the tunnel anchors matched Powers Fast Set epoxy rather than Standard Set epoxy.",
+      "quotes": [
+        {"page_id": "HWY06MH024:011:p001", "quote": "Test Report for the National Transportation Safety Board NTSB No. HWY06MH024 April 27, 2007"},
+        {"page_id": "HWY06MH024:011:p003", "quote": "Thus, FTIR indicates that tunnel epoxy samples correspond to Powers Fast Set epoxy rather than Standard Set epoxy."}
+      ]
+    },
+    {
+      "date": "2007-05-07",
+      "date_source": "document_date",
+      "statement": "NTSB Materials Laboratory Factual Report No. 07-064 documented lap shear strength and creep testing sent out to investigate the shear behavior of the Powers Fasteners Standard Set and Fast Set epoxy anchor systems used in the tunnel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p001", "quote": "May 7, 2007 MATERIALS LABORATORY FACTUAL REPORT Report No. 07-064"},
+        {"page_id": "HWY06MH024:021:p001", "quote": "Powers Fasteners1 Power-Fast Standard Set and Fast Set epoxy anchor systems were sent to an outside laboratory2 for testing to investigate their creep behavior in shear and to determine their shear strengths."}
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "name": "Powers Fasteners, Inc.",
+      "kind": "organization",
+      "role": "manufacturer and supplier of the Power-Fast epoxy adhesive anchor system used in the tunnel ceiling",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p007", "quote": "Powers Fasteners, Inc. 2 Powers Square New Rochelle, New York 10801"}
+      ]
+    },
+    {
+      "name": "Modern Continental Companies, Inc.",
+      "kind": "organization",
+      "role": "contractor on the I-90 Seaport Access Tunnel Finishes contract (C09B2)",
+      "quotes": [
+        {"page_id": "HWY06MH024:041:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc."}
+      ]
+    },
+    {
+      "name": "Modern Continental Construction",
+      "kind": "organization",
+      "role": "contractor referenced in project correspondence for the tunnel finishes contract",
+      "quotes": [
+        {"page_id": "HWY06MH024:048:p002", "quote": "Modern Continental Construction is in receipt of the above referenced submittal regarding the adhesive anchor replacement procedure"}
+      ]
+    },
+    {
+      "name": "Bechtel/Parsons Brinckerhoff",
+      "kind": "organization",
+      "role": "construction manager for the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:066:p002", "quote": "Bechtel/Parsons Brinckerhoff"}
+      ]
+    },
+    {
+      "name": "Massachusetts Turnpike Authority",
+      "kind": "organization",
+      "role": "operating agency of the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:041:p002", "quote": "Massachusetts Turnpike Authority Central Artery/Tunnel Project"}
+      ]
+    },
+    {
+      "name": "Massachusetts Highway Department",
+      "kind": "organization",
+      "role": "Commonwealth agency with responsibility for overseeing the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p006", "quote": "Massachusetts Highway Department (MassHighway) has had the responsibility for overseeing the Project for the Commonwealth."}
+      ]
+    },
+    {
+      "name": "National Transportation Safety Board",
+      "kind": "organization",
+      "role": "federal investigating agency that requested and contracted the post-collapse epoxy testing",
+      "quotes": [
+        {"page_id": "HWY06MH024:011:p002", "quote": "Thirty-eight epoxy samples were received from the National Transportation Safety Board (NTSB) for polymer characterization."}
+      ]
+    },
+    {
+      "name": "Massachusetts Institute of Technology",
+      "kind": "organization",
+      "role": "laboratory that performed FTIR/DSC polymer characterization of epoxy samples for NTSB",
+      "quotes": [
+        {"page_id": "HWY06MH024:011:p001", "quote": "Massachusetts Institute of Technology"}
+      ]
+    },
+    {
+      "name": "Gannett Fleming, Inc.",
+      "kind": "organization",
+      "role": "engineering consultant that researched post-installed anchoring systems for the tunnel ceiling",
+      "quotes": [
+        {"page_id": "HWY06MH024:066:p002", "quote": "GANNETT FLEMING, INC."}
+      ]
+    },
+    {
+      "name": "Bodycote Polymer – Broutman Laboratory",
+      "kind": "organization",
+      "role": "outside laboratory that performed lap shear strength and creep testing of the epoxy adhesives for NTSB",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p006", "quote": "Bodycote Polymer – Broutman Laboratory (BPBL) was contracted by National Transportation Safety Board (NTSB) to conduct lap shear creep tests on two types of epoxy adhesives."}
+      ]
+    },
+    {
+      "name": "Office of the Inspector General",
+      "kind": "organization",
+      "role": "Commonwealth of Massachusetts office that reviewed the C05B1 contract's anchor bolt change orders",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p003", "quote": "The Commonwealth of Massachusetts Office of the Inspector General"}
+      ]
+    },
+    {
+      "name": "Walsh Construction",
+      "kind": "organization",
+      "role": "contractor awarded the C05B1 Tunnel Finishes contract in the Ted Williams Tunnel",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p009", "quote": "MassHighway awarded this $49.5 million contract to Walsh Construction of Illinois in January 1993."}
+      ]
+    },
+    {
+      "name": "Engineered Products Company, Inc.",
+      "kind": "organization",
+      "role": "subcontractor hired to core-drill anchor holes through rebar in the tunnel roof",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p023", "quote": "the construction contractor hired a fourth subcontractor, Engineered Products Company, Inc. (EPC), to perform the core drilling."}
+      ]
+    },
+    {
+      "name": "ENVIRONMENTAL INTERIORS INC.",
+      "kind": "organization",
+      "role": "subcontractor that proposed a substitute ceiling system for the I-90 Seaport Access Tunnel Finishes contract",
+      "quotes": [
+        {"page_id": "HWY06MH024:062:p002", "quote": "ENVIRONMENTAL INTERIORS INC."}
+      ]
+    },
+    {
+      "name": "Domenech Hicks Krockmalnic",
+      "kind": "organization",
+      "role": "Section Design Consultant for the tunnel finishes contract",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p013", "quote": "Domenech Hicks Krockmalnic was the SDC and used the following subconsultants as"}
+      ]
+    },
+    {
+      "name": "Robert Coutts",
+      "kind": "person",
+      "role": "Project Manager, Modern Continental Companies, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:041:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc."}
+      ]
+    },
+    {
+      "name": "Robert E. Steffy",
+      "kind": "person",
+      "role": "Resident Engineer, Bechtel/Parsons Brinckerhoff",
+      "quotes": [
+        {"page_id": "HWY06MH024:041:p003", "quote": "Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "name": "Ray Williamson",
+      "kind": "person",
+      "role": "Engineering Manager, Powers Fasteners, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p006", "quote": "Ray Williamson Engineering Manager"}
+      ]
+    },
+    {
+      "name": "Edwin L. Thomas, PhD",
+      "kind": "person",
+      "role": "Professor and Head, Department of Materials Science and Engineering, MIT; author of the Polymer Characterization Factual Report",
+      "quotes": [
+        {"page_id": "HWY06MH024:011:p001", "quote": "Edwin L. Thomas, PhD Professor and Head Department of Materials Science and Engineering Massachusetts Institute of Technology"}
+      ]
+    },
+    {
+      "name": "Carl R. Schultheisz",
+      "kind": "person",
+      "role": "Materials Research Engineer, NTSB",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p003", "quote": "Carl R. Schultheisz Materials Research Engineer"}
+      ]
+    },
+    {
+      "name": "ROBERT A. CERASOLI",
+      "kind": "person",
+      "role": "Massachusetts Inspector General",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p003", "quote": "ROBERT A. CERASOLI INSPECTOR GENERAL"}
+      ]
+    },
+    {
+      "name": "Peter M. Zuk",
+      "kind": "person",
+      "role": "Project Director, Massachusetts Turnpike Authority",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p037", "quote": "Peter M. Zuk Project Director"}
+      ]
+    },
+    {
+      "name": "William S. Flynn",
+      "kind": "person",
+      "role": "Deputy Director, Massachusetts Turnpike Authority",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p034", "quote": "William S. Flynn Deputy Director"}
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Bechtel/Parsons Brinkeroff",
+      "type": "oversaw",
+      "target": "Modern Continental Construction",
+      "quotes": [
+        {"page_id": "HWY06MH024:048:p002", "quote": "Bechtel/Parsons Brinkeroff"},
+        {"page_id": "HWY06MH024:048:p002", "quote": "Modern Continental Construction is in receipt of the above referenced submittal regarding the adhesive anchor replacement procedure"}
+      ]
+    },
+    {
+      "source": "Powers Fasteners, Inc.",
+      "type": "supplied",
+      "target": "Modern Continental",
+      "quotes": [
+        {"page_id": "HWY06MH024:042:p005", "quote": "Powers Fasteners, Inc. 2 Powers Square New Rochelle, NY"},
+        {"page_id": "HWY06MH024:042:p005", "quote": "Re: Modern Continental - CO9B2 Tunnel Finishes - Epoxy Anchor"}
+      ]
+    },
+    {
+      "source": "GANNETT FLEMING, INC.",
+      "type": "contracted_with",
+      "target": "Bechtel/Parsons Brinckerhoff",
+      "quotes": [
+        {"page_id": "HWY06MH024:066:p002", "quote": "GANNETT FLEMING, INC."},
+        {"page_id": "HWY06MH024:066:p002", "quote": "Bechtel/Parsons Brinckerhoff"}
+      ]
+    },
+    {
+      "source": "Bodycote Polymer – Broutman Laboratory",
+      "type": "contracted_with",
+      "target": "National Transportation Safety Board",
+      "quotes": [
+        {"page_id": "HWY06MH024:021:p006", "quote": "Bodycote Polymer – Broutman Laboratory (BPBL) was contracted by National Transportation Safety Board (NTSB) to conduct lap shear creep tests on two types of epoxy adhesives."}
+      ]
+    },
+    {
+      "source": "MassHighway",
+      "type": "contracted_with",
+      "target": "Bechtel Corporation/Parsons Brinckerhoff Quade and Douglas",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p006", "quote": "In 1985, MassHighway hired the joint venture of Bechtel Corporation/Parsons Brinckerhoff Quade and Douglas (B/PB) to manage the design, day-to-day operations, and construction of the CA/T Project."}
+      ]
+    },
+    {
+      "source": "Massachusetts Institute of Technology",
+      "type": "reviewed_submittals_for",
+      "target": "National Transportation Safety Board",
+      "quotes": [
+        {"page_id": "HWY06MH024:011:p001", "quote": "Test Report for the National Transportation Safety Board"},
+        {"page_id": "HWY06MH024:011:p001", "quote": "Massachusetts Institute of Technology"}
+      ]
+    },
+    {
+      "source": "ENVIRONMENTAL INTERIORS INC.",
+      "type": "subcontracted_to",
+      "target": "Modern Continental Construction Company",
+      "quotes": [
+        {"page_id": "HWY06MH024:062:p002", "quote": "ENVIRONMENTAL INTERIORS INC."},
+        {"page_id": "HWY06MH024:062:p002", "quote": "Modern Continental Construction Company"}
+      ]
+    },
+    {
+      "source": "Walsh Construction",
+      "type": "contracted_with",
+      "target": "MassHighway",
+      "quotes": [
+        {"page_id": "HWY06MH024:058:p009", "quote": "MassHighway awarded this $49.5 million contract to Walsh Construction of Illinois in January 1993."}
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "name": "B/PB",
+      "same_as": "Bechtel Corporation/Parsons Brinckerhoff Quade and Douglas",
+      "quote": {"page_id": "HWY06MH024:058:p006", "quote": "In 1985, MassHighway hired the joint venture of Bechtel Corporation/Parsons Brinckerhoff Quade and Douglas (B/PB) to manage the design, day-to-day operations, and construction of the CA/T Project."}
+    },
+    {
+      "name": "BPBL",
+      "same_as": "Bodycote Polymer – Broutman Laboratory",
+      "quote": {"page_id": "HWY06MH024:021:p006", "quote": "Bodycote Polymer – Broutman Laboratory (BPBL) was contracted by National Transportation Safety Board (NTSB) to conduct lap shear creep tests on two types of epoxy adhesives."}
+    },
+    {
+      "name": "NTSB",
+      "same_as": "National Transportation Safety Board",
+      "quote": {"page_id": "HWY06MH024:021:p006", "quote": "Bodycote Polymer – Broutman Laboratory (BPBL) was contracted by National Transportation Safety Board (NTSB) to conduct lap shear creep tests on two types of epoxy adhesives."}
+    },
+    {
+      "name": "EPC",
+      "same_as": "Engineered Products Company, Inc.",
+      "quote": {"page_id": "HWY06MH024:058:p023", "quote": "the construction contractor hired a fourth subcontractor, Engineered Products Company, Inc. (EPC), to perform the core drilling."}
+    }
+  ],
+  "open_questions": []
+}

@@ -1,0 +1,445 @@
+{
+  "events": [
+    {
+      "date": "1998-10-09",
+      "date_source": "stated_in_text",
+      "statement": "B/PB and GF representatives met to set design criteria for the adhesive anchors used to attach the hanging ceiling supports to the concrete tunnel roof, including a factor of safety of two and a switch from stainless steel to A36 threaded fastener material.",
+      "quotes": [
+        {"page_id": "HWY06MH024:067:p002", "quote": "This meeting focused on the use of adhesive anchors which will be used to attach the hanging\nceiling supports to the concrete tunnel roof."},
+        {"page_id": "HWY06MH024:067:p002", "quote": "Date: 10/12/1998\nRe: Meeting with B/PB on 10/9/98"}
+      ]
+    },
+    {
+      "date": "1998-10-12",
+      "date_source": "document_date",
+      "statement": "A memorandum recorded the design criteria directed by P. Das for the adhesive anchors, including a factor of safety of two on manufacturer's ultimate capacities and use of A36 material instead of stainless steel for threaded fasteners.",
+      "quotes": [
+        {"page_id": "HWY06MH024:067:p002", "quote": "1. For the one-hanger out scenario:\na. use a factor of safety of two (2) applied to manufacturer's ultimate capacities to\narrive at allowable capacity for adhesive design."},
+        {"page_id": "HWY06MH024:067:p002", "quote": "2. Stainless Steel will no longer be used for threaded fasteners. Use A36 material."}
+      ]
+    },
+    {
+      "date": "1999 (06 through 03/2000)",
+      "date_source": "stated_in_text",
+      "statement": "NRC 1000 Gold Epoxy was used in the I-90 eastbound connector tunnel from June 1999 through March 2000 without being on the Massachusetts Highway Department's qualified list.",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p012", "quote": "Why was the NRC 1000 Gold Epoxy used in the I-90\nEast-bound connector tunnel from June 1999 through March 2000,\nwithout being on the Massachusetts Highway Department of\nState's qualified list?"}
+      ]
+    },
+    {
+      "date": "1999-10-07",
+      "date_source": "stated_in_text",
+      "statement": "Modern Continental Construction (MCC) sent a letter to Bechtel/Parsons Brinckerhoff (B/PB) regarding adhesive anchor movement, which was later referenced in a November 1999 letter about additional anchor testing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "Reference: MCC Letter No. 0114, dated 10/07/99\nB/PB Letter No. 0350. dated 10/12/99\nMCC Letter No. 0139, dated 11/08/99"}
+      ]
+    },
+    {
+      "date": "1999-10-12",
+      "date_source": "stated_in_text",
+      "statement": "B/PB directed action items after adhesive anchor movement was found, including having Modern Continental Construction contact the anchor bolt supplier, confirm uniform hanger loading, and having B/PB reconfirm ceiling load calculations.",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "To summarize, the action items from our October 12, 1999 letter:\n1. MCC to contact the supplier of the adhesive anchor bolt system, review the installation of the\nfailed anchors and obtain a manufacturer's recommendation."},
+        {"page_id": "HWY06MH024:045:p003", "quote": "4. B/PB will confirm that ceiling load calculations are correct.\nAction has been completed, B/PB has re-confirmed that design loads for the ceiling\nsystem are correctly stated."}
+      ]
+    },
+    {
+      "date": "1999-11-11",
+      "date_source": "document_date",
+      "statement": "B/PB denied Modern Continental Construction's claim that additional testing of adhesive anchors was a change to the contract, stating the ceiling had not been installed in accordance with the contract because anchors were over-torqued and ceiling hangers were not loaded uniformly.",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "We do not concur with your position that all elements of the ceiling have been installed in accordance\nwith the Contract. Whereas, adhesive anchors are over torqued and the ceiling hangers are not loaded\nuniformly."},
+        {"page_id": "HWY06MH024:045:p003", "quote": "Based on the above, the project has determined that there is no merit to MCC's claim for additional\ncompensation and hereby inform you that this claim is denied."}
+      ]
+    },
+    {
+      "date": "1999-12-29",
+      "date_source": "stated_in_text",
+      "statement": "Modern Continental Construction sent a letter later referenced as part of the correspondence leading to Contract Proposal No. 22 for adhesive anchor replacement and re-testing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:055:p002", "quote": "MCC Letter No. C09B2-0165, dated December 29, 1999"}
+      ]
+    },
+    {
+      "date": "2000-03-10",
+      "date_source": "stated_in_text",
+      "statement": "Modern Continental Construction began retesting ceiling adhesive anchor bolts in the HOV ramp C04A2 area, work that continued into August 2000 and was tracked on time-and-materials slips.",
+      "quotes": [
+        {"page_id": "HWY06MH024:055:p004", "quote": "03/10/00 - Retesting Anchors in HOV - C04A2 area"},
+        {"page_id": "HWY06MH024:055:p002", "quote": "MCC has completed re-testing all ceiling adhesive anchors in the C04A2 area. The\nanchors were originally tested to 3,250 lbs. tension, per the contract, and then re-tested to 6350\nlbs., as directed by the Project."}
+      ]
+    },
+    {
+      "date": "2000-09-18",
+      "date_source": "document_date",
+      "statement": "Modern Continental Construction submitted Contract Proposal No. 22 to B/PB seeking $17,102.61 in reimbursement for retesting the ceiling adhesive anchors in the C04A2 area to 6,350 pounds tension.",
+      "quotes": [
+        {"page_id": "HWY06MH024:055:p002", "quote": "Modern Continental Construction hereby submits a detailed cost\nproposal for Contract Proposal (CP) No. 22. The total cost associated with this change, is\nSeventeen Thousand One Hundred Two Dollars and Sixty-One Cents ($17,102.61)."}
+      ]
+    },
+    {
+      "date": "2001-03-15",
+      "date_source": "document_date",
+      "statement": "B/PB issued a fully executed Contract Modification 158FW authorizing $16,396.50 in compensation for re-testing ceiling adhesive anchor bolts in the HOV ramp because several anchors had failed and all installed bolts had to be re-tested at 6,350 pounds tension.",
+      "quotes": [
+        {"page_id": "HWY06MH024:057:p002", "quote": "Subject: Central Artery (I-93)/Tunnel (I-90) Project\nContract No. 99119-C09B2\nI-90 Seaport Access Tunnel Finishes\nContract Modification 158FW - Anchor Bolt Testing In HOV"},
+        {"page_id": "HWY06MH024:057:p003", "quote": "Due to several failures of ceiling anchor bolts in the HOV, the Project determined that all of the bolts that were installed\nhad to be re-tested at 6350 lbs. tension."}
+      ]
+    },
+    {
+      "date": "2006-07-10",
+      "date_source": "document_date",
+      "statement": "The adhesive anchors along the M1 row of ceiling panel section EB081 pulled out of the tunnel roof, causing the support structure and ten concrete ceiling panels to swing down and to the north in the connector tunnel to the Ted Williams Tunnel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:004:p001", "quote": "the sequence of fracture and\ndamage that led to the structure swinging down and to the north after the adhesive anchors\nalong the “M1” row of ceiling panel section EB081 (module 081 from the eastbound tunnel)\npulled out of the tunnel roof"}
+      ]
+    },
+    {
+      "date": "2006-08-09",
+      "date_source": "document_date",
+      "statement": "NTSB Materials Laboratory representatives began hand-held borescope inspections of the failure anchor holes in the eastbound tunnel and removed core samples from ten anchor positions in the westbound tunnel ceiling using diamond coring bits.",
+      "quotes": [
+        {"page_id": "HWY06MH024:005:p001", "quote": "The samples were removed on August 9, 2006\nusing cylindrical diamond coring bits."},
+        {"page_id": "HWY06MH024:007:p012", "quote": "performed hand-held borescope inspections of the\nfailure anchor holes on August 9 and 10, 2006."}
+      ]
+    },
+    {
+      "date": "2006-08-11",
+      "date_source": "document_date",
+      "statement": "James Wildey transported 17 anchors removed from their ceiling fittings in the failure area from the Boston area to the NTSB Materials Laboratory.",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p002", "quote": "The 17 anchors from the failure area that had been removed from their fittings were\ntransported by the undersigned (James Wildey) from the Boston area to the NTSB\nMaterials Laboratory on August 11, 2006."}
+      ]
+    },
+    {
+      "date": "2006-08-22",
+      "date_source": "document_date",
+      "statement": "Core samples containing anchors were transported to the FBI laboratory in Quantico, Virginia, for x-ray inspection to look for voids in the epoxy.",
+      "quotes": [
+        {"page_id": "HWY06MH024:005:p004", "quote": "the core samples\ncontaining anchors (“WB083-S-8 north”, “WB083-N-3 north”, and “WB083-N-3 south”) were\ntransported to the laboratory facilities of the Federal Bureau of Investigation, Quantico,\nVirginia, on August 22, 2006, where x-ray inspection of the core samples was conducted."}
+      ]
+    },
+    {
+      "date": "2006-09-12",
+      "date_source": "document_date",
+      "statement": "Trace Laboratories-East received five unknown and six known epoxy samples from the NTSB Materials Laboratory for FTIR, DSC, and TGA analysis.",
+      "quotes": [
+        {"page_id": "HWY06MH024:009:p008", "quote": "DATE IN:\nSeptember 12, 2006\nP/O #:\nNTSBP060084"}
+      ]
+    },
+    {
+      "date": "2006-09-28",
+      "date_source": "document_date",
+      "statement": "Laser-scanned images of twenty failure-area anchor holes and selected other holes were acquired by Laser Techniques Company under a contract with the NTSB Materials Laboratory.",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p013", "quote": "a contract was developed with Laser\nTechniques Company to generate laser-scanned images of the holes. These images were\nacquired on September 28 and 29, 2006."}
+      ]
+    },
+    {
+      "date": "2006-10-18",
+      "date_source": "document_date",
+      "statement": "Trace Laboratories-East received two known and three unknown epoxy samples from the NTSB for comparative dynamic headspace GCMS analysis.",
+      "quotes": [
+        {"page_id": "HWY06MH024:009:p052", "quote": "DATE IN:\nOctober 18, 2006\nP/O #:\nNTSB061012"}
+      ]
+    },
+    {
+      "date": "2006-12-13",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory issued Report No. 06-075 documenting the condition of the concrete ceiling panels and support structure after removal from the tunnel and the sequence of fracture that caused the collapse.",
+      "quotes": [
+        {"page_id": "HWY06MH024:004:p001", "quote": "MATERIALS LABORATORY STUDY REPORT\nReport No. 06-075"},
+        {"page_id": "HWY06MH024:004:p001", "quote": "December 13, 2006"}
+      ]
+    },
+    {
+      "date": "2006-12-27",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory issued Report No. 06-105 identifying the adhesive used in the I-90 tunnel anchorages as a Power-Fast epoxy and describing laboratory testing of Standard Set and Fast Set formulations.",
+      "quotes": [
+        {"page_id": "HWY06MH024:009:p001", "quote": "December 27, 2006\nMATERIALS LABORATORY FACTUAL REPORT\nReport No. 06-105"},
+        {"page_id": "HWY06MH024:009:p001", "quote": "The adhesive that was used in the anchorages in the I-90 tunnel roof had been\npreliminarily identified in construction documents as a Power-Fast epoxy"}
+      ]
+    },
+    {
+      "date": "2007-02-21",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory issued Report No. 06-091 detailing examination of the twenty adhesive anchors from the failure area, describing void areas, adhesive failure, and yellowed epoxy found on the failure-area anchors.",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p001", "quote": "February 21, 2007\nMATERIALS LABORATORY FACTUAL REPORT\nReport No. 06-091"},
+        {"page_id": "HWY06MH024:007:p001", "quote": "Twenty adhesive anchors from the failure area (ceiling module EB081, middle1 row),\nLaser scanned images of the twenty failure anchor holes and selected others"}
+      ]
+    },
+    {
+      "date": "2007-03-21",
+      "date_source": "document_date",
+      "statement": "NTSB investigators deposed Jack Armour, a Powers Fasteners employee, who declined nearly all substantive questions about anchor installation, training, and the 1999 anchor displacement problem by invoking his Fifth Amendment privilege.",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p001", "quote": "Deposition of Jack Armour, an employee of Powers Fasteners\nDeposition conducted on March 21, 2007"},
+        {"page_id": "HWY06MH024:083:p010", "quote": "Q. Do you recall the problem in the tunnel in 1999 with\nthe anchors displacing from the ceiling?\nA. I decline to answer, based on the Fifth Amendment and\nArticle 12."}
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "name": "Modern Continental Companies, Inc.",
+      "kind": "organization",
+      "role": "contractor",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "Mr. Robert Coutts\nProject Manager\nModern Continental Companies, Inc.\n600 Memorial Drive\nCambridge, MA 02210"}
+      ]
+    },
+    {
+      "name": "BECHTEL/PARSONS BRINCKERHOFF",
+      "kind": "organization",
+      "role": "design/construction management consultant (B/PB)",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p003", "quote": "Sincerely,\nBECHTEL/PARSONS BRINCKERHOFF\n\nRobert E. Steffy\nResident Engineer"}
+      ]
+    },
+    {
+      "name": "Massachusetts Turnpike Authority",
+      "kind": "organization",
+      "role": "project owner",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "Massachusetts Turnpike Authority\nCentral Artery/Tunnel Project"}
+      ]
+    },
+    {
+      "name": "Robert Coutts",
+      "kind": "person",
+      "role": "project manager, Modern Continental",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "Mr. Robert Coutts\nProject Manager\nModern Continental Companies, Inc."}
+      ]
+    },
+    {
+      "name": "Robert E. Steffy",
+      "kind": "person",
+      "role": "resident engineer, B/PB",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p003", "quote": "Robert E. Steffy\nResident Engineer\nAuthorized Representative of\nthe Project Director"}
+      ]
+    },
+    {
+      "name": "Power Fasteners",
+      "kind": "organization",
+      "role": "adhesive anchor system supplier",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "We concur with the recommendations in your letter from Power Fasteners that Modern Continental\nConstruction will remove and replace anchors which exhibited movement"}
+      ]
+    },
+    {
+      "name": "Massachusetts Highway Department",
+      "kind": "organization",
+      "role": "department authorizing the contract (MHD)",
+      "quotes": [
+        {"page_id": "HWY06MH024:057:p004", "quote": "This Modification and any payment made hereunder does not constitute an admission of liability by MHD or a waiver of insurance coverage by MHI\nor the Contractor."}
+      ]
+    },
+    {
+      "name": "Stephen A. Murphy",
+      "kind": "person",
+      "role": "resident engineer, B/PB",
+      "quotes": [
+        {"page_id": "HWY06MH024:057:p002", "quote": "Stephen A. Murphy\nResident Engineer\nAuthorized Representative of\nthe Project Director"}
+      ]
+    },
+    {
+      "name": "P. Das",
+      "kind": "person",
+      "role": "B/PB design engineer directing anchor design criteria",
+      "quotes": [
+        {"page_id": "HWY06MH024:067:p002", "quote": "P. Das directed us to incorporate the following design criteria into our present design."}
+      ]
+    },
+    {
+      "name": "GF",
+      "kind": "organization",
+      "role": "engineering firm attending anchor design meeting",
+      "quotes": [
+        {"page_id": "HWY06MH024:067:p002", "quote": "P. J. Falk - GF\nE. V. DiSalvio - GF"}
+      ]
+    },
+    {
+      "name": "Powers Fasteners",
+      "kind": "organization",
+      "role": "adhesive anchor system manufacturer/distributor",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p001", "quote": "Deposition of Jack Armour, an employee of Powers Fasteners"}
+      ]
+    },
+    {
+      "name": "Jack Armour",
+      "kind": "person",
+      "role": "employee, Powers Fasteners",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p001", "quote": "Deposition of Jack Armour, an employee of Powers Fasteners"}
+      ]
+    },
+    {
+      "name": "Sika",
+      "kind": "organization",
+      "role": "epoxy manufacturer",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p012", "quote": "Who is the manufacturer and distributor of the Power\nFast epoxy? I understand Sika makes the epoxy, Power Fasteners\npackages and distributes it, and Newman, Renner, and Colony\nredistributes it."}
+      ]
+    },
+    {
+      "name": "Newman, Renner, and Colony",
+      "kind": "organization",
+      "role": "epoxy redistributor (NRC)",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p012", "quote": "I understand Sika makes the epoxy, Power Fasteners\npackages and distributes it, and Newman, Renner, and Colony\nredistributes it."}
+      ]
+    },
+    {
+      "name": "NTSB Materials Laboratory",
+      "kind": "organization",
+      "role": "federal investigator/testing laboratory",
+      "quotes": [
+        {"page_id": "HWY06MH024:004:p001", "quote": "NATIONAL TRANSPORTATION SAFETY BOARD\nOffice of Research and Engineering\nMaterials Laboratory Division"}
+      ]
+    },
+    {
+      "name": "James F. Wildey II",
+      "kind": "person",
+      "role": "supervisory metallurgist, NTSB",
+      "quotes": [
+        {"page_id": "HWY06MH024:004:p004", "quote": "James F. Wildey II\nSupervisory Metallurgist"}
+      ]
+    },
+    {
+      "name": "Carl R. Schultheisz",
+      "kind": "person",
+      "role": "materials research engineer, NTSB",
+      "quotes": [
+        {"page_id": "HWY06MH024:009:p003", "quote": "Carl R. Schultheisz\nMaterials Research Engineer"}
+      ]
+    },
+    {
+      "name": "Trace Laboratories-East",
+      "kind": "organization",
+      "role": "outside testing laboratory",
+      "quotes": [
+        {"page_id": "HWY06MH024:009:p008", "quote": "TRACE LABORATORIES-EAST\nHeadquarters\n5 North Park Drive\nHunt Valley, MD 21030"}
+      ]
+    },
+    {
+      "name": "Advance Testing",
+      "kind": "organization",
+      "role": "private contractor that removed anchors post-accident",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p002", "quote": "a private contractor,\nAdvance Testing, removed the final 4 anchors after the on-scene portion of the accident investigation. FHWA\nfound the methods and procedures used by Advance Testing were in general conformance with the methods and\nprocedures used by FHWA."}
+      ]
+    },
+    {
+      "name": "Federal Highway Administration",
+      "kind": "organization",
+      "role": "federal agency that removed anchors and hosted testing (FHWA)",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p002", "quote": "Federal Highway Administration personnel removed 49 of these 57 additional anchors and many others from the\nEB and west-bound (WB) tunnel roofs as part of the on-scene portion of the accident investigation."}
+      ]
+    },
+    {
+      "name": "Massachusetts State Police",
+      "kind": "organization",
+      "role": "law enforcement/evidence custodian",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p002", "quote": "The Massachusetts State Police labeled these 16 anchors 1-1, 1-2, 1-3, 1-4, 2-1, 2-2, 2-3, 2-4,\n3-1, 3-2, 3-3, 3-4, 4-23, 5-1, 5-2, 5-3 as they were recovered from the accident scene."}
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Modern Continental Companies, Inc.",
+      "type": "contracted_with",
+      "target": "Massachusetts Turnpike Authority",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "Subject: Central Artery (I-93)/Tunnel (I-90) Project\nContract No. 99119-C09B2\nI-90 Seaport Access Tunnel Finishes\nAdhesive Anchor Movement"}
+      ]
+    },
+    {
+      "source": "BECHTEL/PARSONS BRINCKERHOFF",
+      "type": "reviewed_submittals_for",
+      "target": "Massachusetts Turnpike Authority",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p003", "quote": "Sincerely,\nBECHTEL/PARSONS BRINCKERHOFF\n\nRobert E. Steffy\nResident Engineer\nAuthorized Representative of\nthe Project Director"}
+      ]
+    },
+    {
+      "source": "Power Fasteners",
+      "type": "supplied",
+      "target": "Modern Continental Companies, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:045:p002", "quote": "MCC to contact the supplier of the adhesive anchor bolt system, review the installation of the\nfailed anchors and obtain a manufacturer's recommendation.\nAction has been completed, Power Fasteners has reviewed the installation and provided\na recommended corrective action."}
+      ]
+    },
+    {
+      "source": "Sika",
+      "type": "supplied",
+      "target": "Powers Fasteners",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p012", "quote": "I understand Sika makes the epoxy, Power Fasteners\npackages and distributes it, and Newman, Renner, and Colony\nredistributes it."}
+      ]
+    },
+    {
+      "source": "Powers Fasteners",
+      "type": "supplied",
+      "target": "Newman, Renner, and Colony",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p012", "quote": "I understand Sika makes the epoxy, Power Fasteners\npackages and distributes it, and Newman, Renner, and Colony\nredistributes it."}
+      ]
+    },
+    {
+      "source": "Newman, Renner, and Colony",
+      "type": "supplied",
+      "target": "Modern Continental Company",
+      "quotes": [
+        {"page_id": "HWY06MH024:083:p012", "quote": "What did the package, label, and invoices indicate\nfrom Sika to Power Fasteners, from Power Fasteners to NRC, and\nfrom NRC to Modern Continental Company?"}
+      ]
+    },
+    {
+      "source": "Federal Highway Administration",
+      "type": "oversaw",
+      "target": "Advance Testing",
+      "quotes": [
+        {"page_id": "HWY06MH024:007:p002", "quote": "a private contractor,\nAdvance Testing, removed the final 4 anchors after the on-scene portion of the accident investigation. FHWA\nfound the methods and procedures used by Advance Testing were in general conformance with the methods and\nprocedures used by FHWA."}
+      ]
+    },
+    {
+      "source": "NTSB Materials Laboratory",
+      "type": "contracted_with",
+      "target": "Trace Laboratories-East",
+      "quotes": [
+        {"page_id": "HWY06MH024:009:p008", "quote": "TEST REPORT FOR:\nNTSB\nRE-30 Materials Laboratory Divison\n490 L'Enfant Plaza East, S.W.\nWashington, DC 20594\nAttn: Carl Schultheisz"}
+      ]
+    },
+    {
+      "source": "Massachusetts State Police",
+      "type": "supplied",
+      "target": "NTSB Materials Laboratory",
+      "quotes": [
+        {"page_id": "HWY06MH024:005:p001", "quote": "The final column indicates “NTSB” if the NTSB Materials\nLaboratory retained the core sample or “OAG” if the Massachusetts Office of the Attorney\nGeneral retained the core sample."}
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "name": "B/PB",
+      "same_as": "BECHTEL/PARSONS BRINCKERHOFF",
+      "quote": {"page_id": "HWY06MH024:045:p002", "quote": "Reference: MCC Letter No. 0114, dated 10/07/99\nB/PB Letter No. 0350. dated 10/12/99\nMCC Letter No. 0139, dated 11/08/99"}
+    },
+    {
+      "name": "MCC",
+      "same_as": "Modern Continental Construction Company Inc.",
+      "quote": {"page_id": "HWY06MH024:055:p002", "quote": "Sincerely,\nModern Continental Construction Company Inc.\nRobert Coutts\nSr. Project Manager\nRC/JD\ncc: M. Charney, B/PB, C. Madden, MCC, J. Pastore, MCC"}
+    },
+    {
+      "name": "NRC",
+      "same_as": "Newman, Renner, and Colony",
+      "quote": {"page_id": "HWY06MH024:083:p012", "quote": "What is the relationship between Power Fasteners and\nNRC?"}
+    }
+  ],
+  "open_questions": []
+}

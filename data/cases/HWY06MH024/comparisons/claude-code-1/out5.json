@@ -1,0 +1,497 @@
+{
+  "events": [
+    {
+      "date": "1998-04-22",
+      "date_source": "stated_in_text",
+      "statement": "The tunnel finishes specification required core-drilled adhesive ceiling anchors to be proof tested to a service load of 3.25 kips tension per ASTM E 448 after the adhesive cured.",
+      "quotes": [
+        {"page_id": "HWY06MH024:014:p003", "quote": "G. The following testing procedure is only for anchorage systems embedded in the concrete tunnel structure for the hanging ceiling supports. After chemical adhesive has cured, proof test all anchors to a service load of 3.25 kips tension per ASTM E 448, unconfined static tests for tension."},
+        {"page_id": "HWY06MH024:014:p002", "quote": "I-90 Seaport Access Tunnel Finishes C09B2 22 April 1998"}
+      ]
+    },
+    {
+      "date": "1999-03-25",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff and Modern Continental agreed that Value Engineering Change Proposal No. 1, an alternative ceiling panel roof system, was not viable and should not be pursued further.",
+      "quotes": [
+        {"page_id": "HWY06MH024:061:p002", "quote": "we concur that VECP-001 should not be pursued further and is considered not viable to implementation for the C09B2 I-90 Seaport Tunnel Finishes Project."},
+        {"page_id": "HWY06MH024:061:p002", "quote": "March 25, 1999 Letter No.: C09B2-0055"}
+      ]
+    },
+    {
+      "date": "1999-07-28",
+      "date_source": "document_date",
+      "statement": "Conam Inspection submitted its procedure for tension testing the 5/8-inch stainless steel adhesive ceiling anchors, using an Enerpac ten-ton centerhole jack, for approval before use on the project.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p020", "quote": "Conam Inspection, Inc. which is currently performing welding inspection as per C09B1, is presenting a test procedure to perform tension testing as per C09B2 on 5/8\" stainless steel anchors as installed with Power-Rust Epoxy Injection Gel-Adhesive."},
+        {"page_id": "HWY06MH024:093:p020", "quote": "July 28, 1999 Modern Continental Construction Co., Inc. 6 Necco court Boston, MA 02210"}
+      ]
+    },
+    {
+      "date": "1999-07-30",
+      "date_source": "document_date",
+      "statement": "Conam Inspection's nondestructive tension testing of the HOV mock-up ceiling anchors found a mix of acceptable results and outright failures.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p023", "quote": "LINE B ROW 26 N-2,S-1 FAILURES"},
+        {"page_id": "HWY06MH024:093:p023", "quote": "INSPECTED BY: VEL III DATE 7-30-99"}
+      ]
+    },
+    {
+      "date": "1999-07",
+      "date_source": "stated_in_text",
+      "statement": "Powers Fasteners later stated that over 1,000 5/8-inch Power-Fast adhesive anchors were installed in diamond-cored holes in July 1999 and proof-load tested to 3,250 pounds within two or three days of installation.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p033", "quote": "e) adhesive anchors were installed in July of 1999."},
+        {"page_id": "HWY06MH024:093:p034", "quote": "f) within two or three days after installation, all of the adhesive anchors were proof load tested to a load of 3,250 lbs in tension in accordance with procedures approved by the Project Engineer that followed the guidelines of ASTM E-488."}
+      ]
+    },
+    {
+      "date": "1999-08",
+      "date_source": "stated_in_text",
+      "statement": "Modern Continental reported that the HOV ceiling mock-up module was installed using proper securement in early August 1999 and that inspection noted no anchor movement immediately after erection.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p006", "quote": "1) Ceiling module installed using proper securement prior to support removal in early August, '99. Inspection noted no movement subsequent to initial erection."}
+      ]
+    },
+    {
+      "date": "1999-09-09",
+      "date_source": "stated_in_text",
+      "statement": "A foreman installing plenums first noticed small movement, about 1/16 inch, of an anchor and its attached plate in the HOV ceiling mock-up.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p006", "quote": "2) Small movement of anchor and attached plate (approx. 1/16\") noted on September 9, 1999, by foreman installing plenums."}
+      ]
+    },
+    {
+      "date": "1999-10-07",
+      "date_source": "document_date",
+      "statement": "Modern Continental notified Bechtel/Parsons Brinckerhoff that a small percentage of the adhesive anchors in the HOV ceiling mock-up showed tensile movement, creating gaps between the ceiling hanger plate and the cast-in-place ceiling, with worst-case movement of about 1/2 inch by early October.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p006", "quote": "As noted in our field inspection of October 7, 1999, a small percentage of the adhesive anchors in the HOV ceiling mockup appear to show signs of tensile movement, thus creating gaps in the ceiling hanger plate to CIP ceiling interface."},
+        {"page_id": "HWY06MH024:093:p006", "quote": "3) Periodic inspections by MCC revealed an increased movement to a worst case movement of 1/2\" in early October of 1999, leading to notification."}
+      ]
+    },
+    {
+      "date": "1999-10-08",
+      "date_source": "document_date",
+      "statement": "At Technical Meeting #9, project participants discussed why 5/8-inch epoxy ceiling anchors were pulling out in ceiling module HOV079 at four locations, and noted that the epoxy manufacturer, Powers Fasteners, had been notified and would visit the site to investigate.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p011", "quote": "Issue 5 - \"What is causing the 5/8\" epoxy ceiling anchors to pullout in the ceiling module HOY079 at 4 locations?\""},
+        {"page_id": "HWY06MH024:093:p011", "quote": "MCC explained that the vendor (Power Fasteners) of the epoxy used to install the subject anchor bolts in the ceiling has been notified and will be visiting the site soon to examine the problem."}
+      ]
+    },
+    {
+      "date": "1999-10-08",
+      "date_source": "document_date",
+      "statement": "A field engineer recorded a computation sheet of gaps of up to 9/16 inch between the tunnel roof and the ceiling hanger plate at several anchor locations in ceiling module HOV079.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p022", "quote": "Subject HOV MOCK-UP CEILING ANCHOR BOLT PULL OUT MEASUREMENTS"},
+        {"page_id": "HWY06MH024:093:p022", "quote": "Made by JIM BARRETT Date 10/08/99"}
+      ]
+    },
+    {
+      "date": "1999-10-12",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff told Modern Continental that a review found several turnbuckles in the ceiling system loose, which could overstress the anchors, and directed MCC to contact the anchor supplier and confirm uniform hanger loading.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p013", "quote": "We concur that the adhesive anchors were load tested in accordance with the design requirements, however we cannot confirm that the adhesive anchors are correctly loaded. A review of the ceiling system indicates that several turnbuckles are loose."},
+        {"page_id": "HWY06MH024:093:p013", "quote": "October 12, 1999 Letter No.: C09B2-0350"}
+      ]
+    },
+    {
+      "date": "1999-10-13",
+      "date_source": "document_date",
+      "statement": "A field engineer met with MCC's Jim Martin and Powers Fasteners' Jack Armour at the mock-up ceiling to review anchor bolts that were creeping out over time, and gave Armour a copy of an October 8 field sketch.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p017", "quote": "FArch met with J. Martin (MCC) and Jack Armour (Powers Fasteners, Inc.) atop the mock-up ceiling to discuss the problem of anchor bolts \"creeping\" out over time."},
+        {"page_id": "HWY06MH024:093:p017", "quote": "REPORTED BY: JAMES BARRETT DATE: Oct. 13, 1999"}
+      ]
+    },
+    {
+      "date": "1999-10-19",
+      "date_source": "document_date",
+      "statement": "Modern Continental's Neil Joyce sent Powers Fasteners a chronology of the anchor movement and asked whether an installation problem could pass a proof test yet still develop over time, noting more than 1,000 anchors installed.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p019", "quote": "As discussed with you previously, the replacement of approximately five anchors in fifty (10%) is not of great concern to me. However, with over one thousand anchors installed, proof tested but yet to be loaded, 10% re-work is not acceptable."},
+        {"page_id": "HWY06MH024:093:p019", "quote": "From: Neil Joyce – Modern Continental Construction Company Date: October 19, 1999"}
+      ]
+    },
+    {
+      "date": "1999-10-21",
+      "date_source": "stated_in_text",
+      "statement": "Powers Fasteners' regional representative Jack Armour and field engineering manager Stephen Rice visited the site to inspect six anchors that had moved in the HOV ceiling mock-up.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p033", "quote": "Thank you for allowing Powers' Regional Representative, Mr. Jack Armour and Powers' Field Engineering Manager, Mr. Stephen Rice access to the above mentioned job site to inspect the six anchors that showed movement in the HOV ceiling mock up."},
+        {"page_id": "HWY06MH024:093:p031", "quote": "This site visit was conducted on October 21, 1999."}
+      ]
+    },
+    {
+      "date": "1999-10-29",
+      "date_source": "document_date",
+      "statement": "Powers Fasteners reported that torque readings on the anchors, moved and unmoved alike, measured 120 foot-pounds, exceeding the published maximum torque range of 50 to 60 foot-pounds for a 5/8-inch Power-Fast anchor.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p034", "quote": "Mr. Rice checked both the anchors that showed movement as well as anchors that had not moved and got torque readings of 120 foot-pounds. This torque value is greater than the published maximum torque range of a 5/8\" diameter Power-First adhesive anchor (50-60 foot-pounds)."},
+        {"page_id": "HWY06MH024:093:p033", "quote": "Friday, October 29, 1999 The Modern Continental Construction Co., Inc. 6 Necco Court"}
+      ]
+    },
+    {
+      "date": "1999-11-08",
+      "date_source": "document_date",
+      "statement": "Modern Continental disputed the suggestion of improper installation, noting all anchors passed proof testing before module erection, and reserved its right to claim additional costs for further testing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p031", "quote": "If the anchors were improperly installed (i.e. drill hole preparation, epoxy installation, etc.), it is likely that the anchors would have failed the proof test. As all of the anchors passed proof testing prior to module installation, it is not likely that anchor installation procedures were the cause of the anchor movement."},
+        {"page_id": "HWY06MH024:093:p031", "quote": "November 8, 1999 Letter No. C09B2-0139"}
+      ]
+    },
+    {
+      "date": "1999-11-11",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff denied Modern Continental's claim for additional compensation and required MCC to remove and replace anchors that had moved and re-proof-test anchors installed with excessive torque.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p038", "quote": "We concur with the recommendations in your letter from Power Fasteners that Modern Continental Construction will remove and replace anchors which exhibited movement and the proof testing of the anchors subjected to torque values higher than the manufacturer's recommended values."},
+        {"page_id": "HWY06MH024:093:p038", "quote": "November 11, 1999 Letter No.: C09B2-0409"}
+      ]
+    },
+    {
+      "date": "1999-11-09",
+      "date_source": "document_date",
+      "statement": "A field engineer randomly tested 66 epoxied ceiling anchor bolts in the WB 4A2 area and found the torque wrench, set at 75 ft-lbs, clicked on all of them, within the manufacturer's 50-90 ft-lb range.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p041", "quote": "FArch met with J. Martin of MCC (QC) to verify the torque values of epoxied ceiling anchor bolts in the WB 4A2 area. FArch randomly selected 66 bolts (one third of the installed bolts) for testing."},
+        {"page_id": "HWY06MH024:093:p041", "quote": "REPORTED BY: JAMES BARRETT DATE: Nov. 09, 1999"}
+      ]
+    },
+    {
+      "date": "1999-12-01",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff issued Deficiency Report No. 001 documenting that at least five ceiling adhesive anchors in module HOV079 had failed by pulling out since the ceiling module was hung.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p046", "quote": "At least five ceiling adhesive anchors in the area of ceiling module HOV 079 have failed, that is pull-out has been observed, since the hanging of the ceiling module."},
+        {"page_id": "HWY06MH024:093:p046", "quote": "DATE OF DEFICIENCY: December 1, 1999 DEFICIENCY REPORT NO: 001"}
+      ]
+    },
+    {
+      "date": "1999-11-30",
+      "date_source": "document_date",
+      "statement": "Powers Fasteners recommended removing the moved adhesive anchors with a hydraulic hollow-core ram, cleaning the holes, installing new threaded rod, and proof-loading before re-torquing within the published range.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p053", "quote": "The adhesive anchor rods in question should be removed from the base material with care, preventing damage to the concrete base material and preserving the integrity of the original anchor location."},
+        {"page_id": "HWY06MH024:093:p053", "quote": "Tuesday, November 30, 1999 The Modern Continental Construction Co., Inc."}
+      ]
+    },
+    {
+      "date": "1999-12-23",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff rejected Modern Continental's proposed repair for the failed anchors and specified its own procedure, requiring new anchors to be tension tested to 125 percent of the governing allowable tension value, 7,900 pounds.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p060", "quote": "The DR-001 proposed fix for the failed anchor bolts, as submitted, is rejected."},
+        {"page_id": "HWY06MH024:093:p060", "quote": "Install a clean, new anchor and tension test the anchor using 125% of the governing Allowable Tension value from the catalog."}
+      ]
+    },
+    {
+      "date": "2000-01-06",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff again rejected the DR-001 anchor repair fix and revised the required proof-test load for new anchors to the full catalog allowable tension value of 6,350 pounds.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p064", "quote": "Install a clean, new anchor and tension test the anchor using the governing Allowable Tension value from the catalog. For a 5/8\" dia. Powerfast adhesive anchor the limiting Allowable Tension value is the adhesive bond strength, 6350 lbs."},
+        {"page_id": "HWY06MH024:093:p064", "quote": "January 6, 2000 C09B2 Tunnel Finishes DR-001 Adhesive Anchors-Failures"}
+      ]
+    },
+    {
+      "date": "2000-01-07",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff found that the one removed anchor bolt examined had been improperly installed, with an unbrushed drill hole, no screen tube used, and over-torquing, and denied MCC's claim for compensation for re-testing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:049:p002", "quote": "Examination of the one anchor that has been removed, indicated that the anchor bolt was improperly installed. There is evidence that the drill hole was not brushed clean, the application of a screen tube was not utilized and the anchor was not free of dirt, oil or foreign matter."},
+        {"page_id": "HWY06MH024:049:p002", "quote": "January 7, 2000 Letter No.: C09B2-0498"}
+      ]
+    },
+    {
+      "date": "2000-01-28",
+      "date_source": "document_date",
+      "statement": "Modern Continental submitted a revised adhesive anchor repair procedure for the HOV mock-up area, proof-testing replacement anchors to 6,350 pounds, while reserving its right to seek an equitable cost adjustment.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p067", "quote": "Modern Continental is proceeding in accordance with direction received via Letter No. C09B2-0498, dated January 7, 2000, and reserves our rights to request an equitable adjustment to the Contract, as stipulated in Division I, Section 4.03."},
+        {"page_id": "HWY06MH024:093:p067", "quote": "January 28, 2000 Submittal No. 723.480 - 016 B"}
+      ]
+    },
+    {
+      "date": "2003-04-16",
+      "date_source": "document_date",
+      "statement": "Sika Corporation issued the Material Safety Data Sheet for Sikadur Injection Gel / Anchor Fix 4 - Part B, one of the two-part epoxy adhesive products used for anchoring in the industry.",
+      "quotes": [
+        {"page_id": "HWY06MH024:079:p001", "quote": "Issue Date: 04/16/2003 Product Name: Sikadur Injection Gel / Anchor Fix 4 - Part B"}
+      ]
+    },
+    {
+      "date": "2006-07-26",
+      "date_source": "document_date",
+      "statement": "Following the July 10, 2006 partial ceiling collapse, the Federal Highway Administration dispatched Turner-Fairbank Highway Research Center engineers, who on July 26, 2006 began sustained-load screen tests by hanging dead weights from two remaining anchors in the westbound tunnel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:069:p007", "quote": "In response to these observations, TFHRC engineers attached dead-weights to two anchor rods in the westbound tunnel on July 26, 2006 and monitored their displacement response for nearly two days."}
+      ]
+    },
+    {
+      "date": "2006-09-26",
+      "date_source": "document_date",
+      "statement": "Because the screen-test anchors' displacement never stabilized during the initial two-day monitoring, FHWA began a more rigorous sustained-load investigation on nine anchors starting September 26, 2006.",
+      "quotes": [
+        {"page_id": "HWY06MH024:069:p008", "quote": "September 26-28, 2006. Sustained load Tests 1 through 6 initiated: Hartmann, Ocel, Fuchs, Adams"}
+      ]
+    },
+    {
+      "date": "2006-12-18",
+      "date_source": "document_date",
+      "statement": "On December 18, 2006, FHWA engineers performed unconfined static load testing and load-displacement testing on additional adhesive anchor rods removed from the tunnel ceiling, transferring each anchor to a crime-scene investigator once removed.",
+      "quotes": [
+        {"page_id": "HWY06MH024:069:p039", "quote": "The load testing conducted on December 18, 2006 used the loading apparatus shown in Figure 23."},
+        {"page_id": "HWY06MH024:069:p040", "quote": "Once out of the ceiling, custody of the adhesive anchor was taken by an accompanying crime scene investigator (FBI Special Agent or MA State Policeman)."}
+      ]
+    },
+    {
+      "date": "2006-12-07",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory reported that during on-scene investigation from July 14-19 and August 8-10, 2006, each adhesive anchor remaining in the connector tunnel roof was measured for downward displacement from its originally installed position.",
+      "quotes": [
+        {"page_id": "HWY06MH024:002:p001", "quote": "During on-scene portions of the investigation (July 14 to July 19 and August 8 to August 10, 2006), each adhesive anchor remaining in the roof of the connector tunnel was examined to measure the distance that the anchor had moved downward (displaced) from its originally installed position."},
+        {"page_id": "HWY06MH024:002:p001", "quote": "December 7, 2006 MATERIALS LABORATORY FACTUAL REPORT Report No. 06-079"}
+      ]
+    },
+    {
+      "date": "2006-12-07",
+      "date_source": "document_date",
+      "statement": "The NTSB tallied that 78 of the 192 examined westbound-tunnel anchors showed downward displacement, distributed unevenly across the four modules.",
+      "quotes": [
+        {"page_id": "HWY06MH024:002:p002", "quote": "WB Tunnel Number of Displaced Anchors/Total Anchors Module 081 Module 082 Module 083 Module 084 Total Total 10/24 17/56 27/56 24/56 78/192"}
+      ]
+    },
+    {
+      "date": "2006-12-07",
+      "date_source": "document_date",
+      "statement": "NTSB weight calculations found that the middle1 anchor row of the eastbound module where the collapse occurred carried about 27,452 pounds, 100 percent of the maximum row weight calculated across the ceiling system.",
+      "quotes": [
+        {"page_id": "HWY06MH024:002:p004", "quote": "East-bound middle1 row 27,452 pounds 100 percent"}
+      ]
+    },
+    {
+      "date": "2007-03-20",
+      "date_source": "document_date",
+      "statement": "An NTSB Materials Laboratory study demonstrated that an air bubble in an epoxy cartridge chamber could produce a region of unmixed, uncured adhesive in a simulated anchor hole, with features similar to some of the tunnel's failed anchors.",
+      "quotes": [
+        {"page_id": "HWY06MH024:010:p001", "quote": "This study was conducted in order to demonstrate the effects of an air bubble in one of the two chambers of an epoxy cartridge."},
+        {"page_id": "HWY06MH024:010:p004", "quote": "Examination of the test anchors revealed features that were similar to features observed on the anchors removed from the tunnel during post-accident investigation."}
+      ]
+    },
+    {
+      "date": "2007-05-01",
+      "date_source": "document_date",
+      "statement": "FHWA's finite element analysis found the ceiling panel system retained its full design safety factor if a single hanger anchorage failed, but that safety margins against anchor failure dropped substantially if two or three adjacent hanger anchorages failed.",
+      "quotes": [
+        {"page_id": "HWY06MH024:035:p010", "quote": "In summary, the ceiling system is expected to maintain its full design safety capacity under any \"one-out\" anchor failure scenario."},
+        {"page_id": "HWY06MH024:035:p012", "quote": "Under the worst \"three-out\" scenario, the system cannot be considered redundant since both the allowable anchor capacity and allowable bending capacity of the hanger plate are exceeded."}
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "name": "The Modern Continental Construction Company, Inc.",
+      "kind": "organization",
+      "role": "general contractor for the I-90 Seaport Access Tunnel Finishes contract",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p006", "quote": "Sincerely, The Modern Continental Construction Company, Inc. Robert Coutts Sr. Project Manager"}
+      ]
+    },
+    {
+      "name": "BECHTEL/PARSONS BRINCKERHOFF",
+      "kind": "organization",
+      "role": "construction management consultant / Engineer for the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:061:p002", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "name": "B/PB",
+      "kind": "organization",
+      "role": "abbreviation used in project correspondence for Bechtel/Parsons Brinckerhoff",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p006", "quote": "Sincerely, The Modern Continental Construction Company, Inc. Robert Coutts Sr. Project Manager cc: Martin Charney, B/PB"}
+      ]
+    },
+    {
+      "name": "Massachusetts Turnpike Authority",
+      "kind": "organization",
+      "role": "owner of the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:049:p002", "quote": "Massachusetts Turnpike Authority Central Artery/Tunnel Project"}
+      ]
+    },
+    {
+      "name": "Powers Fasteners, Inc.",
+      "kind": "organization",
+      "role": "manufacturer/supplier of the Power-Fast adhesive anchor system",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p033", "quote": "Powers Fasteners, Inc. 2 Powers Square New Rochelle, NY"}
+      ]
+    },
+    {
+      "name": "Conam Inspection Inc",
+      "kind": "organization",
+      "role": "independent testing agency for anchor tension testing",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p020", "quote": "Conam Inspection Inc 2 Milbury Street Auburn, Massachusetts 01501"}
+      ]
+    },
+    {
+      "name": "National Transportation Safety Board",
+      "kind": "organization",
+      "role": "federal investigator of the ceiling collapse",
+      "quotes": [
+        {"page_id": "HWY06MH024:069:p007", "quote": "In support of the National Transportation Safety Board's (NTSB) investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers"}
+      ]
+    },
+    {
+      "name": "Federal Highway Administration",
+      "kind": "organization",
+      "role": "conducted post-collapse anchor testing in support of the NTSB investigation",
+      "quotes": [
+        {"page_id": "HWY06MH024:069:p007", "quote": "the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "name": "Robert E. Steffy",
+      "kind": "person",
+      "role": "Resident Engineer, Authorized Representative of the Project Director, Bechtel/Parsons Brinckerhoff",
+      "quotes": [
+        {"page_id": "HWY06MH024:061:p002", "quote": "Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "name": "Robert Coutts",
+      "kind": "person",
+      "role": "Project Manager / Sr. Project Manager, Modern Continental",
+      "quotes": [
+        {"page_id": "HWY06MH024:049:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc."}
+      ]
+    },
+    {
+      "name": "Neil Joyce",
+      "kind": "person",
+      "role": "Modern Continental Construction Company representative handling the anchor issue",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p019", "quote": "From: Neil Joyce – Modern Continental Construction Company"}
+      ]
+    },
+    {
+      "name": "Ray Williamson",
+      "kind": "person",
+      "role": "Engineering Manager, Powers Fasteners, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p035", "quote": "Very truly yours, Powers Fasteners, Inc. Ray Williamson Engineering Manager"}
+      ]
+    },
+    {
+      "name": "Jack Armour",
+      "kind": "person",
+      "role": "Powers Fasteners Regional Representative (New England)",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p033", "quote": "Thank you for allowing Powers' Regional Representative, Mr. Jack Armour and Powers' Field Engineering Manager, Mr. Stephen Rice access to the above mentioned job site"}
+      ]
+    },
+    {
+      "name": "Stephen Rice",
+      "kind": "person",
+      "role": "Field Engineering Manager, Powers Fasteners, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p033", "quote": "Powers' Field Engineering Manager, Mr. Stephen Rice access to the above mentioned job site to inspect the six anchors that showed movement"}
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Modern Continental Companies, Inc.",
+      "type": "contracted_with",
+      "target": "Massachusetts Turnpike Authority",
+      "quotes": [
+        {"page_id": "HWY06MH024:049:p002", "quote": "Massachusetts Turnpike Authority Central Artery/Tunnel Project January 7, 2000 Letter No.: C09B2-0498 File No.: CN-9.09B2.02 CN-9.09B2.24.22 Mr. Robert Coutts Project Manager Modern Continental Companies, Inc."}
+      ]
+    },
+    {
+      "source": "B/PB",
+      "type": "reviewed_submittals_for",
+      "target": "The Modern Continental Construction Company, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p006", "quote": "Sincerely, The Modern Continental Construction Company, Inc. Robert Coutts Sr. Project Manager cc: Martin Charney, B/PB"}
+      ]
+    },
+    {
+      "source": "Power's Fasteners",
+      "type": "supplied",
+      "target": "Modern Continental Construction Company",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p019", "quote": "To: Ray Williamson – Power's Fasteners From: Neil Joyce – Modern Continental Construction Company Date: October 19, 1999"}
+      ]
+    },
+    {
+      "source": "Conam Inspection Inc",
+      "type": "inspected_for",
+      "target": "Modern Continental Construction Co., Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p020", "quote": "Conam Inspection Inc 2 Milbury Street Auburn, Massachusetts 01501 Telephone + 508-832-5500 Facsimile + 508-832-5557 http://www.conaminc.com July 28, 1999 Modern Continental Construction Co., Inc."}
+      ]
+    },
+    {
+      "source": "Federal Highway Administration",
+      "type": "inspected_for",
+      "target": "National Transportation Safety Board",
+      "quotes": [
+        {"page_id": "HWY06MH024:069:p007", "quote": "In support of the National Transportation Safety Board's (NTSB) investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "source": "Robert E. Steffy",
+      "type": "represented",
+      "target": "BECHTEL/PARSONS BRINCKERHOFF",
+      "quotes": [
+        {"page_id": "HWY06MH024:061:p002", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "source": "Ray Williamson",
+      "type": "represented",
+      "target": "Powers Fasteners, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p035", "quote": "Very truly yours, Powers Fasteners, Inc. Ray Williamson Engineering Manager"}
+      ]
+    },
+    {
+      "source": "Robert Coutts",
+      "type": "represented",
+      "target": "Modern Continental Construction Company Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:093:p032", "quote": "Sincerely, Modern Continental Construction Company Inc. Robert Coutts Sr. Project Manager"}
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "name": "MCC",
+      "same_as": "Modern Continental Construction Company",
+      "quote": {"page_id": "HWY06MH024:049:p002", "quote": "Receipt of the above referenced letter, by which Modern Continental Construction Company (MCC) claims that the review comments as contained in Submittal Number 723.480-016 A are not consistent with the testing requirements included in the Contract Specifications, is hereby acknowledged."}
+    },
+    {
+      "name": "Power's Fasteners",
+      "same_as": "Powers Fasteners, Inc.",
+      "quote": {"page_id": "HWY06MH024:093:p019", "quote": "To: Ray Williamson – Power's Fasteners From: Neil Joyce – Modern Continental Construction Company Date: October 19, 1999"}
+    },
+    {
+      "name": "TFHRC",
+      "same_as": "Turner-Fairbank Highway Research Center",
+      "quote": {"page_id": "HWY06MH024:069:p007", "quote": "the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+    },
+    {
+      "name": "NTSB",
+      "same_as": "National Transportation Safety Board",
+      "quote": {"page_id": "HWY06MH024:069:p007", "quote": "In support of the National Transportation Safety Board's (NTSB) investigation of this failure, the Federal Highway Administration (FHWA) dispatched a"}
+    }
+  ],
+  "open_questions": []
+}

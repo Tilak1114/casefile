@@ -1,0 +1,549 @@
+{
+  "events": [
+    {
+      "date": "1996-12-20",
+      "date_source": "stated_in_text",
+      "statement": "An early design sketch for the tunnel ceiling support system, dated December 20, 1996, described the hanger rods, turnbuckles and clevises and noted their temperature rating.",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p023", "quote": "A Joint Venture Made By: Date: 12/20/96 Job Number QM-081 Checked By: Date: 1/17 For CEILING SUPPORT SYSTEM Backchecked By: Date: Sheet Number 19"},
+        {"page_id": "HWY06MH024:043:p023", "quote": "THE ABOVE RODS, TURNBUCKLES AND CLEVISOS CAN FUNCTION CONTINUOUSLY AT A TEMPERATURE OF 650°F MAX."}
+      ]
+    },
+    {
+      "date": "1997-03-07",
+      "date_source": "stated_in_text",
+      "statement": "The design joint venture EST/HNTB issued a concept diagram and design for a new ceiling panel support system using 40-foot modular units suspended by rods, turnbuckles and clevises.",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p011", "quote": "TUNNEL FINISHES CONCEPT DIAGRAM 7 MAR 97 B/BIWFA"},
+        {"page_id": "HWY06MH024:043:p012", "quote": "EST/HNTB A Joint Venture CEILING PANEL SUPPORT SYSTEM"},
+        {"page_id": "HWY06MH024:043:p012", "quote": "Each 40-foot by 12-foot modular unit is comprised of ten (10) 4' by 12' by 3 1/2\" thick precast prestressed concrete panels framed by a L 8x6x3/4 support angle along each of the two 40-foot edges."}
+      ]
+    },
+    {
+      "date": "1997-03-13",
+      "date_source": "document_date",
+      "statement": "Massachusetts Highway Department issued Design Policy Memorandum No. 107, giving section design consultants advance clarifications and changes to the CA/T Directive Drawings for tunnel wall and ceiling finish details.",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p002", "quote": "To: DPM Manual Holders Date: March 13, 1997 From: A.R. Lancellotti File No: EN-1.1.5"},
+        {"page_id": "HWY06MH024:043:p002", "quote": "This DPM provides advance information to tunnel finish SDCs regarding in-progress clarifications and changes to CA/T Directive Drawings resulting from the C17AA SDCs design development of the tunnel wall and ceiling details."}
+      ]
+    },
+    {
+      "date": "1997-03-17",
+      "date_source": "stated_in_text",
+      "statement": "DPM No. 107 was recorded by the Change Order Control office and made immediately applicable to contracts D009B, D011A, D015A and D018A.",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p003", "quote": "The above guidelines shall be implemented immediately by the SDCs for D009B, D011A, D015A, and D018A."},
+        {"page_id": "HWY06MH024:043:p003", "quote": "ARL/kco Recorded 3-17-97 J. Kalla Date Change Order Control"}
+      ]
+    },
+    {
+      "date": "1997-03-20",
+      "date_source": "stated_in_text",
+      "statement": "A follow-up memorandum from J.A. Vears to DPM Manual Holders, dated March 20, 1997, required section design consultants to return a signed response naming the B/PB Authorized Representative for their contract.",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p040", "quote": "REF: J.A. Vears Memo to DPM Manual Holders, dated 3/20/97"},
+        {"page_id": "HWY06MH024:043:p040", "quote": "B/PB Authorized Representative for Contract D Construction Contract C Stage:"}
+      ]
+    },
+    {
+      "date": "1998-09-23",
+      "date_source": "stated_in_text",
+      "statement": "Massachusetts Highway Department sent an urgent fax asking that anchor bolt testing specification changes, based on lessons learned in the Ted Williams Tunnel, be incorporated and approved; the revised specification required proof testing of adhesive anchors to 125 percent of design load.",
+      "quotes": [
+        {"page_id": "HWY06MH024:037:p002", "quote": "FAX: 261-7552 DATE: 9-23-98 TIME: 8:35pm TO: R.V. PONTET"},
+        {"page_id": "HWY06MH024:037:p002", "quote": "PLEASE INCORPORATE/ APPROVE THESE CHANGES BASED UPON LESSONS LEARNED IN TWT."},
+        {"page_id": "HWY06MH024:037:p003", "quote": "After chemical adhesive has cured, proof test anchors to 125 percent of their design load per ASTM E 449, unconfined static tests for tension and shear, using procedures described in Subparagraph 3.07F1-3.07F4."}
+      ]
+    },
+    {
+      "date": "1999-07-29",
+      "date_source": "stated_in_text",
+      "statement": "A Newman or Powers representative was on site to direct installation of 50 adhesive anchors in the HOV lane 'mock-up' area.",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p003", "quote": "On 7-29-99, a Newman or Powers representative was on-site to direct/assist/explain the install of 50 anchors in the NOV lanes, the “mock-up” area."}
+      ]
+    },
+    {
+      "date": "1999-10-21",
+      "date_source": "stated_in_text",
+      "statement": "Modern Continental reported that five adhesive anchors slipped in the HOV lane ceiling; the slipped anchors were replaced and tested to 6,350 lbs, and a Powers representative was on site examining the HOV lane anchor failures.",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• After 5 anchors slipped in the HOV lanes, Modern Continental replaced the slipped anchors and tested to 6350 lbs."},
+        {"page_id": "HWY06MH024:015:p003", "quote": "On 10-21-99, a Powers representative was on-site examining the HOV lane anchor failures."}
+      ]
+    },
+    {
+      "date": "2000-01-06",
+      "date_source": "stated_in_text",
+      "statement": "The DR-001 corrective action rejected Modern Continental's proposed fix for the failed HOV ceiling anchor bolts, specified a repair and retest procedure at 6,350 lbs, and noted that installation problems put the capacity of the remaining anchors in question.",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p003", "quote": "January 6, 2000 C09B2 Tunnel Finishes DR-001 Adhesive Anchors Failures"},
+        {"page_id": "HWY06MH024:050:p003", "quote": "The DR-001 proposed fix for the failed anchor bolts, as submitted, is rejected."},
+        {"page_id": "HWY06MH024:050:p003", "quote": "Because of evidence concerning installation problems, i.e. dust in the hole and insufficient adhesive in the hole, the capacity of all of the other anchor bolts is in question and will need to be addressed."}
+      ]
+    },
+    {
+      "date": "2000-01-07",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff sent Modern Continental's project manager Robert Coutts the project's corrective action for Deficiency Report No. 001 concerning the failure of adhesive anchors in the HOV ceiling.",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Massachusetts Turnpike Authority Central Artery/Tunnel Project January 7, 2000 Letter No.: C09B2-0499"},
+        {"page_id": "HWY06MH024:050:p002", "quote": "Attached for your action is the Project's corrective action for Deficiency Report Number 001 (DR-001), the failure of adhesive anchors in the HOV ceiling Please incorporate these corrections into the work."}
+      ]
+    },
+    {
+      "date": "2000-01-14",
+      "date_source": "stated_in_text",
+      "statement": "Bob Steffy circulated an email stating a letter would go to Modern Continental Construction requiring it to revise its deviation report and repair submittal before removing the damaged HOV anchors, with retesting required at the higher load.",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p003", "quote": "Author: RESTEFFY at Cat01B Date: 1/14/00 8:02 AM Priority: Normal"},
+        {"page_id": "HWY06MH024:054:p003", "quote": "Letter to MCC to revise A/B Deviation Report. Submittal for repairs is Code 3. MCC to revise procedure and resubmit prior to removing dmaged anchors."}
+      ]
+    },
+    {
+      "date": "2000-07-11",
+      "date_source": "stated_in_text",
+      "statement": "Conam Inspection's Lynn Anderson performed nondestructive testing of anchor resin-to-concrete bonds in the HOV ceiling for Modern Continental Construction and found several anchors failed.",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p006", "quote": "INSPECTION OF: Anchor resin to concrete – Tunnel Hov Contract #C09B2 Line B Row 25 N1 Fail Line B Row 26 N1 Fail N2 Acceptable S1, S2 Fail"},
+        {"page_id": "HWY06MH024:054:p006", "quote": "INSPECTED BY: LEVEL II DATE 7-11-00 Lynn Anderson"}
+      ]
+    },
+    {
+      "date": "2000-08-10",
+      "date_source": "stated_in_text",
+      "statement": "Modern Continental Construction transmitted H.O.V. mock-up anchor pull test results to Bechtel/Parsons Brinckerhoff.",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p005", "quote": "RECEIVED AUG 10 2000 Modern Continental Construction TRANSMITTAL"},
+        {"page_id": "HWY06MH024:054:p005", "quote": "ITEM NO. COPIES DESCRIPTION SUBMITTAL STATUS 1 2 H.O.V. Mock-up Anchor Pull Test Results"}
+      ]
+    },
+    {
+      "date": "2000-08-23",
+      "date_source": "stated_in_text",
+      "statement": "Anchors that had failed inspection at Line A Rows 25 and 29 were retested on August 23, 2000 and passed.",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p009", "quote": "Line A Row 25 N1 – acceptable S1 – Fail RESTED 8/23 & PASSED"},
+        {"page_id": "HWY06MH024:054:p009", "quote": "Line A Row 29 N1 – acceptable S1 – Fail RESTED 8/23 & PASSED -"}
+      ]
+    },
+    {
+      "date": "2000-08-31",
+      "date_source": "stated_in_text",
+      "statement": "Phil Aikele recommended closing DR-1 after all epoxy anchors in the HOV mock-up area were retested at 6,350 lbs; 19 of 187 anchors failed and each was replaced and retested until passing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p002", "quote": "TO: Bob Steffy FROM: Phil Aikele DATE: August 31, 2000 SUBJECT: Recommended disposition for DR #1"},
+        {"page_id": "HWY06MH024:054:p002", "quote": "There were a total of 19 anchors that failed out of the 187 that were retested at the higher load of 6,350lb vs. the initial contractly required load of 3,250."},
+        {"page_id": "HWY06MH024:054:p002", "quote": "It is my recommendation that this DR#1 be closed."}
+      ]
+    },
+    {
+      "date": "2003-04-14",
+      "date_source": "document_date",
+      "statement": "Sika Corporation issued a Material Safety Data Sheet for its Sikadur Injection Gel / Anchor Fix 4 - Part A epoxy anchoring adhesive, superseding a previous version dated May 21, 2002.",
+      "quotes": [
+        {"page_id": "HWY06MH024:078:p001", "quote": "Issue Date: 04/14/2003 Product Name: Sikadur Injection Gel / Anchor Fix 4 - Part A"},
+        {"page_id": "HWY06MH024:078:p004", "quote": "This MSDS Supercedes A Previous MSDS Dated: 05/21/2002"}
+      ]
+    },
+    {
+      "date": "2003-11",
+      "date_source": "stated_in_text",
+      "statement": "B/PB submitted the Inspection Manual for Tunnels and Boat Structures, Volume 5, to the MTA.",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "A. November 2003 – July 2006 B/PB submitted the Inspection Manual for Tunnels and Boat Structures (the Manual) to the MTA in November 2003."}
+      ]
+    },
+    {
+      "date": "2005",
+      "date_source": "stated_in_text",
+      "statement": "In late 2005 the MTA took steps toward pilot inspections based on the Inspection Manual, including engaging an outside consultant, but the trials were never carried out.",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "In late 2005, MTA took steps to initiate pilot or trial inspections based on the Manual, including engagement of an outside consultant. However, these trials were never carried out."}
+      ]
+    },
+    {
+      "date": "2006-07-10",
+      "date_source": "stated_in_text",
+      "statement": "The ceiling system of the eastbound I-90 Seaport tunnel in Boston partially collapsed, prompting an NTSB investigation supported by FHWA testing of the adhesive anchor rods.",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "On July 10, 2006 the ceiling system of the eastbound I-90 Seaport tunnel in Boston, Massachusetts partially collapsed."},
+        {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "date": "2006-07-15",
+      "date_source": "stated_in_text",
+      "statement": "FHWA's team conducted static tension load testing on 188 adhesive anchor rods in the eastbound tunnel between July 15 and July 20, 2006.",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "Load testing was conducted between July 15 and July 20 on 188 anchor rods in the eastbound tunnel."}
+      ]
+    },
+    {
+      "date": "2006-07-20",
+      "date_source": "stated_in_text",
+      "statement": "FHWA conducted load-displacement testing on 42 adhesive anchor rods in the westbound tunnel on July 20, 26, 27 and 28, 2006.",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "Load-displacement testing was conducted on 42 anchors rods July 20, 26, 27 and 28 in the westbound tunnel."}
+      ]
+    },
+    {
+      "date": "2006-07-31",
+      "date_source": "stated_in_text",
+      "statement": "FHWA performed a post-testing calibration of load cell 3350 and the MEGADAC data acquisition system and found its recorded loads read about 13 percent higher than the reference standard.",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p312", "quote": "A post-testing formal calibration of load cell 3350 and the MEGADAC system was performed on July 31, 2006."},
+        {"page_id": "HWY06MH024:008:p312", "quote": "This figure indicates that the output recorded by the MEGADAC is approximately 13.0% higher than the load indicated by the Forney machine which is considered to be a standard reference."}
+      ]
+    },
+    {
+      "date": "2006-08-01",
+      "date_source": "stated_in_text",
+      "statement": "FHWA performed a post-testing calibration of load cell 3348 and the Data Translation data acquisition module and found its measurements closely matched the reference standard.",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p313", "quote": "A post-testing formal calibration of load cell 3348 and the Data Translation model 9804 USB Data Acquisition Function Module was performed on August 1, 2006."}
+      ]
+    },
+    {
+      "date": "2006-09-27",
+      "date_source": "document_date",
+      "statement": "A memorandum to Hinckley Allen Snyder LLP recorded Modern Continental's account of the C09B2 contract: its selection of the Powers/Rawl adhesive anchor system from the contract's pre-approved suppliers, the submittal of product information to B/PB and GF for review, and B/PB's decision not to require retesting of the regular eastbound and westbound lanes at the higher load.",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "September 27, 2006 Hinckley Allen Snyder LLP 28 State Street Boston, MA 02109-1775"},
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Contract specifications listed three (3) pre-approved adhesive anchor suppliers for Modern Continental to choose from. • Selected Powers/Rawl from list."},
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Product information for the adhesive and the installation procedure were submitted to B/PB and GF for review and approval."},
+        {"page_id": "HWY06MH024:015:p002", "quote": "• B/PB chose not to have MC test the “regular” eastbound and westbound lanes to the higher load."}
+      ]
+    },
+    {
+      "date": "2006-12",
+      "date_source": "stated_in_text",
+      "statement": "MTA issued a Request for Proposals for a General Engineering Consultant to help develop a comprehensive tunnel inspection program.",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "In December 2006, MTA issued a Request for Proposals (attached) for a General Engineering Consultant to assist in the development of a comprehensive tunnel inspection program"}
+      ]
+    },
+    {
+      "date": "2007-01-11",
+      "date_source": "stated_in_text",
+      "statement": "MTA's Tunnel Inspection and Testing Program Policy Directive, recommended by Helmut Ernst and approved by Chairman John Cogliano, took effect, requiring annual inspection of ceiling panels and hanger systems over roadways.",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p006", "quote": "John Cogliano Chairman Effective: January 11, 2007"},
+        {"page_id": "HWY06MH024:065:p005", "quote": "Ceiling panels and hanger systems over roadways supporting: Ceiling panels, mechanical equipment (jet fans/exhaust fans), electrical equipment (lights), conduits, pipes, sign mounting assemblies, communications systems and catwalks shall be inspected once per year."}
+      ]
+    },
+    {
+      "date": "2007-01-12",
+      "date_source": "document_date",
+      "statement": "MTA Acting Chief Engineer Helmut Ernst sent NTSB's Daniel Walsh a summary of the Inspection Manual for Tunnels and Boat Structures and the post-collapse tunnel inspection program efforts.",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "To: Daniel Walsh, NTSB From: Helmut Ernst, P.E., MTA Acting Chief Engineer Date: January 12, 2007"}
+      ]
+    },
+    {
+      "date": "2007-02-07",
+      "date_source": "document_date",
+      "statement": "FHWA's Turner-Fairbank Highway Research Center issued its report on the July 2006 adhesive anchor load testing, finding that each tested anchor failed within the epoxy rather than at the epoxy-to-concrete interface.",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p001", "quote": "William Wright, PHD, PE Federal Highway Administration Paul Fuchs, PHD Fuchs Consulting, Inc. FEBRUARY 7, 2007"},
+        {"page_id": "HWY06MH024:008:p075", "quote": "In general, regardless of the test method or type of testing performed, each adhesive anchor tested failed within the epoxy and not at the epoxy-to-concrete interface."}
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "name": "Modern Continental",
+      "kind": "organization",
+      "role": "contractor",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "The section of tunnel we call the “D Street Portal” is called the “C4A2” section by Modern Continental (MC)."}
+      ]
+    },
+    {
+      "name": "Modern Continental Companies, Inc.",
+      "kind": "organization",
+      "role": "contractor",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc. 600 Memorial Drive Cambridge, MA 02210"}
+      ]
+    },
+    {
+      "name": "Modern Continental Construction",
+      "kind": "organization",
+      "role": "contractor",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p004", "quote": "Conam Inspection Inspection & Quality Services 2 Millbury Street Auburn, Massachusetts 01501 Telephone - 1 508-832 5500 Facsimile - 1 508-832-5557 NONDESTRUCTIVE TESTING REPORT CUSTOMER: Modern Continental Construction"}
+      ]
+    },
+    {
+      "name": "B/PB",
+      "kind": "organization",
+      "role": "construction management / design consultant",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Product information for the adhesive and the installation procedure were submitted to B/PB and GF for review and approval."}
+      ]
+    },
+    {
+      "name": "GF",
+      "kind": "organization",
+      "role": "submittal reviewer",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Product information for the adhesive and the installation procedure were submitted to B/PB and GF for review and approval."}
+      ]
+    },
+    {
+      "name": "Powers/Rawl",
+      "kind": "organization",
+      "role": "adhesive anchor supplier",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Contract specifications listed three (3) pre-approved adhesive anchor suppliers for Modern Continental to choose from. • Selected Powers/Rawl from list."}
+      ]
+    },
+    {
+      "name": "Hinckley Allen Snyder LLP",
+      "kind": "organization",
+      "role": "law firm (memo addressee)",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "September 27, 2006 Hinckley Allen Snyder LLP 28 State Street Boston, MA 02109-1775"}
+      ]
+    },
+    {
+      "name": "EST/HNTB",
+      "kind": "organization",
+      "role": "design joint venture",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p012", "quote": "EST/HNTB A Joint Venture CEILING PANEL SUPPORT SYSTEM"}
+      ]
+    },
+    {
+      "name": "MASSACHUSETTS HIGHWAY DEPARTMENT",
+      "kind": "organization",
+      "role": "project agency",
+      "quotes": [
+        {"page_id": "HWY06MH024:037:p002", "quote": "MASSACHUSETTS HIGHWAY DEPARTMENT ONE SOUTH STATION BOSTON, MASSACHUSETTS 02110"}
+      ]
+    },
+    {
+      "name": "MHD",
+      "kind": "organization",
+      "role": "project agency",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p002", "quote": "outlines tunnel finish changes as a result of acceptance of certain Cost Containment proposals approved by MHD and FHWA at their Interface meeting with B/PB."}
+      ]
+    },
+    {
+      "name": "Massachusetts Turnpike Authority",
+      "kind": "organization",
+      "role": "project owner/operator",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p004", "quote": "Massachusetts Turnpike Authority Policy Directive Tunnel Inspection and Testing Program"}
+      ]
+    },
+    {
+      "name": "MTA",
+      "kind": "organization",
+      "role": "project owner/operator",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "To: Daniel Walsh, NTSB From: Helmut Ernst, P.E., MTA Acting Chief Engineer Date: January 12, 2007"}
+      ]
+    },
+    {
+      "name": "Helmut Ernst",
+      "kind": "person",
+      "role": "MTA Acting Chief Engineer",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "To: Daniel Walsh, NTSB From: Helmut Ernst, P.E., MTA Acting Chief Engineer Date: January 12, 2007"}
+      ]
+    },
+    {
+      "name": "Daniel Walsh",
+      "kind": "person",
+      "role": "NTSB investigator",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p002", "quote": "To: Daniel Walsh, NTSB From: Helmut Ernst, P.E., MTA Acting Chief Engineer Date: January 12, 2007"}
+      ]
+    },
+    {
+      "name": "John Cogliano",
+      "kind": "person",
+      "role": "MTA Chairman",
+      "quotes": [
+        {"page_id": "HWY06MH024:065:p006", "quote": "John Cogliano Chairman Effective: January 11, 2007"}
+      ]
+    },
+    {
+      "name": "Robert Coutts",
+      "kind": "person",
+      "role": "Modern Continental Project Manager",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc. 600 Memorial Drive Cambridge, MA 02210"}
+      ]
+    },
+    {
+      "name": "Robert E. Steffy",
+      "kind": "person",
+      "role": "B/PB Resident Engineer",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "name": "Phil Aikele",
+      "kind": "person",
+      "role": "project engineer",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p002", "quote": "TO: Bob Steffy FROM: Phil Aikele DATE: August 31, 2000 SUBJECT: Recommended disposition for DR #1"}
+      ]
+    },
+    {
+      "name": "Conam Inspection",
+      "kind": "organization",
+      "role": "nondestructive testing inspector",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p004", "quote": "Conam Inspection Inspection & Quality Services 2 Millbury Street Auburn, Massachusetts 01501 Telephone - 1 508-832 5500 Facsimile - 1 508-832-5557 NONDESTRUCTIVE TESTING REPORT CUSTOMER: Modern Continental Construction"}
+      ]
+    },
+    {
+      "name": "Sika Corporation",
+      "kind": "organization",
+      "role": "adhesive supplier/manufacturer",
+      "quotes": [
+        {"page_id": "HWY06MH024:078:p001", "quote": "Sika Corporation 201 Polito Ave Lyndhurst, NJ 07071"}
+      ]
+    },
+    {
+      "name": "Federal Highway Administration",
+      "kind": "organization",
+      "role": "testing agency",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "name": "National Transportation Safety Board",
+      "kind": "organization",
+      "role": "investigating agency",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "name": "Turner-Fairbank Highway Research Center",
+      "kind": "organization",
+      "role": "FHWA research center that performed testing",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "name": "BECHTEL/PARSONS BRINCKERHOFF",
+      "kind": "organization",
+      "role": "construction management consultant",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Powers/Rawl",
+      "type": "supplied",
+      "target": "Modern Continental",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Contract specifications listed three (3) pre-approved adhesive anchor suppliers for Modern Continental to choose from. • Selected Powers/Rawl from list."},
+        {"page_id": "HWY06MH024:015:p002", "quote": "The section of tunnel we call the “D Street Portal” is called the “C4A2” section by Modern Continental (MC)."}
+      ]
+    },
+    {
+      "source": "B/PB",
+      "type": "reviewed_submittals_for",
+      "target": "Modern Continental",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Product information for the adhesive and the installation procedure were submitted to B/PB and GF for review and approval."},
+        {"page_id": "HWY06MH024:015:p002", "quote": "The section of tunnel we call the “D Street Portal” is called the “C4A2” section by Modern Continental (MC)."}
+      ]
+    },
+    {
+      "source": "GF",
+      "type": "reviewed_submittals_for",
+      "target": "Modern Continental",
+      "quotes": [
+        {"page_id": "HWY06MH024:015:p002", "quote": "• Product information for the adhesive and the installation procedure were submitted to B/PB and GF for review and approval."},
+        {"page_id": "HWY06MH024:015:p002", "quote": "The section of tunnel we call the “D Street Portal” is called the “C4A2” section by Modern Continental (MC)."}
+      ]
+    },
+    {
+      "source": "Conam Inspection",
+      "type": "inspected_for",
+      "target": "Modern Continental Construction",
+      "quotes": [
+        {"page_id": "HWY06MH024:054:p004", "quote": "Conam Inspection Inspection & Quality Services 2 Millbury Street Auburn, Massachusetts 01501 Telephone - 1 508-832 5500 Facsimile - 1 508-832-5557 NONDESTRUCTIVE TESTING REPORT CUSTOMER: Modern Continental Construction"}
+      ]
+    },
+    {
+      "source": "BECHTEL/PARSONS BRINCKERHOFF",
+      "type": "oversaw",
+      "target": "Modern Continental Companies, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"},
+        {"page_id": "HWY06MH024:050:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc. 600 Memorial Drive Cambridge, MA 02210"}
+      ]
+    },
+    {
+      "source": "Federal Highway Administration",
+      "type": "inspected_for",
+      "target": "National Transportation Safety Board",
+      "quotes": [
+        {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+      ]
+    },
+    {
+      "source": "Robert Coutts",
+      "type": "represented",
+      "target": "Modern Continental Companies, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Mr. Robert Coutts Project Manager Modern Continental Companies, Inc. 600 Memorial Drive Cambridge, MA 02210"}
+      ]
+    },
+    {
+      "source": "Robert E. Steffy",
+      "type": "represented",
+      "target": "BECHTEL/PARSONS BRINCKERHOFF",
+      "quotes": [
+        {"page_id": "HWY06MH024:050:p002", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "source": "MHD",
+      "type": "oversaw",
+      "target": "B/PB",
+      "quotes": [
+        {"page_id": "HWY06MH024:043:p002", "quote": "outlines tunnel finish changes as a result of acceptance of certain Cost Containment proposals approved by MHD and FHWA at their Interface meeting with B/PB."}
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "name": "MC",
+      "same_as": "Modern Continental",
+      "quote": {"page_id": "HWY06MH024:015:p002", "quote": "The section of tunnel we call the “D Street Portal” is called the “C4A2” section by Modern Continental (MC)."}
+    },
+    {
+      "name": "FHWA",
+      "same_as": "Federal Highway Administration",
+      "quote": {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+    },
+    {
+      "name": "NTSB",
+      "same_as": "National Transportation Safety Board",
+      "quote": {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+    },
+    {
+      "name": "TFHRC",
+      "same_as": "Turner-Fairbank Highway Research Center",
+      "quote": {"page_id": "HWY06MH024:008:p016", "quote": "In support of the National Transportation Safety Board’s (NTSB)investigation of this failure, the Federal Highway Administration (FHWA) dispatched a team of engineers and technicians from the Turner-Fairbank Highway Research Center (TFHRC) to conduct static tension load testing"}
+    }
+  ],
+  "open_questions": []
+}

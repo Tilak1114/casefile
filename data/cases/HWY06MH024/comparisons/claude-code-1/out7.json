@@ -1,0 +1,363 @@
+{
+  "events": [
+    {
+      "date": "1997-03-13",
+      "date_source": "stated_in_text",
+      "statement": "Design Policy Memorandum (DPM) 107 was issued and became the basis for the design of the modular ceiling panel/hanger system.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p002", "quote": "Design Policy Memorandum (DPM) 107 dated 3/13/97 was the basis for the design of the modular ceiling panel/hanger system which was subsequently installed In Tunnel Finnish Contract C0982."}
+      ]
+    },
+    {
+      "date": "1997",
+      "date_source": "stated_in_text",
+      "statement": "Redundancy criteria for the ceiling hanger system, including a one-hanger-out failure mode, were discussed in meetings with tunnel finish design consultants and the Management Consultant.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p003", "quote": "Project redundancy issues were discussed in meetings with all tunnel finish section design consultants and the Management Consultant in the summer of 1997."}
+      ]
+    },
+    {
+      "date": "1998-09-23",
+      "date_source": "stated_in_text",
+      "statement": "The Management Consultant sent Gannett Fleming a sample specification by fax that became the basis for the anchor proof-test load requirement.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p003", "quote": "The 1.25 amplification factor was based on the anchor testing procedure specified for the Ted Williams Tunnel; this was furnished in the form of a sample specification by the Management Consultant to Gannett Fleming via fax on 9/23/98."}
+      ]
+    },
+    {
+      "date": "1998-10-09",
+      "date_source": "stated_in_text",
+      "statement": "Gannett Fleming and the Management Consultant met to address the epoxy adhesive transfer factor of safety for the one-hanger-out scenario in the Sta. 70+50 to 72+40 region, and Gannett Fleming was directed to reduce the factor of safety from 4.0 to 2.0 for that scenario.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p003", "quote": "A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998 to address this issue with respect to the epoxy adhesive transfer load in the region from Sta. 70+50 to Sta. 72+40 (C04A2 region). At that time, GF was directed to utilize a reduction in the factor of safety for the epoxy transfer load (from 4.0) to 2.0 for the “one hanger out” scenario"}
+      ]
+    },
+    {
+      "date": "1998-01-23",
+      "date_source": "stated_in_text",
+      "statement": "A Draft Design Policy Memorandum containing guideline safety factors for the concrete insert support systems was in circulation.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p003", "quote": "it was confirmed that this condition provided safety factors within the guidelines of the January 23, 1998 Draft DPM for the respective components of the concrete insert (Unistrut) support systems"}
+      ]
+    },
+    {
+      "date": "1999-07-08",
+      "date_source": "stated_in_text",
+      "statement": "Conformed Special Provisions specified a proof test load of 125% of design service load and a design epoxy transfer load of 4.0 kips with a factor of safety of 4.00 for the epoxy resin anchor system.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p002", "quote": "A proof test load of 125% of the design service load of 3.25 kips (i.e. 1.25 x 2.6 kips) was specified (Conformed Special Provisions 723.480, Section 3.07 G.1, dated 7/8/99)."},
+        {"page_id": "HWY06MH024:034:p002", "quote": "A design epoxy transfer load of 4.0 kips (with an additionally specified factor of safety between ultimate strength and allowable strength of adhesive = 4.00) was specified (Conformed Special Provisions 723.480, Section 2.08 E.1.a., dated 7/8/99)."}
+      ]
+    },
+    {
+      "date": "1999-08",
+      "date_source": "stated_in_text",
+      "statement": "A ceiling module in the HOV tunnel mockup was installed with proper securement prior to support removal, and no anchor movement was noted at first inspection.",
+      "quotes": [
+        {"page_id": "HWY06MH024:040:p002", "quote": "Ceiling module installed using proper securement prior to support removal in early August, ‘99. Inspection noted no movement subsequent to initial erection."}
+      ]
+    },
+    {
+      "date": "1999-09-09",
+      "date_source": "stated_in_text",
+      "statement": "A foreman installing plenums noticed small movement of an anchor and its attached plate in the HOV ceiling mockup.",
+      "quotes": [
+        {"page_id": "HWY06MH024:040:p002", "quote": "Small movement of anchor and attached plate (approx. 1/16\") noted on September 9, 1999, by foreman installing plenums."}
+      ]
+    },
+    {
+      "date": "1999-10-07",
+      "date_source": "document_date",
+      "statement": "Modern Continental Construction wrote to the Central Artery/Tunnel Project management consultant Bechtel/Parsons Brinckerhoff reporting adhesive anchor movement in the HOV ceiling mockup, noting periodic MCC inspections had revealed increased movement up to 1/2 inch, and requesting direction on repair or mitigative measures.",
+      "quotes": [
+        {"page_id": "HWY06MH024:040:p002", "quote": "As noted in our field inspection of October 7, 1999, a small percentage of the adhesive anchors in the HOV ceiling mockup appear to show signs of tensile movement, thus creating gaps in the ceiling hanger plate to CIP ceiling interface."},
+        {"page_id": "HWY06MH024:040:p002", "quote": "Periodic inspections by MCC revealed an increased movement to a worst case movement of 1/2\" in early October of 1999, leading to notification."},
+        {"page_id": "HWY06MH024:040:p002", "quote": "Whereas these anchors have been installed and tested in accordance with contract documents, MCC respectfully requests direction pertaining to any repair or mitigative measures required."}
+      ]
+    },
+    {
+      "date": "1999-12-17",
+      "date_source": "stated_in_text",
+      "statement": "The contractor submitted a PE-sealed anchor adequacy certification stating the epoxy anchor product would attain an adhesive tensile allowable force of 6.35 kips per bolt.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p003", "quote": "The contractor anchor adequacy submittal certified by PE seal dated December 17, 1999 indicated that the product to be supplied would attain an adhesive tensile allowable force of 6.35 kips/bolt (with a safety factor of 4 against ultimate)."}
+      ]
+    },
+    {
+      "date": "2000-02-01",
+      "date_source": "document_date",
+      "statement": "ICBO Evaluation Service reissued Evaluation Report ER-4514 finding that Powers Fasteners' Chem-Stud and Power-Fast adhesive anchor systems complied with the 1997 Uniform Building Code, subject to installation, inspection, and load limitation conditions.",
+      "quotes": [
+        {"page_id": "HWY06MH024:070:p001", "quote": "CHEM-STUD AND POWER-FAST ADHESIVE ANCHOR SYSTEMS POWERS FASTENERS, INC."},
+        {"page_id": "HWY06MH024:070:p001", "quote": "Reissued February 1, 2000"},
+        {"page_id": "HWY06MH024:070:p002", "quote": "That the Chem-Stud and Power-Fast Adhesive Anchor Systems described in this report comply with the 1997 Uniform Building Code™, subject to the following conditions"}
+      ]
+    },
+    {
+      "date": "2006-04-19",
+      "date_source": "document_date",
+      "statement": "Sika Corporation issued a Material Safety Data Sheet for Sikadur Injection Gel FS / Anchor Fix 3, Part B, a related epoxy anchoring product.",
+      "quotes": [
+        {"page_id": "HWY06MH024:076:p001", "quote": "Issue Date: 04/19/2006"},
+        {"page_id": "HWY06MH024:076:p001", "quote": "Product Name: Sikadur Injection Gel FS / Anchor Fix 3 - Part B"}
+      ]
+    },
+    {
+      "date": "2006-07-10",
+      "date_source": "document_date",
+      "statement": "The accident under investigation, a partial ceiling collapse in the I-90 Connector Tunnel to Ted Williams Tunnel in Boston, occurred on this date.",
+      "quotes": [
+        {"page_id": "HWY06MH024:003:p001", "quote": "Date of Accident: July 10, 2006"},
+        {"page_id": "HWY06MH024:006:p001", "quote": "Date : July 10, 2006."}
+      ]
+    },
+    {
+      "date": "2006-08-04",
+      "date_source": "document_date",
+      "statement": "The design engineer sent a memorandum to NTSB (updated November 2, 2006) summarizing the ceiling panel design principles, loading assumptions, and the epoxy resin anchor system specified for Contract C09B2.",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p002", "quote": "August 4, 2006 (Updated November 2, 2006) MEMORANDUM TO THE NATIONAL TRANSPORTATION SAFETY BOARD"},
+        {"page_id": "HWY06MH024:034:p002", "quote": "In response to your recent verbal Inquiry for a brief summation of design principles and relevant loading the following is provided."}
+      ]
+    },
+    {
+      "date": "2006-08-30",
+      "date_source": "document_date",
+      "statement": "Modern Continental Construction faxed a submittal describing its installation procedure and quality control program for the adhesive anchoring system, following manufacturer product information.",
+      "quotes": [
+        {"page_id": "HWY06MH024:013:p002", "quote": "08/30/2006 13:36 FAX"},
+        {"page_id": "HWY06MH024:013:p002", "quote": "It is the intent of Modern Continental Construction to perform the installation of the adhesive anchoring system in accordance with the included manufacturer’s product information"}
+      ]
+    },
+    {
+      "date": "2006-10-12",
+      "date_source": "document_date",
+      "statement": "Representatives of the NTSB Materials Laboratory and Office of Highway Safety and the FHWA Turner Fairbank Highway Research Center conducted tests to study void formation in simulated overhead adhesive anchor holes.",
+      "quotes": [
+        {"page_id": "HWY06MH024:006:p001", "quote": "On October 12, 2006, representatives from the National Transportation Safety Board’s Materials Laboratory and Office of Highway Safety (NTSB) and the Federal Highway Administration’s Turner Fairbank Highway Research Center (FHWA) conducted a series of tests in order to study void formation in an overhead adhesive anchor system."}
+      ]
+    },
+    {
+      "date": "2006-12-11",
+      "date_source": "document_date",
+      "statement": "The NTSB Safety Studies and Statistical Analysis Division issued a data report analyzing the pattern of displaced ceiling anchors, finding displacement was significantly related to dead load and differed among the three tunnels, with the failure occurring in the Eastbound tunnel's Middle 1 row, the highest-load condition.",
+      "quotes": [
+        {"page_id": "HWY06MH024:003:p001", "quote": "Data Report Anchor Displacement Data Analysis"},
+        {"page_id": "HWY06MH024:003:p002", "quote": "Note that the failure of the ceiling system occurred in the Middle 1 row of the Eastbound tunnel."},
+        {"page_id": "HWY06MH024:003:p006", "quote": "The analysis showed that both the effect of Dead Load and Tunnel were significant."}
+      ]
+    },
+    {
+      "date": "2007-01-10",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory Division issued Study Report No. 06-092 describing the October 12, 2006 void-formation testing using simulated adhesive anchor holes and Power-Fast epoxy.",
+      "quotes": [
+        {"page_id": "HWY06MH024:006:p001", "quote": "January 10, 2007. MATERIALS LABORATORY STUDY Report No. 06-092"},
+        {"page_id": "HWY06MH024:006:p001", "quote": "The anchors used in the tunnel were 5/8-11 UNC1 threaded rod produced from grade 316 stainless steel2. The adhesive used was a Powers Fasteners two-part epoxy."}
+      ]
+    },
+    {
+      "date": "2007-05-15",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory Division issued Factual Report No. 07-067 documenting epoxy phase separation and color change after heating, following an FHWA parametric study that found anchor pull-strength dropped sharply after the epoxy was heated to 140 degrees F for 56 hours.",
+      "quotes": [
+        {"page_id": "HWY06MH024:020:p001", "quote": "May 15, 2007 MATERIALS LABORATORY FACTUAL REPORT Report No. 07-067"},
+        {"page_id": "HWY06MH024:020:p001", "quote": "the first anchor installed had a strength of less than 3,250 pounds. The second anchor installed had a strength of 16,476 pounds and subsequent anchors had strengths between 18,000 and 20,000 pounds, approaching the baseline strength of 22,084 pounds"}
+      ]
+    },
+    {
+      "date": "2007-06-29",
+      "date_source": "document_date",
+      "statement": "The NTSB Materials Laboratory Division issued Study Report No. 07-063 presenting finite element analysis of the adhesive anchor system, concluding that voids in the epoxy increased stress and strain concentrations and that anchors had separated cleanly from the epoxy in direct tension.",
+      "quotes": [
+        {"page_id": "HWY06MH024:068:p001", "quote": "June 29, 2007 MATERIALS LABORATORY STUDY Report No. 07-063"},
+        {"page_id": "HWY06MH024:068:p013", "quote": "All of the anchors from the accident location separated cleanly from the epoxy at the top surface of the anchor (see Materials Laboratory Factual report 06-091), suggesting that the bond between the anchor and epoxy is weak in direct tension."}
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "name": "National Transportation Safety Board",
+      "kind": "organization",
+      "role": "federal accident investigator",
+      "quotes": [{"page_id": "HWY06MH024:006:p001", "quote": "representatives from the National Transportation Safety Board’s Materials Laboratory and Office of Highway Safety (NTSB)"}]
+    },
+    {
+      "name": "Federal Highway Administration",
+      "kind": "organization",
+      "role": "federal highway research agency",
+      "quotes": [{"page_id": "HWY06MH024:006:p001", "quote": "the Federal Highway Administration’s Turner Fairbank Highway Research Center (FHWA) conducted a series of tests"}]
+    },
+    {
+      "name": "Modern Continental Construction",
+      "kind": "organization",
+      "role": "contractor",
+      "quotes": [{"page_id": "HWY06MH024:013:p002", "quote": "It is the intent of Modern Continental Construction to perform the installation of the adhesive anchoring system"}]
+    },
+    {
+      "name": "Bechtel/Parsons Brinckerhoff",
+      "kind": "organization",
+      "role": "management consultant",
+      "quotes": [{"page_id": "HWY06MH024:040:p002", "quote": "Central Artery/Tunnel Project\nBechtel/Parsons Brinckerhoff\n185 Kneeland St.\nBoston, MA 02111"}]
+    },
+    {
+      "name": "Gannett Fleming",
+      "kind": "organization",
+      "role": "designer",
+      "quotes": [{"page_id": "HWY06MH024:034:p003", "quote": "the sample specification by the Management Consultant to Gannett Fleming via fax on 9/23/98"}]
+    },
+    {
+      "name": "Powers Fasteners, Inc.",
+      "kind": "organization",
+      "role": "epoxy anchor system manufacturer/supplier",
+      "quotes": [{"page_id": "HWY06MH024:072:p001", "quote": "Epoxy adhesive system shall be standard set or fast set Power-Fast+ as supplied by Powers Fasteners, Inc., Brewster, NY."}]
+    },
+    {
+      "name": "ICBO Evaluation Service, Inc.",
+      "kind": "organization",
+      "role": "product code-compliance evaluator",
+      "quotes": [{"page_id": "HWY06MH024:070:p001", "quote": "ICBO Evaluation Service, Inc.\n5360 WORKMAN MILL ROAD • WHITTIER, CALIFORNIA 90601-2299"}]
+    },
+    {
+      "name": "Sika Corporation",
+      "kind": "organization",
+      "role": "epoxy anchoring product supplier",
+      "quotes": [{"page_id": "HWY06MH024:076:p001", "quote": "Supplier\nSika Corporation\n201 Polito Ave\nLyndhurst, NJ 07071"}]
+    },
+    {
+      "name": "Robert Coutts",
+      "kind": "person",
+      "role": "MCC Senior Project Manager, author of anchor-movement notification letter",
+      "quotes": [{"page_id": "HWY06MH024:040:p002", "quote": "Sincerely,\nThe Modern Continental Construction Company, Inc.\n\nRobert Coutts\nSr. Project Manager"}]
+    },
+    {
+      "name": "R. E. Steffy",
+      "kind": "person",
+      "role": "Bechtel/Parsons Brinckerhoff authorized representative addressed in MCC's anchor-movement letter",
+      "quotes": [{"page_id": "HWY06MH024:040:p002", "quote": "Attention: Mr. R. E. Steffy\nAuthorized Representative"}]
+    },
+    {
+      "name": "Mark Bagnard",
+      "kind": "person",
+      "role": "NTSB investigator",
+      "quotes": [{"page_id": "HWY06MH024:003:p001", "quote": "Investigator: Mark Bagnard"}]
+    },
+    {
+      "name": "Carl R. Schultheisz",
+      "kind": "person",
+      "role": "NTSB Materials Research Engineer, author of materials lab studies",
+      "quotes": [{"page_id": "HWY06MH024:020:p002", "quote": "Carl R. Schultheisz\nMaterials Research Engineer"}]
+    },
+    {
+      "name": "Derek Nash",
+      "kind": "person",
+      "role": "NTSB Materials Lab mechanical engineer, void formation study author",
+      "quotes": [{"page_id": "HWY06MH024:006:p008", "quote": "Derek Nash\nMechanical Engineer"}]
+    },
+    {
+      "name": "Dan Walsh",
+      "kind": "person",
+      "role": "NTSB Office of Highway Safety recipient of design-loads memorandum",
+      "quotes": [{"page_id": "HWY06MH024:034:p002", "quote": "Attention Mr. Dan Walsh"}]
+    },
+    {
+      "name": "Gannett Fleming",
+      "kind": "organization",
+      "role": "designer (abbreviated GF in project correspondence)",
+      "quotes": [{"page_id": "HWY06MH024:034:p003", "quote": "A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998 to address this issue"}]
+    },
+    {
+      "name": "Management Consultant",
+      "kind": "organization",
+      "role": "project management consultant overseeing the designer (abbreviated MC); not identified by company name on these pages",
+      "quotes": [{"page_id": "HWY06MH024:034:p003", "quote": "A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998 to address this issue"}]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Modern Continental Construction",
+      "type": "contracted_with",
+      "target": "Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:040:p002", "quote": "Central Artery/Tunnel Project\nBechtel/Parsons Brinckerhoff"},
+        {"page_id": "HWY06MH024:040:p002", "quote": "Sincerely,\nThe Modern Continental Construction Company, Inc."}
+      ]
+    },
+    {
+      "source": "Bechtel/Parsons Brinckerhoff",
+      "type": "reviewed_submittals_for",
+      "target": "Modern Continental Construction",
+      "quotes": [{"page_id": "HWY06MH024:040:p002", "quote": "Whereas these anchors have been installed and tested in accordance with contract documents, MCC respectfully requests direction pertaining to any repair or mitigative measures required."}]
+    },
+    {
+      "source": "Gannett Fleming",
+      "type": "designed_for",
+      "target": "Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:034:p003", "quote": "For the bid documents, Gannett Fleming applied the 1.25 to the computed design load as discussed in [b] above"},
+        {"page_id": "HWY06MH024:040:p002", "quote": "Central Artery/Tunnel Project\nBechtel/Parsons Brinckerhoff"}
+      ]
+    },
+    {
+      "source": "MC",
+      "type": "oversaw",
+      "target": "GF",
+      "quotes": [{"page_id": "HWY06MH024:034:p003", "quote": "A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998 to address this issue"}]
+    },
+    {
+      "source": "Powers Fasteners, Inc.",
+      "type": "supplied",
+      "target": "Modern Continental Construction",
+      "quotes": [
+        {"page_id": "HWY06MH024:072:p001", "quote": "Epoxy adhesive system shall be standard set or fast set Power-Fast+ as supplied by Powers Fasteners, Inc., Brewster, NY."},
+        {"page_id": "HWY06MH024:013:p002", "quote": "It is the intent of Modern Continental Construction to perform the installation of the adhesive anchoring system"}
+      ]
+    },
+    {
+      "source": "National Transportation Safety Board",
+      "type": "inspected_for",
+      "target": "Federal Highway Administration",
+      "quotes": [{"page_id": "HWY06MH024:006:p001", "quote": "representatives from the National Transportation Safety Board’s Materials Laboratory and Office of Highway Safety (NTSB) and the Federal Highway Administration’s Turner Fairbank Highway Research Center (FHWA) conducted a series of tests"}]
+    },
+    {
+      "source": "ICBO Evaluation Service, Inc.",
+      "type": "reviewed_submittals_for",
+      "target": "Powers Fasteners, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:070:p001", "quote": "ICBO Evaluation Service, Inc.\n5360 WORKMAN MILL ROAD • WHITTIER, CALIFORNIA 90601-2299"},
+        {"page_id": "HWY06MH024:072:p001", "quote": "Epoxy adhesive system shall be standard set or fast set Power-Fast+ as supplied by Powers Fasteners, Inc., Brewster, NY."}
+      ]
+    },
+    {
+      "source": "Robert Coutts",
+      "type": "represented",
+      "target": "Modern Continental Construction",
+      "quotes": [{"page_id": "HWY06MH024:040:p002", "quote": "Sincerely,\nThe Modern Continental Construction Company, Inc.\n\nRobert Coutts\nSr. Project Manager"}]
+    }
+  ],
+  "aliases": [
+    {
+      "name": "GF",
+      "same_as": "Gannett Fleming",
+      "quote": {"page_id": "HWY06MH024:034:p003", "quote": "A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998 to address this issue"}
+    },
+    {
+      "name": "MC",
+      "same_as": "Management Consultant",
+      "quote": {"page_id": "HWY06MH024:034:p003", "quote": "A meeting between GF and the Management Consultant (MC) was conducted on October 9, 1998"}
+    },
+    {
+      "name": "MCC",
+      "same_as": "Modern Continental Construction",
+      "quote": {"page_id": "HWY06MH024:040:p002", "quote": "Periodic inspections by MCC revealed an increased movement to a worst case movement of 1/2\" in early October of 1999"}
+    },
+    {
+      "name": "B/PB",
+      "same_as": "Bechtel/Parsons Brinckerhoff",
+      "quote": {"page_id": "HWY06MH024:040:p002", "quote": "cc: Martin Charney, B/PB\nC. Madden, MCC"}
+    }
+  ],
+  "open_questions": [
+    "Whether the 'Management Consultant' (MC) referenced in the August 4, 2006 design-loads memorandum (page HWY06MH024:034:p003) is the same entity as Bechtel/Parsons Brinckerhoff, the management consultant named in the October 7, 1999 anchor-movement letter (page HWY06MH024:040:p002); these pages do not state the connection directly."
+  ]
+}

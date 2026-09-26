@@ -20,6 +20,10 @@ way a real liability claim is handled, and every line it shows is quoted from th
 
 Collaboration: 8 disputes between the specialists over dates, each ruled by the lead from the quotes.
 
+Against a general-purpose agent: 8 Claude (Sonnet) agents in parallel, no harness, same pages, same verifier and key:
+**36 of 49** events (11/14 held out), 15/19 parties, 2/13 relationships, 369 claims kept, **16% refused**, no record of
+which pages were read.
+
 ## Script
 
 **0:00–0:30 · Board: the problem and the result**
@@ -55,7 +59,8 @@ their own lens. Nothing was skipped."
 
 **2:30–3:00 · Evaluation: measured, not claimed**
 "We held back the NTSB's own analysis as the answer key. The same model given all the pages in one prompt found 18 of 49
-events. The team found all 49, including 14 of 14 we never tuned on. Our weak spot is relationships between companies,
+events. Claude agents working in parallel without a harness found 36, and one in six of their claims failed our quote
+check. The team found all 49, including 14 of 14 we never tuned on, with 5% refused. Our weak spot is relationships between companies,
 4 of 13. And it quotes the record: it never says who is at fault."
 
 ## The reading coverage report: where it is and how to read it
@@ -83,6 +88,9 @@ twice, once by the lawyer and once by the engineer."
 - **Did you tune the answer key to your runs?** No. It comes from the NTSB report; its evidence pages were audited
   against the input files without looking at any run, and every run is scored against the same key.
 - **Why not one big prompt?** Same model, same pages, one prompt: 18 of 49 events, 35% of claims refused.
+- **Why not just use Claude Code?** We tried: 8 Claude agents in parallel, no harness, found 36 of 49 events and 16% of
+  their claims failed the quote check, with no record of what they read. It is a different, stronger model, so this
+  compares model and harness together; the fair next test is a generic agent loop on the same Gemini model.
 - **What stops it running forever?** Token budget, task deadlines, a stall detector that wakes the lead, and a close check
   in code.
 - **Is the data real?** Yes: the public NTSB docket HWY06MH024, unaltered. The NTSB's own analysis files are withheld and

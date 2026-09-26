@@ -1,0 +1,471 @@
+{
+  "events": [
+    {
+      "date": "2006-07-10",
+      "date_source": "stated_in_text",
+      "statement": "Ten two-ton concrete ceiling panels fell from the roof of the eastbound I-90 Seaport Access Tunnel in Boston.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "Late in the evening of July 10, 2006, ten two-ton concrete panels suddenly fell from above the roadway of the eastbound I-90 Seaport Access Tunnel in Boston, Massachusetts."}
+      ]
+    },
+    {
+      "date": "2006-07-15",
+      "date_source": "stated_in_text",
+      "statement": "FHWA sent staff and contractors to Boston to support the NTSB investigation into the ceiling collapse.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "the Federal Highway Administration (FHWA) deployed staff and contractors to Boston on July 15, 2006."}
+      ]
+    },
+    {
+      "date": "1999",
+      "date_source": "stated_in_text",
+      "statement": "The adhesive anchors that later failed were installed in the tunnel ceiling between July and December 1999.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "The adhesive anchors used in the tunnel, installed between July and December 1999, were in service about seven years at the time of the accident."}
+      ]
+    },
+    {
+      "date": "1999",
+      "date_source": "stated_in_text",
+      "statement": "The proof load used to verify installation of the adhesive anchors in the tunnel was raised from 3250 to 6350 pounds.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p023", "quote": "In 1999, the proof load used to verify proper installation of the adhesive anchors in the tunnel was raised from 3250 pounds to 6350 pounds."}
+      ]
+    },
+    {
+      "date": "1998-12-08",
+      "date_source": "document_date",
+      "statement": "Environmental Interiors, Inc. sent Modern Continental a letter proposing its Celline metal panel ceiling system for the tunnel finishes contract.",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p004", "quote": "We are writing this letter in support of our submission of Environmental Interiors, Inc.'s Celline® metal panel structural ceiling system for use on the referenced project."},
+        {"page_id": "HWY06MH024:059:p004", "quote": "December 8, 1998"}
+      ]
+    },
+    {
+      "date": "1999-01-13",
+      "date_source": "document_date",
+      "statement": "Modern Continental submitted a Value Engineering Cost Proposal to Bechtel/Parsons Brinckerhoff proposing the Celline panel roof system in place of the precast ceiling design.",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p002", "quote": "MCC respectfully requests consideration of a Celline Metal Panel Structural Ceiling System manufactured by Environmental Interiors, Inc. as a Value Engineering Cost Proposal"},
+        {"page_id": "HWY06MH024:059:p002", "quote": "January 13, 1999"}
+      ]
+    },
+    {
+      "date": "1999-02-24",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff informed Modern Continental that the proposed Celline panel roof system (VECP No. 1) was not acceptable as presented.",
+      "quotes": [
+        {"page_id": "HWY06MH024:060:p002", "quote": "The proposed C09B2 VECP No. 1, as presented, is not acceptable."},
+        {"page_id": "HWY06MH024:060:p002", "quote": "February 24, 1999"}
+      ]
+    },
+    {
+      "date": "1999-10-13",
+      "date_source": "document_date",
+      "statement": "A Ceiling Module Erection Procedure submittal for the precast ceiling modules under Contract No. 99119-C09B2 was stamped by the reviewer.",
+      "quotes": [
+        {"page_id": "HWY06MH024:038:p003", "quote": "Ceiling Module Erection Procedure INDEX STAMP Contract No. 99119-C09B2 Paragraph 1.04 B"},
+        {"page_id": "HWY06MH024:038:p003", "quote": "10.13.99"}
+      ]
+    },
+    {
+      "date": "1999-12-01",
+      "date_source": "document_date",
+      "statement": "Modern Continental transmitted an Adhesive Anchor Repair Procedure submittal for review after anchor problems arose.",
+      "quotes": [
+        {"page_id": "HWY06MH024:047:p002", "quote": "1 723.480 016 A ADHESIVE ANCHOR REPAIR PROCEDURE T 2R3"},
+        {"page_id": "HWY06MH024:047:p002", "quote": "TRANSMITTAL DATE: 12/1/99"}
+      ]
+    },
+    {
+      "date": "1999-12-23",
+      "date_source": "document_date",
+      "statement": "The Engineer rejected Modern Continental's proposed fix for the failed anchor bolts (DR-001) and set out a new repair and retest procedure.",
+      "quotes": [
+        {"page_id": "HWY06MH024:047:p003", "quote": "The DR-001 proposed fix for the failed anchor bolts, as submitted, is rejected."},
+        {"page_id": "HWY06MH024:047:p003", "quote": "December 23, 1999"}
+      ]
+    },
+    {
+      "date": "1999-12-23",
+      "date_source": "document_date",
+      "statement": "Because of dust and insufficient adhesive found in failed anchor holes, the capacity of the remaining installed anchor bolts was called into question.",
+      "quotes": [
+        {"page_id": "HWY06MH024:047:p003", "quote": "Because of evidence concerning installation problems, i.e. dust in the hole and insufficient adhesive in the hole, the capacity of all of the other anchor bolts is in question and will need to be addressed."}
+      ]
+    },
+    {
+      "date": "2000-01-07",
+      "date_source": "stated_in_text",
+      "statement": "The Engineer directed Modern Continental, by letter, on the revised adhesive anchor testing to be used in the Ramp HOV mock-up area.",
+      "quotes": [
+        {"page_id": "HWY06MH024:053:p003", "quote": "Modern Continental is proceeding in accordance with direction received via Letter No. C09B2-0498, dated January 7, 2000"}
+      ]
+    },
+    {
+      "date": "2000-01-28",
+      "date_source": "document_date",
+      "statement": "Modern Continental submitted a revised adhesive anchor repair procedure raising the required proof-test load to 6,350 pounds tension for the Ramp HOV mock-up.",
+      "quotes": [
+        {"page_id": "HWY06MH024:053:p003", "quote": "The revised loading requirement for proof testing shall be at 6,350 lb. tension."},
+        {"page_id": "HWY06MH024:053:p003", "quote": "January 28, 2000"}
+      ]
+    },
+    {
+      "date": "2000-01-31",
+      "date_source": "document_date",
+      "statement": "Field engineer J. Barrett reviewed the revised repair procedure and commented that hole-cleaning steps should apply to any failed anchor, not just one.",
+      "quotes": [
+        {"page_id": "HWY06MH024:053:p004", "quote": "THE PROPOSED REPAIR PROCEDURE SEEMS TO BE WRITTEN PERTAINING TO \"THE\" FAILED ANCHOR, AS IF THERE IS ONLY ONE. IT SHOULD PERTAIN TO \"ANY\" FAILED ANCHORS."},
+        {"page_id": "HWY06MH024:053:p004", "quote": "Date review completed and initials: 1/31/00"}
+      ]
+    },
+    {
+      "date": "2000-02-16",
+      "date_source": "document_date",
+      "statement": "Bechtel/Parsons Brinckerhoff stamped the adhesive anchor repair procedure submittal to allow work to proceed subject to changes indicated.",
+      "quotes": [
+        {"page_id": "HWY06MH024:053:p002", "quote": "Work May Proceed Subject To The Changes Indicated Resubmittal Not Required"},
+        {"page_id": "HWY06MH024:053:p002", "quote": "Company 2/16/00"}
+      ]
+    },
+    {
+      "date": "2006-09-25",
+      "date_source": "stated_in_text",
+      "statement": "FHWA researchers cast a concrete test slab to replicate the tunnel roof for later adhesive-anchor testing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p011", "quote": "The test slab was cast on September 25, 2006 using a 4000 psi, #57 mix supplied by a local ready-mix producer."}
+      ]
+    },
+    {
+      "date": "2006-10-02",
+      "date_source": "stated_in_text",
+      "statement": "The test slab forms were stripped and concrete cylinders were removed from their molds.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p012", "quote": "The test slab forms were stripped on October 2, 2006, and the cylinders were removed from their molds on October 3, 2006."}
+      ]
+    },
+    {
+      "date": "2006-10-11",
+      "date_source": "stated_in_text",
+      "statement": "Coring of test-slab holes for Phase 1 anchor installation began at the FHWA laboratory.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p012", "quote": "Coring for the installation of anchors for Phase 1 of testing began on October 11, 2006."}
+      ]
+    },
+    {
+      "date": "2006-10-17",
+      "date_source": "stated_in_text",
+      "statement": "Additional test-slab holes were cored, and two holes unintentionally hit rebar during coring.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p012", "quote": "61 additional holes were cored on October 17th, of the holes cored October 17th, two unintentionally hit a #5 rebar"}
+      ]
+    },
+    {
+      "date": "2006-10-31",
+      "date_source": "stated_in_text",
+      "statement": "Most of the Phase 1 test anchors were installed in the FHWA test slab by lab technician Tim Tuggle and project engineer Justin Ocel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p029", "quote": "Anchors 1-77 installed by Tim Tuggle and Justin Ocel on 31 October 2006"}
+      ]
+    },
+    {
+      "date": "2006-11-02",
+      "date_source": "stated_in_text",
+      "statement": "Additional Phase 1 test anchors were installed in the overhead position by Tim Tuggle and Justin Ocel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p029", "quote": "Anchors 78-98 installed by Tim Tuggle and Justin Ocel on 2 November 2006"}
+      ]
+    },
+    {
+      "date": "2006-12-07",
+      "date_source": "stated_in_text",
+      "statement": "The final Phase 1 downward-installed standard-set epoxy anchors were installed in the test slab.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p031", "quote": "Anchors 99-103 installed by Tig Tuggle on 7 December 2006"}
+      ]
+    },
+    {
+      "date": "2006-12-13",
+      "date_source": "document_date",
+      "statement": "NTSB investigator Dennis Collins interviewed Modern Continental labor foreman Fernando Carvalho about the tunnel anchor drilling and epoxy installation work.",
+      "quotes": [
+        {"page_id": "HWY06MH024:018:p005", "quote": "Today is December 13, 2006. It's about 11:30 a.m., and I'm conducting an interview for the Big Dig investigation."}
+      ]
+    },
+    {
+      "date": "2007-01-16",
+      "date_source": "stated_in_text",
+      "statement": "Most of the Phase 2 test-slab holes were cored, apart from those reserved for alternative-adhesive and damp-hole testing.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p013", "quote": "Most of the holes for Phase 2 were cored on January 16, 2007 except for those reserved for the alternative adhesive and damp installation testing parameters."}
+      ]
+    },
+    {
+      "date": "2007-01-26",
+      "date_source": "stated_in_text",
+      "statement": "All Phase 2 test anchors were installed in the FHWA laboratory test slab.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p026", "quote": "All Phase 2 anchors were installed on January 26, 2007."}
+      ]
+    },
+    {
+      "date": "2007-02-02",
+      "date_source": "stated_in_text",
+      "statement": "Fifteen test anchors were torqued (pretensioned) in the FHWA laboratory to study torque relaxation behavior.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p025", "quote": "The 15 pretensioned specimens are shown in Figure 13 prior to torquing which occurred on the afternoon of February 2, 2007."}
+      ]
+    },
+    {
+      "date": "2007-04",
+      "date_source": "document_date",
+      "statement": "FHWA's Turner-Fairbank Highway Research Center published its report on the mechanical behavior of the Power-Fast+ adhesive anchors used in the tunnel.",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p001", "quote": "I-90 Seaport Portal Tunnel Partial Ceiling Collapse Investigation: Mechanical Behavior of Powers Fasteners Power-Fast+ Adhesive Anchors"},
+        {"page_id": "HWY06MH024:012:p001", "quote": "APRIL 2007"}
+      ]
+    }
+  ],
+  "parties": [
+    {
+      "name": "Federal Highway Administration",
+      "kind": "organization",
+      "role": "federal agency that tested the adhesive anchors after the collapse",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "the Federal Highway Administration (FHWA) deployed staff and contractors to Boston on July 15, 2006."}
+      ]
+    },
+    {
+      "name": "National Transportation Safety Board",
+      "kind": "organization",
+      "role": "lead investigator of the ceiling collapse",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "The National Transportation Safety Board (NTSB) is leading the investigation to determine the cause of the failure."}
+      ]
+    },
+    {
+      "name": "Powers Fasteners",
+      "kind": "organization",
+      "role": "supplier of the two-part epoxy adhesive anchor system",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "The stud was adhered to the concrete hole with a two-part epoxy supplied by Powers Fasteners of Brewster, NY."}
+      ]
+    },
+    {
+      "name": "Sika Corporation",
+      "kind": "organization",
+      "role": "formulator of the epoxy used in the Powers Fasteners anchor system",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "The epoxy Powers used was formulated by the Sika Corporation (Lyndhurst, NJ) and they reported no significant changes in the epoxy formulation between 1999 and 2006."}
+      ]
+    },
+    {
+      "name": "Justin M. Ocel",
+      "kind": "person",
+      "role": "project engineer, Professional Service Industries (PSI); co-author of the FHWA anchor report",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p001", "quote": "Justin M. Ocel, PhD Professional Service Industries (PSI)"}
+      ]
+    },
+    {
+      "name": "Joseph Hartmann",
+      "kind": "person",
+      "role": "Federal Highway Administration engineer; co-author of the FHWA anchor report",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p001", "quote": "Joseph Hartmann, PhD, PE Federal Highway Administration"}
+      ]
+    },
+    {
+      "name": "Modern Continental Construction Company",
+      "kind": "organization",
+      "role": "general contractor for the I-90 Seaport Access Tunnel finishes",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p002", "quote": "The Modern Continental Construction Company, Inc."}
+      ]
+    },
+    {
+      "name": "Robert Coutts",
+      "kind": "person",
+      "role": "Senior Project Manager, Modern Continental Construction Company",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p002", "quote": "The Modern Continental Construction Company, Inc. Robert Coutts Sr. Project Manager"}
+      ]
+    },
+    {
+      "name": "Bechtel/Parsons Brinckerhoff",
+      "kind": "organization",
+      "role": "project management/engineering firm for the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p002", "quote": "Central Artery/Tunnel Project Bechtel/Parsons Brinckerhoff 185 Kneeland St. Boston, MA 02111"}
+      ]
+    },
+    {
+      "name": "Robert E. Steffy",
+      "kind": "person",
+      "role": "Resident Engineer and Authorized Representative, Bechtel/Parsons Brinckerhoff",
+      "quotes": [
+        {"page_id": "HWY06MH024:060:p003", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy' V Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "name": "Environmental Interiors, Inc.",
+      "kind": "organization",
+      "role": "manufacturer proposing the Celline metal panel ceiling system as an alternative to precast",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p004", "quote": "We are writing this letter in support of our submission of Environmental Interiors, Inc.'s Celline® metal panel structural ceiling system for use on the referenced project."}
+      ]
+    },
+    {
+      "name": "John C. Montgomery",
+      "kind": "person",
+      "role": "President, Environmental Interiors, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p007", "quote": "Thank you for your consideration of Environmental Interiors, Inc. John C. Montgomery President"}
+      ]
+    },
+    {
+      "name": "John Pastore",
+      "kind": "person",
+      "role": "Modern Continental Construction Company contact for the Celline proposal",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p004", "quote": "Mr. John Pastore Modern Continental Construction Company"}
+      ]
+    },
+    {
+      "name": "Fernando Carvalho",
+      "kind": "person",
+      "role": "labor foreman for Modern Continental who oversaw anchor drilling crews",
+      "quotes": [
+        {"page_id": "HWY06MH024:018:p005", "quote": "Fernando Carvalho. I work for Mondern Continental (ph.), 23 years, almost 24, and I'm a labor foreman at the moment."}
+      ]
+    },
+    {
+      "name": "Dennis Collins",
+      "kind": "person",
+      "role": "NTSB investigator who conducted witness interviews",
+      "quotes": [
+        {"page_id": "HWY06MH024:018:p005", "quote": "This is Dennis Collins with the National Transportation Safety Board."}
+      ]
+    },
+    {
+      "name": "Tim Tuggle",
+      "kind": "person",
+      "role": "lead laboratory technician who injected epoxy for the FHWA anchor tests",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p023", "quote": "All epoxy for this phase of testing was injected into holes by Tim Tuggle (lead laboratory technician)"}
+      ]
+    },
+    {
+      "name": "Jim Wildey",
+      "kind": "person",
+      "role": "NTSB investigator who measured anchor void areas in the FHWA test data",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p037", "quote": "All anchors with voids had their bond areas determined by Jim Wildey of NTSB with a graphical method."}
+      ]
+    },
+    {
+      "name": "Massachusetts Turnpike Authority",
+      "kind": "organization",
+      "role": "owner of the Central Artery/Tunnel Project",
+      "quotes": [
+        {"page_id": "HWY06MH024:060:p002", "quote": "Massachusetts Turnpike Authority Central Artery/Tunnel Project"}
+      ]
+    },
+    {
+      "name": "J. Barrett",
+      "kind": "person",
+      "role": "field engineer who reviewed the adhesive anchor repair procedure submittal",
+      "quotes": [
+        {"page_id": "HWY06MH024:053:p004", "quote": "Responsible Field Engineer: J. BARRETT"}
+      ]
+    },
+    {
+      "name": "Professional Service Industries (PSI)",
+      "kind": "organization",
+      "role": "engineering firm employing the FHWA anchor report's project engineer",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p001", "quote": "Justin M. Ocel, PhD Professional Service Industries (PSI)"}
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Sika Corporation",
+      "type": "supplied",
+      "target": "Powers Fasteners",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p010", "quote": "The stud was adhered to the concrete hole with a two-part epoxy supplied by Powers Fasteners of Brewster, NY. The epoxy Powers used was formulated by the Sika Corporation (Lyndhurst, NJ)"}
+      ]
+    },
+    {
+      "source": "Environmental Interiors, Inc.",
+      "type": "supplied",
+      "target": "Modern Continental Construction Company",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p007", "quote": "Thank you for your consideration of Environmental Interiors, Inc. John C. Montgomery President CC: Mr. Bob Berry, Modern Continental Construction Company"}
+      ]
+    },
+    {
+      "source": "Robert E. Steffy",
+      "type": "represented",
+      "target": "Bechtel/Parsons Brinckerhoff",
+      "quotes": [
+        {"page_id": "HWY06MH024:060:p003", "quote": "Sincerely, BECHTEL/PARSONS BRINCKERHOFF Robert E. Steffy' V Resident Engineer Authorized Representative of the Project Director"}
+      ]
+    },
+    {
+      "source": "John C. Montgomery",
+      "type": "represented",
+      "target": "Environmental Interiors, Inc.",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p007", "quote": "Thank you for your consideration of Environmental Interiors, Inc. John C. Montgomery President"}
+      ]
+    },
+    {
+      "source": "Robert Coutts",
+      "type": "represented",
+      "target": "Modern Continental Construction Company",
+      "quotes": [
+        {"page_id": "HWY06MH024:059:p002", "quote": "The Modern Continental Construction Company, Inc. Robert Coutts Sr. Project Manager"}
+      ]
+    },
+    {
+      "source": "Dennis Collins",
+      "type": "represented",
+      "target": "National Transportation Safety Board",
+      "quotes": [
+        {"page_id": "HWY06MH024:018:p005", "quote": "This is Dennis Collins with the National Transportation Safety Board."}
+      ]
+    },
+    {
+      "source": "Justin M. Ocel",
+      "type": "represented",
+      "target": "Professional Service Industries (PSI)",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p001", "quote": "Justin M. Ocel, PhD Professional Service Industries (PSI)"}
+      ]
+    },
+    {
+      "source": "Joseph Hartmann",
+      "type": "represented",
+      "target": "Federal Highway Administration",
+      "quotes": [
+        {"page_id": "HWY06MH024:012:p001", "quote": "Joseph Hartmann, PhD, PE Federal Highway Administration"}
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "name": "NTSB",
+      "same_as": "National Transportation Safety Board",
+      "quote": {"page_id": "HWY06MH024:012:p010", "quote": "The National Transportation Safety Board (NTSB) is leading the investigation to determine the cause of the failure."}
+    },
+    {
+      "name": "FHWA",
+      "same_as": "Federal Highway Administration",
+      "quote": {"page_id": "HWY06MH024:012:p010", "quote": "the Federal Highway Administration (FHWA) deployed staff and contractors to Boston on July 15, 2006."}
+    }
+  ],
+  "open_questions": []
+}

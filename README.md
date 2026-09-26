@@ -56,6 +56,21 @@ call; `v2-full-2` lost two events on one-page transmittals the lead skipped. `v2
 windows for long logs, 16 model calls at a time, and misses no answer-key event. In it the specialists opened 8 disputes
 over dates, each ruled by the lead from the quotes.
 
+**Against a general-purpose agent.** We also gave the same 1,737 pages to 8 Claude (Sonnet) agents working in
+parallel in Claude Code, with no harness: each read about an eighth of the file for about 10 minutes and returned
+quoted claims in the same format. Scored by the same verifier and key:
+
+| | Casefile `v2-full-3` (Gemini 3.8 Flash) | 8 Claude agents, no harness | One prompt (Gemini) |
+|---|---|---|---|
+| Answer-key events | **49 / 49** | 36 / 49 (25/35 dev, 11/14 held out) | 18 / 49 |
+| Parties | 18 / 19 | 15 / 19 | 7 / 19 |
+| Relationships | 4 / 13 | 2 / 13 | 0 / 13 |
+| Claims kept (refused) | 1,277 (5%) | 369 (16%) | 35 (35%) |
+| Record of pages read | 1,737 / 1,737 | none | — |
+
+This compares model and harness together (a different, stronger model), from one pass per agent; the agents' output
+and the scorer are in `data/cases/HWY06MH024/comparisons/claude-code-1/` and `scripts/score_claude_comparison.py`.
+
 **Weak spot:** relationships (4 of 13). The model links two companies, but the quote often doesn't show the link, so
 the verifier refuses it.
 
