@@ -8,7 +8,8 @@ Read `docs/DECISIONS.md` first: every approved decision, newest last, with links
 - Do not add self-rewriting prompts or policy, auto-tuning, rule proposing or pauses for a human
   unless asked. A self-evolving or learning layer is planned for later; until the user asks for it,
   nothing in the harness rewrites itself.
-- Gemini is the only LLM for the agents and any reasoning (key and model in `.env`). External
+- Model calls go through OpenRouter (`OPENROUTER_API` in `.env`), `google/gemini-3.8-flash` for every agent;
+  Gemini models only unless the user says otherwise. External
   document-processing vendors (e.g. Extend, Reducto) may be used for ingestion if they measure better.
 - The database is the team MongoDB Atlas cluster (`ATLAS_CONNECTION_STRING`, database
   `CASEFILE_DATABASE`), shared by the team. Never drop or overwrite it without the user's go-ahead.

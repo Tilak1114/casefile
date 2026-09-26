@@ -39,7 +39,7 @@ export function PageImage({ page, highlight }: { page: PageRef | undefined; high
   return (
     <figure className="pageimg" style={{ margin: 0 }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={page.image} alt={`File ${page.file_no}, page ${page.page}`} loading="lazy" />
+      <img src={page.image} alt={`PDF ${page.file_no}, page ${page.page}`} loading="lazy" />
       {highlight.boxes.map((b, i) => (
         <span
           key={i}
@@ -48,7 +48,7 @@ export function PageImage({ page, highlight }: { page: PageRef | undefined; high
         />
       ))}
       <figcaption>
-        File {String(page.file_no).padStart(3, "0")} · page {page.page}
+        PDF {String(page.file_no).padStart(3, "0")} · page {page.page}
         {highlight.boxes.length === 0 ? " · location on page not available" : " · highlighted where the quote was read"}
       </figcaption>
     </figure>
@@ -64,7 +64,7 @@ function DocumentMeta({ doc }: { doc: DocumentRow | undefined }) {
       {doc.author && (<><dt>From</dt><dd>{doc.author}</dd></>)}
       {doc.recipient && (<><dt>To</dt><dd>{doc.recipient}</dd></>)}
       <dt>Source</dt>
-      <dd className="mono">file {String(doc.file_no).padStart(3, "0")} · {doc.id.split(":").pop()}</dd>
+      <dd className="mono">PDF {String(doc.file_no).padStart(3, "0")} · {doc.id.split(":").pop()}</dd>
     </dl>
   );
 }

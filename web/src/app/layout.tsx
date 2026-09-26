@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </header>
           <div className="notice" role="note">
-            <span><strong>Real public record:</strong> NTSB docket {b.case.case_id}, {b.case.inputs} files read, {b.case.withheld.length} NTSB analysis files withheld.</span>
+            <span><strong>Real public record:</strong> NTSB docket {b.case.case_id}, {b.case.inputs} source PDFs in the claim file, {b.case.withheld.length} NTSB analysis PDFs withheld.</span>
             <span><strong>Casefile quotes documents and never assigns fault.</strong></span>
             <span><strong>This run:</strong> {b.run.status}.</span>
           </div>

@@ -31,7 +31,7 @@ export default function EvaluationPage() {
         <div className="page-head">
           <div className="eyebrow">Measured against the NTSB&apos;s findings</div>
           <h1>Evaluation</h1>
-          <p>The answer key is built from the NTSB final report HAR-07/02 and its six analysis files, which the agent never sees. It is used to score runs and as context, never as a finding of fault. The harness run shown here stopped early ({b.run.status}), so its numbers are for a partial reading of the file.</p>
+          <p>The answer key is built from the NTSB final report HAR-07/02 and its six analysis PDFs, which the agent never sees. It is used to score runs and as context, never as a finding of fault. The harness run shown here stopped early ({b.run.status}), so its numbers are for a partial reading of the claim file.</p>
         </div>
         <section className="section">
           <h2>Harness against a single prompt</h2>

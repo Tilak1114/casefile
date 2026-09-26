@@ -23,8 +23,8 @@ export default function MemoryPage() {
         </div>
 
         <section className="section">
-          <h2>Coverage of the case file</h2>
-          <p>{readCount} of {docs.length} documents read ({b.coverage.pages_read.toLocaleString()} of {b.coverage.pages_total.toLocaleString()} pages): {both} by both reviewers, {parties} by the parties reviewer only, {technical} by the technical reviewer only. {b.case.withheld.length} files the NTSB wrote as its own analysis are withheld by design.</p>
+          <h2>Coverage of the claim file</h2>
+          <p>{readCount} of {docs.length} documents read ({b.coverage.pages_read.toLocaleString()} of {b.coverage.pages_total.toLocaleString()} pages): {both} by both reviewers, {parties} by the parties reviewer only, {technical} by the technical reviewer only. {b.case.withheld.length} source PDFs the NTSB wrote as its own analysis are withheld by design.</p>
           <div className="card pad" style={{ display: "grid", gap: 10 }}>
             <div className="covmap" role="img" aria-label={`${readCount} of ${docs.length} documents read`}>
               {docs.map((d) => (
@@ -36,7 +36,7 @@ export default function MemoryPage() {
               <span><i className="cov read both" /> read by both</span>
               <span><i className="cov read" /> read by one reviewer</span>
               <span><i className="cov" /> not read</span>
-              <span style={{ color: "var(--muted)" }}>One square per document, in file order. Hover for details.</span>
+              <span style={{ color: "var(--muted)" }}>One square per document, in source PDF order. Hover for details.</span>
             </div>
           </div>
         </section>

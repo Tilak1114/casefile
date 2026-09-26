@@ -1,0 +1,418 @@
+<title>Casefile Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --desk: #eceeec; --surface: #ffffff; --raised: #f7f8f7; --ink: #17212b; --muted: #5b6772; --faint: #86919a;
+  --line: #d3d9d6; --line-strong: #b7c0bc; --accent: #1f4e79; --accent-soft: #e4ecf4; --hl: rgba(245,214,64,.42); --hl-line: #c9a200;
+  --ok: #2e7d4f; --ok-soft: #e3f1e8; --pend: #a86b12; --pend-soft: #f6ebd9;
+  --ui: "Public Sans", "Helvetica Neue", Arial, sans-serif; --quote: "Source Serif 4", Georgia, serif; --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; --desk: #0f1418; --surface: #161c21; --raised: #1c232a; --ink: #e1e7ec; --muted: #97a3ae; --faint: #6e7a85; --line: #2a333c; --line-strong: #3a4550; --accent: #8db4dc; --accent-soft: #1c2d3f; --hl: rgba(245,214,64,.3); --hl-line: #d9b53a; --ok: #6cc48f; --ok-soft: #17301f; --pend: #e0a43a; --pend-soft: #33260f; }
+}
+:root[data-theme="dark"] { color-scheme: dark; --desk: #0f1418; --surface: #161c21; --raised: #1c232a; --ink: #e1e7ec; --muted: #97a3ae; --faint: #6e7a85; --line: #2a333c; --line-strong: #3a4550; --accent: #8db4dc; --accent-soft: #1c2d3f; --hl: rgba(245,214,64,.3); --hl-line: #d9b53a; --ok: #6cc48f; --ok-soft: #17301f; --pend: #e0a43a; --pend-soft: #33260f; }
+body { background: var(--desk); color: var(--ink); font-family: var(--ui); font-size: 15px; line-height: 1.55; }
+.page { max-width: 1100px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 64px; display: grid; gap: 44px; }
+header { display: grid; gap: 10px; max-width: 72ch; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(26px, 3.6vw, 36px); line-height: 1.15; margin: 0; font-weight: 700; text-wrap: balance; }
+h2 { font-size: 21px; margin: 0; font-weight: 650; text-wrap: balance; }
+h3 { font-size: 15px; margin: 0; font-weight: 650; }
+p { margin: 0; }
+.lede { color: var(--muted); font-size: 16px; }
+section { display: grid; gap: 14px; }
+section > p { max-width: 75ch; }
+figure { margin: 0; display: grid; gap: 10px; }
+.scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px; }
+svg.d { display: block; width: 100%; min-width: 760px; height: auto; color: var(--ink); font-family: var(--ui); }
+figcaption { color: var(--muted); font-size: 14px; max-width: 78ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; gap: 8px; align-items: center; }
+.legend svg { width: 34px; height: 14px; }
+/* svg classes */
+.box { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.3; }
+.box.plan { stroke-dasharray: 6 4; }
+.box.acc { stroke: var(--accent); stroke-width: 2; fill: var(--accent-soft); }
+.box.role { fill: var(--surface); stroke: var(--ink); stroke-width: 1.3; stroke-dasharray: 6 4; }
+.bus { fill: var(--hl); stroke: var(--hl-line); stroke-width: 1.3; }
+.t { font-size: 14px; font-weight: 650; fill: var(--ink); }
+.s { font-size: 11.5px; fill: var(--muted); }
+.m { font-size: 10.5px; fill: var(--muted); font-family: var(--mono); }
+.acc-t { fill: var(--accent); }
+.ln { stroke: var(--ink); stroke-width: 1.3; fill: none; }
+.life { stroke: var(--line-strong); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.msg { stroke: var(--ink); stroke-width: 1.2; fill: none; }
+.msg.reply { stroke-dasharray: 5 3; }
+.mk { fill: var(--ink); }
+.ml { font-size: 11px; fill: var(--ink); font-family: var(--mono); }
+.note { font-size: 11px; fill: var(--muted); font-style: italic; }
+.band-lab { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; fill: var(--muted); }
+/* memory layers */
+.layers { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.layer { display: grid; grid-template-columns: 40px 1fr; border-bottom: 1px solid var(--line); }
+.layer:last-child { border-bottom: none; }
+.layer .n { display: grid; place-items: center; font-family: var(--mono); font-size: 12px; color: var(--muted); background: var(--raised); border-right: 1px solid var(--line); }
+.layer .body { padding: 14px 16px; display: grid; grid-template-columns: minmax(220px, 1.1fr) minmax(260px, 2fr); gap: 8px 22px; }
+@media (max-width: 720px) { .layer .body { grid-template-columns: 1fr; } }
+.layer h3 { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.layer .what { font-size: 14px; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-family: var(--mono); font-size: 11.5px; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line-strong); background: var(--surface); }
+.chip.new { border-style: dashed; }
+.meta { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; font-size: 13px; }
+.meta dt { color: var(--muted); }
+.meta dd { margin: 0; }
+.layer.focus { background: var(--accent-soft); }
+.layer.future { background: var(--raised); color: var(--muted); }
+.pill { font-size: 11px; font-weight: 600; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.pill.built { color: var(--ok); background: var(--ok-soft); }
+.pill.plan { color: var(--accent); background: var(--accent-soft); }
+.pill.later { color: var(--muted); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; gap: 8px; align-content: start; font-size: 14px; }
+.card strong { font-size: 15px; }
+.card .muted { color: var(--muted); }
+.members { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 16px; }
+@media (max-width: 560px) { .members { grid-template-columns: 1fr; } }
+.member { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; display: grid; align-content: start; }
+.member-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.member-head .kind { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.member-head h3 { font-size: 17px; }
+.member-head .mirror { font-size: 13px; color: var(--muted); }
+.member dl { margin: 0; padding: 12px 16px 16px; display: grid; grid-template-columns: 96px 1fr; gap: 8px 14px; font-size: 13.5px; }
+.member dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; padding-top: 2px; }
+.member dd { margin: 0; }
+.member code { font-family: var(--mono); font-size: 11.5px; background: var(--raised); border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; white-space: nowrap; line-height: 1.9; }
+.member .never { color: var(--ink); }
+.member .never::before { content: "✕ "; color: #b3372c; font-weight: 700; }
+.tbl { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+.tbl table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 640px; }
+.tbl th { text-align: left; font-size: 11.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; padding: 9px 12px; background: var(--raised); border-bottom: 1px solid var(--line); }
+.tbl td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl code, .card code { font-family: var(--mono); font-size: 12px; }
+ol.approve { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.stat { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.stat div { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; display: grid; gap: 2px; }
+.stat b { font-size: 20px; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); }
+</style>
+
+<div class="page">
+  <header>
+    <div class="eyebrow">Casefile · harness v2 · plan for review</div>
+    <h1>An event-driven claims team, and what it remembers</h1>
+    <p class="lede">This page is the full harness v2 plan for review. Terms: the <b>claim file</b> is the whole package the team works on (88 source PDFs); a <b>source PDF</b> is one of the 94 numbered PDFs in the NTSB docket; a <b>document</b> is one original letter, report or form inside a PDF. Harness v2 models how a carrier works a construction-defect liability claim: a claim professional leads, defense counsel works the parties and contracts, a forensic engineer is retained with the lead's approval, and they coordinate through events rather than calling each other. Nothing below is built yet except where marked. Roles and sequence are sourced in <code>docs/00b-claims-team.md</code>; the plan is <code>docs/06-harness-v2.md</code>.</p>
+  </header>
+
+
+  <section>
+    <h2>Why v2: what run full-1 showed</h2>
+    <p>Run full-1 used v1: one examiner deciding one action per turn. Measured on the run before it stopped at turn 26 during an Atlas failover:</p>
+    <div class="stat">
+      <div><b>11 of 27</b><span>turns spent on repairs instead of assigning work</span></div>
+      <div><b>421 / 1,737</b><span>pages read; all correspondence read, most unread pages were bulk FHWA and MIT test data</span></div>
+      <div><b>7% vs 35%</b><span>claims refused by the verifier: harness vs a single prompt on the same model</span></div>
+      <div><b>2 of 13</b><span>answer-key relationships found; no absences reached</span></div>
+    </div>
+    <p>So v2 changes three things: the work is split across a team that runs in parallel, repairs become automatic, and the goal is no longer to read every page but to read what each task needs, with the rest indexed and any exclusion stated.</p>
+  </section>
+  <section>
+    <h2>The team and the event log</h2>
+    <p>Every interaction is an event appended to one collection in MongoDB. Each role is an independent agent that wakes when an event addressed to it arrives, works, publishes events and goes back to waiting. Code components (the dispatcher, the verifier, assembly) react to the same log.</p>
+    <figure>
+      <div class="scroll">
+        <svg class="d" viewBox="0 0 1000 500" role="img" aria-label="Three model roles above and four code components below all publish to and subscribe from a shared event log in MongoDB; they never call each other directly.">
+          <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mk"/></marker></defs>
+          <text class="band-lab" x="40" y="26">ROLES · MODEL · EACH ITS OWN LANGGRAPH AGENT</text>
+          <rect class="box role" x="40" y="40" width="280" height="118" rx="5"/>
+          <text class="t" x="180" y="66" text-anchor="middle">Claim professional · lead</text>
+          <text class="s" x="180" y="86" text-anchor="middle">owns the claim file, approves the expert,</text>
+          <text class="s" x="180" y="102" text-anchor="middle">rules disputes about meaning, closes</text>
+          <text class="m" x="180" y="126" text-anchor="middle">claim_file.opened · counsel.assigned</text>
+          <text class="m" x="180" y="142" text-anchor="middle">expert.approved · dispute.ruled</text>
+          <rect class="box role" x="360" y="40" width="280" height="118" rx="5"/>
+          <text class="t" x="500" y="66" text-anchor="middle">Defense counsel</text>
+          <text class="s" x="500" y="86" text-anchor="middle">parties, contractor tiers, who was</text>
+          <text class="s" x="500" y="102" text-anchor="middle">responsible for what, in the records</text>
+          <text class="m" x="500" y="126" text-anchor="middle">work.assigned · expert.requested</text>
+          <text class="m" x="500" y="142" text-anchor="middle">report.submitted · request.answered</text>
+          <rect class="box role" x="680" y="40" width="280" height="118" rx="5"/>
+          <text class="t" x="820" y="66" text-anchor="middle">Forensic engineer</text>
+          <text class="s" x="820" y="86" text-anchor="middle">requirements, submittals, tests,</text>
+          <text class="s" x="820" y="102" text-anchor="middle">deviations; facts, never causes</text>
+          <text class="m" x="820" y="126" text-anchor="middle">request.raised · dispute.opened</text>
+          <text class="m" x="820" y="142" text-anchor="middle">absence.proposed · report.submitted</text>
+
+          <line class="ln" x1="180" y1="160" x2="180" y2="218" marker-start="url(#a1)" marker-end="url(#a1)"/>
+          <line class="ln" x1="500" y1="160" x2="500" y2="218" marker-start="url(#a1)" marker-end="url(#a1)"/>
+          <line class="ln" x1="820" y1="160" x2="820" y2="218" marker-start="url(#a1)" marker-end="url(#a1)"/>
+          <text class="note" x="190" y="195">publish · subscribe</text>
+
+          <rect class="bus" x="40" y="220" width="920" height="64" rx="5"/>
+          <text class="t" x="500" y="247" text-anchor="middle">Event log · MongoDB <tspan font-family="IBM Plex Mono, monospace" font-weight="500">events</tspan> · change streams</text>
+          <text class="s" x="500" y="267" text-anchor="middle">append-only · each event has a correlation id (the conversation) and a causation id (what caused it)</text>
+
+          <line class="ln" x1="150" y1="286" x2="150" y2="344" marker-start="url(#a1)" marker-end="url(#a1)"/>
+          <line class="ln" x1="390" y1="286" x2="390" y2="344" marker-start="url(#a1)" marker-end="url(#a1)"/>
+          <line class="ln" x1="620" y1="286" x2="620" y2="344" marker-start="url(#a1)" marker-end="url(#a1)"/>
+          <line class="ln" x1="850" y1="286" x2="850" y2="344" marker-start="url(#a1)" marker-end="url(#a1)"/>
+
+          <text class="band-lab" x="40" y="478">CODE · DETERMINISTIC (READERS ARE MODEL WORKERS, STARTED BY ROLES)</text>
+          <rect class="box plan" x="40" y="346" width="220" height="110" rx="5"/>
+          <text class="t" x="150" y="372" text-anchor="middle">Dispatcher</text>
+          <text class="s" x="150" y="392" text-anchor="middle">turns events into tasks; starts</text>
+          <text class="s" x="150" y="408" text-anchor="middle">a task when its waits_for are met</text>
+          <text class="m" x="150" y="432" text-anchor="middle">max 4 model calls at once</text>
+          <rect class="box" x="280" y="346" width="220" height="110" rx="5"/>
+          <text class="t" x="390" y="372" text-anchor="middle">Readers</text>
+          <text class="s" x="390" y="392" text-anchor="middle">read whole documents for a role;</text>
+          <text class="s" x="390" y="408" text-anchor="middle">coverage written by the system</text>
+          <text class="m" x="390" y="432" text-anchor="middle">built in v1 · one retry per refusal</text>
+          <rect class="box acc" x="510" y="346" width="220" height="110" rx="5"/>
+          <text class="t acc-t" x="620" y="372" text-anchor="middle">Verifier</text>
+          <text class="s" x="620" y="392" text-anchor="middle">every claim against its page;</text>
+          <text class="s" x="620" y="408" text-anchor="middle">rules disputes about what a page says</text>
+          <text class="m" x="620" y="432" text-anchor="middle">built · tested</text>
+          <rect class="box" x="740" y="346" width="220" height="110" rx="5"/>
+          <text class="t" x="850" y="372" text-anchor="middle">Assembly</text>
+          <text class="s" x="850" y="392" text-anchor="middle">party map, chronology, exhibits,</text>
+          <text class="s" x="850" y="408" text-anchor="middle">coverage report, on claim_file.closed</text>
+          <text class="m" x="850" y="432" text-anchor="middle">built in v1</text>
+        </svg>
+      </div>
+      <figcaption>Nothing calls anything else. A role learns about work only from events addressed to it, and every result is an event, so the log is a complete record of who did what, when and because of what.</figcaption>
+      <div class="legend">
+        <span><svg viewBox="0 0 34 14" aria-hidden="true"><rect x="1" y="1" width="32" height="12" rx="2" fill="none" stroke="currentColor"/></svg>built</span>
+        <span><svg viewBox="0 0 34 14" aria-hidden="true"><rect x="1" y="1" width="32" height="12" rx="2" fill="none" stroke="currentColor" stroke-dasharray="6 4"/></svg>planned in v2</span>
+      </div>
+    </figure>
+  </section>
+
+
+  <section>
+    <h2>Each team member</h2>
+    <p>Every agent is specified the same way, and the harness enforces it: what wakes it, what it must wait for, what it is allowed to see and do, what it publishes, and what it may never do. The dispatcher, verifier and assembly are code and follow the rules shown above.</p>
+    <div class="members">
+      <article class="member"><div class="member-head"><span class="kind">Lead · model</span><h3>Claim professional</h3><span class="mirror">Mirrors the carrier's claim professional (NAIC ch.18, CLM, Hartford guidelines).</span></div><dl><dt>Job</dt><dd>Owns the claim file. Assigns counsel, approves or declines the expert with a scope, marks documents out of scope with a reason, handles expired tasks, convenes a roundtable and rules disputes about meaning, closes the claim file, writes the case brief from verified claims only.</dd><dt>Wakes on</dt><dd><code>claim_file.opened</code> <code>expert.requested</code> <code>report.submitted</code> <code>dispute.opened</code> <code>position.submitted</code> <code>task.expired</code> <code>guard.hit</code></dd><dt>Waits for</dt><dd>A ruling waits for both positions. Closing waits until no request, dispute or task is open and every document is read or excluded.</dd><dt>Sees</dt><dd>The document index (type, date, author, recipient, pages, who read it), coverage, counts of verified and refused claims, open requests, disputes and tasks, reports received. Never page text.</dd><dt>Can</dt><dd>Assign work · approve or decline the expert · exclude documents with a reason · rule a dispute, citing claim ids · close the claim file · submit the brief</dd><dt>Publishes</dt><dd><code>counsel.assigned</code> <code>expert.approved</code> <code>expert.declined</code> <code>work.assigned</code> <code>scope.excluded</code> <code>dispute.ruled</code> <code>claim_file.closed</code> <code>brief.submitted</code></dd><dt>Never</dt><dd><span class="never">reads pages, makes claims about their content, or states fault or coverage</span></dd><dt>Model</dt><dd><code>google/gemini-3.8-flash</code> via OpenRouter · the model the baseline used</dd></dl></article>
+      <article class="member"><div class="member-head"><span class="kind">Role · model</span><h3>Defense counsel</h3><span class="mirror">Mirrors panel defense counsel (Hartford CD guidelines, DRI, JSH).</span></div><dl><dt>Job</dt><dd>The parties and contractor tiers; how they are related (contracted with, represented, reviewed submittals for, supplied, inspected for); names written differently; who approved or was responsible for what, as documented. Asks for an expert when a question is technical. Reports an initial assessment and status. Proposes absences in its scope.</dd><dt>Wakes on</dt><dd><code>counsel.assigned</code> <code>work.assigned</code> <code>request.raised</code> <code>expert.declined</code> <code>dispute.ruled</code></dd><dt>Waits for</dt><dd>Nothing to start. Its initial assessment waits for its first reading pass.</dd><dt>Sees</dt><dd>The index of its assigned documents, their text only through its readers, its own verified claims, the party map so far.</dd><dt>Can</dt><dd>Start readers with a focus · search · request an expert with a scope · raise and answer requests · open a dispute · submit a position · submit a report · propose an absence</dd><dt>Publishes</dt><dd><code>expert.requested</code> <code>request.raised</code> <code>request.answered</code> <code>dispute.opened</code> <code>position.submitted</code> <code>report.submitted</code> <code>absence.proposed</code></dd><dt>Never</dt><dd><span class="never">retains the engineer without approval, or states fault</span></dd><dt>Model</dt><dd><code>google/gemini-3.8-flash</code> via OpenRouter · the model the baseline used</dd></dl></article>
+      <article class="member"><div class="member-head"><span class="kind">Role · model</span><h3>Forensic engineer</h3><span class="mirror">Mirrors the expert counsel retains with the carrier's approval (CLM, Thompson Coe, Hartford).</span></div><dl><dt>Job</dt><dd>The technical record: design requirements and values (factor of safety, proof loads), submittals and how they were dispositioned, test methods and results, deviations, repairs, and tests that were never run. Answers technical requests. Reports.</dd><dt>Wakes on</dt><dd><code>expert.approved</code> <code>work.assigned</code> <code>request.raised</code> <code>dispute.ruled</code></dd><dt>Waits for</dt><dd><code>expert.approved</code>: it cannot start before the lead approves it.</dd><dt>Sees</dt><dd>As counsel, for its own documents and claims.</dd><dt>Can</dt><dd>As counsel, except requesting an expert</dd><dt>Publishes</dt><dd><code>request.raised</code> <code>request.answered</code> <code>dispute.opened</code> <code>position.submitted</code> <code>report.submitted</code> <code>absence.proposed</code></dd><dt>Never</dt><dd><span class="never">gives an opinion on cause</span></dd><dt>Model</dt><dd><code>google/gemini-3.8-flash</code> via OpenRouter · the model the baseline used</dd></dl></article>
+      <article class="member"><div class="member-head"><span class="kind">Worker · model, on the go</span><h3>Readers</h3><span class="mirror">Stand in for the reading a person does. Started by counsel or the engineer.</span></div><dl><dt>Job</dt><dd>Read a batch of whole documents (about 25 pages) with the role's focus. Return dated events, parties, relationships, aliases and open questions, each quoted with its page.</dd><dt>Wakes on</dt><dd>A role starting it (the dispatcher runs it when a slot is free).</dd><dt>Waits for</dt><dd>A free slot: at most 4 model calls run at once across the team.</dd><dt>Sees</dt><dd>Only its documents' text, the role's brief and the focus.</dd><dt>Can</dt><dd>Return claims, and use narrow retrieval (<code>find_references</code>, <code>search_text</code>, <code>get_document</code>) for about two extra documents to resolve a reference on the spot</dd><dt>Publishes</dt><dd><code>reader.finished</code> (the system logs the pages as read before the model runs)</dd><dt>Repairs</dt><dd>A refused claim is retried once, automatically, with the page text and the reason.</dd><dt>Model</dt><dd><code>google/gemini-3.8-flash</code> via OpenRouter · the model the baseline used</dd></dl></article>
+    </div>
+    <p style="font-size:13px;color:var(--muted)">Model choice: <code>gemini-3.8-flash</code> for every agent, the model the single-prompt baseline and run full-1 used, so the comparison is fair. On a three-document test it refused 9% of its claims; cheaper Flash models refused 33–41%, failing mostly on relationships and aliases.</p>
+  </section>
+
+
+  <section>
+    <h2>Retrieval: the records desk</h2>
+    <p>Retrieval is a lookup, not a judgement, so it is deterministic code exposed as typed, read-only tools, and the agents decide what to look up. There is no separate retrieval agent. Every tool hides production labels and withheld PDFs and writes coverage automatically. Agents never get raw database queries; the MongoDB MCP server stays a tool for developers.</p>
+    <div class="tbl"><table><thead><tr><th>Tool</th><th>Returns</th><th>Who may use it</th><th>Coverage</th><th>Status</th></tr></thead><tbody><tr><td><code>list_documents</code></td><td>the structured index (Reducto split + span-checked metadata)</td><td>counsel, engineer, lead</td><td>—</td><td>data built; tool planned</td></tr><tr><td><code>get_document / get_pages</code></td><td>full page text</td><td>counsel, engineer; readers (capped)</td><td>read</td><td>built inside readers; tool planned</td></tr><tr><td><code>search_text</code></td><td>Atlas Search keyword and phrase results with highlights</td><td>counsel, engineer; readers (capped)</td><td>search</td><td>built</td></tr><tr><td><code>find_references</code></td><td>reference numbers it cites (letter C09B2-xxxx, submittal 723.480-xxx, DR No. 1), resolved to the documents carrying them; deterministic pattern matching</td><td>counsel, engineer, readers</td><td>—</td><td>planned (also draws the Board's reply lines)</td></tr><tr><td><code>get_claims / get_party</code></td><td>the team's verified findings and the party map so far</td><td>counsel, engineer; lead (counts and headlines only)</td><td>—</td><td>data built; tool planned</td></tr><tr><td><code>coverage_status</code></td><td>what is indexed, read (by whom, with what focus), excluded or unread</td><td>all roles</td><td>—</td><td>data built; tool planned</td></tr><tr><td><code>search_semantic</code></td><td>Atlas Vector Search over page embeddings (Voyage or Atlas automated embeddings)</td><td>counsel, engineer</td><td>search</td><td>proposed; only if a retrieval test shows it finds answer-key evidence that keyword search misses</td></tr></tbody></table></div>
+    <p style="font-size:14px;color:var(--muted)">Readers get narrow retrieval, about two extra documents each, to resolve a reference like “see our letter of 12 October” on the spot; anything bigger goes back to the role as an open question. Counsel and the engineer get the full set. The lead gets metadata and counts only, so it never sees page text.</p>
+  </section>
+
+  <section>
+    <h2>Keeping context from thinning up the hierarchy</h2>
+    <p>Each layer can only pass up what the layer below noticed. Measured on run full-1, the 22 missed answer-key events were lost here. The dominant loss was what nobody read, not what readers dropped.</p>
+    <div class="tbl"><table><thead><tr><th>Where it was lost</th><th style="text-align:right">Missed</th><th>What it means</th></tr></thead><tbody><tr><td>Evidence page never read</td><td style='text-align:right' class='num'><b>13</b></td><td>most in the daily-report printout (PDF 019, 8 events) and the post-collapse test and lab reports</td></tr><tr><td>Read, but no claim made</td><td style='text-align:right' class='num'><b>1</b></td><td>the reader-level loss: E22, Powers reporting 120 ft-lb torque above the 50–90 range</td></tr><tr><td>Read, claim made, refused by the verifier</td><td style='text-align:right' class='num'><b>5</b></td><td>found, but the quote or date did not check out; v2's automatic repair targets this</td></tr><tr><td>Read, claim verified with a different date</td><td style='text-align:right' class='num'><b>3</b></td><td>found, but dated by another event on the same page</td></tr></tbody></table></div>
+    <div class="grid"><div class="card"><strong>Claims are pointers, not summaries</strong><span>Every claim carries its source PDF, page and exact quote; any role can open the full document at any time. What travels up is a reference, not a retelling.</span></div><div class="card"><strong>Gaps are visible</strong><span>Coverage records who read each page and with what focus, so the lead can see what nobody has looked at through, say, a technical lens.</span></div><div class="card"><strong>Deliberate overlap</strong><span>Key document types (correspondence, submittals, deficiency reports) are read by both roles with their own focus. In full-1 no document was read by both. The one-reviewer ablation measures whether the overlap earns its cost.</span></div><div class="card"><strong>Roles can read for themselves</strong><span>Counsel and the engineer can read a high-value document directly, not only through readers.</span></div><div class="card"><strong>Loose ends travel as events</strong><span>Open questions and unresolved references are published as events the roles must act on.</span></div><div class="card"><strong>Loss attribution in every evaluation</strong><span>Each missed answer-key event is attributed to where it was lost: never read, read but not claimed, claimed but refused, or a different date.</span></div></div>
+  </section>
+  <section>
+    <h2>Roles left out, and why</h2>
+    <p>Sourced in <code>docs/00b-claims-team.md</code>. Only liability-side roles are used, and only those this claim file gives work to.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Role</th><th>Why it is not on this case</th></tr></thead>
+      <tbody>
+        <tr><td>Coverage counsel</td><td>There is no insurance policy in the claim file to read.</td></tr>
+        <tr><td>Cost expert (quantity surveyor in the UK)</td><td>No repair estimate is in the claim file.</td></tr>
+        <tr><td>Forensic accountant</td><td>On liability claims it is used for economic damages; none are claimed in the claim file.</td></tr>
+        <tr><td>General, field and desk adjusters; subrogation; public adjuster</td><td>Property-side (first-party) roles, not liability.</td></tr>
+        <tr><td>"Desktop investigator"</td><td>A real title, but at fraud investigation firms; auditing project paperwork is defense counsel's job on liability.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+  <section>
+    <h2>How a claim moves through the team</h2>
+    <p>The order follows a carrier's published guidelines for construction-defect counsel: counsel is assigned, asks the lead for prior written approval to retain an expert, reports an initial assessment, and requests further work. Roles work in parallel between these points. The request and the dispute below are illustrative of the mechanism; the events are the real catalogue.</p>
+    <figure>
+      <div class="scroll">
+        <svg class="d" viewBox="0 0 1000 720" role="img" aria-label="Sequence: the lead opens the claim file and assigns counsel; counsel starts readers, whose claims the verifier checks; counsel requests an expert and the lead approves; the engineer reads and raises a request that counsel answers; a dispute goes to the lead, who collects both positions and rules; both roles report; the lead closes the claim file and assembly runs.">
+          <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="mk"/></marker></defs>
+          <g>
+            <text class="t" x="110" y="28" text-anchor="middle">Lead</text>
+            <text class="t" x="300" y="28" text-anchor="middle">Counsel</text>
+            <text class="t" x="490" y="28" text-anchor="middle">Engineer</text>
+            <text class="t" x="680" y="28" text-anchor="middle">Readers</text>
+            <text class="t" x="870" y="28" text-anchor="middle">Verifier</text>
+            <line class="life" x1="110" y1="40" x2="110" y2="700"/>
+            <line class="life" x1="300" y1="40" x2="300" y2="700"/>
+            <line class="life" x1="490" y1="40" x2="490" y2="700"/>
+            <line class="life" x1="680" y1="40" x2="680" y2="700"/>
+            <line class="life" x1="870" y1="40" x2="870" y2="700"/>
+          </g>
+          <line class="msg" x1="20" y1="64" x2="106" y2="64" marker-end="url(#a2)"/><text class="ml" x="24" y="58">claim_file.opened</text>
+          <line class="msg" x1="110" y1="98" x2="296" y2="98" marker-end="url(#a2)"/><text class="ml" x="120" y="92">counsel.assigned</text>
+          <line class="msg" x1="300" y1="132" x2="676" y2="132" marker-end="url(#a2)"/><text class="ml" x="310" y="126">work.assigned → reader.started (parties, contracts, approvals)</text>
+          <line class="msg" x1="680" y1="166" x2="866" y2="166" marker-end="url(#a2)"/><text class="ml" x="690" y="160">claims</text>
+          <line class="msg reply" x1="870" y1="200" x2="304" y2="200" marker-end="url(#a2)"/><text class="ml" x="560" y="194">claim.verified · claim.refused</text>
+          <line class="msg" x1="300" y1="234" x2="114" y2="234" marker-end="url(#a2)"/><text class="ml" x="124" y="228">expert.requested (scope)</text>
+          <line class="msg" x1="110" y1="268" x2="486" y2="268" marker-end="url(#a2)"/><text class="ml" x="120" y="262">expert.approved → releases the engineer's waiting task</text>
+          <line class="msg" x1="490" y1="302" x2="676" y2="302" marker-end="url(#a2)"/><text class="ml" x="500" y="296">work.assigned (tests, submittals)</text>
+          <line class="msg" x1="680" y1="336" x2="866" y2="336" marker-end="url(#a2)"/><text class="ml" x="690" y="330">claims</text>
+          <line class="msg reply" x1="870" y1="370" x2="494" y2="370" marker-end="url(#a2)"/><text class="ml" x="620" y="364">claim.verified</text>
+          <line class="msg" x1="490" y1="404" x2="304" y2="404" marker-end="url(#a2)"/><text class="ml" x="316" y="398">request.raised: who approved this submittal?</text>
+          <line class="msg reply" x1="300" y1="438" x2="486" y2="438" marker-end="url(#a2)"/><text class="ml" x="310" y="432">request.answered (cites verified claims)</text>
+          <line class="msg" x1="490" y1="472" x2="114" y2="472" marker-end="url(#a2)"/><text class="ml" x="124" y="466">dispute.opened: what two documents mean</text>
+          <line class="msg" x1="300" y1="506" x2="114" y2="506" marker-end="url(#a2)"/><text class="ml" x="124" y="500">position.submitted</text>
+          <line class="msg" x1="490" y1="520" x2="114" y2="520" marker-end="url(#a2)"/><text class="ml" x="330" y="534">position.submitted</text>
+          <line class="msg" x1="110" y1="566" x2="866" y2="566" marker-end="url(#a2)"/><text class="ml" x="120" y="560">dispute.ruled (with citations; both positions kept)</text>
+          <line class="msg" x1="300" y1="600" x2="114" y2="600" marker-end="url(#a2)"/><text class="ml" x="124" y="594">report.submitted</text>
+          <line class="msg" x1="490" y1="626" x2="114" y2="626" marker-end="url(#a2)"/><text class="ml" x="330" y="640">report.submitted</text>
+          <line class="msg" x1="110" y1="676" x2="980" y2="676" marker-end="url(#a2)"/><text class="ml" x="120" y="670">claim_file.closed → assembly builds the outputs</text>
+        </svg>
+      </div>
+      <figcaption>Solid arrows start work; dashed arrows answer it. Counsel and the engineer read in parallel once the engineer is approved. A disagreement about what a page literally says goes to the verifier instead of the lead.</figcaption>
+    </figure>
+  </section>
+
+
+  <section>
+    <h2>Event catalogue</h2>
+    <p>Every event carries an id, the case and run, who sent it and to whom, the claims, documents or tasks it concerns, a correlation id (the conversation it belongs to), a causation id (the event that caused it) and a typed payload.</p>
+    <div class="tbl"><table><thead><tr><th>Event</th><th>From → to</th><th>Mirrors</th></tr></thead><tbody>
+<tr><td><code>claim_file.opened</code></td><td>system → lead</td><td>the claim is assigned</td></tr><tr><td><code>counsel.assigned</code></td><td>lead → counsel</td><td>the handler assigns defense counsel</td></tr><tr><td><code>expert.requested</code></td><td>counsel → lead</td><td>counsel asks prior written approval to retain an expert</td></tr><tr><td><code>expert.approved · expert.declined</code></td><td>lead → counsel, engineer</td><td>approval, with a scope</td></tr><tr><td><code>work.assigned</code></td><td>lead or counsel → role</td><td>an assignment letter: documents and focus</td></tr><tr><td><code>reader.started · reader.finished</code></td><td>role → system</td><td>a document read in full; coverage is written by the system</td></tr><tr><td><code>claim.verified · claim.refused</code></td><td>verifier → the claim's role</td><td>the check against the page</td></tr><tr><td><code>claim.repaired</code></td><td>reader → verifier</td><td>the one automatic retry of a refused claim</td></tr><tr><td><code>request.raised · request.answered</code></td><td>any role → any role</td><td>a request for information between team members</td></tr><tr><td><code>report.submitted</code></td><td>counsel, engineer → lead</td><td>initial assessment and status reports</td></tr><tr><td><code>dispute.opened</code></td><td>any role → verifier or lead</td><td>a disagreement over a claim</td></tr><tr><td><code>position.submitted</code></td><td>disputing roles → lead</td><td>each side's case, with citations</td></tr><tr><td><code>dispute.ruled</code></td><td>verifier or lead → all</td><td>the ruling, with citations</td></tr><tr><td><code>absence.proposed · absence.checked</code></td><td>role → verifier</td><td>a negative, tested against coverage and search</td></tr><tr><td><code>scope.excluded</code></td><td>lead → all</td><td>a document marked out of scope, with a reason</td></tr><tr><td><code>task.expired</code></td><td>system → lead</td><td>a request or assignment passed its deadline</td></tr><tr><td><code>claim_file.closed</code></td><td>lead → system</td><td>the claim file is complete; assembly runs</td></tr>
+    </tbody></table></div>
+  </section>
+  <section>
+    <h2>Independent work, declared dependencies</h2>
+    <div class="grid">
+      <div class="card">
+        <strong>Tasks wait for events, not for each other</strong>
+        <span>Every task carries <code>waits_for</code>: the events that must exist before it can start. The engineer's first task waits for <code>expert.approved</code>; counsel's status report waits for the answer to any request it raised. The dispatcher starts a task the moment its conditions are met.</span>
+      </div>
+      <div class="card">
+        <strong>Task states</strong>
+        <svg viewBox="0 0 420 110" width="100%" role="img" aria-label="A task goes pending, then ready when its waits_for are met, then running when a slot is free, then done; a task past its deadline becomes expired and the lead is told.">
+          <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="mk"/></marker></defs>
+          <rect class="box" x="4" y="14" width="80" height="30" rx="4"/><text class="s" x="44" y="33" text-anchor="middle" style="fill:var(--ink)">pending</text>
+          <rect class="box" x="116" y="14" width="80" height="30" rx="4"/><text class="s" x="156" y="33" text-anchor="middle" style="fill:var(--ink)">ready</text>
+          <rect class="box" x="228" y="14" width="80" height="30" rx="4"/><text class="s" x="268" y="33" text-anchor="middle" style="fill:var(--ink)">running</text>
+          <rect class="box" x="336" y="14" width="80" height="30" rx="4"/><text class="s" x="376" y="33" text-anchor="middle" style="fill:var(--ink)">done</text>
+          <rect class="box" x="116" y="74" width="80" height="30" rx="4"/><text class="s" x="156" y="93" text-anchor="middle" style="fill:var(--ink)">expired</text>
+          <line class="ln" x1="84" y1="29" x2="114" y2="29" marker-end="url(#a3)"/>
+          <line class="ln" x1="196" y1="29" x2="226" y2="29" marker-end="url(#a3)"/>
+          <line class="ln" x1="308" y1="29" x2="334" y2="29" marker-end="url(#a3)"/>
+          <polyline class="ln" points="44,44 44,89 114,89" marker-end="url(#a3)"/>
+          <text class="m" x="86" y="10">waits_for met</text>
+          <text class="m" x="200" y="10">slot free</text>
+          <text class="m" x="200" y="92">deadline passed → lead told</text>
+        </svg>
+      </div>
+      <div class="card">
+        <strong>Nothing lost, nothing done twice</strong>
+        <span>Consumers record the event ids they have handled and their change-stream resume token. After a crash every role resumes from its LangGraph checkpoint and the log, so a failover like the one that stopped run full-1 costs nothing.</span>
+      </div>
+      <div class="card">
+        <strong>Reading what the task needs</strong>
+        <span>Every document is indexed at ingestion (type, date, author, recipient, search). Roles read in full only what their task needs; the lead may mark documents out of scope with a reason. Absences can only be claimed over pages read in full.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <h2>Guards</h2>
+    <p>Guards are rules the harness enforces in code; no model can talk its way past them. Each one hit is an event and the lead is told. <b>Built</b> exists in v1; <b>planned</b> is part of v2; <b>proposed</b> is a suggestion for you to accept or drop. Pauses for a human are not included: they were removed from the previous project as unproven and stay out unless you ask.</p>
+    <div class="tbl"><table><thead><tr><th>Kind</th><th>Guard</th><th>Status</th></tr></thead><tbody><tr><td>Budget</td><td>Tokens per run</td><td><span class="pill built">built</span></td></tr><tr><td>Budget</td><td>Readers started per run</td><td><span class="pill built">built</span></td></tr><tr><td>Budget</td><td>Turns / dispatcher cycles per run</td><td><span class="pill built">built</span></td></tr><tr><td>Budget</td><td>Dollar cap per run, from the cost OpenRouter reports on every call</td><td><span class="pill later">proposed</span></td></tr><tr><td>Budget</td><td>No paid call without <code>--allow-spend</code>; cached answers replay free</td><td><span class="pill built">built</span></td></tr><tr><td>Concurrency</td><td>At most 4 model calls at once across the team</td><td><span class="pill built">built</span></td></tr><tr><td>Concurrency</td><td>Back off and retry when the provider rate-limits</td><td><span class="pill later">proposed</span></td></tr><tr><td>Progress</td><td>Stop after N cycles with no new verified claim, coverage or ruling</td><td><span class="pill built">built</span></td></tr><tr><td>Progress</td><td>Detect a role repeating the same action (a loop)</td><td><span class="pill later">proposed</span></td></tr><tr><td>Progress</td><td>Deadlines on tasks and requests; expiry is an event the lead handles</td><td><span class="pill plan">planned</span></td></tr><tr><td>Progress</td><td>Reject a <code>waits_for</code> that can never be met (an event nobody can send, or a cycle)</td><td><span class="pill plan">planned</span></td></tr><tr><td>Progress</td><td>Limit rounds per dispute and depth of requests between roles</td><td><span class="pill plan">planned</span></td></tr><tr><td>Authority</td><td>Each role may publish only the events in its spec; the dispatcher refuses the rest</td><td><span class="pill plan">planned</span></td></tr><tr><td>Authority</td><td>The engineer cannot start before <code>expert.approved</code></td><td><span class="pill plan">planned</span></td></tr><tr><td>Authority</td><td>Readers get only narrow retrieval (about two extra documents); no agent can write the case index</td><td><span class="pill built">built</span></td></tr><tr><td>Context</td><td>The lead never sees page text; no agent sees file names, production labels or withheld PDFs</td><td><span class="pill built">built</span></td></tr><tr><td>Context</td><td>A size cap on every prompt</td><td><span class="pill later">proposed</span></td></tr><tr><td>Output</td><td>Every model output parsed into a typed model or rejected</td><td><span class="pill built">built</span></td></tr><tr><td>Output</td><td>Every claim checked against its page: quote, dates, names</td><td><span class="pill built">built</span></td></tr><tr><td>Output</td><td>One automatic repair per refused claim</td><td><span class="pill plan">planned</span></td></tr><tr><td>Output</td><td>Flag claims that use fault or cause language (liable, negligent, at fault, caused) for the lead</td><td><span class="pill later">proposed</span></td></tr><tr><td>Output</td><td>Answers and rulings must cite verified claims</td><td><span class="pill plan">planned</span></td></tr><tr><td>Evidence</td><td>Absences only over pages read in full, and only if a search finds no counter-example</td><td><span class="pill built">built</span></td></tr><tr><td>Evidence</td><td>Excluding a document requires a stated reason</td><td><span class="pill plan">planned</span></td></tr><tr><td>Integrity</td><td>Append-only event log; each event handled once in effect; resume from checkpoints</td><td><span class="pill plan">planned</span></td></tr><tr><td>Integrity</td><td>Restoring a snapshot refuses to overwrite a shared database without confirmation</td><td><span class="pill built">built</span></td></tr></tbody></table></div>
+  </section>
+  <section>
+    <h2>Memory layers</h2>
+    <p>Seven layers, from what was received to what the team concluded. A model never holds the investigation in its prompt: each agent's working context is rebuilt from the layers below it for each task, and everything it learns is written back as records or events.</p>
+    <div class="layers">
+      <div class="layer"><div class="n">1</div><div class="body">
+        <div><h3>Source record <span class="pill built">built</span></h3><p class="what">What was received, unaltered.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip">sources (GridFS, 94 PDFs)</span><span class="chip">fetch manifest (SHA-256)</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>fetch, once</dd><dt>Read by</dt><dd>ingestion; the UI's page images</dd><dt>Lifetime</dt><dd>permanent, never edited</dd></dl></div>
+      </div></div>
+      <div class="layer"><div class="n">2</div><div class="body">
+        <div><h3>Case index <span class="pill built">built</span></h3><p class="what">What the claim file contains: every page's text, every document's type, date and parties, searchable.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip">pages</span><span class="chip">documents</span><span class="chip">metadata</span><span class="chip">search index</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>ingestion (Reducto, Gemini with span checks)</dd><dt>Read by</dt><dd>every role, the verifier, search</dd><dt>Lifetime</dt><dd>per case; rebuilt only by re-ingesting</dd></dl></div>
+      </div></div>
+      <div class="layer focus"><div class="n">3</div><div class="body">
+        <div><h3>Working memory <span class="pill built">built</span> <span class="pill plan">per role in v2</span></h3><p class="what">What one agent holds while it works a task: its brief, the documents it was given, its own recent findings. Bounded and short-lived.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip">prompt, rebuilt per task</span><span class="chip">checkpoints (LangGraph)</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>the harness, from layers 2, 4 and 5</dd><dt>Read by</dt><dd>that agent only</dd><dt>Lifetime</dt><dd>one task; checkpoints let it resume</dd></dl></div>
+      </div></div>
+      <div class="layer"><div class="n">4</div><div class="body">
+        <div><h3>Event log <span class="pill plan">new in v2</span></h3><p class="what">What happened, who did it and why: assignments, approvals, requests, reports, disputes, rulings. The team's shared history and the source of truth for replay.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip new">events</span><span class="chip new">tasks</span><span class="chip new">subscriptions</span><span class="chip">trace (v1)</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>every role and component, append-only</dd><dt>Read by</dt><dd>the dispatcher, roles (via change streams), the UI</dd><dt>Lifetime</dt><dd>per run, permanent</dd></dl></div>
+      </div></div>
+      <div class="layer"><div class="n">5</div><div class="body">
+        <div><h3>Shared case memory <span class="pill built">built</span> <span class="pill plan">+ requests, disputes, reports</span></h3><p class="what">What the team knows: every verified claim with its quote, every refusal with its reason, what was read and what was only indexed.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip">findings</span><span class="chip">refusals</span><span class="chip">coverage (indexed / read)</span><span class="chip new">requests</span><span class="chip new">disputes</span><span class="chip new">reports</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>the verifier (claims), the harness (coverage), roles (via events)</dd><dt>Read by</dt><dd>all roles, assembly, the UI</dd><dt>Lifetime</dt><dd>per run, permanent</dd></dl></div>
+      </div></div>
+      <div class="layer"><div class="n">6</div><div class="body">
+        <div><h3>Outputs <span class="pill built">built</span></h3><p class="what">What the team hands over: the chronology, the party map, the exhibit list, the coverage report, the case brief.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip">outputs</span><span class="chip">export bundle</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>assembly, by code, on claim_file.closed</dd><dt>Read by</dt><dd>the UI, the evaluation</dd><dt>Lifetime</dt><dd>per run</dd></dl></div>
+      </div></div>
+      <div class="layer"><div class="n">7</div><div class="body">
+        <div><h3>Model cache <span class="pill built">built</span></h3><p class="what">Every paid model and vendor response, so nothing is paid for twice and any run replays exactly.</p></div>
+        <div style="display:grid;gap:8px"><div class="chips"><span class="chip">cache</span></div>
+        <dl class="meta"><dt>Written by</dt><dd>the Reducto and model clients</dd><dt>Read by</dt><dd>the same clients, first</dd><dt>Lifetime</dt><dd>permanent, shared with the team</dd></dl></div>
+      </div></div>
+      <div class="layer future"><div class="n">8</div><div class="body">
+        <div><h3>Learning across cases <span class="pill later">later</span></h3><p class="what">What the team should carry to the next case: which searches found evidence, which claims were refused and why. Planned for later; not designed yet.</p></div>
+        <div style="display:grid;gap:8px"><dl class="meta"><dt>Gate</dt><dd>any change it makes must improve held-out answer-key scores, measured</dd></dl></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Disputes, coverage and models</h2>
+    <div class="grid">
+      <div class="card"><strong>Disputes</strong>
+        <span>A role opens a dispute when another role's claim conflicts with its own: a different date for the same event, two documents that disagree, a relationship its evidence contradicts.</span>
+        <span><b>About what a page says:</b> the verifier rechecks deterministically and rules.</span>
+        <span><b>About what it means:</b> the lead convenes a roundtable; each side submits a position with citations; the lead rules, citing evidence. Both positions stay on the record.</span>
+        <span class="muted">How carriers settle disagreements between their own experts is unsourced, so the lead's ruling is our design choice and the UI says so.</span></div>
+      <div class="card"><strong>Coverage in two levels</strong>
+        <span><b>Indexed:</b> every document, free, from ingestion (type, date, author, recipient, pages) and search.</span>
+        <span><b>Read in full:</b> the pages a reader was given. Roles read what their task needs.</span>
+        <span>The lead may exclude a document with a stated reason, such as bulk test data. The claim file closes when every document is read or excluded. Absences can only be claimed over pages read in full and must survive a search for counter-examples.</span></div>
+      <div class="card"><strong>Models</strong>
+        <span><code>google/gemini-3.8-flash</code> via OpenRouter for every agent, the model the baseline and full-1 used, so the comparison is fair.</span>
+        <span class="muted">Three-document test: 3.8-flash refused 9% of its claims; 2.5-flash 33%, 3.1-flash-lite 37%, 2.5-flash-lite 41%. Kept for a later cost pass.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Evaluation</h2>
+    <div class="grid">
+      <div class="card"><strong>Against the answer key</strong><span>49 events (31 on the causal chain), 7 negatives, 19 parties, 13 relationships, built from the NTSB report and the six withheld NTSB analysis PDFs. Scored separately for the development set and the held-out set.</span></div>
+      <div class="card"><strong>Against the baseline and v1</strong><span>The same single-prompt baseline, and run full-1, on found events, relationships, parties, refused rate, absences produced and verified, cost and time.</span></div>
+      <div class="card"><strong>Ablations, each in isolation</strong><span>Without disputes; without requests between roles; one reviewer instead of two; keyword search alone against keyword plus semantic search. Each part stays only if removing it makes the result measurably worse.</span></div>
+      <div class="card"><strong>Loss attribution</strong><span>Every missed answer-key event is attributed to where it was lost (never read, read but not claimed, refused, other date), in every run and on the Evaluation screen.</span></div>
+      <div class="card"><strong>Fix first</strong><span>Split returned two overlapping documents for source PDF 011, so its pages count twice; ingestion is corrected before the run.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>For your approval</h2>
+    <div class="card"><ol class="approve">
+      <li>The team: claim professional (lead), defense counsel, forensic engineer, readers; and the roles left out.</li>
+      <li>Communication through the MongoDB event log and change streams, with the catalogue above.</li>
+      <li>Dependencies through declared <code>waits_for</code> and a deterministic dispatcher; each event handled once in effect.</li>
+      <li>Disputes: the verifier for what a page says, the lead's roundtable for what it means.</li>
+      <li>Two-level coverage, and the lead's power to exclude documents with a reason.</li>
+      <li><code>gemini-3.8-flash</code> for every agent through OpenRouter.</li>
+      <li>The evaluation, including the ablations and loss attribution.</li>
+      <li>The records desk: typed retrieval tools, narrow for readers, full for roles, metadata only for the lead.</li>
+      <li>The six measures against context thinning up the hierarchy.</li>
+    </ol></div>
+  </section>
+</div>

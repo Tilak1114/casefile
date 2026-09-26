@@ -47,8 +47,8 @@ from casefile.ingest.models import page_id as make_page_id
 
 VERIFIER_RULES = [
     "Every quote must be found on the page it cites, after collapsing whitespace and folding curly quotes and dashes. Case, spelling and word order must match.",
-    "A quote on a production label (a cover sheet or divider added when the file was assembled) is refused.",
-    "A quote on a page outside the readable case file is refused.",
+    "A quote on a production label (a cover sheet or divider added when the claim file was assembled) is refused.",
+    "A quote on a page outside the readable claim file is refused.",
     "An event dated as the document's own date must match the date read from the document, with its source span.",
     "An event dated from the text must have a quote that shows that date.",
     "A party's name must appear in its quotes; a relationship's two parties must both appear in its quotes.",
@@ -58,12 +58,12 @@ VERIFIER_RULES = [
 ]
 MAX_LANES = 9  # parties with their own lane on the board; the rest share "Other parties"
 NEGATIVE_RULE = (
-    "Each role proposes what the case file does not contain at the end of the run, with search terms that would "
+    "Each role proposes what the claim file does not contain at the end of the run, with search terms that would "
     "find a counter-example. A negative is accepted only if every in-scope page was read in the run and a phrase "
     "search for each term finds nothing in scope."
 )
 MEMORY = {
-    "pages / documents / metadata": "the ingested case file, written only by ingestion",
+    "pages / documents / metadata": "the ingested claim file, written only by ingestion",
     "coverage": "every read and search, with the pages it covered",
     "findings": "verified claims",
     "refusals": "refused claims with the verifier's reasons",

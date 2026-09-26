@@ -31,7 +31,7 @@ export function claimsById(bundle: Bundle): Record<string, Claim> {
 
 export function pageLabel(pageId: string): string {
   const [, file, page] = pageId.split(":");
-  return `file ${file} · p.${Number(page.slice(1))}`;
+  return `PDF ${file} · p.${Number(page.slice(1))}`;
 }
 
 import type { PageRef } from "./types";
