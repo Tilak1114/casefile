@@ -63,6 +63,46 @@ events. Claude agents working in parallel without a harness found 36, and one in
 check. The team found all 49, including 14 of 14 we never tuned on, with 5% refused. Our weak spot is relationships between companies,
 4 of 13. And it quotes the record: it never says who is at fault."
 
+## Memory, explained simply
+
+**In one line:** no agent remembers anything in its head. Everything goes into a shared case binder (MongoDB), and
+every time an agent starts a task it gets a short briefing sheet printed fresh from that binder.
+
+**Why it matters.** A model's only built-in memory is its prompt. 1,737 pages don't fit, and summarising to make room
+loses details. If the team kept the case in their prompts, the lead would drown in text and facts would quietly drop out.
+
+**The binder's tabs** (MongoDB collections), all written the moment something happens:
+
+| Tab | What goes in it | Collection |
+|---|---|---|
+| Message board | every note between roles: assignments, reports, disputes, rulings | `events` |
+| To-do list | who must do what, and what they wait for | `tasks` |
+| Sign-out sheet | "I'm reading document 42", so no role reads it twice | `reservations` |
+| Reading log | every page each reader was handed, and why | `coverage` |
+| Verified facts | each fact with its exact quote and page | `findings` |
+| Rejected facts | facts that failed the check, with the reason | `refusals` |
+| Bookmarks | where each task was, to resume after an interruption | LangGraph `checkpoints` |
+| Decision log | every decision, its reasoning summary and cost | `model_calls` |
+
+**The briefing each role gets:**
+- **Lead:** one line per document (type, date, author, who has read it), the counts, and the latest reports. Never page
+  text, which is why its prompt stayed under about 10k tokens while 1,737 pages were read.
+- **Counsel and the engineer:** the document list plus their own verified facts and open questions, to decide what to read next.
+- **A reader:** only its batch of pages; it files its facts and ends.
+
+**Example from the run:** a counsel reader reads a 1999 letter, and its pages go into the reading log. It proposes "B/PB
+rejected the repair procedure on 23 Dec 1999" with a quote; the verifier checks it and files it under verified facts.
+Counsel posts a report, which wakes the lead; the lead's briefing now shows that document as read and the new count,
+never the letter itself. At the end, assembly builds the chronology from verified facts, not from anyone's memory.
+
+**Why it's the long-horizon point:** nothing is forgotten (facts are on file, not summarised away), nothing overflows
+(briefings stay small), nothing is done twice (sign-out sheet), everything is auditable (the binder is the record, shown on
+Trajectory and Memory), and a task can resume from its bookmark (designed and unit-tested; not yet tested by a real
+failover). It does not learn across cases: the binder belongs to one claim file.
+
+**Say it like this:** "Our agents don't remember the case; MongoDB does. Each agent gets a fresh, short briefing from it
+for every task, so the lead's prompt stayed under 10k tokens while the team read 1,737 pages."
+
 ## The reading coverage report: where it is and how to read it
 
 **Where:** the **Memory** tab, section "Coverage of the claim file". The top bar also shows "Pages read 1,737 / 1,737".
